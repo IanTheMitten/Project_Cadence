@@ -169,7 +169,7 @@ not an executor's licence to build a wake word.
 **Why:** Eleven downstream tasks assume this stack runs on 3.14. Negative result is a valid outcome — a failed import is the trigger for the spec's second-venv fallback, and reporting it is success.
 
 ### Task 3: Prove `gemma4:31b-cloud` tool calling with `think: false` [experiment]
-- [ ] status
+- [x] status
 **Objective:** A written record of the exact `tool_calls` JSON shape Ollama returns for `gemma4:31b-cloud`, plus measured latency.
 **Write-scope:**
 - `docs/preflight/ollama.md` (new)
