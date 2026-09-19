@@ -600,7 +600,7 @@ new modules import cleanly.
 ## Phase 4 — The turn path
 
 ### Task 15: Write agent-loop tests [test]
-- [ ] status
+- [x] status
 **Objective:** A red test file pinning the 3-call cap, the no-retry rule, and the tool-failure-ends-turn rule.
 **Write-scope:** `harness/tests/test_agent.py` (new)
 **Read-context:**
