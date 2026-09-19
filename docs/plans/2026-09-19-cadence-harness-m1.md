@@ -637,7 +637,7 @@ new modules import cleanly.
 **Why:** Test-first. Tests 6, 7, and 8 are the executable form of the line between personal assistant and software engineer — cap, no recovery, no fallback.
 
 ### Task 16: Implement the agent loop and Ollama client
-- [ ] status
+- [x] status
 **Objective:** `run_turn` drives a bounded tool-calling loop against `gemma4:31b-cloud` with `think: false`, capped at three tool calls, with no retry anywhere.
 **Write-scope:**
 - `harness/cadence/agent.py` (new)
