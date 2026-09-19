@@ -238,7 +238,7 @@ user to run `ollama signin` — do not start Phase 4.
 ## Phase 2 — Muse MCP server
 
 ### Task 5: Write Muse client tests against the captured fixtures [test]
-- [ ] status
+- [x] status
 **Objective:** A red test file covering all eight Muse client methods, asserting against the Phase 1 fixtures.
 **Write-scope:** `harness/tests/test_muse_client.py` (new)
 **Read-context:**
