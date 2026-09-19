@@ -404,7 +404,7 @@ user to run `ollama signin` — do not start Phase 4.
 ## Phase 3 — Store, routines, context, session
 
 ### Task 9: Write SQLite store tests [test]
-- [ ] status
+- [x] status
 **Objective:** A red test file covering diary and routine persistence, queries, and burn.
 **Write-scope:** `harness/tests/test_store.py` (new)
 **Read-context:** `docs/specs/2026-09-19-voice-music-agent-harness.md:127-134` — the diary-storage decision: harness-owned SQLite, decisions and context only, Muse track IDs referenced not copied.
