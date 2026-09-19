@@ -329,7 +329,7 @@ user to run `ollama signin` — do not start Phase 4.
 **Why:** The single point where Muse's HTTP surface enters the harness, so the no-retry rule is enforced in exactly one place.
 
 ### Task 7: Write MCP tool-surface tests [test]
-- [ ] status
+- [x] status
 **Objective:** A red test file asserting the MCP server exposes exactly the eight spec'd tools with the right schemas and that each dispatches to the matching `MuseClient` method.
 **Write-scope:** `harness/tests/test_muse_mcp_server.py` (new)
 **Read-context:**
