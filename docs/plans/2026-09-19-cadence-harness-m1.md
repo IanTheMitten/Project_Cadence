@@ -135,7 +135,7 @@ not an executor's licence to build a wake word.
 **Why:** Every later task installs nothing — the whole dependency set is decided here so each brief can forbid new deps outright.
 
 ### Task 2: Prove the audio stack imports and measure its latency [experiment]
-- [ ] status
+- [x] status
 **Objective:** A written record showing whether `mcp`, `faster-whisper`, `kokoro-onnx`, and `webrtcvad` import and run on Python 3.14.7, with measured ASR and TTS latency.
 **Write-scope:**
 - `docs/preflight/runtime.md` (new)
