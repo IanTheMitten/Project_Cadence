@@ -128,7 +128,8 @@ not an executor's licence to build a wake word.
 4. Create `harness/.gitignore` containing `.venv/`, `__pycache__/`, `*.sqlite3`.
 5. Run `python3 -m venv harness/.venv` then `harness/.venv/bin/pip install -r harness/requirements.txt`.
 **New symbols:** none
-**Verify:** `cd harness && .venv/bin/python -m pytest -q` — expected: exits 0 with `no tests ran`.
+**Verify:** `cd harness && .venv/bin/python -c "import mcp, faster_whisper, kokoro_onnx, webrtcvad, fastapi, uvicorn, websockets, httpx, pytest, numpy, scipy; print('ok')"` — expected: prints `ok`.
+**Note:** do not verify with bare `pytest` here — with no test files it exits 5 (`no tests ran`), which reads as a failure.
 **Forbidden:** no dependency outside the 14 pinned lines above; do not touch `tools/`; do not create any module beyond the `__init__.py` files listed.
 **Depends:** none.
 **Why:** Every later task installs nothing — the whole dependency set is decided here so each brief can forbid new deps outright.
@@ -278,7 +279,7 @@ user to run `ollama signin` — do not start Phase 4.
     assert `MuseUnavailable` propagates and that no retry request was made (assert the transport
     saw exactly one call).
 **New symbols:** none (test functions only).
-**Verify:** `cd harness && .venv/bin/python -m pytest tests/test_muse_client.py -q` — expected: 9 errors, every one a `ModuleNotFoundError` naming `cadence.muse.client`.
+**Verify:** `cd harness && .venv/bin/python -m pytest tests/test_muse_client.py -q` — expected: exit 2, `1 error`, a collection error reading `ModuleNotFoundError: No module named 'cadence.muse.client'`. Red is the correct outcome here.
 **Forbidden:** do not create `harness/cadence/muse/client.py`; no real network call in any test; do not invent `track_rowid` values — copy them from the fixtures.
 **Depends:** Task 4.
 **Why:** Test-first per the plan's default pairing. The signatures in Anchors are copied verbatim from Task 6's New symbols so the two tasks cannot drift.
@@ -357,7 +358,7 @@ user to run `ollama signin` — do not start Phase 4.
    tool result is an error carrying the exception text, and that the stub was called exactly once
    (no retry).
 **New symbols:** none (test functions only).
-**Verify:** `cd harness && .venv/bin/python -m pytest tests/test_muse_mcp_server.py -q` — expected: 8 errors, every one a `ModuleNotFoundError` naming `cadence.muse.mcp_server`.
+**Verify:** `cd harness && .venv/bin/python -m pytest tests/test_muse_mcp_server.py -q` — expected: exit 2, `1 error`, a collection error reading `ModuleNotFoundError: No module named 'cadence.muse.mcp_server'`. Red is the correct outcome here.
 **Forbidden:** do not create `harness/cadence/muse/mcp_server.py`; do not edit `harness/cadence/muse/client.py`; no real network call.
 **Depends:** Task 6.
 **Why:** The eight-name assertion is the frozen surface. If a ninth tool is ever added, this test is the thing that must be edited deliberately — which is the point.
@@ -429,7 +430,7 @@ user to run `ollama signin` — do not start Phase 4.
 9. `test_delete_routine_removes_it` — saves two, deletes one, asserts one remains.
 10. `test_due_routines_returns_only_past_schedules` — saves two schedule routines with `trigger_value` `"1000.0"` and `"3000.0"` and one utterance routine; asserts `due_routines(2000.0)` returns exactly the 1000.0 one.
 **New symbols:** none (test functions only).
-**Verify:** `cd harness && .venv/bin/python -m pytest tests/test_store.py -q` — expected: 9 errors, every one a `ModuleNotFoundError` naming `cadence.store`.
+**Verify:** `cd harness && .venv/bin/python -m pytest tests/test_store.py -q` — expected: exit 2, `1 error`, a collection error reading `ModuleNotFoundError: No module named 'cadence.store'`. Red is the correct outcome here.
 **Forbidden:** do not create `harness/cadence/store.py`; never write to `harness/cadence.sqlite3`; no new deps.
 **Depends:** Task 1.
 **Why:** Test-first. Test 5 and test 6 are the executable form of two PRD Refusals — the harness owns context not taste, and burn must be one command that never touches Muse.
@@ -492,7 +493,7 @@ user to run `ollama signin` — do not start Phase 4.
 8. `test_invalidate_removes_matching_routine` — crystallizes, calls `invalidate(store, "play something chill")`, asserts it returns 1 and `match` now returns `None`.
 9. `test_invalidate_returns_zero_when_nothing_matches` — asserts `invalidate(store, "nothing like this")` returns 0 and raises nothing.
 **New symbols:** none (test functions only).
-**Verify:** `cd harness && .venv/bin/python -m pytest tests/test_routines.py -q` — expected: 8 errors, every one a `ModuleNotFoundError` naming `cadence.routines`.
+**Verify:** `cd harness && .venv/bin/python -m pytest tests/test_routines.py -q` — expected: exit 2, `1 error`, a collection error reading `ModuleNotFoundError: No module named 'cadence.routines'`. Red is the correct outcome here.
 **Forbidden:** do not create `harness/cadence/routines.py`; no new deps; do not import any embedding or similarity library.
 **Depends:** Task 10.
 **Why:** Test 5 pins the dumb-matching decision so no executor "improves" it into the fuzzy-intent project the spec rules out.
@@ -630,7 +631,7 @@ new modules import cleanly.
    that no second LLM call was made. There is no local fallback.
 9. `test_think_false_for_live_turns` — asserts every LLM call `run_turn` made passed `think=False`.
 **New symbols:** none (test functions only).
-**Verify:** `cd harness && .venv/bin/python -m pytest tests/test_agent.py -q` — expected: 7 errors, every one a `ModuleNotFoundError` naming `cadence.agent`.
+**Verify:** `cd harness && .venv/bin/python -m pytest tests/test_agent.py -q` — expected: exit 2, `1 error`, a collection error reading `ModuleNotFoundError: No module named 'cadence.agent'`. Red is the correct outcome here.
 **Forbidden:** do not create `harness/cadence/agent.py`; no real HTTP call to Ollama or Muse; do not soften any of the three caps into a warning.
 **Depends:** Task 3, Task 8.
 **Why:** Test-first. Tests 6, 7, and 8 are the executable form of the line between personal assistant and software engineer — cap, no recovery, no fallback.
@@ -711,7 +712,7 @@ new modules import cleanly.
    element is 1.0 and its last is 0.25.
 8. `test_ramp_is_monotonic_down` — asserts `np.all(np.diff(ramp(100, 1.0, 0.25)) <= 0)`.
 **New symbols:** none (test functions only).
-**Verify:** `cd harness && .venv/bin/python -m pytest tests/test_mixer.py -q` — expected: 8 errors, every one a `ModuleNotFoundError` naming `cadence.audio.mixer`.
+**Verify:** `cd harness && .venv/bin/python -m pytest tests/test_mixer.py -q` — expected: exit 2, `1 error`, a collection error reading `ModuleNotFoundError: No module named 'cadence.audio.mixer'`. Red is the correct outcome here.
 **Forbidden:** do not create `harness/cadence/audio/mixer.py`; no new deps; no audio file I/O — build every buffer with numpy.
 **Depends:** Task 1.
 **Why:** Test-first. Test 5 is the one that matters: int16 overflow wraps to loud noise, which is the audible way "never breaks the mood" fails.
@@ -886,7 +887,7 @@ new modules import cleanly.
 6. `test_speaking_step_is_rejected_in_v1` — a routine whose steps include `{"say": "good morning"}`; asserts `is_speaking_step` is `True` for it and that `tick` skips the routine and sends no audio.
 7. `test_no_audio_session_means_no_execution` — an empty registry; asserts `tick(2000.0)` returns an empty list and raises nothing.
 **New symbols:** none (test functions only).
-**Verify:** `cd harness && .venv/bin/python -m pytest tests/test_scheduler.py -q` — expected: 6 errors, every one a `ModuleNotFoundError` naming `cadence.scheduler`.
+**Verify:** `cd harness && .venv/bin/python -m pytest tests/test_scheduler.py -q` — expected: exit 2, `1 error`, a collection error reading `ModuleNotFoundError: No module named 'cadence.scheduler'`. Red is the correct outcome here.
 **Forbidden:** do not create `harness/cadence/scheduler.py`; no real timers or `sleep` in any test — call `tick(now)` directly with an explicit timestamp; no new deps.
 **Depends:** Task 20.
 **Why:** Test-first. Test 4 is the executable form of the concurrency-1 rule, and test 6 is the proactive-speech deferral — the only thing stopping v1 from talking to an empty room.
@@ -930,6 +931,7 @@ new modules import cleanly.
 - `voice_chat/main/voice_chat.c`
 - `voice_chat/main/CMakeLists.txt`
 - `voice_chat/main/Kconfig.projbuild`
+- `voice_chat/main/idf_component.yml` (new)
 - `voice_chat/sdkconfig.defaults`
 **Read-context:**
 - `voice_chat/main/voice_chat.c:1-124` — WiFi bring-up and both I2S init functions, which stay unchanged.
@@ -951,22 +953,26 @@ new modules import cleanly.
    `VOICE_WIFI_PASSWORD` exactly as they are.
 2. In `sdkconfig.defaults`, leave the two WiFi lines untouched and add nothing else — the two new
    options take their Kconfig defaults.
-3. In `CMakeLists.txt`, replace `esp_http_client` in `PRIV_REQUIRES` with `esp_websocket_client`
-   and keep every other component. Add `esp_websocket_client` as a managed component by creating
-   `voice_chat/main/idf_component.yml` only if the build reports it missing — that file is inside
-   this task's Write-scope directory.
-4. Delete `http_event_handler`, `speak_stream_task`, `mic_connect`, and `mic_upload_task`.
-5. Add `ws_event_handler`: on `WEBSOCKET_EVENT_CONNECTED`, send one text frame
+3. `esp_websocket_client` is **not** a core ESP-IDF v5.3 component — verified: `ls ~/esp/esp-idf/components | grep -i websocket` returns nothing. It ships from the component registry, latest `1.0.1`. Create `voice_chat/main/idf_component.yml` containing:
+   ```yaml
+   dependencies:
+     espressif/esp_websocket_client: "^1.0.1"
+   ```
+   The first build downloads it into `voice_chat/managed_components/`, so this task needs network access.
+4. In `CMakeLists.txt`, replace `esp_http_client` in `PRIV_REQUIRES` with `esp_websocket_client`
+   and keep every other component unchanged.
+5. Delete `http_event_handler`, `speak_stream_task`, `mic_connect`, and `mic_upload_task`.
+6. Add `ws_event_handler`: on `WEBSOCKET_EVENT_CONNECTED`, send one text frame
    `{"type":"hello","client_id":"<VOICE_CLIENT_ID>","caps":["audio_in","audio_out"]}`. On
    `WEBSOCKET_EVENT_DATA` with `op_code` 2 (binary), push the payload into `s_audio_ring` exactly
    as `http_event_handler` did. On `op_code` 1 (text), `ESP_LOGI` the payload and do nothing else.
-6. Add `ws_client_task` creating an `esp_websocket_client` against `CONFIG_VOICE_WS_URL`, starting
+7. Add `ws_client_task` creating an `esp_websocket_client` against `CONFIG_VOICE_WS_URL`, starting
    it, and keeping it alive with reconnect on disconnect.
-7. Add `mic_ws_task` doing what `mic_upload_task` did — `i2s_channel_read`, the same
+8. Add `mic_ws_task` doing what `mic_upload_task` did — `i2s_channel_read`, the same
    `(int16_t)(raw[i] >> 14)` conversion — but sending each buffer as a binary WebSocket frame via
    `esp_websocket_client_send_bin` instead of `send()`. Skip sending while the client is not
    connected.
-8. Keep `i2s_drain_task`, `i2s_speaker_init`, `i2s_mic_init`, and `wifi_init_sta` unchanged. In
+9. Keep `i2s_drain_task`, `i2s_speaker_init`, `i2s_mic_init`, and `wifi_init_sta` unchanged. In
    `app_main`, create `i2s_drain_task`, `ws_client_task`, and `mic_ws_task`.
 **New symbols:**
 - `static void ws_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data)`
