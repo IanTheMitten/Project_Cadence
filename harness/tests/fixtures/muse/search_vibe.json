@@ -1,0 +1,125 @@
+{
+  "q": "chill",
+  "results": [
+    {
+      "track_rowid": 123458861,
+      "score": 0.571459031885354,
+      "track": {
+        "track_rowid": 123458861,
+        "track_name": "Christmas Eve",
+        "artist_name": "Justin Bieber",
+        "artist_names": [
+          "Justin Bieber"
+        ],
+        "album_name": "Under The Mistletoe",
+        "album_rowid": 26753352,
+        "track_no": 8,
+        "disc_no": 1,
+        "duration_ms": 223613,
+        "status": "done",
+        "is_instrumental": false,
+        "has_art": true,
+        "has_lyrics": true,
+        "gain_db": null,
+        "rating": null,
+        "playable": true
+      }
+    },
+    {
+      "track_rowid": 231801304,
+      "score": 0.5519578185779229,
+      "track": {
+        "track_rowid": 231801304,
+        "track_name": "snowflake (feat. Jaden & Sarcastic Sounds)",
+        "artist_name": "Powfu & Jaden & Sarcastic Sounds",
+        "artist_names": [
+          "Powfu & Jaden & Sarcastic Sounds"
+        ],
+        "album_name": "snowflake (feat. Jaden & Sarcastic Sounds)",
+        "album_rowid": 53220517,
+        "track_no": 1,
+        "disc_no": 1,
+        "duration_ms": 188885,
+        "status": "done",
+        "is_instrumental": false,
+        "has_art": true,
+        "has_lyrics": false,
+        "gain_db": null,
+        "rating": null,
+        "playable": true
+      }
+    },
+    {
+      "track_rowid": 54304,
+      "score": 0.5460625191553256,
+      "track": {
+        "track_rowid": 54304,
+        "track_name": "1.23.23",
+        "artist_name": "Dominic Fike",
+        "artist_names": [
+          "Dominic Fike"
+        ],
+        "album_name": "14 minutes",
+        "album_rowid": 8884,
+        "track_no": 3,
+        "disc_no": 1,
+        "duration_ms": 121630,
+        "status": "done",
+        "is_instrumental": false,
+        "has_art": true,
+        "has_lyrics": true,
+        "gain_db": null,
+        "rating": null,
+        "playable": true
+      }
+    },
+    {
+      "track_rowid": 123617130,
+      "score": 0.5457262646049335,
+      "track": {
+        "track_rowid": 123617130,
+        "track_name": "Breakfast With the Moon",
+        "artist_name": "Powfu",
+        "artist_names": [
+          "Powfu"
+        ],
+        "album_name": "Breakfast With the Moon",
+        "album_rowid": 26786800,
+        "track_no": 1,
+        "disc_no": 1,
+        "duration_ms": 163108,
+        "status": "done",
+        "is_instrumental": false,
+        "has_art": true,
+        "has_lyrics": true,
+        "gain_db": null,
+        "rating": null,
+        "playable": true
+      }
+    },
+    {
+      "track_rowid": 203080364,
+      "score": 0.5436130351918685,
+      "track": {
+        "track_rowid": 203080364,
+        "track_name": "the songbird and the bookworm",
+        "artist_name": "Powfu & Blue Wednesday",
+        "artist_names": [
+          "Powfu & Blue Wednesday"
+        ],
+        "album_name": "the life of a lofi boy",
+        "album_rowid": 45563568,
+        "track_no": 1,
+        "disc_no": 1,
+        "duration_ms": 187692,
+        "status": "done",
+        "is_instrumental": false,
+        "has_art": true,
+        "has_lyrics": true,
+        "gain_db": null,
+        "rating": null,
+        "playable": true
+      }
+    }
+  ]
+}

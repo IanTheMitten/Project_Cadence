@@ -1,0 +1,22 @@
+{
+  "detail": [
+    {
+      "type": "missing",
+      "loc": [
+        "body",
+        "track_rowid"
+      ],
+      "msg": "Field required",
+      "input": {}
+    },
+    {
+      "type": "missing",
+      "loc": [
+        "body",
+        "rating"
+      ],
+      "msg": "Field required",
+      "input": {}
+    }
+  ]
+}

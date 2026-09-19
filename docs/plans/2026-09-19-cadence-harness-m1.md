@@ -197,7 +197,7 @@ not an executor's licence to build a wake word.
 **Why:** Task 16's loop parses whatever shape this returns, so guessing it is the single most likely hallucination in the plan. Negative result is a valid outcome — an Unauthorized reply is a real finding that parks the phase for the user, not a failure to hide.
 
 ### Task 4: Capture Muse API response fixtures
-- [ ] status
+- [x] status
 **Objective:** Real JSON responses from all eight Muse endpoints saved as test fixtures.
 **Write-scope:**
 - `harness/tests/fixtures/muse/` (new)
