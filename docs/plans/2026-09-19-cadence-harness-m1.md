@@ -103,7 +103,7 @@ not an executor's licence to build a wake word.
 ## Phase 1 — Foundation and preflight
 
 ### Task 1: Scaffold the harness package and venv [mechanical]
-- [ ] status
+- [x] status
 **Objective:** `harness/` exists with a venv, pinned dependencies, and a `pytest` run that collects zero tests and exits 0.
 **Write-scope:**
 - `harness/pyproject.toml` (new)
