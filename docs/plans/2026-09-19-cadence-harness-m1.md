@@ -718,7 +718,7 @@ new modules import cleanly.
 **Why:** Test-first. Test 5 is the one that matters: int16 overflow wraps to loud noise, which is the audible way "never breaks the mood" fails.
 
 ### Task 18: Implement the mixer
-- [ ] status
+- [x] status
 **Objective:** `mix` combines ducked music with speech into clipped s16le stereo, with a linear gain ramp.
 **Write-scope:** `harness/cadence/audio/mixer.py` (new)
 **Read-context:**
