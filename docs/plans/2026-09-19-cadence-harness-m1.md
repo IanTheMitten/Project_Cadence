@@ -865,7 +865,7 @@ new modules import cleanly.
 ## Phase 5 — Scheduler, firmware, docs
 
 ### Task 21: Write scheduler tests [test]
-- [ ] status
+- [x] status
 **Objective:** A red test file pinning due-routine detection, the yield-to-user-turn rule, and the v1 no-speak rule.
 **Write-scope:** `harness/tests/test_scheduler.py` (new)
 **Read-context:**
