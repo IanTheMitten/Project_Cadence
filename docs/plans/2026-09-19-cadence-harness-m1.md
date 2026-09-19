@@ -471,7 +471,7 @@ user to run `ollama signin` — do not start Phase 4.
 **Why:** One file, two tables, so "burn it" is a single delete that can never endanger Muse's library.
 
 ### Task 11: Write routine matcher tests [test]
-- [ ] status
+- [x] status
 **Objective:** A red test file covering utterance matching, misses, crystallization, and correction-driven invalidation.
 **Write-scope:** `harness/tests/test_routines.py` (new)
 **Read-context:**
