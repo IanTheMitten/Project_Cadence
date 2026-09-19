@@ -984,7 +984,7 @@ new modules import cleanly.
 **Why:** Collapses two half-duplex channels into the one bidirectional protocol multiple speakers need. Verified by build only — no board was attached at plan time; flashing with `idf.py -p /dev/cu.usbmodem101 flash monitor` is a manual step for the user afterwards.
 
 ### Task 24: Write the harness README [docs]
-- [ ] status
+- [x] status
 **Objective:** `harness/README.md` tells a reader how to run the harness, what M1 does, and what it deliberately does not do yet.
 **Write-scope:** `harness/README.md` (new)
 **Read-context:**
