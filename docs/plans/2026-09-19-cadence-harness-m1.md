@@ -565,7 +565,7 @@ user to run `ollama signin` — do not start Phase 4.
 **Why:** Keeps the memory strategy behind an interface so the SQLite provider can be swapped without touching the loop, as the spec's provider-seam decision requires.
 
 ### Task 14: Implement the session abstraction
-- [ ] status
+- [x] status
 **Objective:** A `Session` type that makes ASR and TTS optional per session, so a text client runs the same turn path with no audio stages.
 **Write-scope:** `harness/cadence/session.py` (new)
 **Read-context:** `docs/specs/2026-09-19-voice-music-agent-harness.md:56-61` — the client-interface decision; text sessions have no audio stage, so ASR and TTS must be optional per session rather than fixed pipeline stages.
