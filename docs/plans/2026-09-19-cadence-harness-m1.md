@@ -436,7 +436,7 @@ user to run `ollama signin` — do not start Phase 4.
 **Why:** Test-first. Test 5 and test 6 are the executable form of two PRD Refusals — the harness owns context not taste, and burn must be one command that never touches Muse.
 
 ### Task 10: Implement the SQLite store
-- [ ] status
+- [x] status
 **Objective:** `Store` persists decisions and routines in one harness-owned SQLite file with two tables.
 **Write-scope:** `harness/cadence/store.py` (new)
 **Read-context:** `harness/tests/test_store.py` (from Task 9) — the contract, in full.
