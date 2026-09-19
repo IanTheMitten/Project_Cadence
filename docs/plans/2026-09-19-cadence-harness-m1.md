@@ -285,7 +285,7 @@ user to run `ollama signin` — do not start Phase 4.
 **Why:** Test-first per the plan's default pairing. The signatures in Anchors are copied verbatim from Task 6's New symbols so the two tasks cannot drift.
 
 ### Task 6: Implement the Muse HTTP client
-- [ ] status
+- [x] status
 **Objective:** `MuseClient` wraps all eight Muse operations and turns any connection failure into `MuseUnavailable` without retrying.
 **Write-scope:** `harness/cadence/muse/client.py` (new)
 **Read-context:**
