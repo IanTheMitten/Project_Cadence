@@ -1,0 +1,7 @@
+setuptools<81  # webrtcvad imports pkg_resources at runtime; removed in setuptools>=81
+faster-whisper
+mlx-lm
+webrtcvad
+kokoro-onnx
+scipy
+numpy

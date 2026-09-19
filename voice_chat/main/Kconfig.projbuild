@@ -1,0 +1,37 @@
+menu "Voice Chat"
+
+    config VOICE_WIFI_SSID
+        string "WiFi SSID"
+        default ""
+        help
+            Home WiFi network the ESP32-S3 should join to reach
+            tools/voice_chat_host.py.
+
+    config VOICE_WIFI_PASSWORD
+        string "WiFi password"
+        default ""
+        help
+            Password for VOICE_WIFI_SSID.
+
+    config VOICE_HOST_IP
+        string "voice_chat_host.py host IP"
+        default "192.168.0.67"
+        help
+            IP of the machine running tools/voice_chat_host.py.
+
+    config VOICE_MIC_PORT
+        int "Mic upload TCP port"
+        default 8766
+        help
+            Raw TCP port voice_chat_host.py listens on for the
+            16kHz/16-bit/mono mic PCM stream.
+
+    config VOICE_SPEAK_URL
+        string "speak_stream URL"
+        default "http://192.168.0.67:8767/speak_stream"
+        help
+            URL served by tools/voice_chat_host.py. Body is raw
+            s16le, 44100Hz, stereo PCM for one assistant turn,
+            streamed straight into I2S.
+
+endmenu

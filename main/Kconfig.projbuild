@@ -1,0 +1,23 @@
+menu "Muse Speaker"
+
+    config MUSE_WIFI_SSID
+        string "WiFi SSID"
+        default ""
+        help
+            Home WiFi network the ESP32-S3 should join to reach the
+            muse_proxy script.
+
+    config MUSE_WIFI_PASSWORD
+        string "WiFi password"
+        default ""
+        help
+            Password for MUSE_WIFI_SSID.
+
+    config MUSE_PROXY_URL
+        string "muse_proxy stream URL"
+        default "http://192.168.0.67:8765/play/3112"
+        help
+            URL served by tools/muse_proxy.py. Body is raw s16le,
+            44100Hz, stereo PCM streamed straight into I2S.
+
+endmenu
