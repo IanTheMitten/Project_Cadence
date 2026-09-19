@@ -529,7 +529,7 @@ user to run `ollama signin` — do not start Phase 4.
 **Why:** The cache in front of the LLM. Every hit is a turn that costs zero model calls, which is the whole point of the routines decision.
 
 ### Task 13: Implement the context provider seam
-- [ ] status
+- [x] status
 **Objective:** A `ContextProvider` interface plus a `SqliteContextProvider` that contributes a system prompt, prefetches pre-turn, and syncs post-turn.
 **Write-scope:** `harness/cadence/context.py` (new)
 **Read-context:**
