@@ -893,7 +893,7 @@ new modules import cleanly.
 **Why:** Test-first. Test 4 is the executable form of the concurrency-1 rule, and test 6 is the proactive-speech deferral — the only thing stopping v1 from talking to an empty room.
 
 ### Task 22: Implement the scheduler
-- [ ] status
+- [x] status
 **Objective:** A tick-driven evaluator that executes due schedule-triggered routines through the same path a cache hit uses, yielding to any in-flight user turn.
 **Write-scope:** `harness/cadence/scheduler.py` (new)
 **Read-context:**
