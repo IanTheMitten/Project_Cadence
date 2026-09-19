@@ -797,7 +797,7 @@ new modules import cleanly.
 **Why:** These stages are proven on the bench and must arrive in the harness unchanged, so an M1 audio regression can only come from new code, never from a silent rewrite of working code.
 
 ### Task 20: Wire the WebSocket server and turn path
-- [ ] status
+- [x] status
 **Objective:** A FastAPI WebSocket server on port 8768 that runs the full turn path — hello, VAD, ASR, routine lookup, agent loop, TTS, mix, stream out — for audio sessions, and the same path without ASR and TTS for text sessions.
 **Write-scope:**
 - `harness/cadence/server.py` (new)
