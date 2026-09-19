@@ -499,7 +499,7 @@ user to run `ollama signin` — do not start Phase 4.
 **Why:** Test 5 pins the dumb-matching decision so no executor "improves" it into the fuzzy-intent project the spec rules out.
 
 ### Task 12: Implement the routine matcher
-- [ ] status
+- [x] status
 **Objective:** `routines` matches an utterance against the store, crystallizes a resolved path, and invalidates on correction.
 **Write-scope:** `harness/cadence/routines.py` (new)
 **Read-context:** `harness/tests/test_routines.py` (from Task 11) — the contract, in full.
