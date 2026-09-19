@@ -364,7 +364,7 @@ user to run `ollama signin` — do not start Phase 4.
 **Why:** The eight-name assertion is the frozen surface. If a ninth tool is ever added, this test is the thing that must be edited deliberately — which is the point.
 
 ### Task 8: Implement the Muse MCP server
-- [ ] status
+- [x] status
 **Objective:** An MCP stdio server exposing the eight Muse tools, each a thin pass-through to `MuseClient`.
 **Write-scope:**
 - `harness/cadence/muse/mcp_server.py` (new)
