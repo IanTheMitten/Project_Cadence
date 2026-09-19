@@ -748,7 +748,7 @@ new modules import cleanly.
 **Why:** Arithmetic, not a project — both streams already share a format, which is exactly why the spec chose mixing over pausing.
 
 ### Task 19: Port the audio stages into the harness package
-- [ ] status
+- [x] status
 **Objective:** VAD segmentation, ASR, TTS, and the sentence chunker live in `cadence.audio` as reusable stages independent of any transport.
 **Write-scope:**
 - `harness/cadence/audio/chunker.py` (new)
