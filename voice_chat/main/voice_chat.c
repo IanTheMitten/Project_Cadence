@@ -1,6 +1,6 @@
 #include <string.h>
 #include "esp_event.h"
-#include "esp_http_client.h"
+#include "esp_websocket_client.h"
 #include "esp_log.h"
 #include "esp_netif.h"
 #include "esp_wifi.h"
@@ -11,8 +11,6 @@
 #include "driver/i2s_std.h"
 #include "driver/gpio.h"
 #include "nvs_flash.h"
-#include "lwip/sockets.h"
-#include "lwip/netdb.h"
 
 static const char *TAG = "voice_chat";
 
@@ -34,6 +32,7 @@ static EventGroupHandle_t s_wifi_event_group;
 static StreamBufferHandle_t s_audio_ring;
 static i2s_chan_handle_t s_tx_chan;
 static i2s_chan_handle_t s_rx_chan;
+static esp_websocket_client_handle_t s_ws_client;
 
 static void wifi_event_handler(void *arg, esp_event_base_t event_base,
                                 int32_t event_id, void *event_data)
@@ -122,41 +121,6 @@ static void i2s_mic_init(void)
     ESP_ERROR_CHECK(i2s_channel_enable(s_rx_chan));
 }
 
-static esp_err_t http_event_handler(esp_http_client_event_t *evt)
-{
-    if (evt->event_id == HTTP_EVENT_ON_DATA) {
-        const uint8_t *data = evt->data;
-        int remaining = evt->data_len;
-        while (remaining > 0) {
-            size_t sent = xStreamBufferSend(s_audio_ring, data, remaining, portMAX_DELAY);
-            data += sent;
-            remaining -= sent;
-        }
-    }
-    return ESP_OK;
-}
-
-static void speak_stream_task(void *arg)
-{
-    while (1) {
-        esp_http_client_config_t config = {
-            .url = CONFIG_VOICE_SPEAK_URL,
-            .event_handler = http_event_handler,
-            .timeout_ms = 60000, // long enough to cover ASR+LLM+TTS think time before the first chunk
-        };
-        esp_http_client_handle_t client = esp_http_client_init(&config);
-
-        esp_err_t err = esp_http_client_perform(client);
-        if (err == ESP_OK) {
-            ESP_LOGI(TAG, "turn done, status=%d", esp_http_client_get_status_code(client));
-        } else {
-            ESP_LOGE(TAG, "speak_stream failed: %s", esp_err_to_name(err));
-            vTaskDelay(pdMS_TO_TICKS(1000));
-        }
-        esp_http_client_cleanup(client);
-    }
-}
-
 static void i2s_drain_task(void *arg)
 {
     int16_t buf[256];
@@ -170,70 +134,75 @@ static void i2s_drain_task(void *arg)
     }
 }
 
-static int mic_connect(void)
+static void ws_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data)
 {
-    struct sockaddr_in dest = {
-        .sin_family = AF_INET,
-        .sin_port = htons(CONFIG_VOICE_MIC_PORT),
-    };
-    dest.sin_addr.s_addr = inet_addr(CONFIG_VOICE_HOST_IP);
+    esp_websocket_event_data_t *data = (esp_websocket_event_data_t *)event_data;
 
-    int sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-    if (sock < 0) {
-        ESP_LOGE(TAG, "mic socket() failed: errno %d", errno);
-        return -1;
+    switch (event_id) {
+    case WEBSOCKET_EVENT_CONNECTED: {
+        ESP_LOGI(TAG, "ws connected");
+        char hello[160];
+        int len = snprintf(hello, sizeof(hello),
+                            "{\"type\":\"hello\",\"client_id\":\"%s\",\"caps\":[\"audio_in\",\"audio_out\"]}",
+                            CONFIG_VOICE_CLIENT_ID);
+        esp_websocket_client_send_text(s_ws_client, hello, len, portMAX_DELAY);
+        break;
     }
-    if (connect(sock, (struct sockaddr *)&dest, sizeof(dest)) != 0) {
-        ESP_LOGE(TAG, "mic connect() failed: errno %d", errno);
-        close(sock);
-        return -1;
+    case WEBSOCKET_EVENT_DATA:
+        if (data->op_code == 2) {
+            const uint8_t *p = (const uint8_t *)data->data_ptr;
+            int remaining = data->data_len;
+            while (remaining > 0) {
+                size_t sent = xStreamBufferSend(s_audio_ring, p, remaining, portMAX_DELAY);
+                p += sent;
+                remaining -= sent;
+            }
+        } else if (data->op_code == 1) {
+            ESP_LOGI(TAG, "ws text: %.*s", data->data_len, data->data_ptr);
+        }
+        break;
+    default:
+        break;
     }
-    ESP_LOGI(TAG, "mic upload connected to %s:%d", CONFIG_VOICE_HOST_IP, CONFIG_VOICE_MIC_PORT);
-    return sock;
 }
 
-static void mic_upload_task(void *arg)
+static void ws_client_task(void *arg)
+{
+    esp_websocket_client_config_t ws_cfg = {
+        .uri = CONFIG_VOICE_WS_URL,
+    };
+    s_ws_client = esp_websocket_client_init(&ws_cfg);
+    esp_websocket_register_events(s_ws_client, WEBSOCKET_EVENT_ANY, ws_event_handler, NULL);
+    esp_websocket_client_start(s_ws_client);
+
+    // esp_websocket_client reconnects on disconnect on its own; just keep the task alive.
+    while (1) {
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+}
+
+static void mic_ws_task(void *arg)
 {
     int32_t raw[MIC_BUF_SAMPLES];
     int16_t pcm16[MIC_BUF_SAMPLES];
 
     while (1) {
-        int sock = mic_connect();
-        if (sock < 0) {
-            vTaskDelay(pdMS_TO_TICKS(1000));
+        size_t bytes_read = 0;
+        esp_err_t err = i2s_channel_read(s_rx_chan, raw, sizeof(raw), &bytes_read, portMAX_DELAY);
+        if (err != ESP_OK) {
+            ESP_LOGE(TAG, "mic read failed: %s", esp_err_to_name(err));
             continue;
         }
 
-        bool link_ok = true;
-        while (link_ok) {
-            size_t bytes_read = 0;
-            esp_err_t err = i2s_channel_read(s_rx_chan, raw, sizeof(raw), &bytes_read, portMAX_DELAY);
-            if (err != ESP_OK) {
-                ESP_LOGE(TAG, "mic read failed: %s", esp_err_to_name(err));
-                continue;
-            }
-
-            int n = bytes_read / sizeof(int32_t);
-            for (int i = 0; i < n; i++) {
-                pcm16[i] = (int16_t)(raw[i] >> 14);
-            }
-
-            const uint8_t *data = (const uint8_t *)pcm16;
-            int remaining = n * sizeof(int16_t);
-            while (remaining > 0) {
-                int sent = send(sock, data, remaining, 0);
-                if (sent < 0) {
-                    ESP_LOGE(TAG, "mic send() failed: errno %d", errno);
-                    link_ok = false;
-                    break;
-                }
-                data += sent;
-                remaining -= sent;
-            }
+        int n = bytes_read / sizeof(int32_t);
+        for (int i = 0; i < n; i++) {
+            pcm16[i] = (int16_t)(raw[i] >> 14);
         }
 
-        close(sock);
-        vTaskDelay(pdMS_TO_TICKS(1000));
+        if (s_ws_client == NULL || !esp_websocket_client_is_connected(s_ws_client)) {
+            continue;
+        }
+        esp_websocket_client_send_bin(s_ws_client, (const char *)pcm16, n * sizeof(int16_t), portMAX_DELAY);
     }
 }
 
@@ -248,6 +217,6 @@ void app_main(void)
     i2s_mic_init();
 
     xTaskCreate(i2s_drain_task, "i2s_drain", 4096, NULL, 6, NULL);
-    xTaskCreate(speak_stream_task, "speak_stream", 8192, NULL, 5, NULL);
-    xTaskCreate(mic_upload_task, "mic_upload", 4096, NULL, 5, NULL);
+    xTaskCreate(ws_client_task, "ws_client", 8192, NULL, 5, NULL);
+    xTaskCreate(mic_ws_task, "mic_ws", 4096, NULL, 5, NULL);
 }

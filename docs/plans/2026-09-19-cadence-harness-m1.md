@@ -925,7 +925,7 @@ new modules import cleanly.
 **Why:** The only component that originates a session rather than receiving one, which is why target resolution and the lock check both live here.
 
 ### Task 23: Rewrite the firmware as a WebSocket client
-- [ ] status
+- [x] status
 **Objective:** `voice_chat/` builds green with one bidirectional WebSocket client replacing the separate TCP mic upload and HTTP speak-stream tasks.
 **Write-scope:**
 - `voice_chat/main/voice_chat.c`

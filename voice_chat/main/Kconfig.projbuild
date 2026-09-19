@@ -13,25 +13,20 @@ menu "Voice Chat"
         help
             Password for VOICE_WIFI_SSID.
 
-    config VOICE_HOST_IP
-        string "voice_chat_host.py host IP"
-        default "192.168.0.67"
+    config VOICE_WS_URL
+        string "Cadence session WebSocket URL"
+        default "ws://ianshomeserver:8768/session"
         help
-            IP of the machine running tools/voice_chat_host.py.
+            URL of the harness's /session WebSocket endpoint
+            (tools/voice_chat_host.py's successor). Carries the
+            hello handshake, mic PCM upload, and playback PCM
+            download over one bidirectional connection.
 
-    config VOICE_MIC_PORT
-        int "Mic upload TCP port"
-        default 8766
+    config VOICE_CLIENT_ID
+        string "Client ID"
+        default "speaker-1"
         help
-            Raw TCP port voice_chat_host.py listens on for the
-            16kHz/16-bit/mono mic PCM stream.
-
-    config VOICE_SPEAK_URL
-        string "speak_stream URL"
-        default "http://192.168.0.67:8767/speak_stream"
-        help
-            URL served by tools/voice_chat_host.py. Body is raw
-            s16le, 44100Hz, stereo PCM for one assistant turn,
-            streamed straight into I2S.
+            Identifies this board in the hello frame sent on
+            WebSocket connect.
 
 endmenu
