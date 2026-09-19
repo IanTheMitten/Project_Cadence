@@ -686,7 +686,7 @@ new modules import cleanly.
 **Why:** The core loop. It must stay protocol-bound and Muse-free, which is exactly what the import ban in Forbidden enforces.
 
 ### Task 17: Write mixer and ducking tests [test]
-- [ ] status
+- [x] status
 **Objective:** A red test file pinning the ducking gain, the ramp, and int16 clipping.
 **Write-scope:** `harness/tests/test_mixer.py` (new)
 **Read-context:**
