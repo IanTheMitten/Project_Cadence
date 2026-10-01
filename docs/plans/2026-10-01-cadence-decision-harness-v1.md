@@ -856,7 +856,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 **Why:** Queue composition and play-span reasons are deterministic and must match Muse's semantics.
 
 ### Task 14: Implement the music plugin
-- [ ] status
+- [x] status
 **Objective:** `cadence/plugins/music.py` per I14; Task 13's tests pass.
 **Write-scope:**
 - `harness/cadence/plugins/music.py` (new)
