@@ -824,7 +824,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 **Why:** Plays write into Muse's one non-regenerable table; the request shape must match Muse's API exactly.
 
 ### Task 12: Add plays and contract-version methods to MuseClient
-- [ ] status
+- [x] status
 **Objective:** `MuseClient` gains I13 methods; Task 11's tests pass.
 **Write-scope:**
 - `harness/cadence/muse/client.py`

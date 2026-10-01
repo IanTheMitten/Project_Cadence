@@ -10,6 +10,15 @@ import httpx
 DEFAULT_BASE_URL = "http://ianshomeserver:8080"
 DEFAULT_PROXY_URL = "http://ianshomeserver:8765"
 
+ENDED_REASONS = (
+    "track_end",
+    "user_next",
+    "user_prev",
+    "new_selection",
+    "pause_timeout",
+    "lost",
+)
+
 
 class MuseUnavailable(Exception):
     """Raised when the Muse server cannot be reached."""
@@ -90,3 +99,31 @@ class MuseClient:
             raise ValueError(f"invalid rating: {rating!r}")
         body = {"track_rowid": track_rowid, "rating": rating}
         return self._send("POST", "/api/ratings", json=body)
+
+    def open_play(
+        self, track_rowid: int, duration_ms: int, source: str | None = None
+    ) -> int:
+        body = {
+            "track_rowid": track_rowid,
+            "duration_ms": duration_ms,
+            "source": source,
+        }
+        return self._send("POST", "/api/plays", json=body)["id"]
+
+    def close_play(
+        self, play_id: int, ended_reason: str, position_ms: int | None = None
+    ) -> None:
+        if ended_reason not in ENDED_REASONS:
+            raise ValueError(f"invalid ended_reason: {ended_reason!r}")
+        body = {"ended_reason": ended_reason, "position_ms": position_ms}
+        self._send("POST", f"/api/plays/{play_id}/close", json=body)
+
+    def contract_version(self) -> str | None:
+        try:
+            response = self._client.get("/api/contract")
+            if response.status_code == 404:
+                return None
+            response.raise_for_status()
+        except httpx.HTTPError as exc:
+            raise MuseUnavailable(str(exc)) from exc
+        return response.json()["version"]
