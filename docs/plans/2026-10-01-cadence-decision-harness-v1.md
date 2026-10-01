@@ -1054,7 +1054,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 **Why:** The only check that every piece works together with real services.
 
 ### Task 24: Document v1 setup and architecture [docs]
-- [ ] status
+- [x] status
 **Objective:** `harness/README.md` and the repo `CLAUDE.md` describe the v1 harness accurately.
 **Write-scope:**
 - `harness/README.md`

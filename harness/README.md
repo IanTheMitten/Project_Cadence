@@ -2,73 +2,126 @@
 
 ## What this is
 
-M1 of the Cadence voice/music agent harness: a WebSocket server (`cadence.server`) that runs
-the turn loop — VAD/ASR on incoming mic audio, an LLM tool-calling agent, TTS on the reply, and
-a mixer that ducks any in-progress music playback under the reply. A companion stdio MCP server
-(`cadence.muse`) exposes eight Muse library tools to the agent. State (diary entries, routines)
-lives in SQLite.
+v1 of the Cadence decision harness: a WebSocket server (`cadence.server`, `/session`) that turns
+speaker utterances into decisions and actions. Pipeline: mic audio, then wake word ("hey
+jarvis"), VAD, ASR, then an `Event` goes through Decide (Jev first, a cloud LLM on
+escalation), Resolve, Execute. Every decision is written to a SQLite decision log. Plugins:
+`speaker` (volume, audio port) and `music` (Muse). Replies are synthesized with Kokoro TTS.
 
-Measured on this Mac (Python 3.14.7, `docs/preflight/runtime.md`): Whisper `small.en` (CPU,
-int8) loads in 1.146 s cold / 0.627 s warm; Kokoro TTS synthesizes a short test sentence in a
-mean 0.631 s against 1.643 s of output audio (RTF 0.384, faster than real time here).
+Design: `docs/specs/2026-10-01-cadence-decision-harness-v1.md`. Plan:
+`docs/plans/2026-10-01-cadence-decision-harness-v1.md`.
 
-This is a desktop test harness, not the firmware. The ESP32-S3 boards talk to it as WebSocket
-clients over the `/session` endpoint (`harness/cadence/server.py`).
+The ESP32-S3 boards talk to this server as WebSocket clients over `/session`
+(`harness/cadence/server.py`). Target host is `ianshomeserver`.
 
-## Prerequisites
-
-- Python 3.14.7, with `harness/.venv` created and `harness/requirements.txt` installed into it
-  (see runtime notes in `docs/preflight/runtime.md` — all imports in that dep set succeed on
-  3.14.7).
-- `ollama signin` run once on this Mac. The agent calls `gemma4:31b-cloud` at
-  `http://localhost:11434/api/chat`. Measured post-signin (`docs/preflight/ollama.md`): a
-  tool-call round trip took 719.7 ms with `think: false` and 1739.4 ms with `think: true`. The
-  harness does not run `ollama signin` for you.
-- `tools/muse_proxy.py` running and reachable on port 8765. It transcodes tracks to raw PCM for
-  playback; the harness does not start it. Without it, `play` tool calls will resolve to a URL
-  that nothing serves.
-
-## Running it
+## Setup
 
 From the repo root:
 
 ```
 python3 -m venv harness/.venv
 harness/.venv/bin/pip install -r harness/requirements.txt
-cd harness && .venv/bin/python -m cadence
+harness/.venv/bin/pip install --no-deps -r harness/requirements-nodeps.txt
 ```
 
-This starts the WebSocket server listening on the port read from `cadence/config.py`
-(`WS_PORT`, currently `8768`). A client connects, sends a `hello` frame, and the server runs
-one turn per utterance/text message it receives.
+The second install is `--no-deps` on purpose. `openwakeword` 0.6.0 hard-requires
+`tflite-runtime` on Linux, which has no Python 3.14 wheel, so a normal install fails. The code
+runs it with `inference_framework="onnx"` instead; its other needs (`scikit-learn`, `requests`,
+`tqdm`) are listed in `requirements.txt`. Never run a plain `pip install openwakeword`.
 
-## The eight Muse tools
+### Kokoro model files
 
-Exposed by `cadence.muse.mcp_server` (`TOOL_NAMES`), each a thin pass-through to one
-`MuseClient` call:
+`cadence.audio.tts` loads them from `tools/` at the repo root:
 
-- `search_vibe` — ranked candidate tracks matching a vibe/mood query; returns candidates, does
-  not pick one.
-- `search_text` — ranked candidate tracks matching a text search; returns candidates, does not
-  pick one.
-- `recommend_next` — ranked candidate tracks recommended to follow a given track; returns
-  candidates, does not pick one.
-- `play` — the playback URL for a track; returns the URL, does not decide which track to play.
-- `get_player_state` — the current player state; read-only.
-- `set_player_state` — applies exactly the queue/playback state you provide; does not decide
-  what to play next.
-- `get_dashboard` — the library dashboard summary; read-only.
-- `rate` — records exactly the rating you provide for a track; does not decide how to rate it.
+```
+cd tools
+wget https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/kokoro-v1.0.onnx
+wget https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/voices-v1.0.bin
+```
 
-## What M1 does not do yet
+Kokoro and Whisper load lazily on first use, not at import.
 
-Deferred, on purpose, to a later plan:
+### Jev (TypeSafe) key
 
-- **Wake word** — no on-board or server-side wake word detection. Until it lands, VAD is the
-  only utterance gate.
-- **Echo subtraction** — no acoustic echo cancellation on the mic path.
-- **Acknowledgement clip pool** — no pre-generated filler-phrase audio for turn latency.
-- **Server deployment** — nothing here is packaged or running on `ianshomeserver`; this runs on
-  a dev Mac only.
-- **Telegram and iMessage adapters** — the only client protocol is the WebSocket session
-  protocol above; no chat-platform bridges exist.
+Jev, the first-stage decider, needs a TypeSafe API key. It is read from the env var
+`TYPESAFE_API_KEY`, or else from `~/.config/cadence/typesafe.env`, a file with a line:
+
+```
+TYPESAFE_API_KEY=<your key>
+```
+
+Keep that file outside the repo and never commit it. If no key is found, Jev is marked
+unavailable at startup (a message goes to stderr) and every utterance escalates to the LLM.
+
+### LLM (Ollama)
+
+Escalations go to `gemma4:31b-cloud` at `http://localhost:11434/api/chat` (`cadence/llm.py`).
+Run `ollama signin` once on the host; the harness does not do it for you.
+
+## Configuration
+
+Env vars, read in `cadence/config.py`:
+
+| Variable | Default | Meaning |
+|---|---|---|
+| `CADENCE_MUSE_BASE_URL` | `http://ianshomeserver:8080` | Muse library server |
+| `CADENCE_MUSE_PROXY_URL` | `http://ianshomeserver:8765` | `tools/muse_proxy.py`, where speakers fetch PCM |
+| `CADENCE_DEVICES_PATH` | `devices.json` | Device registry file |
+| `CADENCE_WAKE_ENABLED` | `1` | `1` gates utterances on the wake word; any other value falls back to VAD-only |
+
+Relative paths resolve against `harness/`, the directory the server runs from.
+
+### `devices.json`
+
+Static device list, loaded at startup. The shipped file has one device:
+
+```
+{"devices": [{"id": "speaker-1", "kind": "speaker", "room": "bedroom"}]}
+```
+
+`id` is the client id the firmware connects with (`speaker-1` is the firmware default). Edit
+`room` by hand.
+
+## Acknowledgement clips
+
+Short spoken acknowledgements (categories `action`, `chat`, `correction`) are played from
+`harness/acks/<category>/NN.pcm`. Regenerate them from `harness/` with:
+
+```
+.venv/bin/python scripts/build_ack_pool.py --out acks --per-category 20
+```
+
+It asks the Ollama LLM for phrases and renders them with Kokoro, so both must be available.
+
+## Running it
+
+1. Start the Muse proxy on the host (the harness does not start it):
+
+   ```
+   python3 tools/muse_proxy.py
+   ```
+
+   It listens on port 8765 and transcodes tracks to raw PCM.
+
+2. Start the harness:
+
+   ```
+   cd harness && .venv/bin/python -m cadence
+   ```
+
+   Listens on `0.0.0.0:8768` (`WS_PORT`). The runtime is built lazily on first use
+   (`build_runtime()` in `cadence/wiring.py`).
+
+Wake phrase: "hey jarvis" (`hey_jarvis_v0.1`, threshold 0.5). After a wake, utterances are
+accepted for a listen window of 8 s.
+
+## Decision log
+
+Decisions are stored in `cadence.sqlite3` (`DB_PATH`, relative to `harness/`):
+
+- `decision_log` — one row per decision: event, context, decider, route, calls, and results.
+- `decision_labels` — labels on decisions. When an utterance is routed to `correction` within
+  60 s of the same source's previous decision, that previous decision is labelled `wrong` with
+  source `spoken_correction`.
+
+The log is append-only data for later finetuning of Jev's replacement.

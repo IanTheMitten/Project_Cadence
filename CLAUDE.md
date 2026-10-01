@@ -4,13 +4,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository layout
 
-This repo contains **three independent ESP-IDF projects** targeting the same ESP32-S3 board, not one project:
+This repo holds a Python decision harness plus **three independent ESP-IDF projects** targeting the same ESP32-S3 board:
 
+- **`harness/`** — the server-side Cadence decision harness (Python, v1). See "Decision harness (`harness/`)" below.
 - **Root project** (`CMakeLists.txt`, `main/Cadence_Speaker.c`) — the real firmware. Joins WiFi, pulls a raw PCM stream over HTTP from `tools/muse_proxy.py`, and plays it out an I2S DAC/amp.
 - **`mic_test/`** — a standalone scratch project (its own `CMakeLists.txt`, `main/`, `sdkconfig.defaults`) that reads an INMP441 I2S mic and prints an amplitude meter over serial. Not wired into the main app; it's a separate firmware image for bench-testing the mic in isolation.
-- **`voice_chat/`** — a standalone scratch project that runs the speaker TX path and the mic RX path at once (the board is wired for both simultaneously), streaming mic audio to `tools/voice_chat_host.py` and playing back its TTS replies, for a realtime spoken-conversation test. See "Voice conversation test" below.
+- **`voice_chat/`** — a standalone scratch project that runs the speaker TX path and the mic RX path at once (the board is wired for both simultaneously). It is the firmware client of the harness's `/session` WebSocket; `tools/voice_chat_host.py` is the older, pre-harness companion server for it. See "Voice conversation test" below.
 
-Each has its own `build/` directory. `idf.py` commands act on whichever project directory you're `cd`'d into — always check which one before building/flashing.
+Each ESP-IDF project has its own `build/` directory. `idf.py` commands act on whichever project directory you're `cd`'d into — always check which one before building/flashing.
+
+## Decision harness (`harness/`)
+
+Setup and run steps are in `harness/README.md`. Design: `docs/specs/2026-10-01-cadence-decision-harness-v1.md`; task plan: `docs/plans/2026-10-01-cadence-decision-harness-v1.md`. Run from `harness/` with `python -m cadence` (WebSocket server on port 8768; `/session` protocol and `TURN_LOCK` live in `cadence/server.py`). `build_runtime()` in `cadence/wiring.py` assembles everything lazily.
+
+**Event pipeline** (`cadence/pipeline.py`): speaker session (mic, wake word "hey jarvis" via `openwakeword`, VAD, ASR) produces an `Event` (`cadence/events.py`; v1 kind `utterance`), then Decide, Resolve (`resolver.py`: target devices), Execute (`executor.py`: plugin calls), and every decision is written to the decision log. Acknowledgement clips (`acks.py`, `harness/acks/`) play after Jev routes.
+
+**Deciders** (`cadence/deciders/`): one interface, `decide(event, context, capabilities, instruction)`. `JevDecider` (TypeSafe, key from `TYPESAFE_API_KEY` or `~/.config/cadence/typesafe.env`, never committed) decides first. `LlmDecider` (Ollama) is the escalation: low confidence, missing args, `chat`, `correction`, or Jev unavailable.
+
+**Plugins** (`cadence/plugins/`): `speaker` (volume, audio port) and `music` (Muse client in `cadence/muse/`); `mcp_adapter.py` wraps an external MCP server, none wired by default. `registry.py` holds the device registry loaded from `devices.json`. The capability catalogue (`catalogue.py`) is generated from plugin manifests plus built-ins `chat` and `correction`.
+
+**Decision log** (`cadence/decisionlog.py`, `cadence.sqlite3`): table `decision_log` records every decision; `decision_labels` holds labels. A spoken correction labels the previous decision `wrong` (source `spoken_correction`). The only input is the speaker; labels come from spoken corrections only.
+
+Config constants and env vars (`CADENCE_MUSE_BASE_URL`, `CADENCE_MUSE_PROXY_URL`, `CADENCE_DEVICES_PATH`, `CADENCE_WAKE_ENABLED`) are in `cadence/config.py`. `openwakeword` must be installed with `--no-deps` (`requirements-nodeps.txt`). Scheduler, routines, and diary code (`scheduler.py`, `routines.py`, `store.py`) remain in the repo, unwired until v2.
 
 ## Commands
 
