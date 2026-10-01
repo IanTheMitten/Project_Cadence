@@ -730,7 +730,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 **Why:** Separate from M1's diary table by spec decision.
 
 ### Task 7: Write decider tests [test]
-- [ ] status
+- [x] status
 **Objective:** Red tests pin `JevDecider` (I8) and `LlmDecider` (I9).
 **Write-scope:**
 - `harness/tests/test_deciders.py` (new)
