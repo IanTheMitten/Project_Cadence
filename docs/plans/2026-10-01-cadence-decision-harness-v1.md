@@ -964,7 +964,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 **Why:** Proves the server is only a transport around the pipeline.
 
 ### Task 20: Wire the runtime and rewrite the server around the pipeline
-- [ ] status
+- [x] status
 **Objective:** `cadence/wiring.py` builds the v1 runtime and `cadence/server.py` routes every utterance through `Pipeline.handle`; all tests pass.
 **Write-scope:**
 - `harness/cadence/wiring.py` (new)
