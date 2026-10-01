@@ -1,0 +1,107 @@
+"""Tests for the rewritten /session endpoint (I17). Fake runtime, no network, no real models."""
+
+import asyncio
+import importlib
+import json
+
+import pytest
+from fastapi.testclient import TestClient
+
+import cadence.server as server
+from cadence.acks import AckPool
+from cadence.audio.listener import Listener
+from cadence.catalogue import Catalogue
+from cadence.decisionlog import DecisionLog
+from cadence.executor import Executor
+from cadence.livecontext import LiveContext
+from cadence.pipeline import Pipeline
+from cadence.plugins.base import Result
+from cadence.plugins.registry import Device, DeviceRegistry
+from cadence.wiring import Runtime
+from tests.test_pipeline import DO_CALL, FakePlugin, ScriptedDecider, _jev
+
+HELLO = {"type": "hello", "client_id": "speaker-1", "caps": ["text_in", "text_out"]}
+
+
+@pytest.fixture
+def rt(tmp_path):
+    plugin = FakePlugin(result=Result(True, say="done"))
+    catalogue = Catalogue([plugin])
+    registry = DeviceRegistry([Device("speaker-1", "speaker", "bedroom")])
+    log = DecisionLog(str(tmp_path / "log.db"))
+    pipeline = Pipeline(ScriptedDecider(_jev("x.do", [DO_CALL])), ScriptedDecider(), catalogue,
+                        Executor(catalogue, registry, lambda i: None), log,
+                        LiveContext(log, lambda s: None))
+    runtime = Runtime(registry=registry, ports={}, music=None, pipeline=pipeline,
+                      acks=AckPool(str(tmp_path / "acks")), tts=None, asr=None,
+                      listener_factory=lambda: Listener(None))
+    runtime.log = log
+    server.set_runtime(runtime)
+    yield runtime
+    server.set_runtime(None)
+
+
+def _hello(ws, hello=HELLO):
+    ws.send_text(json.dumps(hello))
+
+
+def _recv(ws):
+    return json.loads(ws.receive_text())
+
+
+def test_text_turn_frames_and_log(rt):
+    with TestClient(server.app).websocket_connect("/session") as ws:
+        _hello(ws)
+        ws.send_text(json.dumps({"type": "text", "content": "do it"}))
+        assert _recv(ws) == {"type": "turn_start"}
+        assert _recv(ws) == {"type": "text", "content": "done"}
+        assert _recv(ws) == {"type": "turn_end"}
+    rows = rt.log.export()
+    assert len(rows) == 1
+    assert rows[0]["source"] == "speaker-1"
+    assert rows[0]["room"] == "bedroom"
+
+
+def test_bad_hello_error_frame(rt):
+    with TestClient(server.app).websocket_connect("/session") as ws:
+        ws.send_text(json.dumps({"type": "nope"}))
+        assert _recv(ws)["type"] == "error"
+
+
+def test_device_online_during_session_offline_after(rt):
+    with TestClient(server.app).websocket_connect("/session") as ws:
+        _hello(ws)
+        ws.send_text(json.dumps({"type": "text", "content": "do it"}))
+        assert _recv(ws) == {"type": "turn_start"}
+        assert _recv(ws)["type"] == "text"
+        assert _recv(ws) == {"type": "turn_end"}
+        assert rt.registry.get("speaker-1").online is True
+    assert rt.registry.get("speaker-1").online is False
+
+
+def test_pipeline_error_then_turn_end(rt):
+    async def boom(event, out):
+        raise RuntimeError("boom")
+
+    rt.pipeline.handle = boom
+    with TestClient(server.app).websocket_connect("/session") as ws:
+        _hello(ws)
+        ws.send_text(json.dumps({"type": "text", "content": "do it"}))
+        frames = [_recv(ws) for _ in range(3)]
+    assert frames[0] == {"type": "turn_start"}
+    assert frames[1]["type"] == "error"
+    assert frames[2] == {"type": "turn_end"}
+
+
+def test_turn_lock_is_asyncio_lock():
+    assert isinstance(server.TURN_LOCK, asyncio.Lock)
+
+
+def test_import_does_not_build_runtime(monkeypatch):
+    import cadence.wiring
+
+    def boom():
+        raise AssertionError("build_runtime called at import")
+
+    monkeypatch.setattr(cadence.wiring, "build_runtime", boom)
+    importlib.reload(server)

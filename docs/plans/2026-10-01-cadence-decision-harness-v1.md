@@ -945,7 +945,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 ## Phase 5 — Wiring and server
 
 ### Task 19: Write server tests [test]
-- [ ] status
+- [x] status
 **Objective:** Red tests pin the rewritten `/session` endpoint against a fake runtime per I17 and the protocol section.
 **Write-scope:**
 - `harness/tests/test_server.py` (new)
