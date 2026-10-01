@@ -30,7 +30,8 @@ def _outcome(decision: Decision, results: list[Result]) -> str:
 
 class DecisionLog:
     def __init__(self, path: str) -> None:
-        self._conn = sqlite3.connect(path)
+        # single-writer: all access serialized by server.TURN_LOCK; may be created in a different thread than used (TestClient/uvicorn)
+        self._conn = sqlite3.connect(path, check_same_thread=False)
         self._conn.execute(
             """
             CREATE TABLE IF NOT EXISTS decision_log (
