@@ -985,7 +985,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 **Why:** The v1 entry point; `python -m cadence` now runs the pipeline.
 
 ### Task 21: Build the acknowledgement clip pool
-- [ ] status
+- [x] status
 **Objective:** `harness/scripts/build_ack_pool.py` writes pre-rendered clips per category into `harness/acks/`.
 **Write-scope:**
 - `harness/scripts/build_ack_pool.py` (new)
