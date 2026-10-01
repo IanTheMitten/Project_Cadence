@@ -106,7 +106,7 @@ def _three():
 
 
 def _setup(tracks=None, **kw):
-    muse = FakeMuse(vibe=[_vibe(t, 1.0 - i / 10) for i, t in enumerate(tracks or _three())])
+    muse = FakeMuse(vibe=[_vibe(t, 1.0 - i / 10) for i, t in enumerate(_three() if tracks is None else tracks)])
     plugin = MusicPlugin(muse, **kw)
     return muse, plugin, FakePort()
 
