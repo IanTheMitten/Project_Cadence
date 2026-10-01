@@ -656,7 +656,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 ## Phase 2 — Core model
 
 ### Task 3: Write core-type tests [test]
-- [ ] status
+- [x] status
 **Objective:** Red tests pin events, registry, plugin base, catalogue, resolver, and the decider base exactly as I1–I6.
 **Write-scope:**
 - `harness/tests/test_core.py` (new)
