@@ -25,6 +25,12 @@ Setup and run steps are in `harness/README.md`. Design: `docs/specs/2026-10-01-c
 
 **Decision log** (`cadence/decisionlog.py`, `cadence.sqlite3`): table `decision_log` records every decision; `decision_labels` holds labels. A spoken correction labels the previous decision `wrong` (source `spoken_correction`). The only input is the speaker; labels come from spoken corrections only.
 
+**Other modules**: `cadence/audio/` (`vad.py`, `wakeword.py`, `listener.py` wake-gated utterance capture, `asr.py` Whisper, `tts.py` Kokoro, `mixer.py` music ducking under speech, `chunker.py`); `session.py` (`SessionCaps`, `SessionRegistry` for connected clients); `livecontext.py` (now-playing and recent decisions fed to deciders); `context.py` (`RollingContext`); `llm.py` (Ollama client, model `gemma4:31b-cloud`); `agent.py` (`MAX_TOOL_CALLS` cap, bounded tool loop); `mcp_client.py` (stdio MCP tool registry).
+
+**Setup and tests**: venv lives at `harness/.venv` (Python >= 3.14). Install `requirements.txt`, then `requirements-nodeps.txt` with `--no-deps`. Kokoro model files (`kokoro-v1.0.onnx`, `voices-v1.0.bin`) go in `tools/`; `harness/README.md` has the download commands. Run tests from `harness/`: `.venv/bin/python -m pytest` (`asyncio_mode = auto`, `testpaths = tests`).
+
+**Scripts** (`harness/scripts/`, run from `harness/`): `build_ack_pool.py` (regenerate `acks/`, needs Ollama + Kokoro), `golden_replay.py` (replay golden set against live Jev), `smoke_session.py` (end-to-end turn smoke), `preflight_*.py` (live-service checks), `capture_muse_fixtures.py`, `bench_*.py`. Preflight and smoke results are recorded in `docs/preflight/`; Muse/Cadence contract is `docs/handoffs/2026-10-01-muse-cadence-contract.md`.
+
 Config constants and env vars (`CADENCE_MUSE_BASE_URL`, `CADENCE_MUSE_PROXY_URL`, `CADENCE_DEVICES_PATH`, `CADENCE_WAKE_ENABLED`) are in `cadence/config.py`. `openwakeword` must be installed with `--no-deps` (`requirements-nodeps.txt`). Scheduler, routines, and diary code (`scheduler.py`, `routines.py`, `store.py`) remain in the repo, unwired until v2.
 
 ## Commands
@@ -45,7 +51,7 @@ idf.py -p /dev/cu.usbmodem101 monitor
 idf.py -p /dev/cu.usbmodem101 flash monitor   # combined
 ```
 
-Port may enumerate differently across replugs/reboots — check with `ls /dev/cu.usbmodem*` if flashing fails to connect. Flashing either project overwrites whatever firmware is currently on the chip; there's no way to run both at once. Reflash the other project's directory to switch back.
+Port may enumerate differently across replugs/reboots — check with `ls /dev/cu.usbmodem*` (macOS) or `ls /dev/ttyACM*` (Linux; `-p /dev/ttyACM0`) if flashing fails to connect. Flashing either project overwrites whatever firmware is currently on the chip; there's no way to run both at once. Reflash the other project's directory to switch back.
 
 ## Architecture (root project — speaker/playback path)
 
