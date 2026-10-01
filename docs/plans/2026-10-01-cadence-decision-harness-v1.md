@@ -839,7 +839,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 **Why:** Shared-facts sync with Muse.
 
 ### Task 13: Write music plugin tests [test]
-- [ ] status
+- [x] status
 **Objective:** Red tests pin `compose_queue` and `MusicPlugin` behaviour per I14.
 **Write-scope:**
 - `harness/tests/test_music_plugin.py` (new)
