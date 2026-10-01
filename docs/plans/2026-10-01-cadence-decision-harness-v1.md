@@ -749,7 +749,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 **Why:** Deciders talk to two external APIs; recorded shapes pin them without network.
 
 ### Task 8: Implement the Jev and LLM deciders
-- [ ] status
+- [x] status
 **Objective:** `cadence/deciders/jev.py` and `cadence/deciders/llm.py` per I8–I9; Task 7's tests pass.
 **Write-scope:**
 - `harness/cadence/deciders/jev.py` (new)
