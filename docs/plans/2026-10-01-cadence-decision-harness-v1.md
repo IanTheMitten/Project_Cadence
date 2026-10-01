@@ -923,7 +923,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 **Why:** Small units with sharp edges (repeat avoidance, frame buffering, listening window).
 
 ### Task 18: Implement ack pool, wake gate, listener, and MCP adapter
-- [ ] status
+- [x] status
 **Objective:** I16 modules exist; Task 17's tests pass.
 **Write-scope:**
 - `harness/cadence/acks.py` (new)
