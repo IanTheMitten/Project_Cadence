@@ -673,7 +673,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 **Why:** Pins the core seam before code exists so the implementer cannot drift from I1–I6.
 
 ### Task 4: Implement core types
-- [ ] status
+- [x] status
 **Objective:** `cadence.events`, `cadence.plugins.{base,registry}`, `cadence.catalogue`, `cadence.resolver`, `cadence.deciders.base` exist exactly as I1–I6 and Task 3's tests pass.
 **Write-scope:**
 - `harness/cadence/events.py` (new)
