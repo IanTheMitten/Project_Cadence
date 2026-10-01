@@ -183,3 +183,97 @@ def test_unreachable_muse_raises_museunavailable():
         client.get_player_state()
 
     assert len(calls) == 1
+
+
+def test_open_play_posts_play_and_returns_id():
+    captured = {}
+
+    def handler(request):
+        captured["method"] = request.method
+        captured["path"] = request.url.path
+        captured["body"] = json.loads(request.content)
+        return httpx.Response(201, json={"id": 9})
+
+    client = make_client(handler)
+    play_id = client.open_play(5, 1000, "cadence")
+
+    assert captured["method"] == "POST"
+    assert captured["path"] == "/api/plays"
+    assert captured["body"] == {
+        "track_rowid": 5,
+        "duration_ms": 1000,
+        "source": "cadence",
+    }
+    assert play_id == 9
+
+
+def test_close_play_posts_close_body():
+    captured = {}
+
+    def handler(request):
+        captured["method"] = request.method
+        captured["path"] = request.url.path
+        captured["body"] = json.loads(request.content)
+        return httpx.Response(200, json={"ok": True})
+
+    client = make_client(handler)
+    client.close_play(9, "track_end", 1200)
+
+    assert captured["method"] == "POST"
+    assert captured["path"] == "/api/plays/9/close"
+    assert captured["body"] == {"ended_reason": "track_end", "position_ms": 1200}
+
+
+def test_close_play_rejects_invalid_reason_without_request():
+    calls = []
+
+    def handler(request):
+        calls.append(request)
+        raise AssertionError("no request should be sent for an invalid ended_reason")
+
+    client = make_client(handler)
+    with pytest.raises(ValueError):
+        client.close_play(9, "stopped")
+
+    assert calls == []
+
+
+def test_ended_reasons_matches_contract():
+    from cadence.muse.client import ENDED_REASONS
+
+    assert ENDED_REASONS == (
+        "track_end",
+        "user_next",
+        "user_prev",
+        "new_selection",
+        "pause_timeout",
+        "lost",
+    )
+
+
+def test_contract_version_statuses():
+    client = make_client(
+        lambda request: httpx.Response(200, json={"version": "1.0"})
+    )
+    assert client.contract_version() == "1.0"
+
+    def not_found(request):
+        assert request.url.path == "/api/contract"
+        return httpx.Response(404, json={"error": "not found"})
+
+    assert make_client(not_found).contract_version() is None
+
+    def server_error(request):
+        return httpx.Response(500, json={"error": "boom"})
+
+    with pytest.raises(MuseUnavailable):
+        make_client(server_error).contract_version()
+
+
+def test_open_play_transport_error_raises_museunavailable():
+    def handler(request):
+        raise httpx.ConnectError("connection refused", request=request)
+
+    client = make_client(handler)
+    with pytest.raises(MuseUnavailable):
+        client.open_play(5, 1000, "cadence")

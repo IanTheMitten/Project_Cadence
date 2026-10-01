@@ -809,7 +809,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 ## Phase 4 — Plugins and audio
 
 ### Task 11: Write Muse client tests for plays and contract version [test]
-- [ ] status
+- [x] status
 **Objective:** Red tests pin I13 additions to `MuseClient`.
 **Write-scope:**
 - `harness/tests/test_muse_client.py`
