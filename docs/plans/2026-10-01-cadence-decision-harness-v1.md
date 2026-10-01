@@ -789,7 +789,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 **Why:** The escalation rules are the heart of v1 and must be pinned exactly.
 
 ### Task 10: Implement executor, live context, and pipeline
-- [ ] status
+- [x] status
 **Objective:** `cadence/executor.py`, `cadence/livecontext.py`, `cadence/pipeline.py` per I10–I12; Task 9's tests pass.
 **Write-scope:**
 - `harness/cadence/executor.py` (new)
