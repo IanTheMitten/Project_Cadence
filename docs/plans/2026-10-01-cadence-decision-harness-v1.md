@@ -887,7 +887,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 **Why:** The port carries music and speech to the board; gain and end reasons feed Muse plays.
 
 ### Task 16: Implement the speaker port and plugin
-- [ ] status
+- [x] status
 **Objective:** `cadence/plugins/speaker.py` per I15; Task 15's tests pass.
 **Write-scope:**
 - `harness/cadence/plugins/speaker.py` (new)
