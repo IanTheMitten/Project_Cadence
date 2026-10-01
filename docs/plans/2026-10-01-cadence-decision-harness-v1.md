@@ -714,7 +714,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 **Why:** The log is the training data; its shape and append-only rule must be pinned before code.
 
 ### Task 6: Implement the decision log
-- [ ] status
+- [x] status
 **Objective:** `cadence/decisionlog.py` per I7; Task 5's tests pass.
 **Write-scope:**
 - `harness/cadence/decisionlog.py` (new)
