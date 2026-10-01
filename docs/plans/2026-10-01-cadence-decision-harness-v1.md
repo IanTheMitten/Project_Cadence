@@ -769,7 +769,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 **Why:** Jev is the first-stage decider; the LLM fills free-text args and handles chat.
 
 ### Task 9: Write pipeline, executor, and live-context tests [test]
-- [ ] status
+- [x] status
 **Objective:** Red tests pin `Executor` (I10), `LiveContext` (I11), and `Pipeline.handle` (I12).
 **Write-scope:**
 - `harness/tests/test_pipeline.py` (new)
