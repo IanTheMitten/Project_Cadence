@@ -1,0 +1,2916 @@
+{
+ "arch": "jev_gate",
+ "reps": 1,
+ "n_items": 48,
+ "init_s": 3.035156747791916,
+ "rss_before_mb": 16.9140625,
+ "rss_after_load_mb": 98.43359375,
+ "rss_peak_mb": 104.6484375,
+ "cpu_count": 8,
+ "records": [
+  {
+   "rep": 0,
+   "id": "v1",
+   "category": "music_vibe",
+   "utterance": "play something mellow for dinner",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "mellow",
+         "dinner",
+         "chill",
+         "calm"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 562.478722538799,
+   "is_first_call_of_process": true,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.96,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 366,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 208.9749937877059,
+     "needle": 353.50372875109315
+    },
+    "needle": {
+     "confidence": 0.0147,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 1
+       }
+      }
+     ],
+     "reasoning": "'play something mellow' -> play with track_rowid=1 (mellow), no other params needed",
+     "validation": {
+      "ungrounded": [
+       "play.track_rowid"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 103.5,
+     "decode_tps": 154.2,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "v2",
+   "category": "music_vibe",
+   "utterance": "I want some upbeat music to get me going",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "upbeat",
+         "energetic",
+         "energy"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 698.8073531538248,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.92,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 369,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 202.08527520298958,
+     "needle": 496.7220779508352
+    },
+    "needle": {
+     "confidence": 0.0141,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 1
+       }
+      }
+     ],
+     "reasoning": "'upbeat music' -> play with track_rowid=1 (default), 'upbeat' -> request for music, no specific track_rowid given so use default",
+     "validation": {
+      "ungrounded": [
+       "play.track_rowid"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 103.7,
+     "decode_tps": 135.4,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "v3",
+   "category": "music_vibe",
+   "utterance": "find me something moody and rainy",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "moody",
+         "rain"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_vibe",
+     "arguments": {
+      "query": "moody rainy"
+     }
+    }
+   ],
+   "latency_ms": 624.1790517233312,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.91,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 367,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 201.46423671394587,
+     "needle": 422.71481500938535
+    },
+    "needle": {
+     "confidence": 0.1688,
+     "suppressed": [],
+     "reasoning": "'moody and rainy' -> query 'moody rainy'. search_vibe tool.",
+     "validation": {
+      "ungrounded": [
+       "search_vibe.query"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 103.7,
+     "decode_tps": 125.2,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "v4",
+   "category": "music_vibe",
+   "utterance": "put on some focus music, five options is plenty",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "focus"
+        ]
+       },
+       "n": 5
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 538.8957816176116,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.97,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 370,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 193.93784133717418,
+     "needle": 344.95794028043747
+    },
+    "needle": {
+     "confidence": 0.0332,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 5
+       }
+      }
+     ],
+     "reasoning": "'focus music' -> track_rowid 5; 'five options' -> required parameter 'required'",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 103.7,
+     "decode_tps": 156.0,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "v5",
+   "category": "music_vibe",
+   "utterance": "something that feels like a sunday morning",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "sunday",
+         "morning"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 553.2892090268433,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.82,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 367,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 185.23308401927352,
+     "needle": 368.0561250075698
+    },
+    "needle": {
+     "confidence": 0.04,
+     "suppressed": [
+      {
+       "name": "search_vibe",
+       "arguments": {
+        "query": "sunday morning"
+       }
+      }
+     ],
+     "reasoning": "'feels like a sunday morning' -> search_vibe query 'sunday morning'",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 103.7,
+     "decode_tps": 143.3,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "t1",
+   "category": "music_text",
+   "utterance": "search for Radiohead",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "radiohead"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_vibe",
+     "arguments": {
+      "query": "Radiohead"
+     }
+    }
+   ],
+   "latency_ms": 638.7224909849465,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.85,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 364,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 212.8353901207447,
+     "needle": 425.8871008642018
+    },
+    "needle": {
+     "confidence": 0.6375,
+     "suppressed": [],
+     "reasoning": "'search for Radiohead' -> query 'Radiohead'. search_vibe tool.",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 103.7,
+     "decode_tps": 122.4,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "t2",
+   "category": "music_text",
+   "utterance": "look up the song Clair de Lune",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "clair de lune"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_text",
+     "arguments": {
+      "query": "Clair de Lune"
+     }
+    }
+   ],
+   "latency_ms": 591.3064568303525,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.9,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 368,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 192.67839519307017,
+     "needle": 398.62806163728237
+    },
+    "needle": {
+     "confidence": 0.3124,
+     "suppressed": [],
+     "reasoning": "'look up the song' -> search_text 'Clair de Lune'. No limit specified, default 10.",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 103.8,
+     "decode_tps": 148.6,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "t3",
+   "category": "music_text",
+   "utterance": "find songs by Khruangbin, give me 3",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "khruangbin"
+        ]
+       },
+       "limit": 3
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_vibe",
+     "arguments": {
+      "query": "Khruangbin"
+     }
+    },
+    {
+     "name": "get_player_state",
+     "arguments": {}
+    }
+   ],
+   "latency_ms": 963.5155787691474,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.94,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 372,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 223.5126867890358,
+     "needle": 740.0028919801116
+    },
+    "needle": {
+     "confidence": 0.1065,
+     "suppressed": [],
+     "reasoning": "'find songs by Khruangbin' -> search_vibe query 'Khruangbin'; 'give me 3' -> get_player_state track_rowid 3",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 103.9,
+     "decode_tps": 120.7,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "r1",
+   "category": "recommend",
+   "utterance": "what should play after this one",
+   "gold_outcomes": [
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "get_player_state",
+     "arguments": {}
+    }
+   ],
+   "latency_ms": 534.7220720723271,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.77,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 366,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 218.32995396107435,
+     "needle": 316.3921181112528
+    },
+    "needle": {
+     "confidence": 0.2796,
+     "suppressed": [],
+     "reasoning": "'what should play after this one' means go back to previous track -> get_player_state.",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 103.9,
+     "decode_tps": 161.7,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "r2",
+   "category": "recommend",
+   "utterance": "queue up something similar to track 587",
+   "gold_outcomes": [
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 587
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 999.7684643603861,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.97,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 370,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 212.749055121094,
+     "needle": 787.0194092392921
+    },
+    "needle": {
+     "confidence": 0.0562,
+     "suppressed": [
+      {
+       "name": "set_player_state",
+       "arguments": {
+        "queue": [
+         587
+        ],
+        "client_state": "default",
+        "shuffle": false
+       }
+      }
+     ],
+     "reasoning": "'track 587' -> track_rowid 587. No other params given.",
+     "validation": {
+      "ungrounded": [
+       "set_player_state.client_state"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.2,
+     "decode_tps": 99.0,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "r3",
+   "category": "recommend",
+   "utterance": "give me 4 tracks that follow this song",
+   "gold_outcomes": [
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112,
+       "n": 4
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "recommend_next",
+     "arguments": {
+      "track_rowid": 4
+     }
+    }
+   ],
+   "latency_ms": 613.8965445570648,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.96,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 369,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 206.80793561041355,
+     "needle": 407.0886089466512
+    },
+    "needle": {
+     "confidence": 0.3682,
+     "suppressed": [],
+     "reasoning": "'4 tracks' -> track_rowid 4; 'follow this song' -> required parameter not provided, so omitted.",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.2,
+     "decode_tps": 145.0,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "p1",
+   "category": "play",
+   "utterance": "play track 3112",
+   "gold_outcomes": [
+    [
+     {
+      "name": "play",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "play",
+     "arguments": {
+      "track_rowid": 3112
+     }
+    }
+   ],
+   "latency_ms": 548.8368319347501,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.96,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 367,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 201.3096329756081,
+     "needle": 347.52719895914197
+    },
+    "needle": {
+     "confidence": 0.7125,
+     "suppressed": [],
+     "reasoning": "Query 'track 3112' -> track_rowid 3112. No other parameters needed.",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.2,
+     "decode_tps": 145.8,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "p2",
+   "category": "play",
+   "utterance": "play song number 9045 please",
+   "gold_outcomes": [
+    [
+     {
+      "name": "play",
+      "args": {
+       "track_rowid": 9045
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "play",
+     "arguments": {
+      "track_rowid": 945
+     }
+    }
+   ],
+   "latency_ms": 692.4269986338913,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.98,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 369,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 192.39509105682373,
+     "needle": 500.0319075770676
+    },
+    "needle": {
+     "confidence": 0.5042,
+     "suppressed": [],
+     "reasoning": "'play song number 9045' -> track_rowid 945; required parameter required.",
+     "validation": {
+      "ungrounded": [
+       "play.track_rowid"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.2,
+     "decode_tps": 91.3,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "p3",
+   "category": "play",
+   "utterance": "start track 12",
+   "gold_outcomes": [
+    [
+     {
+      "name": "play",
+      "args": {
+       "track_rowid": 12
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "play",
+     "arguments": {
+      "track_rowid": 12
+     }
+    }
+   ],
+   "latency_ms": 500.4359711892903,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.98,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 365,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 225.8665580302477,
+     "needle": 274.5694131590426
+    },
+    "needle": {
+     "confidence": 0.3521,
+     "suppressed": [],
+     "reasoning": "'start track 12' -> track_rowid 12; no other parameters needed.",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.2,
+     "decode_tps": 158.3,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "s1",
+   "category": "state_read",
+   "utterance": "what's playing right now?",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_player_state",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 199.04255773872137,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.12,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 366,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 199.04255773872137,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "s2",
+   "category": "state_read",
+   "utterance": "is the music paused?",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_player_state",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 199.2046069353819,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.07,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 365,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 199.2046069353819,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "s3",
+   "category": "state_read",
+   "utterance": "how far into this song are we",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_player_state",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 204.39181476831436,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.27,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 367,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 204.39181476831436,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "w1",
+   "category": "state_write",
+   "utterance": "turn shuffle on",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "shuffle": true
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 736.0358694568276,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.98,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 363,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 195.5272383056581,
+     "needle": 540.5086311511695
+    },
+    "needle": {
+     "confidence": 0.0408,
+     "suppressed": [
+      {
+       "name": "set_player_state",
+       "arguments": {
+        "queue": [
+         0
+        ],
+        "repeat_mode": "shuffle",
+        "client_state": "default"
+       }
+      }
+     ],
+     "reasoning": "'turn shuffle on' -> set_player_state with queue=[0] and repeat_mode='shuffle'.",
+     "validation": {
+      "ungrounded": [
+       "set_player_state.client_state"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.3,
+     "decode_tps": 150.1,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "w2",
+   "category": "state_write",
+   "utterance": "set repeat to all",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "repeat_mode": {
+        "any": [
+         "all"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 901.9680921919644,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.98,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 364,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 207.1046601049602,
+     "needle": 694.8634320870042
+    },
+    "needle": {
+     "confidence": 0.0877,
+     "suppressed": [
+      {
+       "name": "set_player_state",
+       "arguments": {
+        "queue": [],
+        "client_state": "",
+        "queue_index": 0,
+        "position_ms": 0,
+        "shuffle": false
+       }
+      }
+     ],
+     "reasoning": "'repeat to all' -> repeat_mode 'off'. No queue or client_state given.",
+     "validation": {
+      "ungrounded": [
+       "set_player_state.queue_index",
+       "set_player_state.position_ms"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.3,
+     "decode_tps": 124.1,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "w3",
+   "category": "state_write",
+   "utterance": "pause the music",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "client_state": {
+        "any": [
+         "pause"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 469.70032481476665,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.98,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 363,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 201.95366302505136,
+     "needle": 267.7466617897153
+    },
+    "needle": {
+     "confidence": 0.0341,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 3112
+       }
+      }
+     ],
+     "reasoning": "'pause the music' means pause playback -> play with defaults.",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.3,
+     "decode_tps": 159.1,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "w4",
+   "category": "state_write",
+   "utterance": "jump back to the start of this song",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "position_ms": 0
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 550.4185077734292,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.98,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 368,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 201.83573104441166,
+     "needle": 348.5827767290175
+    },
+    "needle": {
+     "confidence": 0.0617,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 10
+       }
+      }
+     ],
+     "reasoning": "'jump back to the start' means continue playback -> play with default track_rowid 10",
+     "validation": {
+      "ungrounded": [
+       "play.track_rowid"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.3,
+     "decode_tps": 139.8,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "d1",
+   "category": "dashboard",
+   "utterance": "show me my library dashboard",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_dashboard",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "get_dashboard",
+     "arguments": {}
+    }
+   ],
+   "latency_ms": 513.4124639444053,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.62,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 365,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 224.2431421764195,
+     "needle": 289.1693217679858
+    },
+    "needle": {
+     "confidence": 0.8747,
+     "suppressed": [],
+     "reasoning": "User wants to see the library dashboard. get_dashboard has no required parameters.",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.3,
+     "decode_tps": 161.6,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "d2",
+   "category": "dashboard",
+   "utterance": "how big is my music library and what have I been listening to",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_dashboard",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 205.31454496085644,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.29,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 373,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 205.31454496085644,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "q1",
+   "category": "rate",
+   "utterance": "I love this song",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": 1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 216.4472211152315,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.05,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 364,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 216.4472211152315,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "q2",
+   "category": "rate",
+   "utterance": "thumbs down, skip this trash",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": -1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 972.4828954786062,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.94,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 366,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 217.35010435804725,
+     "needle": 755.132791120559
+    },
+    "needle": {
+     "confidence": 0.0248,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 0
+       }
+      },
+      {
+       "name": "set_player_state",
+       "arguments": {
+        "queue": [],
+        "client_state": "",
+        "shuffle": false
+       }
+      }
+     ],
+     "reasoning": "'thumbs down' -> play with no arguments; 'skip this trash' -> repeat_mode 'off'",
+     "validation": {
+      "ungrounded": [
+       "play.track_rowid"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.3,
+     "decode_tps": 135.7,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "q3",
+   "category": "rate",
+   "utterance": "give track 587 a thumbs up",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 587,
+       "rating": 1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "rate",
+     "arguments": {
+      "track_rowid": 587,
+      "rating": 1
+     }
+    }
+   ],
+   "latency_ms": 570.5794356763363,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.97,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 369,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 206.0877699404955,
+     "needle": 364.4916657358408
+    },
+    "needle": {
+     "confidence": 0.3363,
+     "suppressed": [],
+     "reasoning": "track_rowid 587 from query; rating defaults to 1; rate tool selected.",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.3,
+     "decode_tps": 142.3,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "q4",
+   "category": "rate",
+   "utterance": "I hate track 2001",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 2001,
+       "rating": -1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 194.28541883826256,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.4,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 368,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 194.28541883826256,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "l1",
+   "category": "light",
+   "utterance": "make the lights warmer",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 593.6339618638158,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.97,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 364,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 189.25126874819398,
+     "needle": 404.3826931156218
+    },
+    "needle": {
+     "confidence": 0.0089,
+     "suppressed": [
+      {
+       "name": "set_warmth",
+       "arguments": {
+        "kelvin": 1800,
+        "brightness": 80
+       }
+      }
+     ],
+     "reasoning": "'lights warmer' -> color temperature increase. No specific temperature given, use 1800 kelvin.",
+     "validation": {
+      "ungrounded": [
+       "set_warmth.kelvin"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.4,
+     "decode_tps": 136.9,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "l2",
+   "category": "light",
+   "utterance": "set the light to 2700 kelvin",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": 2700
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "kelvin": 2700
+     }
+    }
+   ],
+   "latency_ms": 525.126731954515,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.98,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 371,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 189.91871597245336,
+     "needle": 335.2080159820616
+    },
+    "needle": {
+     "confidence": 0.4921,
+     "suppressed": [],
+     "reasoning": "'2700 kelvin' -> temperature 2700; brightness omitted.",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.4,
+     "decode_tps": 146.6,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "l3",
+   "category": "light",
+   "utterance": "set the lights to 3000K at 40 percent brightness",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": 3000,
+       "brightness": 40
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "kelvin": 3000,
+      "brightness": 40
+     }
+    }
+   ],
+   "latency_ms": 623.0704849585891,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.98,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 376,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 186.80892884731293,
+     "needle": 436.26155611127615
+    },
+    "needle": {
+     "confidence": 0.5277,
+     "suppressed": [],
+     "reasoning": "'3000K' -> temperature 3000; '40 percent' -> brightness 40; set_warmth tool.",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.4,
+     "decode_tps": 135.8,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "l4",
+   "category": "light",
+   "utterance": "dim the lights to 20%",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "brightness": 20
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 446.29011675715446,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.98,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 368,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 187.626619823277,
+     "needle": 258.66349693387747
+    },
+    "needle": {
+     "confidence": 0.7029,
+     "suppressed": [],
+     "reasoning": "No tool controls smart lights or home automation. Available tools are media playback, track, and dashboard.",
+     "validation": null,
+     "engine_peak_ram_mb": 104.4,
+     "decode_tps": 158.0,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "l5",
+   "category": "light",
+   "utterance": "give me cool daylight white",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         5000,
+         6500
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 570.707127917558,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.95,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 365,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 197.90237583220005,
+     "needle": 372.8047520853579
+    },
+    "needle": {
+     "confidence": 0.0871,
+     "suppressed": [
+      {
+       "name": "set_warmth",
+       "arguments": {
+        "kelvin": 1800
+       }
+      }
+     ],
+     "reasoning": "'cool daylight' -> color temperature 1800; brightness not specified so omitted; set_warmth tool.",
+     "validation": {
+      "ungrounded": [
+       "set_warmth.kelvin"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.5,
+     "decode_tps": 144.3,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "l6",
+   "category": "light",
+   "utterance": "candle glow please, super dim",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         2200
+        ]
+       },
+       "brightness": {
+        "between": [
+         0,
+         25
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 927.8218857944012,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.97,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 366,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 170.01331597566605,
+     "needle": 757.8085698187351
+    },
+    "needle": {
+     "confidence": 0.0176,
+     "suppressed": [
+      {
+       "name": "set_warmth",
+       "arguments": {
+        "kelvin": 1800
+       }
+      }
+     ],
+     "reasoning": "'candle glow' -> color 'warm white' (warm white). 'super dim' -> brightness 60. set_warmth with color and brightness.",
+     "validation": {
+      "ungrounded": [
+       "set_warmth.kelvin"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.6,
+     "decode_tps": 88.8,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "c1",
+   "category": "chat",
+   "utterance": "tell me a joke",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 197.77132431045175,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.02,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 364,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 197.77132431045175,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c2",
+   "category": "chat",
+   "utterance": "what's the capital of France?",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 188.9698882587254,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.02,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 367,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 188.9698882587254,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c3",
+   "category": "chat",
+   "utterance": "thanks, that was great",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 187.41386895999312,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.02,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 365,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 187.41386895999312,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c4",
+   "category": "chat",
+   "utterance": "how are you today",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 211.0654879361391,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.02,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 364,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 211.0654879361391,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c5",
+   "category": "chat",
+   "utterance": "what's the weather tomorrow",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 213.10823177918792,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.02,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 365,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 213.10823177918792,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c6",
+   "category": "chat",
+   "utterance": "set an alarm for 7am",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 183.37185867130756,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.04,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 367,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 183.37185867130756,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c7",
+   "category": "chat",
+   "utterance": "who sang Bohemian Rhapsody? just tell me, don't play it",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 187.25693365558982,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.4,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 377,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 187.25693365558982,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c8",
+   "category": "chat",
+   "utterance": "I'm bored",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 220.3027969226241,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.08,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 363,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 220.3027969226241,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "a1",
+   "category": "ambiguous",
+   "utterance": "make it cozy in here",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "cozy"
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     },
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "cozy"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 619.3856643512845,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.9,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 365,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 182.4374021962285,
+     "needle": 436.948262155056
+    },
+    "needle": {
+     "confidence": 0.0255,
+     "suppressed": [
+      {
+       "name": "set_warmth",
+       "arguments": {
+        "kelvin": 1800
+       }
+      }
+     ],
+     "reasoning": "'make it cozy' means warm light -> set_warmth with 1800K and 6500K.",
+     "validation": {
+      "ungrounded": [
+       "set_warmth.kelvin"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.6,
+     "decode_tps": 135.0,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "a2",
+   "category": "ambiguous",
+   "utterance": "I'm going to bed",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         2700
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "client_state": {
+        "any": [
+         "pause",
+         "stop"
+        ]
+       }
+      }
+     }
+    ],
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 212.9451408982277,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.11,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 365,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 212.9451408982277,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "a3",
+   "category": "multistep",
+   "utterance": "warm up the lights and play something chill",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     },
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "chill",
+         "calm",
+         "relax"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 741.3856177590787,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.98,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 368,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 183.91724303364754,
+     "needle": 557.4683747254312
+    },
+    "needle": {
+     "confidence": 0.0202,
+     "suppressed": [
+      {
+       "name": "set_warmth",
+       "arguments": {
+        "kelvin": 1800
+       }
+      },
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 3112
+       }
+      }
+     ],
+     "reasoning": "'warm up the lights' -> set_warmth with no specific color given, use default 1800; 'play something chill' -> play with track_rowid 3112",
+     "validation": {
+      "ungrounded": [
+       "set_warmth.kelvin"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.6,
+     "decode_tps": 150.9,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "a4",
+   "category": "multistep",
+   "utterance": "play some jazz",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "jazz"
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "jazz"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 544.764915946871,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.97,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 363,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 186.49212922900915,
+     "needle": 358.2727867178619
+    },
+    "needle": {
+     "confidence": 0.0281,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 1
+       }
+      }
+     ],
+     "reasoning": "'play some jazz' -> play with track_rowid=1 (jazz implies current track), required parameter track_rowid 1",
+     "validation": {
+      "ungrounded": [
+       "play.track_rowid"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.6,
+     "decode_tps": 159.0,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "a5",
+   "category": "multistep",
+   "utterance": "like this song and then play whatever should come next",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": 1
+      }
+     },
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ],
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": 1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "play",
+     "arguments": {
+      "track_rowid": 0
+     }
+    }
+   ],
+   "latency_ms": 642.2911272384226,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.97,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 370,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 211.9600409641862,
+     "needle": 430.33108627423644
+    },
+    "needle": {
+     "confidence": 0.1023,
+     "suppressed": [],
+     "reasoning": "'play whatever should come next' -> play_track_rowid with default 0; track_rowid 0 from 'this song'",
+     "validation": {
+      "ungrounded": [
+       "play.track_rowid"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.6,
+     "decode_tps": 130.4,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "a6",
+   "category": "ambiguous",
+   "utterance": "not this one",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": -1
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "client_state": {
+        "any": [
+         "skip",
+         "next"
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 880.229776725173,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.82,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 363,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 193.17677477374673,
+     "needle": 687.0530019514263
+    },
+    "needle": {
+     "confidence": 0.0159,
+     "suppressed": [
+      {
+       "name": "set_player_state",
+       "arguments": {
+        "queue": [
+         0
+        ],
+        "client_state": "0",
+        "position_ms": 0,
+        "shuffle": false
+       }
+      }
+     ],
+     "reasoning": "'not this one' means repeat the current track -> repeat_mode 'off'",
+     "validation": {
+      "ungrounded": [
+       "set_player_state.position_ms"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.6,
+     "decode_tps": 107.0,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "a7",
+   "category": "ambiguous",
+   "utterance": "it's too bright in here",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "brightness": {
+        "between": [
+         0,
+         50
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 785.6281045824289,
+   "is_first_call_of_process": false,
+   "info": {
+    "jev": {
+     "needs_tool_p": 0.81,
+     "model": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 366,
+      "output_tokens": 21
+     }
+    },
+    "stage_ms": {
+     "jev": 198.18035187199712,
+     "needle": 587.4477527104318
+    },
+    "needle": {
+     "confidence": 0.0292,
+     "suppressed": [
+      {
+       "name": "set_warmth",
+       "arguments": {
+        "kelvin": 1800
+       }
+      }
+     ],
+     "reasoning": "'too bright' implies dimming; brightness not specified so default to 60.",
+     "validation": {
+      "ungrounded": [
+       "set_warmth.kelvin"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 104.6,
+     "decode_tps": 86.7,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  }
+ ]
+}

@@ -1,0 +1,3748 @@
+{
+ "arch": "cloud",
+ "reps": 2,
+ "n_items": 48,
+ "init_s": 0.0892321178689599,
+ "rss_before_mb": 16.35546875,
+ "rss_after_load_mb": 29.72265625,
+ "rss_peak_mb": 45.58203125,
+ "cpu_count": 8,
+ "records": [
+  {
+   "rep": 0,
+   "id": "v1",
+   "category": "music_vibe",
+   "utterance": "play something mellow for dinner",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "mellow",
+         "dinner",
+         "chill",
+         "calm"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_vibe",
+     "arguments": {
+      "query": "mellow dinner music"
+     }
+    }
+   ],
+   "latency_ms": 635.0054489448667,
+   "is_first_call_of_process": true,
+   "info": {
+    "stage_ms": {
+     "llm": 635.0054489448667
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "v2",
+   "category": "music_vibe",
+   "utterance": "I want some upbeat music to get me going",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "upbeat",
+         "energetic",
+         "energy"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_vibe",
+     "arguments": {
+      "query": "upbeat music to get me going"
+     }
+    }
+   ],
+   "latency_ms": 616.9307311065495,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 616.9307311065495
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "v3",
+   "category": "music_vibe",
+   "utterance": "find me something moody and rainy",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "moody",
+         "rain"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_vibe",
+     "arguments": {
+      "query": "moody and rainy"
+     }
+    }
+   ],
+   "latency_ms": 497.908191755414,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 497.908191755414
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "v4",
+   "category": "music_vibe",
+   "utterance": "put on some focus music, five options is plenty",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "focus"
+        ]
+       },
+       "n": 5
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_vibe",
+     "arguments": {
+      "n": 5,
+      "query": "focus music"
+     }
+    }
+   ],
+   "latency_ms": 510.0047439336777,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 510.0047439336777
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "v5",
+   "category": "music_vibe",
+   "utterance": "something that feels like a sunday morning",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "sunday",
+         "morning"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_vibe",
+     "arguments": {
+      "query": "sunday morning"
+     }
+    }
+   ],
+   "latency_ms": 5332.242283038795,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 5332.242283038795
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "t1",
+   "category": "music_text",
+   "utterance": "search for Radiohead",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "radiohead"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_text",
+     "arguments": {
+      "query": "Radiohead"
+     }
+    }
+   ],
+   "latency_ms": 535.2809368632734,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 535.2809368632734
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "t2",
+   "category": "music_text",
+   "utterance": "look up the song Clair de Lune",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "clair de lune"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_text",
+     "arguments": {
+      "query": "Clair de Lune"
+     }
+    }
+   ],
+   "latency_ms": 754.7514140605927,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 754.7514140605927
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "t3",
+   "category": "music_text",
+   "utterance": "find songs by Khruangbin, give me 3",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "khruangbin"
+        ]
+       },
+       "limit": 3
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_text",
+     "arguments": {
+      "limit": 3,
+      "query": "Khruangbin"
+     }
+    }
+   ],
+   "latency_ms": 666.7318921536207,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 666.7318921536207
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "r1",
+   "category": "recommend",
+   "utterance": "what should play after this one",
+   "gold_outcomes": [
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "recommend_next",
+     "arguments": {
+      "track_rowid": 3112
+     }
+    }
+   ],
+   "latency_ms": 654.74554290995,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 654.74554290995
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "r2",
+   "category": "recommend",
+   "utterance": "queue up something similar to track 587",
+   "gold_outcomes": [
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 587
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "recommend_next",
+     "arguments": {
+      "track_rowid": 587
+     }
+    }
+   ],
+   "latency_ms": 1163.7594630010426,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 1163.7594630010426
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "r3",
+   "category": "recommend",
+   "utterance": "give me 4 tracks that follow this song",
+   "gold_outcomes": [
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112,
+       "n": 4
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "recommend_next",
+     "arguments": {
+      "n": 4,
+      "track_rowid": 3112
+     }
+    }
+   ],
+   "latency_ms": 650.7539111189544,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 650.7539111189544
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "p1",
+   "category": "play",
+   "utterance": "play track 3112",
+   "gold_outcomes": [
+    [
+     {
+      "name": "play",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "play",
+     "arguments": {
+      "track_rowid": 3112
+     }
+    }
+   ],
+   "latency_ms": 577.5681487284601,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 577.5681487284601
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "p2",
+   "category": "play",
+   "utterance": "play song number 9045 please",
+   "gold_outcomes": [
+    [
+     {
+      "name": "play",
+      "args": {
+       "track_rowid": 9045
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "play",
+     "arguments": {
+      "track_rowid": 9045
+     }
+    }
+   ],
+   "latency_ms": 514.2418062314391,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 514.2418062314391
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "p3",
+   "category": "play",
+   "utterance": "start track 12",
+   "gold_outcomes": [
+    [
+     {
+      "name": "play",
+      "args": {
+       "track_rowid": 12
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "play",
+     "arguments": {
+      "track_rowid": 12
+     }
+    }
+   ],
+   "latency_ms": 1124.7356487438083,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 1124.7356487438083
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "s1",
+   "category": "state_read",
+   "utterance": "what's playing right now?",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_player_state",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "get_player_state",
+     "arguments": {}
+    }
+   ],
+   "latency_ms": 464.54692585393786,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 464.54692585393786
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "s2",
+   "category": "state_read",
+   "utterance": "is the music paused?",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_player_state",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "get_player_state",
+     "arguments": {}
+    }
+   ],
+   "latency_ms": 513.5673191398382,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 513.5673191398382
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "s3",
+   "category": "state_read",
+   "utterance": "how far into this song are we",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_player_state",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "get_player_state",
+     "arguments": {}
+    }
+   ],
+   "latency_ms": 1143.5815240256488,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 1143.5815240256488
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "w1",
+   "category": "state_write",
+   "utterance": "turn shuffle on",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "shuffle": true
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "get_player_state",
+     "arguments": {}
+    }
+   ],
+   "latency_ms": 535.8896339312196,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 535.8896339312196
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "w2",
+   "category": "state_write",
+   "utterance": "set repeat to all",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "repeat_mode": {
+        "any": [
+         "all"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_player_state",
+     "arguments": {
+      "client_state": "playing",
+      "queue": [
+       3112
+      ],
+      "repeat_mode": "all"
+     }
+    }
+   ],
+   "latency_ms": 586.6411989554763,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 586.6411989554763
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "w3",
+   "category": "state_write",
+   "utterance": "pause the music",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "client_state": {
+        "any": [
+         "pause"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "get_player_state",
+     "arguments": {}
+    }
+   ],
+   "latency_ms": 584.9803290329874,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 584.9803290329874
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "w4",
+   "category": "state_write",
+   "utterance": "jump back to the start of this song",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "position_ms": 0
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_player_state",
+     "arguments": {
+      "client_state": "playing",
+      "position_ms": 0,
+      "queue": [
+       3112
+      ]
+     }
+    }
+   ],
+   "latency_ms": 547.1110441721976,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 547.1110441721976
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "d1",
+   "category": "dashboard",
+   "utterance": "show me my library dashboard",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_dashboard",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "get_dashboard",
+     "arguments": {}
+    }
+   ],
+   "latency_ms": 1052.8865526430309,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 1052.8865526430309
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "d2",
+   "category": "dashboard",
+   "utterance": "how big is my music library and what have I been listening to",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_dashboard",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "get_dashboard",
+     "arguments": {}
+    }
+   ],
+   "latency_ms": 569.4467970170081,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 569.4467970170081
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "q1",
+   "category": "rate",
+   "utterance": "I love this song",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": 1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "rate",
+     "arguments": {
+      "rating": 5,
+      "track_rowid": 3112
+     }
+    }
+   ],
+   "latency_ms": 672.7454937063158,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 672.7454937063158
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "q2",
+   "category": "rate",
+   "utterance": "thumbs down, skip this trash",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": -1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "rate",
+     "arguments": {
+      "rating": 1,
+      "track_rowid": 3112
+     }
+    },
+    {
+     "name": "recommend_next",
+     "arguments": {
+      "track_rowid": 3112
+     }
+    }
+   ],
+   "latency_ms": 853.8350607268512,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 853.8350607268512
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "q3",
+   "category": "rate",
+   "utterance": "give track 587 a thumbs up",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 587,
+       "rating": 1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "rate",
+     "arguments": {
+      "rating": 5,
+      "track_rowid": 587
+     }
+    }
+   ],
+   "latency_ms": 717.6390909589827,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 717.6390909589827
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "q4",
+   "category": "rate",
+   "utterance": "I hate track 2001",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 2001,
+       "rating": -1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "rate",
+     "arguments": {
+      "rating": 1,
+      "track_rowid": 2001
+     }
+    }
+   ],
+   "latency_ms": 651.7047313973308,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 651.7047313973308
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "l1",
+   "category": "light",
+   "utterance": "make the lights warmer",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "kelvin": 3000
+     }
+    }
+   ],
+   "latency_ms": 746.1329437792301,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 746.1329437792301
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "l2",
+   "category": "light",
+   "utterance": "set the light to 2700 kelvin",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": 2700
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "kelvin": 2700
+     }
+    }
+   ],
+   "latency_ms": 616.3642397150397,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 616.3642397150397
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "l3",
+   "category": "light",
+   "utterance": "set the lights to 3000K at 40 percent brightness",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": 3000,
+       "brightness": 40
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "brightness": 40,
+      "kelvin": 3000
+     }
+    }
+   ],
+   "latency_ms": 760.0100543349981,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 760.0100543349981
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "l4",
+   "category": "light",
+   "utterance": "dim the lights to 20%",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "brightness": 20
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "brightness": 20,
+      "kelvin": 4000
+     }
+    }
+   ],
+   "latency_ms": 600.7365020923316,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 600.7365020923316
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "l5",
+   "category": "light",
+   "utterance": "give me cool daylight white",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         5000,
+         6500
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "kelvin": 6500
+     }
+    }
+   ],
+   "latency_ms": 615.5125531367958,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 615.5125531367958
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "l6",
+   "category": "light",
+   "utterance": "candle glow please, super dim",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         2200
+        ]
+       },
+       "brightness": {
+        "between": [
+         0,
+         25
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "brightness": 10,
+      "kelvin": 1800
+     }
+    }
+   ],
+   "latency_ms": 563.8946639373899,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 563.8946639373899
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c1",
+   "category": "chat",
+   "utterance": "tell me a joke",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 912.1407149359584,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 912.1407149359584
+    },
+    "text": "Why did the music teacher need a ladder?\n\nTo reach the high notes!",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c2",
+   "category": "chat",
+   "utterance": "what's the capital of France?",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 587.1613607741892,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 587.1613607741892
+    },
+    "text": "The capital of France is Paris.",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c3",
+   "category": "chat",
+   "utterance": "thanks, that was great",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 883.0959377810359,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 883.0959377810359
+    },
+    "text": "You're welcome! I'm glad you enjoyed it. Would you like me to find something similar to keep the mood going, or are you all set for now?",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c4",
+   "category": "chat",
+   "utterance": "how are you today",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 772.0115766860545,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 772.0115766860545
+    },
+    "text": "I'm doing great, thank you for asking! I'm here and ready to help you with your music or lighting. How is your evening going?",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c5",
+   "category": "chat",
+   "utterance": "what's the weather tomorrow",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 592.8610363043845,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 592.8610363043845
+    },
+    "text": "I'm sorry, I don't have access to weather information. I can help you with your music or control your lights!",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c6",
+   "category": "chat",
+   "utterance": "set an alarm for 7am",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 723.2603137381375,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 723.2603137381375
+    },
+    "text": "I'm sorry, I don't have the ability to set alarms. I can help you with your music and smart lighting, though!",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c7",
+   "category": "chat",
+   "utterance": "who sang Bohemian Rhapsody? just tell me, don't play it",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 1388.8557916507125,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 1388.8557916507125
+    },
+    "text": "Queen sang \"Bohemian Rhapsody.\"",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c8",
+   "category": "chat",
+   "utterance": "I'm bored",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 589.4991001114249,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 589.4991001114249
+    },
+    "text": "I can help with that! Would you like me to find some new music for you to discover, or perhaps change the mood in the room with the lights?",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "a1",
+   "category": "ambiguous",
+   "utterance": "make it cozy in here",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "cozy"
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     },
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "cozy"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "brightness": 40,
+      "kelvin": 2700
+     }
+    }
+   ],
+   "latency_ms": 587.7471528947353,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 587.7471528947353
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "a2",
+   "category": "ambiguous",
+   "utterance": "I'm going to bed",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         2700
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "client_state": {
+        "any": [
+         "pause",
+         "stop"
+        ]
+       }
+      }
+     }
+    ],
+    []
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "brightness": 10,
+      "kelvin": 2000
+     }
+    },
+    {
+     "name": "set_player_state",
+     "arguments": {
+      "client_state": "paused",
+      "queue": [],
+      "queue_index": 0
+     }
+    }
+   ],
+   "latency_ms": 574.7684380039573,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 574.7684380039573
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "a3",
+   "category": "multistep",
+   "utterance": "warm up the lights and play something chill",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     },
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "chill",
+         "calm",
+         "relax"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "kelvin": 2700
+     }
+    },
+    {
+     "name": "search_vibe",
+     "arguments": {
+      "query": "chill"
+     }
+    }
+   ],
+   "latency_ms": 569.242412224412,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 569.242412224412
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "a4",
+   "category": "multistep",
+   "utterance": "play some jazz",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "jazz"
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "jazz"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_vibe",
+     "arguments": {
+      "query": "jazz"
+     }
+    }
+   ],
+   "latency_ms": 481.3899081200361,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 481.3899081200361
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "a5",
+   "category": "multistep",
+   "utterance": "like this song and then play whatever should come next",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": 1
+      }
+     },
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ],
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": 1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "rate",
+     "arguments": {
+      "rating": 5,
+      "track_rowid": 3112
+     }
+    },
+    {
+     "name": "recommend_next",
+     "arguments": {
+      "n": 1,
+      "track_rowid": 3112
+     }
+    }
+   ],
+   "latency_ms": 804.1022652760148,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 804.1022652760148
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "a6",
+   "category": "ambiguous",
+   "utterance": "not this one",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": -1
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "client_state": {
+        "any": [
+         "skip",
+         "next"
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "recommend_next",
+     "arguments": {
+      "track_rowid": 3112
+     }
+    }
+   ],
+   "latency_ms": 597.9414097964764,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 597.9414097964764
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "a7",
+   "category": "ambiguous",
+   "utterance": "it's too bright in here",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "brightness": {
+        "between": [
+         0,
+         50
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "brightness": 30,
+      "kelvin": 2700
+     }
+    }
+   ],
+   "latency_ms": 508.0504519864917,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 508.0504519864917
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "v1",
+   "category": "music_vibe",
+   "utterance": "play something mellow for dinner",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "mellow",
+         "dinner",
+         "chill",
+         "calm"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_vibe",
+     "arguments": {
+      "query": "mellow dinner"
+     }
+    }
+   ],
+   "latency_ms": 522.1413583494723,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 522.1413583494723
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "v2",
+   "category": "music_vibe",
+   "utterance": "I want some upbeat music to get me going",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "upbeat",
+         "energetic",
+         "energy"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_vibe",
+     "arguments": {
+      "query": "upbeat music to get me going"
+     }
+    }
+   ],
+   "latency_ms": 796.0297311656177,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 796.0297311656177
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "v3",
+   "category": "music_vibe",
+   "utterance": "find me something moody and rainy",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "moody",
+         "rain"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_vibe",
+     "arguments": {
+      "query": "moody and rainy"
+     }
+    }
+   ],
+   "latency_ms": 483.7967152707279,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 483.7967152707279
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "v4",
+   "category": "music_vibe",
+   "utterance": "put on some focus music, five options is plenty",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "focus"
+        ]
+       },
+       "n": 5
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_vibe",
+     "arguments": {
+      "n": 5,
+      "query": "focus"
+     }
+    }
+   ],
+   "latency_ms": 601.5156442299485,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 601.5156442299485
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "v5",
+   "category": "music_vibe",
+   "utterance": "something that feels like a sunday morning",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "sunday",
+         "morning"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_vibe",
+     "arguments": {
+      "query": "sunday morning"
+     }
+    }
+   ],
+   "latency_ms": 499.24941919744015,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 499.24941919744015
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "t1",
+   "category": "music_text",
+   "utterance": "search for Radiohead",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "radiohead"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_text",
+     "arguments": {
+      "query": "Radiohead"
+     }
+    }
+   ],
+   "latency_ms": 489.83240500092506,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 489.83240500092506
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "t2",
+   "category": "music_text",
+   "utterance": "look up the song Clair de Lune",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "clair de lune"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_text",
+     "arguments": {
+      "query": "Clair de Lune"
+     }
+    }
+   ],
+   "latency_ms": 637.4684059992433,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 637.4684059992433
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "t3",
+   "category": "music_text",
+   "utterance": "find songs by Khruangbin, give me 3",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "khruangbin"
+        ]
+       },
+       "limit": 3
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_text",
+     "arguments": {
+      "limit": 3,
+      "query": "Khruangbin"
+     }
+    }
+   ],
+   "latency_ms": 705.2566101774573,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 705.2566101774573
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "r1",
+   "category": "recommend",
+   "utterance": "what should play after this one",
+   "gold_outcomes": [
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "recommend_next",
+     "arguments": {
+      "track_rowid": 3112
+     }
+    }
+   ],
+   "latency_ms": 602.4328111670911,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 602.4328111670911
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "r2",
+   "category": "recommend",
+   "utterance": "queue up something similar to track 587",
+   "gold_outcomes": [
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 587
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "recommend_next",
+     "arguments": {
+      "track_rowid": 587
+     }
+    }
+   ],
+   "latency_ms": 650.5729728378356,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 650.5729728378356
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "r3",
+   "category": "recommend",
+   "utterance": "give me 4 tracks that follow this song",
+   "gold_outcomes": [
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112,
+       "n": 4
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "recommend_next",
+     "arguments": {
+      "n": 4,
+      "track_rowid": 3112
+     }
+    }
+   ],
+   "latency_ms": 682.102476246655,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 682.102476246655
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "p1",
+   "category": "play",
+   "utterance": "play track 3112",
+   "gold_outcomes": [
+    [
+     {
+      "name": "play",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "play",
+     "arguments": {
+      "track_rowid": 3112
+     }
+    }
+   ],
+   "latency_ms": 632.815939374268,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 632.815939374268
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "p2",
+   "category": "play",
+   "utterance": "play song number 9045 please",
+   "gold_outcomes": [
+    [
+     {
+      "name": "play",
+      "args": {
+       "track_rowid": 9045
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "play",
+     "arguments": {
+      "track_rowid": 9045
+     }
+    }
+   ],
+   "latency_ms": 518.4630192816257,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 518.4630192816257
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "p3",
+   "category": "play",
+   "utterance": "start track 12",
+   "gold_outcomes": [
+    [
+     {
+      "name": "play",
+      "args": {
+       "track_rowid": 12
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "play",
+     "arguments": {
+      "track_rowid": 12
+     }
+    }
+   ],
+   "latency_ms": 466.5443692356348,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 466.5443692356348
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "s1",
+   "category": "state_read",
+   "utterance": "what's playing right now?",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_player_state",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "get_player_state",
+     "arguments": {}
+    }
+   ],
+   "latency_ms": 498.1188648380339,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 498.1188648380339
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "s2",
+   "category": "state_read",
+   "utterance": "is the music paused?",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_player_state",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "get_player_state",
+     "arguments": {}
+    }
+   ],
+   "latency_ms": 462.2861761599779,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 462.2861761599779
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "s3",
+   "category": "state_read",
+   "utterance": "how far into this song are we",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_player_state",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "get_player_state",
+     "arguments": {}
+    }
+   ],
+   "latency_ms": 478.0820063315332,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 478.0820063315332
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "w1",
+   "category": "state_write",
+   "utterance": "turn shuffle on",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "shuffle": true
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "get_player_state",
+     "arguments": {}
+    }
+   ],
+   "latency_ms": 466.18450386449695,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 466.18450386449695
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "w2",
+   "category": "state_write",
+   "utterance": "set repeat to all",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "repeat_mode": {
+        "any": [
+         "all"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_player_state",
+     "arguments": {
+      "client_state": "playing",
+      "queue": [
+       3112
+      ],
+      "queue_index": 0,
+      "repeat_mode": "all"
+     }
+    }
+   ],
+   "latency_ms": 569.137095939368,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 569.137095939368
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "w3",
+   "category": "state_write",
+   "utterance": "pause the music",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "client_state": {
+        "any": [
+         "pause"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "get_player_state",
+     "arguments": {}
+    }
+   ],
+   "latency_ms": 592.8002260625362,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 592.8002260625362
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "w4",
+   "category": "state_write",
+   "utterance": "jump back to the start of this song",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "position_ms": 0
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_player_state",
+     "arguments": {
+      "client_state": "playing",
+      "position_ms": 0,
+      "queue": [
+       3112
+      ]
+     }
+    }
+   ],
+   "latency_ms": 861.8147359229624,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 861.8147359229624
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "d1",
+   "category": "dashboard",
+   "utterance": "show me my library dashboard",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_dashboard",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "get_dashboard",
+     "arguments": {}
+    }
+   ],
+   "latency_ms": 558.6690041236579,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 558.6690041236579
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "d2",
+   "category": "dashboard",
+   "utterance": "how big is my music library and what have I been listening to",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_dashboard",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "get_dashboard",
+     "arguments": {}
+    }
+   ],
+   "latency_ms": 561.9507059454918,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 561.9507059454918
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "q1",
+   "category": "rate",
+   "utterance": "I love this song",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": 1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "rate",
+     "arguments": {
+      "rating": 5,
+      "track_rowid": 3112
+     }
+    }
+   ],
+   "latency_ms": 711.9060489349067,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 711.9060489349067
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "q2",
+   "category": "rate",
+   "utterance": "thumbs down, skip this trash",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": -1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "rate",
+     "arguments": {
+      "rating": 1,
+      "track_rowid": 3112
+     }
+    },
+    {
+     "name": "recommend_next",
+     "arguments": {
+      "track_rowid": 3112
+     }
+    }
+   ],
+   "latency_ms": 821.9661703333259,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 821.9661703333259
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "q3",
+   "category": "rate",
+   "utterance": "give track 587 a thumbs up",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 587,
+       "rating": 1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "rate",
+     "arguments": {
+      "rating": 5,
+      "track_rowid": 587
+     }
+    }
+   ],
+   "latency_ms": 643.297721631825,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 643.297721631825
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "q4",
+   "category": "rate",
+   "utterance": "I hate track 2001",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 2001,
+       "rating": -1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "rate",
+     "arguments": {
+      "rating": 1,
+      "track_rowid": 2001
+     }
+    }
+   ],
+   "latency_ms": 611.61387572065,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 611.61387572065
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "l1",
+   "category": "light",
+   "utterance": "make the lights warmer",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "kelvin": 3000
+     }
+    }
+   ],
+   "latency_ms": 671.5838089585304,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 671.5838089585304
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "l2",
+   "category": "light",
+   "utterance": "set the light to 2700 kelvin",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": 2700
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "kelvin": 2700
+     }
+    }
+   ],
+   "latency_ms": 1208.16520601511,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 1208.16520601511
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "l3",
+   "category": "light",
+   "utterance": "set the lights to 3000K at 40 percent brightness",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": 3000,
+       "brightness": 40
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "brightness": 40,
+      "kelvin": 3000
+     }
+    }
+   ],
+   "latency_ms": 1637.148352805525,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 1637.148352805525
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "l4",
+   "category": "light",
+   "utterance": "dim the lights to 20%",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "brightness": 20
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "brightness": 20,
+      "kelvin": 4000
+     }
+    }
+   ],
+   "latency_ms": 6503.351225052029,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 6503.351225052029
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "l5",
+   "category": "light",
+   "utterance": "give me cool daylight white",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         5000,
+         6500
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "kelvin": 6500
+     }
+    }
+   ],
+   "latency_ms": 636.4797954447567,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 636.4797954447567
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "l6",
+   "category": "light",
+   "utterance": "candle glow please, super dim",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         2200
+        ]
+       },
+       "brightness": {
+        "between": [
+         0,
+         25
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "brightness": 10,
+      "kelvin": 1800
+     }
+    }
+   ],
+   "latency_ms": 598.9218992181122,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 598.9218992181122
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "c1",
+   "category": "chat",
+   "utterance": "tell me a joke",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 604.2426289059222,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 604.2426289059222
+    },
+    "text": "Why don't scientists trust atoms?\n\nBecause they make up everything!",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "c2",
+   "category": "chat",
+   "utterance": "what's the capital of France?",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 595.3029468655586,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 595.3029468655586
+    },
+    "text": "The capital of France is Paris.",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "c3",
+   "category": "chat",
+   "utterance": "thanks, that was great",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 758.0961692146957,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 758.0961692146957
+    },
+    "text": "You're very welcome! I'm glad you enjoyed it. Would you like me to find something similar to keep the mood going, or are you all set for now?",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "c4",
+   "category": "chat",
+   "utterance": "how are you today",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 969.8547860607505,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 969.8547860607505
+    },
+    "text": "I'm doing great, thank you for asking! I'm here and ready to help you with your music or lighting. How can I make your evening better?",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "c5",
+   "category": "chat",
+   "utterance": "what's the weather tomorrow",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 732.0036119781435,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 732.0036119781435
+    },
+    "text": "I'm sorry, I don't have access to weather information. I can help you with your music or control your lights!",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "c6",
+   "category": "chat",
+   "utterance": "set an alarm for 7am",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 768.2229038327932,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 768.2229038327932
+    },
+    "text": "I'm sorry, I don't have the ability to set alarms. I can help you with your music and lighting, though!",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "c7",
+   "category": "chat",
+   "utterance": "who sang Bohemian Rhapsody? just tell me, don't play it",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 529.1774566285312,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 529.1774566285312
+    },
+    "text": "Queen sang Bohemian Rhapsody.",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "c8",
+   "category": "chat",
+   "utterance": "I'm bored",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [
+    {
+     "name": "get_dashboard",
+     "arguments": {}
+    }
+   ],
+   "latency_ms": 565.8421167172492,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 565.8421167172492
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "a1",
+   "category": "ambiguous",
+   "utterance": "make it cozy in here",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "cozy"
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     },
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "cozy"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "brightness": 40,
+      "kelvin": 2700
+     }
+    }
+   ],
+   "latency_ms": 590.3903529979289,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 590.3903529979289
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "a2",
+   "category": "ambiguous",
+   "utterance": "I'm going to bed",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         2700
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "client_state": {
+        "any": [
+         "pause",
+         "stop"
+        ]
+       }
+      }
+     }
+    ],
+    []
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "brightness": 10,
+      "kelvin": 2000
+     }
+    },
+    {
+     "name": "set_player_state",
+     "arguments": {
+      "client_state": "paused",
+      "queue": [],
+      "queue_index": 0
+     }
+    }
+   ],
+   "latency_ms": 1302.3046040907502,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 1302.3046040907502
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "a3",
+   "category": "multistep",
+   "utterance": "warm up the lights and play something chill",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     },
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "chill",
+         "calm",
+         "relax"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "kelvin": 2700
+     }
+    },
+    {
+     "name": "search_vibe",
+     "arguments": {
+      "query": "chill"
+     }
+    }
+   ],
+   "latency_ms": 667.8887028247118,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 667.8887028247118
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "a4",
+   "category": "multistep",
+   "utterance": "play some jazz",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "jazz"
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "jazz"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "search_vibe",
+     "arguments": {
+      "query": "jazz"
+     }
+    }
+   ],
+   "latency_ms": 722.696895711124,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 722.696895711124
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "a5",
+   "category": "multistep",
+   "utterance": "like this song and then play whatever should come next",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": 1
+      }
+     },
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ],
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": 1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "rate",
+     "arguments": {
+      "rating": 5,
+      "track_rowid": 3112
+     }
+    },
+    {
+     "name": "recommend_next",
+     "arguments": {
+      "n": 1,
+      "track_rowid": 3112
+     }
+    }
+   ],
+   "latency_ms": 805.3231560625136,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 805.3231560625136
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "a6",
+   "category": "ambiguous",
+   "utterance": "not this one",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": -1
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "client_state": {
+        "any": [
+         "skip",
+         "next"
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "recommend_next",
+     "arguments": {
+      "track_rowid": 3112
+     }
+    }
+   ],
+   "latency_ms": 542.8009727038443,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 542.8009727038443
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "a7",
+   "category": "ambiguous",
+   "utterance": "it's too bright in here",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "brightness": {
+        "between": [
+         0,
+         50
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "set_warmth",
+     "arguments": {
+      "brightness": 30,
+      "kelvin": 2700
+     }
+    }
+   ],
+   "latency_ms": 551.9751720130444,
+   "is_first_call_of_process": false,
+   "info": {
+    "stage_ms": {
+     "llm": 551.9751720130444
+    },
+    "text": "",
+    "http": 200
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  }
+ ]
+}

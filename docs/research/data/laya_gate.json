@@ -1,0 +1,7179 @@
+{
+ "arch": "laya_gate",
+ "reps": 3,
+ "n_items": 48,
+ "init_s": 9.152317880187184,
+ "rss_before_mb": 16.51171875,
+ "rss_after_load_mb": 2069.68359375,
+ "rss_peak_mb": 2859.08984375,
+ "cpu_count": 8,
+ "records": [
+  {
+   "rep": 0,
+   "id": "v1",
+   "category": "music_vibe",
+   "utterance": "play something mellow for dinner",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "mellow",
+         "dinner",
+         "chill",
+         "calm"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 552.775511983782,
+   "is_first_call_of_process": true,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2407,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2407,
+      "confidence": 0.7593,
+      "answer_confidence": 0.7593,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 552.775511983782,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "v2",
+   "category": "music_vibe",
+   "utterance": "I want some upbeat music to get me going",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "upbeat",
+         "energetic",
+         "energy"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 672.4832397885621,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2142,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2142,
+      "confidence": 0.7858,
+      "answer_confidence": 0.7858,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 672.4832397885621,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "v3",
+   "category": "music_vibe",
+   "utterance": "find me something moody and rainy",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "moody",
+         "rain"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 689.6722256205976,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2277,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2277,
+      "confidence": 0.7723,
+      "answer_confidence": 0.7723,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 689.6722256205976,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "v4",
+   "category": "music_vibe",
+   "utterance": "put on some focus music, five options is plenty",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "focus"
+        ]
+       },
+       "n": 5
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 1060.0847364403307,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.5175,
+     "raw": {
+      "type": "noul",
+      "noul": 0.5175,
+      "confidence": 0.5175,
+      "answer_confidence": 0.5175,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 633.3825592882931,
+     "needle": 426.7021771520376
+    },
+    "needle": {
+     "confidence": 0.0342,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 5
+       }
+      }
+     ],
+     "reasoning": "'focus music' -> track_rowid 5; 'five options' -> required parameter 'required'",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 120.2,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "v5",
+   "category": "music_vibe",
+   "utterance": "something that feels like a sunday morning",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "sunday",
+         "morning"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 648.4895669855177,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1819,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1819,
+      "confidence": 0.8181,
+      "answer_confidence": 0.8181,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 648.4895669855177,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "t1",
+   "category": "music_text",
+   "utterance": "search for Radiohead",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "radiohead"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 596.0625605657697,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1065,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1065,
+      "confidence": 0.8935,
+      "answer_confidence": 0.8935,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 596.0625605657697,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "t2",
+   "category": "music_text",
+   "utterance": "look up the song Clair de Lune",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "clair de lune"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 673.2416148297489,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.096,
+     "raw": {
+      "type": "noul",
+      "noul": 0.096,
+      "confidence": 0.904,
+      "answer_confidence": 0.904,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 673.2416148297489,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "t3",
+   "category": "music_text",
+   "utterance": "find songs by Khruangbin, give me 3",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "khruangbin"
+        ]
+       },
+       "limit": 3
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 744.4972670637071,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1606,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1606,
+      "confidence": 0.8394,
+      "answer_confidence": 0.8394,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 744.4972670637071,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "r1",
+   "category": "recommend",
+   "utterance": "what should play after this one",
+   "gold_outcomes": [
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 629.5457798987627,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1099,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1099,
+      "confidence": 0.8901,
+      "answer_confidence": 0.8901,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 629.5457798987627,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "r2",
+   "category": "recommend",
+   "utterance": "queue up something similar to track 587",
+   "gold_outcomes": [
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 587
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 621.8298599123955,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2155,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2155,
+      "confidence": 0.7845,
+      "answer_confidence": 0.7845,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 621.8298599123955,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "r3",
+   "category": "recommend",
+   "utterance": "give me 4 tracks that follow this song",
+   "gold_outcomes": [
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112,
+       "n": 4
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 747.4330863915384,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1687,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1687,
+      "confidence": 0.8313,
+      "answer_confidence": 0.8313,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 747.4330863915384,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "p1",
+   "category": "play",
+   "utterance": "play track 3112",
+   "gold_outcomes": [
+    [
+     {
+      "name": "play",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "play",
+     "arguments": {
+      "track_rowid": 3112
+     }
+    }
+   ],
+   "latency_ms": 994.1333727911115,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.9889,
+     "raw": {
+      "type": "noul",
+      "noul": 0.9889,
+      "confidence": 0.9889,
+      "answer_confidence": 0.9889,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 594.7379120625556,
+     "needle": 399.3954607285559
+    },
+    "needle": {
+     "confidence": 0.6922,
+     "suppressed": [],
+     "reasoning": "Query 'track 3112' -> track_rowid 3112. No other parameters needed.",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 134.0,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "p2",
+   "category": "play",
+   "utterance": "play song number 9045 please",
+   "gold_outcomes": [
+    [
+     {
+      "name": "play",
+      "args": {
+       "track_rowid": 9045
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "play",
+     "arguments": {
+      "track_rowid": 945
+     }
+    }
+   ],
+   "latency_ms": 1203.3090838231146,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.8718,
+     "raw": {
+      "type": "noul",
+      "noul": 0.8718,
+      "confidence": 0.8718,
+      "answer_confidence": 0.8718,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 706.528436858207,
+     "needle": 496.78064696490765
+    },
+    "needle": {
+     "confidence": 0.5018,
+     "suppressed": [],
+     "reasoning": "'play song number 9045' -> track_rowid 945; required parameter required.",
+     "validation": {
+      "ungrounded": [
+       "play.track_rowid"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 92.3,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "p3",
+   "category": "play",
+   "utterance": "start track 12",
+   "gold_outcomes": [
+    [
+     {
+      "name": "play",
+      "args": {
+       "track_rowid": 12
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "play",
+     "arguments": {
+      "track_rowid": 12
+     }
+    }
+   ],
+   "latency_ms": 941.3980557583272,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.6576,
+     "raw": {
+      "type": "noul",
+      "noul": 0.6576,
+      "confidence": 0.6576,
+      "answer_confidence": 0.6576,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 582.371330820024,
+     "needle": 359.02672493830323
+    },
+    "needle": {
+     "confidence": 0.3515,
+     "suppressed": [],
+     "reasoning": "'start track 12' -> track_rowid 12; no other parameters needed.",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 121.4,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "s1",
+   "category": "state_read",
+   "utterance": "what's playing right now?",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_player_state",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 711.0018180683255,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.4597,
+     "raw": {
+      "type": "noul",
+      "noul": 0.4597,
+      "confidence": 0.5403,
+      "answer_confidence": 0.5403,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 711.0018180683255,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "s2",
+   "category": "state_read",
+   "utterance": "is the music paused?",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_player_state",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 595.8256400190294,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1822,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1822,
+      "confidence": 0.8178,
+      "answer_confidence": 0.8178,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 595.8256400190294,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "s3",
+   "category": "state_read",
+   "utterance": "how far into this song are we",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_player_state",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 666.095394641161,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.23,
+     "raw": {
+      "type": "noul",
+      "noul": 0.23,
+      "confidence": 0.77,
+      "answer_confidence": 0.77,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 666.095394641161,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "w1",
+   "category": "state_write",
+   "utterance": "turn shuffle on",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "shuffle": true
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 1412.8250661306083,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.7709,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7709,
+      "confidence": 0.7709,
+      "answer_confidence": 0.7709,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 670.0097029097378,
+     "needle": 742.8153632208705
+    },
+    "needle": {
+     "confidence": 0.0408,
+     "suppressed": [
+      {
+       "name": "set_player_state",
+       "arguments": {
+        "queue": [
+         0
+        ],
+        "repeat_mode": "shuffle",
+        "client_state": "default"
+       }
+      }
+     ],
+     "reasoning": "'turn shuffle on' -> set_player_state with queue=[0] and repeat_mode='shuffle'.",
+     "validation": {
+      "ungrounded": [
+       "set_player_state.client_state"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 122.0,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "w2",
+   "category": "state_write",
+   "utterance": "set repeat to all",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "repeat_mode": {
+        "any": [
+         "all"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 1535.3591800667346,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.6818,
+     "raw": {
+      "type": "noul",
+      "noul": 0.6818,
+      "confidence": 0.6818,
+      "answer_confidence": 0.6818,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 664.7686050273478,
+     "needle": 870.5905750393867
+    },
+    "needle": {
+     "confidence": 0.089,
+     "suppressed": [
+      {
+       "name": "set_player_state",
+       "arguments": {
+        "queue": [],
+        "client_state": "",
+        "queue_index": 0,
+        "position_ms": 0,
+        "shuffle": false
+       }
+      }
+     ],
+     "reasoning": "'repeat to all' -> repeat_mode 'off'. No queue or client_state given.",
+     "validation": {
+      "ungrounded": [
+       "set_player_state.queue_index",
+       "set_player_state.position_ms"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 103.3,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "w3",
+   "category": "state_write",
+   "utterance": "pause the music",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "client_state": {
+        "any": [
+         "pause"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 1029.584807343781,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.8347,
+     "raw": {
+      "type": "noul",
+      "noul": 0.8347,
+      "confidence": 0.8347,
+      "answer_confidence": 0.8347,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 672.3424810916185,
+     "needle": 357.24232625216246
+    },
+    "needle": {
+     "confidence": 0.0325,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 3112
+       }
+      }
+     ],
+     "reasoning": "'pause the music' means pause playback -> play with defaults.",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 121.3,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "w4",
+   "category": "state_write",
+   "utterance": "jump back to the start of this song",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "position_ms": 0
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 1020.4437873326242,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.8824,
+     "raw": {
+      "type": "noul",
+      "noul": 0.8824,
+      "confidence": 0.8824,
+      "answer_confidence": 0.8824,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 586.6322042420506,
+     "needle": 433.81158309057355
+    },
+    "needle": {
+     "confidence": 0.0601,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 10
+       }
+      }
+     ],
+     "reasoning": "'jump back to the start' means continue playback -> play with default track_rowid 10",
+     "validation": {
+      "ungrounded": [
+       "play.track_rowid"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 115.5,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "d1",
+   "category": "dashboard",
+   "utterance": "show me my library dashboard",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_dashboard",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 567.5864042714238,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2692,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2692,
+      "confidence": 0.7308,
+      "answer_confidence": 0.7308,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 567.5864042714238,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "d2",
+   "category": "dashboard",
+   "utterance": "how big is my music library and what have I been listening to",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_dashboard",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 584.4100890681148,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1702,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1702,
+      "confidence": 0.8298,
+      "answer_confidence": 0.8298,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 584.4100890681148,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "q1",
+   "category": "rate",
+   "utterance": "I love this song",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": 1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 1039.8751092143357,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.7098,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7098,
+      "confidence": 0.7098,
+      "answer_confidence": 0.7098,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 571.6699212789536,
+     "needle": 468.2051879353821
+    },
+    "needle": {
+     "confidence": 0.0949,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 10
+       }
+      }
+     ],
+     "reasoning": "'I love this song' means play the current track. play with default track_rowid 10.",
+     "validation": {
+      "ungrounded": [
+       "play.track_rowid"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 101.5,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "q2",
+   "category": "rate",
+   "utterance": "thumbs down, skip this trash",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": -1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 716.7704836465418,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1927,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1927,
+      "confidence": 0.8073,
+      "answer_confidence": 0.8073,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 716.7704836465418,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "q3",
+   "category": "rate",
+   "utterance": "give track 587 a thumbs up",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 587,
+       "rating": 1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 795.9053707309067,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1563,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1563,
+      "confidence": 0.8437,
+      "answer_confidence": 0.8437,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 795.9053707309067,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "q4",
+   "category": "rate",
+   "utterance": "I hate track 2001",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 2001,
+       "rating": -1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 706.0634680092335,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.165,
+     "raw": {
+      "type": "noul",
+      "noul": 0.165,
+      "confidence": 0.835,
+      "answer_confidence": 0.835,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 706.0634680092335,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "l1",
+   "category": "light",
+   "utterance": "make the lights warmer",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 730.7749018073082,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0916,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0916,
+      "confidence": 0.9084,
+      "answer_confidence": 0.9084,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 730.7749018073082,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "l2",
+   "category": "light",
+   "utterance": "set the light to 2700 kelvin",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": 2700
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 1449.03294602409,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0903,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0903,
+      "confidence": 0.9097,
+      "answer_confidence": 0.9097,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 1449.03294602409,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "l3",
+   "category": "light",
+   "utterance": "set the lights to 3000K at 40 percent brightness",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": 3000,
+       "brightness": 40
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 876.8382957205176,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1151,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1151,
+      "confidence": 0.8849,
+      "answer_confidence": 0.8849,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 876.8382957205176,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "l4",
+   "category": "light",
+   "utterance": "dim the lights to 20%",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "brightness": 20
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 560.2328120730817,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2434,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2434,
+      "confidence": 0.7566,
+      "answer_confidence": 0.7566,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 560.2328120730817,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "l5",
+   "category": "light",
+   "utterance": "give me cool daylight white",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         5000,
+         6500
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 584.246417041868,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.3056,
+     "raw": {
+      "type": "noul",
+      "noul": 0.3056,
+      "confidence": 0.6944,
+      "answer_confidence": 0.6944,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 584.246417041868,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "l6",
+   "category": "light",
+   "utterance": "candle glow please, super dim",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         2200
+        ]
+       },
+       "brightness": {
+        "between": [
+         0,
+         25
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 565.6502647325397,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1305,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1305,
+      "confidence": 0.8695,
+      "answer_confidence": 0.8695,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 565.6502647325397,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "c1",
+   "category": "chat",
+   "utterance": "tell me a joke",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 701.4783639460802,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0967,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0967,
+      "confidence": 0.9033,
+      "answer_confidence": 0.9033,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 701.4783639460802,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c2",
+   "category": "chat",
+   "utterance": "what's the capital of France?",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 672.0852558501065,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0271,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0271,
+      "confidence": 0.9729,
+      "answer_confidence": 0.9729,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 672.0852558501065,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c3",
+   "category": "chat",
+   "utterance": "thanks, that was great",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 641.8633530847728,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1152,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1152,
+      "confidence": 0.8848,
+      "answer_confidence": 0.8848,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 641.8633530847728,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c4",
+   "category": "chat",
+   "utterance": "how are you today",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 643.8173661008477,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.4928,
+     "raw": {
+      "type": "noul",
+      "noul": 0.4928,
+      "confidence": 0.5072,
+      "answer_confidence": 0.5072,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 643.8173661008477,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c5",
+   "category": "chat",
+   "utterance": "what's the weather tomorrow",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 646.1989423260093,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0711,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0711,
+      "confidence": 0.9289,
+      "answer_confidence": 0.9289,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 646.1989423260093,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c6",
+   "category": "chat",
+   "utterance": "set an alarm for 7am",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 683.9653439819813,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1062,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1062,
+      "confidence": 0.8938,
+      "answer_confidence": 0.8938,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 683.9653439819813,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c7",
+   "category": "chat",
+   "utterance": "who sang Bohemian Rhapsody? just tell me, don't play it",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 746.6281498782337,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1104,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1104,
+      "confidence": 0.8896,
+      "answer_confidence": 0.8896,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 746.6281498782337,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "c8",
+   "category": "chat",
+   "utterance": "I'm bored",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 682.4949998408556,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1246,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1246,
+      "confidence": 0.8754,
+      "answer_confidence": 0.8754,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 682.4949998408556,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "a1",
+   "category": "ambiguous",
+   "utterance": "make it cozy in here",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "cozy"
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     },
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "cozy"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 768.8557435758412,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.201,
+     "raw": {
+      "type": "noul",
+      "noul": 0.201,
+      "confidence": 0.799,
+      "answer_confidence": 0.799,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 768.8557435758412,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "a2",
+   "category": "ambiguous",
+   "utterance": "I'm going to bed",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         2700
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "client_state": {
+        "any": [
+         "pause",
+         "stop"
+        ]
+       }
+      }
+     }
+    ],
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 690.4259012080729,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2646,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2646,
+      "confidence": 0.7354,
+      "answer_confidence": 0.7354,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 690.4259012080729,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 0,
+   "id": "a3",
+   "category": "multistep",
+   "utterance": "warm up the lights and play something chill",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     },
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "chill",
+         "calm",
+         "relax"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 660.0918266922235,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.205,
+     "raw": {
+      "type": "noul",
+      "noul": 0.205,
+      "confidence": 0.795,
+      "answer_confidence": 0.795,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 660.0918266922235,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "a4",
+   "category": "multistep",
+   "utterance": "play some jazz",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "jazz"
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "jazz"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 709.3176231719553,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2353,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2353,
+      "confidence": 0.7647,
+      "answer_confidence": 0.7647,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 709.3176231719553,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "a5",
+   "category": "multistep",
+   "utterance": "like this song and then play whatever should come next",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": 1
+      }
+     },
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ],
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": 1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 1223.2105610892177,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.7146,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7146,
+      "confidence": 0.7146,
+      "answer_confidence": 0.7146,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 692.2386982478201,
+     "needle": 530.9718628413975
+    },
+    "needle": {
+     "confidence": 0.0944,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 0
+       }
+      }
+     ],
+     "reasoning": "'play whatever should come next' -> play_track_rowid with default 0; 'this song' is context but no track_rowid given",
+     "validation": {
+      "ungrounded": [
+       "play.track_rowid"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 111.2,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "a6",
+   "category": "ambiguous",
+   "utterance": "not this one",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": -1
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "client_state": {
+        "any": [
+         "skip",
+         "next"
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 745.5097860656679,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0754,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0754,
+      "confidence": 0.9246,
+      "answer_confidence": 0.9246,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 745.5097860656679,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 0,
+   "id": "a7",
+   "category": "ambiguous",
+   "utterance": "it's too bright in here",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "brightness": {
+        "between": [
+         0,
+         50
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 693.8931960612535,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0823,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0823,
+      "confidence": 0.9177,
+      "answer_confidence": 0.9177,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 693.8931960612535,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "v1",
+   "category": "music_vibe",
+   "utterance": "play something mellow for dinner",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "mellow",
+         "dinner",
+         "chill",
+         "calm"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 712.2376449406147,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2407,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2407,
+      "confidence": 0.7593,
+      "answer_confidence": 0.7593,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 712.2376449406147,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "v2",
+   "category": "music_vibe",
+   "utterance": "I want some upbeat music to get me going",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "upbeat",
+         "energetic",
+         "energy"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 740.8531443215907,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2142,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2142,
+      "confidence": 0.7858,
+      "answer_confidence": 0.7858,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 740.8531443215907,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "v3",
+   "category": "music_vibe",
+   "utterance": "find me something moody and rainy",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "moody",
+         "rain"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 674.8366830870509,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2277,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2277,
+      "confidence": 0.7723,
+      "answer_confidence": 0.7723,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 674.8366830870509,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "v4",
+   "category": "music_vibe",
+   "utterance": "put on some focus music, five options is plenty",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "focus"
+        ]
+       },
+       "n": 5
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 1129.8266653902829,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.5175,
+     "raw": {
+      "type": "noul",
+      "noul": 0.5175,
+      "confidence": 0.5175,
+      "answer_confidence": 0.5175,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 701.7097352072597,
+     "needle": 428.1169301830232
+    },
+    "needle": {
+     "confidence": 0.0342,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 5
+       }
+      }
+     ],
+     "reasoning": "'focus music' -> track_rowid 5; 'five options' -> required parameter 'required'",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 121.8,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "v5",
+   "category": "music_vibe",
+   "utterance": "something that feels like a sunday morning",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "sunday",
+         "morning"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 810.0657598115504,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1819,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1819,
+      "confidence": 0.8181,
+      "answer_confidence": 0.8181,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 810.0657598115504,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "t1",
+   "category": "music_text",
+   "utterance": "search for Radiohead",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "radiohead"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 703.1805668957531,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1065,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1065,
+      "confidence": 0.8935,
+      "answer_confidence": 0.8935,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 703.1805668957531,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "t2",
+   "category": "music_text",
+   "utterance": "look up the song Clair de Lune",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "clair de lune"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 618.8589869998395,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.096,
+     "raw": {
+      "type": "noul",
+      "noul": 0.096,
+      "confidence": 0.904,
+      "answer_confidence": 0.904,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 618.8589869998395,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "t3",
+   "category": "music_text",
+   "utterance": "find songs by Khruangbin, give me 3",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "khruangbin"
+        ]
+       },
+       "limit": 3
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 770.5520922318101,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1606,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1606,
+      "confidence": 0.8394,
+      "answer_confidence": 0.8394,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 770.5520922318101,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "r1",
+   "category": "recommend",
+   "utterance": "what should play after this one",
+   "gold_outcomes": [
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 646.8377108685672,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1099,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1099,
+      "confidence": 0.8901,
+      "answer_confidence": 0.8901,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 646.8377108685672,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "r2",
+   "category": "recommend",
+   "utterance": "queue up something similar to track 587",
+   "gold_outcomes": [
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 587
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 603.526116348803,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2155,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2155,
+      "confidence": 0.7845,
+      "answer_confidence": 0.7845,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 603.526116348803,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "r3",
+   "category": "recommend",
+   "utterance": "give me 4 tracks that follow this song",
+   "gold_outcomes": [
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112,
+       "n": 4
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 597.3654291592538,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1687,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1687,
+      "confidence": 0.8313,
+      "answer_confidence": 0.8313,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 597.3654291592538,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "p1",
+   "category": "play",
+   "utterance": "play track 3112",
+   "gold_outcomes": [
+    [
+     {
+      "name": "play",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "play",
+     "arguments": {
+      "track_rowid": 3112
+     }
+    }
+   ],
+   "latency_ms": 1007.8251827508211,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.9889,
+     "raw": {
+      "type": "noul",
+      "noul": 0.9889,
+      "confidence": 0.9889,
+      "answer_confidence": 0.9889,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 575.542485807091,
+     "needle": 432.2826969437301
+    },
+    "needle": {
+     "confidence": 0.6922,
+     "suppressed": [],
+     "reasoning": "Query 'track 3112' -> track_rowid 3112. No other parameters needed.",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 118.2,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "p2",
+   "category": "play",
+   "utterance": "play song number 9045 please",
+   "gold_outcomes": [
+    [
+     {
+      "name": "play",
+      "args": {
+       "track_rowid": 9045
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "play",
+     "arguments": {
+      "track_rowid": 945
+     }
+    }
+   ],
+   "latency_ms": 1104.2256485670805,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.8718,
+     "raw": {
+      "type": "noul",
+      "noul": 0.8718,
+      "confidence": 0.8718,
+      "answer_confidence": 0.8718,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 559.4047829508781,
+     "needle": 544.8208656162024
+    },
+    "needle": {
+     "confidence": 0.5018,
+     "suppressed": [],
+     "reasoning": "'play song number 9045' -> track_rowid 945; required parameter required.",
+     "validation": {
+      "ungrounded": [
+       "play.track_rowid"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 86.8,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "p3",
+   "category": "play",
+   "utterance": "start track 12",
+   "gold_outcomes": [
+    [
+     {
+      "name": "play",
+      "args": {
+       "track_rowid": 12
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "play",
+     "arguments": {
+      "track_rowid": 12
+     }
+    }
+   ],
+   "latency_ms": 1188.3763843216002,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.6576,
+     "raw": {
+      "type": "noul",
+      "noul": 0.6576,
+      "confidence": 0.6576,
+      "answer_confidence": 0.6576,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 701.6953281126916,
+     "needle": 486.68105620890856
+    },
+    "needle": {
+     "confidence": 0.3515,
+     "suppressed": [],
+     "reasoning": "'start track 12' -> track_rowid 12; no other parameters needed.",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 89.6,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "s1",
+   "category": "state_read",
+   "utterance": "what's playing right now?",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_player_state",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 722.1921468153596,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.4597,
+     "raw": {
+      "type": "noul",
+      "noul": 0.4597,
+      "confidence": 0.5403,
+      "answer_confidence": 0.5403,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 722.1921468153596,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "s2",
+   "category": "state_read",
+   "utterance": "is the music paused?",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_player_state",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 705.9101876802742,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1822,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1822,
+      "confidence": 0.8178,
+      "answer_confidence": 0.8178,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 705.9101876802742,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "s3",
+   "category": "state_read",
+   "utterance": "how far into this song are we",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_player_state",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 653.3726961351931,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.23,
+     "raw": {
+      "type": "noul",
+      "noul": 0.23,
+      "confidence": 0.77,
+      "answer_confidence": 0.77,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 653.3726961351931,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "w1",
+   "category": "state_write",
+   "utterance": "turn shuffle on",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "shuffle": true
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 1677.833334542811,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.7709,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7709,
+      "confidence": 0.7709,
+      "answer_confidence": 0.7709,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 648.2778135687113,
+     "needle": 1029.5555209740996
+    },
+    "needle": {
+     "confidence": 0.0408,
+     "suppressed": [
+      {
+       "name": "set_player_state",
+       "arguments": {
+        "queue": [
+         0
+        ],
+        "repeat_mode": "shuffle",
+        "client_state": "default"
+       }
+      }
+     ],
+     "reasoning": "'turn shuffle on' -> set_player_state with queue=[0] and repeat_mode='shuffle'.",
+     "validation": {
+      "ungrounded": [
+       "set_player_state.client_state"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 78.5,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "w2",
+   "category": "state_write",
+   "utterance": "set repeat to all",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "repeat_mode": {
+        "any": [
+         "all"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 2228.701044805348,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.6818,
+     "raw": {
+      "type": "noul",
+      "noul": 0.6818,
+      "confidence": 0.6818,
+      "answer_confidence": 0.6818,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 612.3435897752643,
+     "needle": 1616.3574550300837
+    },
+    "needle": {
+     "confidence": 0.089,
+     "suppressed": [
+      {
+       "name": "set_player_state",
+       "arguments": {
+        "queue": [],
+        "client_state": "",
+        "queue_index": 0,
+        "position_ms": 0,
+        "shuffle": false
+       }
+      }
+     ],
+     "reasoning": "'repeat to all' -> repeat_mode 'off'. No queue or client_state given.",
+     "validation": {
+      "ungrounded": [
+       "set_player_state.queue_index",
+       "set_player_state.position_ms"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 51.0,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "w3",
+   "category": "state_write",
+   "utterance": "pause the music",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "client_state": {
+        "any": [
+         "pause"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 991.0707664676011,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.8347,
+     "raw": {
+      "type": "noul",
+      "noul": 0.8347,
+      "confidence": 0.8347,
+      "answer_confidence": 0.8347,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 609.8775831051171,
+     "needle": 381.193183362484
+    },
+    "needle": {
+     "confidence": 0.0325,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 3112
+       }
+      }
+     ],
+     "reasoning": "'pause the music' means pause playback -> play with defaults.",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 112.7,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "w4",
+   "category": "state_write",
+   "utterance": "jump back to the start of this song",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "position_ms": 0
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 1038.0483944900334,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.8824,
+     "raw": {
+      "type": "noul",
+      "noul": 0.8824,
+      "confidence": 0.8824,
+      "answer_confidence": 0.8824,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 571.1687128059566,
+     "needle": 466.8796816840768
+    },
+    "needle": {
+     "confidence": 0.0601,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 10
+       }
+      }
+     ],
+     "reasoning": "'jump back to the start' means continue playback -> play with default track_rowid 10",
+     "validation": {
+      "ungrounded": [
+       "play.track_rowid"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 105.4,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "d1",
+   "category": "dashboard",
+   "utterance": "show me my library dashboard",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_dashboard",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 602.704687975347,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2692,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2692,
+      "confidence": 0.7308,
+      "answer_confidence": 0.7308,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 602.704687975347,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "d2",
+   "category": "dashboard",
+   "utterance": "how big is my music library and what have I been listening to",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_dashboard",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 644.048597663641,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1702,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1702,
+      "confidence": 0.8298,
+      "answer_confidence": 0.8298,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 644.048597663641,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "q1",
+   "category": "rate",
+   "utterance": "I love this song",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": 1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 1066.1930032074451,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.7098,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7098,
+      "confidence": 0.7098,
+      "answer_confidence": 0.7098,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 607.3938179761171,
+     "needle": 458.799185231328
+    },
+    "needle": {
+     "confidence": 0.0949,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 10
+       }
+      }
+     ],
+     "reasoning": "'I love this song' means play the current track. play with default track_rowid 10.",
+     "validation": {
+      "ungrounded": [
+       "play.track_rowid"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 105.4,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "q2",
+   "category": "rate",
+   "utterance": "thumbs down, skip this trash",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": -1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 767.714899033308,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1927,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1927,
+      "confidence": 0.8073,
+      "answer_confidence": 0.8073,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 767.714899033308,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "q3",
+   "category": "rate",
+   "utterance": "give track 587 a thumbs up",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 587,
+       "rating": 1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 890.2183789759874,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1563,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1563,
+      "confidence": 0.8437,
+      "answer_confidence": 0.8437,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 890.2183789759874,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "q4",
+   "category": "rate",
+   "utterance": "I hate track 2001",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 2001,
+       "rating": -1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 743.078213185072,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.165,
+     "raw": {
+      "type": "noul",
+      "noul": 0.165,
+      "confidence": 0.835,
+      "answer_confidence": 0.835,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 743.078213185072,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "l1",
+   "category": "light",
+   "utterance": "make the lights warmer",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 605.8073220774531,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0916,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0916,
+      "confidence": 0.9084,
+      "answer_confidence": 0.9084,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 605.8073220774531,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "l2",
+   "category": "light",
+   "utterance": "set the light to 2700 kelvin",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": 2700
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 657.8791071660817,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0903,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0903,
+      "confidence": 0.9097,
+      "answer_confidence": 0.9097,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 657.8791071660817,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "l3",
+   "category": "light",
+   "utterance": "set the lights to 3000K at 40 percent brightness",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": 3000,
+       "brightness": 40
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 723.7106487154961,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1151,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1151,
+      "confidence": 0.8849,
+      "answer_confidence": 0.8849,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 723.7106487154961,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "l4",
+   "category": "light",
+   "utterance": "dim the lights to 20%",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "brightness": 20
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 614.7972140461206,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2434,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2434,
+      "confidence": 0.7566,
+      "answer_confidence": 0.7566,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 614.7972140461206,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "l5",
+   "category": "light",
+   "utterance": "give me cool daylight white",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         5000,
+         6500
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 702.5740230455995,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.3056,
+     "raw": {
+      "type": "noul",
+      "noul": 0.3056,
+      "confidence": 0.6944,
+      "answer_confidence": 0.6944,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 702.5740230455995,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "l6",
+   "category": "light",
+   "utterance": "candle glow please, super dim",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         2200
+        ]
+       },
+       "brightness": {
+        "between": [
+         0,
+         25
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 715.5538876540959,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1305,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1305,
+      "confidence": 0.8695,
+      "answer_confidence": 0.8695,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 715.5538876540959,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "c1",
+   "category": "chat",
+   "utterance": "tell me a joke",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 620.6220244057477,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0967,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0967,
+      "confidence": 0.9033,
+      "answer_confidence": 0.9033,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 620.6220244057477,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "c2",
+   "category": "chat",
+   "utterance": "what's the capital of France?",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 664.4682330079377,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0271,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0271,
+      "confidence": 0.9729,
+      "answer_confidence": 0.9729,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 664.4682330079377,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "c3",
+   "category": "chat",
+   "utterance": "thanks, that was great",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 710.2264040149748,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1152,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1152,
+      "confidence": 0.8848,
+      "answer_confidence": 0.8848,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 710.2264040149748,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "c4",
+   "category": "chat",
+   "utterance": "how are you today",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 774.2779040709138,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.4928,
+     "raw": {
+      "type": "noul",
+      "noul": 0.4928,
+      "confidence": 0.5072,
+      "answer_confidence": 0.5072,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 774.2779040709138,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "c5",
+   "category": "chat",
+   "utterance": "what's the weather tomorrow",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 642.5600959919393,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0711,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0711,
+      "confidence": 0.9289,
+      "answer_confidence": 0.9289,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 642.5600959919393,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "c6",
+   "category": "chat",
+   "utterance": "set an alarm for 7am",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 625.8324729278684,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1062,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1062,
+      "confidence": 0.8938,
+      "answer_confidence": 0.8938,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 625.8324729278684,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "c7",
+   "category": "chat",
+   "utterance": "who sang Bohemian Rhapsody? just tell me, don't play it",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 755.6767109781504,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1104,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1104,
+      "confidence": 0.8896,
+      "answer_confidence": 0.8896,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 755.6767109781504,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "c8",
+   "category": "chat",
+   "utterance": "I'm bored",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 699.2901358753443,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1246,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1246,
+      "confidence": 0.8754,
+      "answer_confidence": 0.8754,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 699.2901358753443,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "a1",
+   "category": "ambiguous",
+   "utterance": "make it cozy in here",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "cozy"
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     },
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "cozy"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 670.3894352540374,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.201,
+     "raw": {
+      "type": "noul",
+      "noul": 0.201,
+      "confidence": 0.799,
+      "answer_confidence": 0.799,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 670.3894352540374,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "a2",
+   "category": "ambiguous",
+   "utterance": "I'm going to bed",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         2700
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "client_state": {
+        "any": [
+         "pause",
+         "stop"
+        ]
+       }
+      }
+     }
+    ],
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 604.45193387568,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2646,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2646,
+      "confidence": 0.7354,
+      "answer_confidence": 0.7354,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 604.45193387568,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 1,
+   "id": "a3",
+   "category": "multistep",
+   "utterance": "warm up the lights and play something chill",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     },
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "chill",
+         "calm",
+         "relax"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 696.0383509285748,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.205,
+     "raw": {
+      "type": "noul",
+      "noul": 0.205,
+      "confidence": 0.795,
+      "answer_confidence": 0.795,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 696.0383509285748,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "a4",
+   "category": "multistep",
+   "utterance": "play some jazz",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "jazz"
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "jazz"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 698.010478168726,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2353,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2353,
+      "confidence": 0.7647,
+      "answer_confidence": 0.7647,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 698.010478168726,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "a5",
+   "category": "multistep",
+   "utterance": "like this song and then play whatever should come next",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": 1
+      }
+     },
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ],
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": 1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 1350.607748143375,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.7146,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7146,
+      "confidence": 0.7146,
+      "answer_confidence": 0.7146,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 769.2266530357301,
+     "needle": 581.3810951076448
+    },
+    "needle": {
+     "confidence": 0.0944,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 0
+       }
+      }
+     ],
+     "reasoning": "'play whatever should come next' -> play_track_rowid with default 0; 'this song' is context but no track_rowid given",
+     "validation": {
+      "ungrounded": [
+       "play.track_rowid"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 106.2,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "a6",
+   "category": "ambiguous",
+   "utterance": "not this one",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": -1
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "client_state": {
+        "any": [
+         "skip",
+         "next"
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 622.6260620169342,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0754,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0754,
+      "confidence": 0.9246,
+      "answer_confidence": 0.9246,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 622.6260620169342,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 1,
+   "id": "a7",
+   "category": "ambiguous",
+   "utterance": "it's too bright in here",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "brightness": {
+        "between": [
+         0,
+         50
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 715.6649641692638,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0823,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0823,
+      "confidence": 0.9177,
+      "answer_confidence": 0.9177,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 715.6649641692638,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "v1",
+   "category": "music_vibe",
+   "utterance": "play something mellow for dinner",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "mellow",
+         "dinner",
+         "chill",
+         "calm"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 626.8617049790919,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2407,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2407,
+      "confidence": 0.7593,
+      "answer_confidence": 0.7593,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 626.8617049790919,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "v2",
+   "category": "music_vibe",
+   "utterance": "I want some upbeat music to get me going",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "upbeat",
+         "energetic",
+         "energy"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 653.3718570135534,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2142,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2142,
+      "confidence": 0.7858,
+      "answer_confidence": 0.7858,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 653.3718570135534,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "v3",
+   "category": "music_vibe",
+   "utterance": "find me something moody and rainy",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "moody",
+         "rain"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 723.0741330422461,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2277,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2277,
+      "confidence": 0.7723,
+      "answer_confidence": 0.7723,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 723.0741330422461,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "v4",
+   "category": "music_vibe",
+   "utterance": "put on some focus music, five options is plenty",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "focus"
+        ]
+       },
+       "n": 5
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 1153.9099710062146,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.5175,
+     "raw": {
+      "type": "noul",
+      "noul": 0.5175,
+      "confidence": 0.5175,
+      "answer_confidence": 0.5175,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 644.7180681861937,
+     "needle": 509.1919028200209
+    },
+    "needle": {
+     "confidence": 0.0342,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 5
+       }
+      }
+     ],
+     "reasoning": "'focus music' -> track_rowid 5; 'five options' -> required parameter 'required'",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 106.8,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "v5",
+   "category": "music_vibe",
+   "utterance": "something that feels like a sunday morning",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "sunday",
+         "morning"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 570.0465636327863,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1819,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1819,
+      "confidence": 0.8181,
+      "answer_confidence": 0.8181,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 570.0465636327863,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "t1",
+   "category": "music_text",
+   "utterance": "search for Radiohead",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "radiohead"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 568.4731109067798,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1065,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1065,
+      "confidence": 0.8935,
+      "answer_confidence": 0.8935,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 568.4731109067798,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "t2",
+   "category": "music_text",
+   "utterance": "look up the song Clair de Lune",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "clair de lune"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 659.9799199029803,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.096,
+     "raw": {
+      "type": "noul",
+      "noul": 0.096,
+      "confidence": 0.904,
+      "answer_confidence": 0.904,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 659.9799199029803,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "t3",
+   "category": "music_text",
+   "utterance": "find songs by Khruangbin, give me 3",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "khruangbin"
+        ]
+       },
+       "limit": 3
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 642.6405599340796,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1606,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1606,
+      "confidence": 0.8394,
+      "answer_confidence": 0.8394,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 642.6405599340796,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "r1",
+   "category": "recommend",
+   "utterance": "what should play after this one",
+   "gold_outcomes": [
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 632.5156977400184,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1099,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1099,
+      "confidence": 0.8901,
+      "answer_confidence": 0.8901,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 632.5156977400184,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "r2",
+   "category": "recommend",
+   "utterance": "queue up something similar to track 587",
+   "gold_outcomes": [
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 587
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 621.3216609321535,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2155,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2155,
+      "confidence": 0.7845,
+      "answer_confidence": 0.7845,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 621.3216609321535,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "r3",
+   "category": "recommend",
+   "utterance": "give me 4 tracks that follow this song",
+   "gold_outcomes": [
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112,
+       "n": 4
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 839.2648557201028,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1687,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1687,
+      "confidence": 0.8313,
+      "answer_confidence": 0.8313,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 839.2648557201028,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "p1",
+   "category": "play",
+   "utterance": "play track 3112",
+   "gold_outcomes": [
+    [
+     {
+      "name": "play",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "play",
+     "arguments": {
+      "track_rowid": 3112
+     }
+    }
+   ],
+   "latency_ms": 1412.4895888380706,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.9889,
+     "raw": {
+      "type": "noul",
+      "noul": 0.9889,
+      "confidence": 0.9889,
+      "answer_confidence": 0.9889,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 834.615308791399,
+     "needle": 577.8742800466716
+    },
+    "needle": {
+     "confidence": 0.6922,
+     "suppressed": [],
+     "reasoning": "Query 'track 3112' -> track_rowid 3112. No other parameters needed.",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 87.5,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 2,
+   "id": "p2",
+   "category": "play",
+   "utterance": "play song number 9045 please",
+   "gold_outcomes": [
+    [
+     {
+      "name": "play",
+      "args": {
+       "track_rowid": 9045
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "play",
+     "arguments": {
+      "track_rowid": 945
+     }
+    }
+   ],
+   "latency_ms": 1164.0609446913004,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.8718,
+     "raw": {
+      "type": "noul",
+      "noul": 0.8718,
+      "confidence": 0.8718,
+      "answer_confidence": 0.8718,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 617.1281700953841,
+     "needle": 546.9327745959163
+    },
+    "needle": {
+     "confidence": 0.5018,
+     "suppressed": [],
+     "reasoning": "'play song number 9045' -> track_rowid 945; required parameter required.",
+     "validation": {
+      "ungrounded": [
+       "play.track_rowid"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 87.3,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "p3",
+   "category": "play",
+   "utterance": "start track 12",
+   "gold_outcomes": [
+    [
+     {
+      "name": "play",
+      "args": {
+       "track_rowid": 12
+      }
+     }
+    ]
+   ],
+   "pred_calls": [
+    {
+     "name": "play",
+     "arguments": {
+      "track_rowid": 12
+     }
+    }
+   ],
+   "latency_ms": 944.7675063274801,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.6576,
+     "raw": {
+      "type": "noul",
+      "noul": 0.6576,
+      "confidence": 0.6576,
+      "answer_confidence": 0.6576,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 564.2056143842638,
+     "needle": 380.5618919432163
+    },
+    "needle": {
+     "confidence": 0.3515,
+     "suppressed": [],
+     "reasoning": "'start track 12' -> track_rowid 12; no other parameters needed.",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 115.2,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 2,
+   "id": "s1",
+   "category": "state_read",
+   "utterance": "what's playing right now?",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_player_state",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 617.4023160710931,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.4597,
+     "raw": {
+      "type": "noul",
+      "noul": 0.4597,
+      "confidence": 0.5403,
+      "answer_confidence": 0.5403,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 617.4023160710931,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "s2",
+   "category": "state_read",
+   "utterance": "is the music paused?",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_player_state",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 618.3458082377911,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1822,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1822,
+      "confidence": 0.8178,
+      "answer_confidence": 0.8178,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 618.3458082377911,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "s3",
+   "category": "state_read",
+   "utterance": "how far into this song are we",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_player_state",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 621.454946231097,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.23,
+     "raw": {
+      "type": "noul",
+      "noul": 0.23,
+      "confidence": 0.77,
+      "answer_confidence": 0.77,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 621.454946231097,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "w1",
+   "category": "state_write",
+   "utterance": "turn shuffle on",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "shuffle": true
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 1586.3159531727433,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.7709,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7709,
+      "confidence": 0.7709,
+      "answer_confidence": 0.7709,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 607.4728579260409,
+     "needle": 978.8430952467024
+    },
+    "needle": {
+     "confidence": 0.0408,
+     "suppressed": [
+      {
+       "name": "set_player_state",
+       "arguments": {
+        "queue": [
+         0
+        ],
+        "repeat_mode": "shuffle",
+        "client_state": "default"
+       }
+      }
+     ],
+     "reasoning": "'turn shuffle on' -> set_player_state with queue=[0] and repeat_mode='shuffle'.",
+     "validation": {
+      "ungrounded": [
+       "set_player_state.client_state"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 82.0,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "w2",
+   "category": "state_write",
+   "utterance": "set repeat to all",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "repeat_mode": {
+        "any": [
+         "all"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 1853.0462328344584,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.6818,
+     "raw": {
+      "type": "noul",
+      "noul": 0.6818,
+      "confidence": 0.6818,
+      "answer_confidence": 0.6818,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 848.7524120137095,
+     "needle": 1004.2938208207488
+    },
+    "needle": {
+     "confidence": 0.089,
+     "suppressed": [
+      {
+       "name": "set_player_state",
+       "arguments": {
+        "queue": [],
+        "client_state": "",
+        "queue_index": 0,
+        "position_ms": 0,
+        "shuffle": false
+       }
+      }
+     ],
+     "reasoning": "'repeat to all' -> repeat_mode 'off'. No queue or client_state given.",
+     "validation": {
+      "ungrounded": [
+       "set_player_state.queue_index",
+       "set_player_state.position_ms"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 85.3,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "w3",
+   "category": "state_write",
+   "utterance": "pause the music",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "client_state": {
+        "any": [
+         "pause"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 972.4073796533048,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.8347,
+     "raw": {
+      "type": "noul",
+      "noul": 0.8347,
+      "confidence": 0.8347,
+      "answer_confidence": 0.8347,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 600.9876877069473,
+     "needle": 371.4196919463575
+    },
+    "needle": {
+     "confidence": 0.0325,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 3112
+       }
+      }
+     ],
+     "reasoning": "'pause the music' means pause playback -> play with defaults.",
+     "validation": {
+      "ungrounded": [],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 115.6,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "w4",
+   "category": "state_write",
+   "utterance": "jump back to the start of this song",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "position_ms": 0
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 1057.739875279367,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.8824,
+     "raw": {
+      "type": "noul",
+      "noul": 0.8824,
+      "confidence": 0.8824,
+      "answer_confidence": 0.8824,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 574.4711556471884,
+     "needle": 483.26871963217854
+    },
+    "needle": {
+     "confidence": 0.0601,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 10
+       }
+      }
+     ],
+     "reasoning": "'jump back to the start' means continue playback -> play with default track_rowid 10",
+     "validation": {
+      "ungrounded": [
+       "play.track_rowid"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 102.4,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "d1",
+   "category": "dashboard",
+   "utterance": "show me my library dashboard",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_dashboard",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 603.6126930266619,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2692,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2692,
+      "confidence": 0.7308,
+      "answer_confidence": 0.7308,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 603.6126930266619,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "d2",
+   "category": "dashboard",
+   "utterance": "how big is my music library and what have I been listening to",
+   "gold_outcomes": [
+    [
+     {
+      "name": "get_dashboard",
+      "args": {}
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 641.0331130027771,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1702,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1702,
+      "confidence": 0.8298,
+      "answer_confidence": 0.8298,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 641.0331130027771,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "q1",
+   "category": "rate",
+   "utterance": "I love this song",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": 1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 1064.4467193633318,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.7098,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7098,
+      "confidence": 0.7098,
+      "answer_confidence": 0.7098,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 609.8168692551553,
+     "needle": 454.62985010817647
+    },
+    "needle": {
+     "confidence": 0.0949,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 10
+       }
+      }
+     ],
+     "reasoning": "'I love this song' means play the current track. play with default track_rowid 10.",
+     "validation": {
+      "ungrounded": [
+       "play.track_rowid"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 105.8,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "q2",
+   "category": "rate",
+   "utterance": "thumbs down, skip this trash",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": -1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 901.2076482176781,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1927,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1927,
+      "confidence": 0.8073,
+      "answer_confidence": 0.8073,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 901.2076482176781,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "q3",
+   "category": "rate",
+   "utterance": "give track 587 a thumbs up",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 587,
+       "rating": 1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 836.756288073957,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1563,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1563,
+      "confidence": 0.8437,
+      "answer_confidence": 0.8437,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 836.756288073957,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "q4",
+   "category": "rate",
+   "utterance": "I hate track 2001",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 2001,
+       "rating": -1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 708.9658342301846,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.165,
+     "raw": {
+      "type": "noul",
+      "noul": 0.165,
+      "confidence": 0.835,
+      "answer_confidence": 0.835,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 708.9658342301846,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "l1",
+   "category": "light",
+   "utterance": "make the lights warmer",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 606.2675868161023,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0916,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0916,
+      "confidence": 0.9084,
+      "answer_confidence": 0.9084,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 606.2675868161023,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "l2",
+   "category": "light",
+   "utterance": "set the light to 2700 kelvin",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": 2700
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 582.3152922093868,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0903,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0903,
+      "confidence": 0.9097,
+      "answer_confidence": 0.9097,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 582.3152922093868,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "l3",
+   "category": "light",
+   "utterance": "set the lights to 3000K at 40 percent brightness",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": 3000,
+       "brightness": 40
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 573.3590079471469,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1151,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1151,
+      "confidence": 0.8849,
+      "answer_confidence": 0.8849,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 573.3590079471469,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "l4",
+   "category": "light",
+   "utterance": "dim the lights to 20%",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "brightness": 20
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 606.2572947703302,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2434,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2434,
+      "confidence": 0.7566,
+      "answer_confidence": 0.7566,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 606.2572947703302,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "l5",
+   "category": "light",
+   "utterance": "give me cool daylight white",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         5000,
+         6500
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 601.8960848450661,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.3056,
+     "raw": {
+      "type": "noul",
+      "noul": 0.3056,
+      "confidence": 0.6944,
+      "answer_confidence": 0.6944,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 601.8960848450661,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "l6",
+   "category": "light",
+   "utterance": "candle glow please, super dim",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         2200
+        ]
+       },
+       "brightness": {
+        "between": [
+         0,
+         25
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 627.4090399965644,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1305,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1305,
+      "confidence": 0.8695,
+      "answer_confidence": 0.8695,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 627.4090399965644,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "c1",
+   "category": "chat",
+   "utterance": "tell me a joke",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 608.8998131453991,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0967,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0967,
+      "confidence": 0.9033,
+      "answer_confidence": 0.9033,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 608.8998131453991,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 2,
+   "id": "c2",
+   "category": "chat",
+   "utterance": "what's the capital of France?",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 619.0805183723569,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0271,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0271,
+      "confidence": 0.9729,
+      "answer_confidence": 0.9729,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 619.0805183723569,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 2,
+   "id": "c3",
+   "category": "chat",
+   "utterance": "thanks, that was great",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 939.4374126568437,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1152,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1152,
+      "confidence": 0.8848,
+      "answer_confidence": 0.8848,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 939.4374126568437,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 2,
+   "id": "c4",
+   "category": "chat",
+   "utterance": "how are you today",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 766.5181336924434,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.4928,
+     "raw": {
+      "type": "noul",
+      "noul": 0.4928,
+      "confidence": 0.5072,
+      "answer_confidence": 0.5072,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 766.5181336924434,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 2,
+   "id": "c5",
+   "category": "chat",
+   "utterance": "what's the weather tomorrow",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 659.043681807816,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0711,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0711,
+      "confidence": 0.9289,
+      "answer_confidence": 0.9289,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 659.043681807816,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 2,
+   "id": "c6",
+   "category": "chat",
+   "utterance": "set an alarm for 7am",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 613.2806660607457,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1062,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1062,
+      "confidence": 0.8938,
+      "answer_confidence": 0.8938,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 613.2806660607457,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 2,
+   "id": "c7",
+   "category": "chat",
+   "utterance": "who sang Bohemian Rhapsody? just tell me, don't play it",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 746.9636183232069,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1104,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1104,
+      "confidence": 0.8896,
+      "answer_confidence": 0.8896,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 746.9636183232069,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 2,
+   "id": "c8",
+   "category": "chat",
+   "utterance": "I'm bored",
+   "gold_outcomes": [
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 640.4979731887579,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.1246,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1246,
+      "confidence": 0.8754,
+      "answer_confidence": 0.8754,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 640.4979731887579,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 2,
+   "id": "a1",
+   "category": "ambiguous",
+   "utterance": "make it cozy in here",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "cozy"
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     },
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "cozy"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 606.2909197062254,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.201,
+     "raw": {
+      "type": "noul",
+      "noul": 0.201,
+      "confidence": 0.799,
+      "answer_confidence": 0.799,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 606.2909197062254,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "a2",
+   "category": "ambiguous",
+   "utterance": "I'm going to bed",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         2700
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "client_state": {
+        "any": [
+         "pause",
+         "stop"
+        ]
+       }
+      }
+     }
+    ],
+    []
+   ],
+   "pred_calls": [],
+   "latency_ms": 693.4921881183982,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2646,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2646,
+      "confidence": 0.7354,
+      "answer_confidence": 0.7354,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 693.4921881183982,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": true,
+   "name_ok": true,
+   "args_ok": true
+  },
+  {
+   "rep": 2,
+   "id": "a3",
+   "category": "multistep",
+   "utterance": "warm up the lights and play something chill",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     },
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "chill",
+         "calm",
+         "relax"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 672.651578206569,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.205,
+     "raw": {
+      "type": "noul",
+      "noul": 0.205,
+      "confidence": 0.795,
+      "answer_confidence": 0.795,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 672.651578206569,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "a4",
+   "category": "multistep",
+   "utterance": "play some jazz",
+   "gold_outcomes": [
+    [
+     {
+      "name": "search_vibe",
+      "args": {
+       "query": {
+        "any": [
+         "jazz"
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "search_text",
+      "args": {
+       "query": {
+        "any": [
+         "jazz"
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 638.038728851825,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.2353,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2353,
+      "confidence": 0.7647,
+      "answer_confidence": 0.7647,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 638.038728851825,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "a5",
+   "category": "multistep",
+   "utterance": "like this song and then play whatever should come next",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": 1
+      }
+     },
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ],
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": 1
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 1390.69252461195,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.7146,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7146,
+      "confidence": 0.7146,
+      "answer_confidence": 0.7146,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 727.9657968319952,
+     "needle": 662.7267277799547
+    },
+    "needle": {
+     "confidence": 0.0944,
+     "suppressed": [
+      {
+       "name": "play",
+       "arguments": {
+        "track_rowid": 0
+       }
+      }
+     ],
+     "reasoning": "'play whatever should come next' -> play_track_rowid with default 0; 'this song' is context but no track_rowid given",
+     "validation": {
+      "ungrounded": [
+       "play.track_rowid"
+      ],
+      "negation": false
+     },
+     "engine_peak_ram_mb": 2859.1,
+     "decode_tps": 92.9,
+     "tools_offered": [
+      "search_vibe",
+      "search_text",
+      "recommend_next",
+      "play",
+      "get_player_state",
+      "set_player_state",
+      "get_dashboard",
+      "rate",
+      "set_warmth"
+     ]
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "a6",
+   "category": "ambiguous",
+   "utterance": "not this one",
+   "gold_outcomes": [
+    [
+     {
+      "name": "rate",
+      "args": {
+       "track_rowid": 3112,
+       "rating": -1
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_player_state",
+      "args": {
+       "client_state": {
+        "any": [
+         "skip",
+         "next"
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "recommend_next",
+      "args": {
+       "track_rowid": 3112
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 596.7372269369662,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0754,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0754,
+      "confidence": 0.9246,
+      "answer_confidence": 0.9246,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 596.7372269369662,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  },
+  {
+   "rep": 2,
+   "id": "a7",
+   "category": "ambiguous",
+   "utterance": "it's too bright in here",
+   "gold_outcomes": [
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "brightness": {
+        "between": [
+         0,
+         50
+        ]
+       }
+      }
+     }
+    ],
+    [
+     {
+      "name": "set_warmth",
+      "args": {
+       "kelvin": {
+        "between": [
+         1800,
+         3200
+        ]
+       }
+      }
+     }
+    ]
+   ],
+   "pred_calls": [],
+   "latency_ms": 709.9760076962411,
+   "is_first_call_of_process": false,
+   "info": {
+    "laya": {
+     "needs_tool_p": 0.0823,
+     "raw": {
+      "type": "noul",
+      "noul": 0.0823,
+      "confidence": 0.9177,
+      "answer_confidence": 0.9177,
+      "action": {
+       "act_probability": 1.0
+      }
+     }
+    },
+    "stage_ms": {
+     "laya": 709.9760076962411,
+     "needle": 0.0
+    }
+   },
+   "decision_ok": false,
+   "name_ok": false,
+   "args_ok": false
+  }
+ ]
+}
