@@ -1032,7 +1032,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 **Why:** Sets the escalation threshold and the closed-arg switch from evidence, as the spec requires.
 
 ### Task 23: Smoke the full turn path against live services [experiment]
-- [ ] status
+- [x] status
 **Objective:** A recorded transcript of five live turns through the running harness with Jev, the LLM, Muse, and the proxy, plus the resulting decision-log rows.
 **Write-scope:**
 - `harness/scripts/smoke_session.py` (new)
