@@ -604,7 +604,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 ## Phase 1 — Foundation and preflight
 
 ### Task 1: Pin dependencies, add config constants, and make Muse URLs configurable [mechanical]
-- [ ] status
+- [x] status
 **Objective:** `openwakeword` installs and imports in `harness/.venv`, `cadence/config.py` holds every shared constant, and Muse/proxy URLs read environment overrides.
 **Write-scope:**
 - `harness/requirements.txt`

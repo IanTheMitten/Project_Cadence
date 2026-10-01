@@ -5,12 +5,13 @@ GET /play/<track_rowid> -> ffmpeg piping s16le/44100/stereo PCM straight
 through to the response body. The ESP32 firmware streams this directly
 into I2S; no audio decoding happens on the device.
 """
+import os
 import re
 import subprocess
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs
 
-MUSE_BASE = "http://ianshomeserver:8080"
+MUSE_BASE = os.environ.get("CADENCE_MUSE_BASE_URL", "http://ianshomeserver:8080")
 LISTEN_PORT = 8765
 TRACK_PATH_RE = re.compile(r"^/play/(\d+)$")
 
