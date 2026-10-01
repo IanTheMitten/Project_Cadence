@@ -871,7 +871,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 **Why:** Turns structured slots into a queue and keeps Muse's plays honest.
 
 ### Task 15: Write speaker port and plugin tests [test]
-- [ ] status
+- [x] status
 **Objective:** Red tests pin `SpeakerPort` and `SpeakerPlugin` per I15.
 **Write-scope:**
 - `harness/tests/test_speaker.py` (new)
