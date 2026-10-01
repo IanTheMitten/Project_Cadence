@@ -698,7 +698,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 ## Phase 3 — Log, deciders, pipeline
 
 ### Task 5: Write decision-log tests [test]
-- [ ] status
+- [x] status
 **Objective:** Red tests pin `DecisionLog` per I7.
 **Write-scope:**
 - `harness/tests/test_decisionlog.py` (new)
