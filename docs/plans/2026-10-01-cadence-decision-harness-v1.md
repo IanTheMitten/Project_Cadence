@@ -904,7 +904,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 **Why:** Moves playback out of the server into a device plugin with a reusable port.
 
 ### Task 17: Write ack pool, wake gate, listener, and MCP adapter tests [test]
-- [ ] status
+- [x] status
 **Objective:** Red tests pin I16.
 **Write-scope:**
 - `harness/tests/test_acks.py` (new)
