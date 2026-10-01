@@ -632,7 +632,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 **Why:** Every later brief imports these constants and forbids new deps. Muse is reachable only by tailnet address on this host, so URLs must be overridable.
 
 ### Task 2: Prove the live runtime on ianshomeserver [experiment]
-- [ ] status
+- [x] status
 **Objective:** A recorded table showing whether Kokoro, Whisper, openwakeword, Jev (multi-question), Ollama, and Muse each load or answer on this host, with latencies.
 **Write-scope:**
 - `harness/scripts/preflight_v1.py` (new)
