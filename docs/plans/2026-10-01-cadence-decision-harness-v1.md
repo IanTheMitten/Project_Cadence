@@ -1009,7 +1009,7 @@ async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> 
 ## Phase 6 — Live validation and docs
 
 ### Task 22: Replay the golden set against live Jev and calibrate [experiment]
-- [ ] status
+- [x] status
 **Objective:** A recorded table of Jev route accuracy, closed-arg accuracy, confidence distribution, and latency on the v1 catalogue, with a recommended `CONF_MIN` and `JEV_CLOSED_ARGS`.
 **Write-scope:**
 - `harness/scripts/golden_replay.py` (new)
