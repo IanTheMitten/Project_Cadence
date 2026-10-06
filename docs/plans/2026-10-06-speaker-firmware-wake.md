@@ -60,7 +60,7 @@ Firmware build: `bash -c 'source ~/esp/esp-idf/export.sh >/dev/null 2>&1 && cd v
 Full check: `cd harness && .venv/bin/python -m pytest -q` and `bash -c 'source ~/esp/esp-idf/export.sh >/dev/null 2>&1 && cd voice_chat && idf.py build >/dev/null && echo BUILD_OK'`.
 
 ### Task 1: Split voice_chat config into committed defaults plus gitignored local override [mechanical]
-- [ ] status
+- [x] status
 **Objective:** `voice_chat/` builds from a committed `sdkconfig.defaults` (8 MB flash, quad PSRAM, WS URL) with WiFi creds read from an optional gitignored `sdkconfig.defaults.local`.
 **Write-scope:**
 `voice_chat/CMakeLists.txt`
@@ -123,7 +123,7 @@ CONFIG_VOICE_WS_URL="ws://ianshomeserver:8768/session"
 **Why:** Spec decision "CLAUDE.md voice_chat section is corrected in phase 1" (`docs/specs/2026-10-06-speaker-firmware-wake.md:134-139`); anyone flashing from the stale text points the board at the wrong server.
 
 ### Task 3: Preflight the bench artifacts (microWakeWord, openWakeWord, Whisper models)
-- [ ] status
+- [x] status
 **Objective:** A preflight script proves pymicro-wakeword, the stock models, and the three Whisper models load in `harness/.venv`; its output is committed.
 **Write-scope:**
 `harness/requirements.txt`
@@ -152,7 +152,7 @@ CONFIG_VOICE_WS_URL="ws://ianshomeserver:8768/session"
 Full check: `cd harness && .venv/bin/python -m pytest -q`.
 
 ### Task 4: Write red tests for turn timing and the bench recorder [test]
-- [ ] status
+- [x] status
 **Objective:** 17 new tests encode the timing and recorder contract and fail against the current tree.
 **Write-scope:**
 `harness/tests/test_turntiming.py` (new)
