@@ -225,7 +225,7 @@ Full check: `cd harness && .venv/bin/python -m pytest -q`.
 **Why:** Spec decision "Bench recording handling" and error-handling rule for an unwritable dir (`docs/specs/2026-10-06-speaker-firmware-wake.md:113-118`, `:159`).
 
 ### Task 7: Wire timing and recording into the /session server
-- [ ] status
+- [x] status
 **Objective:** Every turn prints one `turn_timing` stderr line and logs stage durations; audio sessions record to `runtime.bench_dir` when set.
 **Write-scope:** `harness/cadence/server.py`
 **Read-context:** `harness/cadence/server.py:47-159`; `harness/cadence/turntiming.py` (from Task 5); `harness/cadence/benchrec.py` (from Task 6); `harness/tests/test_server.py` (from Task 4)
@@ -277,7 +277,7 @@ Full check: `cd harness && .venv/bin/python -m pytest -q`.
 **Why:** Spec: bench scoring math is unit-tested on synthetic data (`docs/specs/2026-10-06-speaker-firmware-wake.md:165`). These cases encode the plan-header scoring rules (refractory, window, 2x-with-floor, 1e-9 tolerances).
 
 ### Task 9: Implement the cadence.wakebench scoring library
-- [ ] status
+- [x] status
 **Objective:** `cadence/wakebench.py` implements detection, hit rate, false wakes, threshold sweep, win rule, WER, ASR pick, and bench file loaders.
 **Write-scope:** `harness/cadence/wakebench.py` (new)
 **Read-context:** `harness/tests/test_wakebench.py` (from Task 8); `harness/cadence/benchrec.py` (from Task 6)
