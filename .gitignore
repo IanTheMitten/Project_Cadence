@@ -2,6 +2,7 @@
 build/
 mic_test/build/
 voice_chat/build/
+voice_chat/managed_components/
 
 # Generated, machine-specific full configs (see CLAUDE.md)
 sdkconfig
@@ -11,15 +12,14 @@ mic_test/sdkconfig.old
 voice_chat/sdkconfig
 voice_chat/sdkconfig.old
 
-# Contains the WiFi password in plaintext. Excluded until credentials are
-# split out into a local override — see docs note. Once sdkconfig.defaults
-# carries placeholders only, un-ignore it and ignore the override instead.
+# Contain the WiFi password in plaintext. voice_chat/ commits its sdkconfig.defaults
+# (no secrets) and keeps credentials in the ignored sdkconfig.defaults.local.
 sdkconfig.defaults
 mic_test/sdkconfig.defaults
-voice_chat/sdkconfig.defaults
 sdkconfig.defaults.local
 mic_test/sdkconfig.defaults.local
 voice_chat/sdkconfig.defaults.local
+!voice_chat/sdkconfig.defaults
 
 # Python
 tools/.venv/
