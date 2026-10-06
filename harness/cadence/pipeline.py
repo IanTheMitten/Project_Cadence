@@ -126,7 +126,7 @@ class Pipeline:
         if timer is not None:
             latency.update(timer.durations())
         try:
-            new_id =self._log.record(event, ctx, final, jev_d, results, latency)
+            new_id = self._log.record(event, ctx, final, jev_d, results, latency)
             if prev:
                 self._log.label(prev["id"], "wrong", "spoken_correction", corrected_by=new_id)
         except Exception as exc:
