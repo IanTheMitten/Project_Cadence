@@ -178,7 +178,7 @@ Full check: `cd harness && .venv/bin/python -m pytest -q`.
 **Why:** Spec testing strategy: red tests first for timing stamps and an off-by-default recorder (`docs/specs/2026-10-06-speaker-firmware-wake.md:164`). Signatures here are the binding contract for Tasks 5–7.
 
 ### Task 5: Implement TurnTimer, Listener.wake_at, and Pipeline timer stamps
-- [ ] status
+- [x] status
 **Objective:** `TurnTimer` exists, `Listener` records the wake instant, and `Pipeline.handle` marks `decided` and merges timer durations into `latency_ms`.
 **Write-scope:**
 `harness/cadence/turntiming.py` (new)
@@ -199,7 +199,7 @@ Full check: `cd harness && .venv/bin/python -m pytest -q`.
 **Why:** Spec latency decision: per-stage monotonic stamps, written to `latency_ms` where the stage exists at record time (`docs/specs/2026-10-06-speaker-firmware-wake.md:110`).
 
 ### Task 6: Implement BenchRecorder, CADENCE_BENCH_RECORD_DIR, and Runtime.bench_dir
-- [ ] status
+- [x] status
 **Objective:** An off-by-default recorder writes session mic PCM plus per-utterance PCM under a configured directory, never crashing a session.
 **Write-scope:**
 `harness/cadence/benchrec.py` (new)
@@ -250,7 +250,7 @@ Full check: `cd harness && .venv/bin/python -m pytest -q`.
 Full check: `cd harness && .venv/bin/python -m pytest -q`.
 
 ### Task 8: Write red tests for the wake/ASR bench scoring library [test]
-- [ ] status
+- [x] status
 **Objective:** 22 tests pin the scoring math and file loaders of `cadence.wakebench` and fail against the current tree.
 **Write-scope:** `harness/tests/test_wakebench.py` (new)
 **Read-context:** `harness/tests/test_listener.py:1-20` (style); `harness/tests/test_pipeline.py:1-20` (imports style)
