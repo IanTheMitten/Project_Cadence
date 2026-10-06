@@ -297,7 +297,7 @@ Full check: `cd harness && .venv/bin/python -m pytest -q`.
 **Why:** Spec bench win rule and ASR pick rule (`docs/specs/2026-10-06-speaker-firmware-wake.md:57-62`, `:110`), kept pure so replay scripts stay thin.
 
 ### Task 10: Add the guided wake/command labelling script
-- [ ] status
+- [x] status
 **Objective:** `scripts/wake_guide.py` prompts the user through wake attempts or commands and writes a `labels-<ms>.jsonl` file the bench loaders read.
 **Write-scope:** `harness/scripts/wake_guide.py` (new)
 **Read-context:** `harness/scripts/smoke_session.py:1-30` (script style)
