@@ -17,6 +17,7 @@ class Listener:
         self._clock = clock
         self._listening = False
         self._deadline = 0.0
+        self.wake_at: float | None = None
         self._vad = vad_factory() if gate is None else None
 
     @property
@@ -29,7 +30,9 @@ class Listener:
         if not self._listening:
             if self._gate.feed(pcm):
                 self._listening = True
-                self._deadline = self._clock() + self._window_s
+                now = self._clock()
+                self.wake_at = now
+                self._deadline = now + self._window_s
                 self._vad = self._vad_factory()
             return []
         if self._clock() > self._deadline:

@@ -12,6 +12,7 @@ from cadence.decisionlog import DecisionLog
 from cadence.events import Decision, Event
 from cadence.executor import Executor
 from cadence.livecontext import LiveContext
+from cadence.turntiming import TurnTimer
 
 UNAVAILABLE_SAY = "I can't reach my brain right now."
 NOTHING_SAY = "I'm not sure what to do with that."
@@ -48,7 +49,7 @@ class Pipeline:
         self._window = correction_window_s
         self._clock = clock
 
-    async def handle(self, event: Event, out: TurnOutput) -> Decision:
+    async def handle(self, event: Event, out: TurnOutput, timer: TurnTimer | None = None) -> Decision:
         t0 = time.perf_counter()
         latency: dict[str, float] = {}
         ctx = self._context.snapshot(event)
@@ -105,6 +106,9 @@ class Pipeline:
                 final = Decision("none", None, [], escalation=escalation)
             latency["llm"] = (time.perf_counter() - t) * 1000
 
+        if timer is not None:
+            timer.mark("decided")
+
         results = []
         if not unavailable:
             t = time.perf_counter()
@@ -119,8 +123,10 @@ class Pipeline:
                 await out.say(NOTHING_SAY)
 
         latency["total"] = (time.perf_counter() - t0) * 1000
+        if timer is not None:
+            latency.update(timer.durations())
         try:
-            new_id = self._log.record(event, ctx, final, jev_d, results, latency)
+            new_id =self._log.record(event, ctx, final, jev_d, results, latency)
             if prev:
                 self._log.label(prev["id"], "wrong", "spoken_correction", corrected_by=new_id)
         except Exception as exc:
