@@ -13,14 +13,17 @@ cheap and side-effect-free.
 
 import asyncio
 import json
+import sys
 import time
 
 from fastapi import FastAPI, WebSocket
 
 from cadence.audio.chunker import SentenceChunker
+from cadence.benchrec import BenchRecorder
 from cadence.events import utterance
 from cadence.plugins.speaker import SpeakerPort
 from cadence.session import Session, SessionCaps, SessionRegistry
+from cadence.turntiming import TurnTimer
 from cadence.wiring import Runtime
 
 app = FastAPI()
@@ -45,16 +48,28 @@ def get_runtime() -> Runtime:
 
 
 class SessionOutput:
-    def __init__(self, session: Session, port: SpeakerPort | None, runtime: Runtime) -> None:
+    def __init__(
+        self,
+        session: Session,
+        port: SpeakerPort | None,
+        runtime: Runtime,
+        timer: TurnTimer | None = None,
+    ) -> None:
         self._session = session
         self._port = port
         self._runtime = runtime
+        self._timer = timer
+
+    def _mark_audio(self) -> None:
+        if self._timer is not None:
+            self._timer.mark("first_audio")
 
     async def ack(self, category: str) -> None:
         if self._port is None:
             return
         clip = self._runtime.acks.pick(category)
         if clip is not None:
+            self._mark_audio()
             await self._port.speak(clip)
 
     async def say(self, text: str) -> None:
@@ -62,7 +77,9 @@ class SessionOutput:
         sentences = chunker.feed(text) + chunker.flush()
         for sentence in sentences:
             if self._port is not None and self._session.caps.audio_out and self._runtime.tts is not None:
-                await self._port.speak(self._runtime.tts(sentence))
+                pcm = self._runtime.tts(sentence)
+                self._mark_audio()
+                await self._port.speak(pcm)
             else:
                 await self._session.send_text(json.dumps({"type": "text", "content": sentence}))
 
@@ -107,6 +124,7 @@ async def session_endpoint(ws: WebSocket) -> None:
         port = SpeakerPort(send_audio)
         runtime.ports[client_id] = port
     listener = runtime.listener_factory() if session.needs_asr else None
+    recorder = BenchRecorder.open(runtime.bench_dir, client_id) if runtime.bench_dir and caps.audio_in else None
 
     try:
         while True:
@@ -117,13 +135,22 @@ async def session_endpoint(ws: WebSocket) -> None:
 
             data = message.get("bytes")
             if data is not None:
+                if recorder is not None:
+                    recorder.write(data)
                 if listener is None or runtime.asr is None:
                     continue
                 for pcm in listener.feed(data):
+                    timer = TurnTimer()
+                    if listener.wake_at is not None:
+                        timer.mark("wake", at=listener.wake_at)
+                    timer.mark("speech_end")
+                    if recorder is not None:
+                        recorder.save_utterance(pcm)
                     text = runtime.asr(pcm)
+                    timer.mark("asr_done")
                     if not text:
                         continue
-                    await handle_text(session, port, text)
+                    await handle_text(session, port, text, timer=timer)
                 continue
 
             text_frame = message.get("text")
@@ -138,6 +165,8 @@ async def session_endpoint(ws: WebSocket) -> None:
                 if content:
                     await handle_text(session, port, content)
     finally:
+        if recorder is not None:
+            recorder.close()
         REGISTRY.remove(client_id)
         runtime.ports.pop(client_id, None)
         runtime.registry.set_online(client_id, False)
@@ -145,15 +174,22 @@ async def session_endpoint(ws: WebSocket) -> None:
             await port.stop("lost")
 
 
-async def handle_text(session: Session, port: SpeakerPort | None, text: str) -> None:
+async def handle_text(
+    session: Session, port: SpeakerPort | None, text: str, timer: TurnTimer | None = None
+) -> None:
+    if timer is None:
+        timer = TurnTimer()
+    timer.mark("turn_start")
     runtime = get_runtime()
     device = runtime.registry.get(session.client_id)
     event = utterance(session.client_id, device.room if device else None, text)
-    out = SessionOutput(session, port, runtime)
+    out = SessionOutput(session, port, runtime, timer)
     await session.send_text(json.dumps({"type": "turn_start"}))
     async with TURN_LOCK:
         try:
-            await runtime.pipeline.handle(event, out)
+            await runtime.pipeline.handle(event, out, timer=timer)
         except Exception as exc:
             await session.send_text(json.dumps({"type": "error", "message": str(exc)}))
+    timer.mark("turn_end")
+    print(timer.log_line(session.client_id), file=sys.stderr, flush=True)
     await session.send_text(json.dumps({"type": "turn_end"}))
