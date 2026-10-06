@@ -317,7 +317,7 @@ Full check: `cd harness && .venv/bin/python -m pytest -q`.
 **Why:** Spec data flow: guided script prompts and writes label timestamps next to the audio (`docs/specs/2026-10-06-speaker-firmware-wake.md:149`).
 
 ### Task 11: Add the wake replay bench that writes docs/preflight/wake-bench.md
-- [ ] status
+- [x] status
 **Objective:** `scripts/wake_bench.py` replays recordings through openWakeWord and microWakeWord, applies the win rule, and writes the report; `--selftest` proves the pipeline end to end.
 **Write-scope:** `harness/scripts/wake_bench.py` (new)
 **Read-context:** `harness/cadence/wakebench.py` (from Task 9); `harness/scripts/preflight_wake_bench.py` (from Task 3); `harness/cadence/audio/wakeword.py:9-16`
@@ -337,7 +337,7 @@ Full check: `cd harness && .venv/bin/python -m pytest -q`.
 **Why:** Spec decision "Wake site is decided by a replay bench" — same audio through both engines, report applies the rule mechanically (`docs/specs/2026-10-06-speaker-firmware-wake.md:50-62`).
 
 ### Task 12: Add the ASR bench and make Asr model/beam configurable
-- [ ] status
+- [x] status
 **Objective:** `scripts/asr_bench.py` times six Whisper configs on recorded command utterances and writes the pick per the 2-point WER rule; `Asr` accepts model and beam.
 **Write-scope:**
 `harness/scripts/asr_bench.py` (new)

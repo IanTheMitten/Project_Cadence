@@ -9,8 +9,9 @@ def _pcm16_bytes_to_float32(pcm: bytes) -> np.ndarray:
 
 
 class Asr:
-    def __init__(self):
-        self.model = WhisperModel("small.en", device="cpu", compute_type="int8")
+    def __init__(self, model_name: str = "small.en", beam_size: int = 5):
+        self.model = WhisperModel(model_name, device="cpu", compute_type="int8")
+        self.beam_size = beam_size
 
     def transcribe(self, pcm: bytes) -> str:
         audio = _pcm16_bytes_to_float32(pcm)
@@ -19,7 +20,7 @@ class Asr:
         # second, per-segment guard against Whisper hallucinating filler
         # text ("Thank you.", "Thanks for watching!") on noise it still
         # decided to transcribe.
-        segments, _info = self.model.transcribe(audio, beam_size=5, vad_filter=True)
+        segments, _info = self.model.transcribe(audio, beam_size=self.beam_size, vad_filter=True)
         segments = list(segments)
         text = "".join(
             seg.text for seg in segments if seg.no_speech_prob < NO_SPEECH_PROB_MAX
