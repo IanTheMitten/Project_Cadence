@@ -41,6 +41,8 @@ Environment must be sourced once per shell (ESP-IDF lives at `~/esp/esp-idf`, v5
 source ~/esp/esp-idf/export.sh
 ```
 
+On Linux, cmake and ninja come from `python ~/esp/esp-idf/tools/idf_tools.py install cmake ninja` (run after sourcing `export.sh`).
+
 From inside any project directory (root, `mic_test/`, or `voice_chat/`):
 
 ```
@@ -71,26 +73,24 @@ Transcodes tracks from a Muse library server (`MUSE_BASE = http://ianshomeserver
 
 `voice_chat/main/voice_chat.c` runs the root project's speaker TX path and `mic_test`'s mic
 RX path in the same firmware image (different I2S peripherals/pins, no conflict — see the pin
-map below), plus two network tasks: `speak_stream_task` (a `while(1)` version of the root
-project's `http_stream_task`, GETting `CONFIG_VOICE_SPEAK_URL` in a loop — one GET per
-assistant turn) and `mic_upload_task` (a raw TCP socket streaming 16-bit mic PCM to
-`CONFIG_VOICE_HOST_IP:CONFIG_VOICE_MIC_PORT`, reconnecting on failure).
+map below). It is the firmware client of the harness's `/session` WebSocket. `app_main` joins
+WiFi as a station (blocks until an IP is obtained), then starts three tasks: `i2s_drain_task`
+(pulls from the 64 KB `s_audio_ring` and writes to the I2S TX channel), `ws_client_task` (opens
+the `esp_websocket_client` to `CONFIG_VOICE_WS_URL`; the client reconnects on its own), and
+`mic_ws_task` (reads the mic and uploads it).
 
-`tools/voice_chat_host.py` is the companion server (like `tools/muse_proxy.py`, but not
-related to it — run separately, not started by the firmware): VAD (`webrtcvad`) segments the
-mic stream into utterances, `faster-whisper` transcribes them, `mlx_lm` streams a reply from a
-small local model, a sentence chunker (ported from
-`~/Documents/Projects/lumi`'s `crates/cadence-gateway/src/voice/chunker.rs`) cuts the stream
-into sentences as they complete, and Kokoro (`kokoro-onnx`) synthesizes and streams each one
-back over `GET /speak_stream` as soon as it's ready — so the board can start talking before
-the full reply has finished generating. Setup and model-file download steps are in the
-docstring at the top of `tools/voice_chat_host.py`.
+On connect the board sends a text hello frame:
+`{"type":"hello","client_id":<CONFIG_VOICE_CLIENT_ID>,"caps":["audio_in","audio_out"]}`.
+While connected, `mic_ws_task` sends binary frames continuously: 16 kHz s16le mono, 256
+samples per frame (32-bit I2S samples shifted `>> 14`). Binary frames from the server are
+44.1 kHz s16le stereo PCM and go into `s_audio_ring`. Text frames from the server
+(`turn_start`, `turn_end`, `text`, `error`) are only logged (`ws text: ...`); the firmware
+takes no other action on them.
 
-No real echo cancellation: instead `tools/voice_chat_host.py` gates the mic off (VAD skipped,
-frames dropped) for the estimated duration of the board's own playback after each turn, so it
-can't transcribe itself. This surfaced as a real problem during testing — the assistant kept
-replying to its own speech — before the mute was added; it's a blunt mitigation, not real AEC,
-so a loud enough echo bleeding past the mute window is still possible.
+The server is the harness: run `python -m cadence` from `harness/` (`/session` on port 8768).
+It does the wake word ("hey jarvis") server-side, then VAD and ASR. There is no echo
+cancellation; the harness ducks music under speech. `tools/voice_chat_host.py` is the
+pre-harness server and is not used by this firmware.
 
 ## I2S pin map
 
@@ -109,4 +109,11 @@ INMP441 `L/R` pin is tied to GND (selects left channel — matches `I2S_STD_SLOT
 
 ## Config
 
-WiFi SSID/password and the proxy URL are ESP-IDF Kconfig options (`main/Kconfig.projbuild`, under menu "Muse Speaker") with defaults baked into `sdkconfig.defaults`. `sdkconfig` and `sdkconfig.old` are the generated, machine-specific full configs — `sdkconfig.defaults` is the one meant to be hand-edited/committed. Note the WiFi password currently sits in plaintext in `sdkconfig.defaults`. `voice_chat/` has its own equivalent menu ("Voice Chat", in `voice_chat/main/Kconfig.projbuild`) with `VOICE_WIFI_SSID`/`VOICE_WIFI_PASSWORD`/`VOICE_HOST_IP`/`VOICE_MIC_PORT`/`VOICE_SPEAK_URL`.
+WiFi SSID/password and the proxy URL are ESP-IDF Kconfig options (`main/Kconfig.projbuild`, under menu "Muse Speaker") with defaults baked into `sdkconfig.defaults`. `sdkconfig` and `sdkconfig.old` are the generated, machine-specific full configs — `sdkconfig.defaults` is the one meant to be hand-edited/committed. Note the WiFi password currently sits in plaintext in `sdkconfig.defaults`. `voice_chat/` has its own menu ("Voice Chat", in `voice_chat/main/Kconfig.projbuild`) with options `VOICE_WIFI_SSID`, `VOICE_WIFI_PASSWORD`, `VOICE_WS_URL`, `VOICE_CLIENT_ID`. The committed `voice_chat/sdkconfig.defaults` sets 8 MB flash, quad PSRAM, and the WS URL `ws://ianshomeserver:8768/session`. WiFi credentials live in the gitignored `voice_chat/sdkconfig.defaults.local`, which a fresh clone must create by hand:
+
+```
+CONFIG_VOICE_WIFI_SSID="your-ssid"
+CONFIG_VOICE_WIFI_PASSWORD="your-password"
+```
+
+`sdkconfig.defaults.local` may also override `CONFIG_VOICE_WS_URL`. Defaults apply only when `sdkconfig` is generated, so run `rm voice_chat/sdkconfig` after editing either file.

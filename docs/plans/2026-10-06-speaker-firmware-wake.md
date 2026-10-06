@@ -105,7 +105,7 @@ CONFIG_VOICE_WS_URL="ws://ianshomeserver:8768/session"
 **Why:** Spec decision "Board config and secrets" (`docs/specs/2026-10-06-speaker-firmware-wake.md:120-125`). Build must pass without the local file so executors and fresh clones can build.
 
 ### Task 2: Rewrite CLAUDE.md voice_chat section to the /session WebSocket client [docs]
-- [ ] status
+- [x] status
 **Objective:** CLAUDE.md describes the current `voice_chat/` firmware (WebSocket `/session` client) and its config files, with no pre-harness HTTP/TCP facts left.
 **Write-scope:** `CLAUDE.md`
 **Read-context:** `CLAUDE.md:36-54`; `CLAUDE.md:70-93`; `CLAUDE.md:110-112`; `voice_chat/main/voice_chat.c:124-221`; `voice_chat/main/Kconfig.projbuild:1-32`; `voice_chat/CMakeLists.txt` (from Task 1); `voice_chat/sdkconfig.defaults` (from Task 1); `harness/cadence/server.py:70-159`
