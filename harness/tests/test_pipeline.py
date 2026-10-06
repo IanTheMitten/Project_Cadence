@@ -274,3 +274,14 @@ async def test_latency_has_jev_and_total(tmp_path):
     latency = log.recent(1)[0]["latency_ms"]
     assert "jev" in latency
     assert "total" in latency
+
+
+async def test_timer_marks_decided_and_latency_has_decide(tmp_path):
+    from cadence.turntiming import TurnTimer
+
+    pipe, log, _ = _pipeline(tmp_path, ScriptedDecider(_jev("x.do", [DO_CALL])), ScriptedDecider())
+    timer = TurnTimer(clock=iter([1.0, 1.5]).__next__)
+    timer.mark("turn_start")
+    await pipe.handle(_event(), FakeOut(), timer=timer)
+    assert timer.stamps["decided"] == 1.5
+    assert log.recent(1)[0]["latency_ms"]["decide"] == 500.0

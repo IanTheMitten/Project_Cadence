@@ -112,3 +112,17 @@ def test_listener_window_expiry_returns_to_idle():
     now[0] = 5.1
     assert listener.feed(b"x") == []
     assert listener.listening is False
+
+
+def test_listener_wake_at_set_on_gate_fire():
+    gate = FakeGate()
+    listener = Listener(gate, vad_factory=lambda: FakeVad(), clock=lambda: 42.0)
+    gate.fire = True
+    listener.feed(b"x")
+    assert listener.wake_at == 42.0
+
+
+def test_listener_wake_at_none_without_gate():
+    listener = Listener(None, vad_factory=lambda: FakeVad())
+    listener.feed(b"x")
+    assert listener.wake_at is None

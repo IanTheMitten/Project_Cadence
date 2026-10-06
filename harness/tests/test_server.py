@@ -18,6 +18,7 @@ from cadence.pipeline import Pipeline
 from cadence.plugins.base import Result
 from cadence.plugins.registry import Device, DeviceRegistry
 from cadence.wiring import Runtime
+from tests.test_listener import FakeVad
 from tests.test_pipeline import DO_CALL, FakePlugin, ScriptedDecider, _jev
 
 HELLO = {"type": "hello", "client_id": "speaker-1", "caps": ["text_in", "text_out"]}
@@ -80,7 +81,7 @@ def test_device_online_during_session_offline_after(rt):
 
 
 def test_pipeline_error_then_turn_end(rt):
-    async def boom(event, out):
+    async def boom(event, out, timer=None):
         raise RuntimeError("boom")
 
     rt.pipeline.handle = boom
@@ -105,3 +106,48 @@ def test_import_does_not_build_runtime(monkeypatch):
 
     monkeypatch.setattr(cadence.wiring, "build_runtime", boom)
     importlib.reload(server)
+
+
+AUDIO_HELLO = {"type": "hello", "client_id": "speaker-1", "caps": ["audio_in", "text_out"]}
+
+
+def test_audio_turn_logs_timing(rt, capsys):
+    rt.asr = lambda pcm: "do it"
+    rt.listener_factory = lambda: Listener(None, vad_factory=lambda: FakeVad([b"\x00\x00" * 8000]))
+    with TestClient(server.app).websocket_connect("/session") as ws:
+        _hello(ws, AUDIO_HELLO)
+        ws.send_bytes(b"\x00\x00" * 160)
+        assert _recv(ws) == {"type": "turn_start"}
+        assert _recv(ws) == {"type": "text", "content": "done"}
+        assert _recv(ws) == {"type": "turn_end"}
+    lines = [l for l in capsys.readouterr().err.splitlines() if l.startswith("turn_timing ")]
+    payload = json.loads(lines[0][len("turn_timing "):])
+    assert payload["client_id"] == "speaker-1"
+    assert {"asr", "decide", "turn"} <= payload["durations_ms"].keys()
+    latency = rt.log.export()[0]["latency_ms"]
+    assert "asr" in latency
+    assert "decide" in latency
+
+
+def test_bench_recorder_writes_session_audio(rt, tmp_path):
+    bench = tmp_path / "rec"
+    bench.mkdir()
+    rt.bench_dir = str(bench)
+    rt.asr = lambda pcm: "do it"
+    rt.listener_factory = lambda: Listener(None, vad_factory=lambda: FakeVad([b"\x01\x00" * 8000]))
+    with TestClient(server.app).websocket_connect("/session") as ws:
+        _hello(ws, AUDIO_HELLO)
+        ws.send_bytes(b"\x01\x00" * 160)
+        for _ in range(3):
+            _recv(ws)
+    pcms = list(bench.glob("speaker-1-*.pcm"))
+    assert len(pcms) == 1
+    assert pcms[0].read_bytes() == b"\x01\x00" * 160
+    assert pcms[0].with_suffix(".json").exists()
+    utts = list(bench.glob("utt-speaker-1-*.pcm"))
+    assert len(utts) == 1
+    assert utts[0].read_bytes() == b"\x01\x00" * 8000
+
+
+def test_runtime_bench_dir_defaults_none(rt):
+    assert rt.bench_dir is None
