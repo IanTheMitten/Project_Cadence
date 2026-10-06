@@ -12,8 +12,8 @@ from cadence.acks import AckPool
 from cadence.audio.listener import Listener
 from cadence.audio.wakeword import WakeGate
 from cadence.catalogue import Catalogue
-from cadence.config import (ACK_DIR, DB_PATH, DEVICES_PATH, MUSE_BASE_URL, MUSE_PROXY_URL,
-                            WAKE_ENABLED)
+from cadence.config import (ACK_DIR, BENCH_RECORD_DIR, DB_PATH, DEVICES_PATH, MUSE_BASE_URL,
+                            MUSE_PROXY_URL, WAKE_ENABLED)
 from cadence.context import RollingContext
 from cadence.deciders.base import DeciderUnavailable, UnavailableDecider
 from cadence.deciders.jev import JevDecider, load_api_key
@@ -39,6 +39,7 @@ class Runtime:
     tts: Callable[[str], bytes] | None       # sentence -> speaker PCM
     asr: Callable[[bytes], str] | None       # mic PCM -> text
     listener_factory: Callable[[], Listener]
+    bench_dir: str | None = None
 
 
 def build_runtime() -> Runtime:
@@ -84,4 +85,4 @@ def build_runtime() -> Runtime:
         return Listener(WakeGate() if WAKE_ENABLED else None)
 
     return Runtime(registry=registry, ports=ports, music=music, pipeline=pipeline, acks=acks,
-                   tts=tts, asr=asr, listener_factory=listener_factory)
+                   tts=tts, asr=asr, listener_factory=listener_factory, bench_dir=BENCH_RECORD_DIR)
