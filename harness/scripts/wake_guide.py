@@ -4,8 +4,10 @@
 Run from harness/. See docs/specs/2026-10-06-speaker-firmware-wake.md.
 """
 import argparse
+import glob
 import json
 import os
+import sys
 import time
 
 COMMANDS = [
@@ -43,7 +45,12 @@ def main() -> int:
 
     f = None
     if not dry:
-        os.makedirs(args.dir, exist_ok=True)
+        if not os.path.isdir(args.dir):
+            print(f"wake_guide: {args.dir!r} does not exist; mkdir it and start the harness with CADENCE_BENCH_RECORD_DIR", file=sys.stderr)
+            return 1
+        if not glob.glob(os.path.join(args.dir, "*.json")):
+            print(f"wake_guide: no recorder session in {args.dir!r}; is the harness running with CADENCE_BENCH_RECORD_DIR and the board connected?", file=sys.stderr)
+            return 1
         f = open(os.path.join(args.dir, f"labels-{int(time.time() * 1000)}.jsonl"), "w")
 
     def write(obj):
