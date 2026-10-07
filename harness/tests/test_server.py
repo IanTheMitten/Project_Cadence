@@ -151,3 +151,26 @@ def test_bench_recorder_writes_session_audio(rt, tmp_path):
 
 def test_runtime_bench_dir_defaults_none(rt):
     assert rt.bench_dir is None
+
+
+def test_stale_session_cleanup_does_not_unregister_newer_one(rt):
+    # The board reconnects after any hiccup; the old connection can finish closing after the
+    # new one registered. Its cleanup must not mark the live session offline.
+    client = TestClient(server.app)
+    old = client.websocket_connect("/session")
+    ws_old = old.__enter__()
+    _hello(ws_old)
+    ws_old.send_text(json.dumps({"type": "text", "content": "do it"}))
+    for _ in range(3):
+        _recv(ws_old)
+    with client.websocket_connect("/session") as ws_new:
+        _hello(ws_new)
+        ws_new.send_text(json.dumps({"type": "text", "content": "do it"}))
+        for _ in range(3):
+            _recv(ws_new)
+        old.__exit__(None, None, None)  # old connection finishes closing while the new one is live
+        ws_new.send_text(json.dumps({"type": "text", "content": "do it"}))
+        for _ in range(3):
+            _recv(ws_new)
+        assert rt.registry.get("speaker-1").online is True
+        assert server.REGISTRY.get("speaker-1") is not None

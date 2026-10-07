@@ -77,7 +77,7 @@ class SessionOutput:
         sentences = chunker.feed(text) + chunker.flush()
         for sentence in sentences:
             if self._port is not None and self._session.caps.audio_out and self._runtime.tts is not None:
-                pcm = self._runtime.tts(sentence)
+                pcm = await asyncio.to_thread(self._runtime.tts, sentence)
                 self._mark_audio()
                 await self._port.speak(pcm)
             else:
@@ -126,6 +126,28 @@ async def session_endpoint(ws: WebSocket) -> None:
     listener = runtime.listener_factory() if session.needs_asr else None
     recorder = BenchRecorder.open(runtime.bench_dir, client_id) if runtime.bench_dir and caps.audio_in else None
 
+    # Turns run as tasks so this loop keeps reading the socket (ping/pong, mic frames)
+    # while ASR, TTS and the pipeline work; otherwise the board's sends back up.
+    turns: set[asyncio.Task] = set()
+
+    def spawn(coro) -> None:
+        task = asyncio.create_task(_guard(coro))
+        turns.add(task)
+        task.add_done_callback(turns.discard)
+
+    async def audio_turns(utterances: list[bytes], listener_wake_at) -> None:
+        for pcm in utterances:
+            timer = TurnTimer()
+            if listener_wake_at is not None:
+                timer.mark("wake", at=listener_wake_at)
+            timer.mark("speech_end")
+            if recorder is not None:
+                recorder.save_utterance(pcm)
+            text = await asyncio.to_thread(runtime.asr, pcm)
+            timer.mark("asr_done")
+            if text:
+                await handle_text(session, port, text, timer=timer)
+
     try:
         while True:
             message = await ws.receive()
@@ -137,20 +159,11 @@ async def session_endpoint(ws: WebSocket) -> None:
             if data is not None:
                 if recorder is not None:
                     recorder.write(data)
-                if listener is None or runtime.asr is None:
-                    continue
-                for pcm in listener.feed(data):
-                    timer = TurnTimer()
-                    if listener.wake_at is not None:
-                        timer.mark("wake", at=listener.wake_at)
-                    timer.mark("speech_end")
-                    if recorder is not None:
-                        recorder.save_utterance(pcm)
-                    text = runtime.asr(pcm)
-                    timer.mark("asr_done")
-                    if not text:
-                        continue
-                    await handle_text(session, port, text, timer=timer)
+                if listener is None or runtime.asr is None or turns:
+                    continue  # mic audio during a turn is the speaker's own output
+                utterances = listener.feed(data)
+                if utterances:
+                    spawn(audio_turns(utterances, listener.wake_at))
                 continue
 
             text_frame = message.get("text")
@@ -163,15 +176,30 @@ async def session_endpoint(ws: WebSocket) -> None:
             if payload.get("type") == "text":
                 content = payload.get("content", "")
                 if content:
-                    await handle_text(session, port, content)
+                    spawn(handle_text(session, port, content))
     finally:
+        for task in list(turns):
+            task.cancel()
+        await asyncio.gather(*turns, return_exceptions=True)
         if recorder is not None:
             recorder.close()
-        REGISTRY.remove(client_id)
-        runtime.ports.pop(client_id, None)
-        runtime.registry.set_online(client_id, False)
+        # A reconnecting client can register a newer session before this one finishes closing;
+        # only tear down shared state if it is still ours.
+        if REGISTRY.get(client_id) is session:
+            REGISTRY.remove(client_id)
+            runtime.ports.pop(client_id, None)
+            runtime.registry.set_online(client_id, False)
         if port is not None:
             await port.stop("lost")
+
+
+async def _guard(coro) -> None:
+    try:
+        await coro
+    except asyncio.CancelledError:
+        raise
+    except Exception as exc:  # e.g. the socket closed mid-turn
+        print(f"turn task failed: {exc!r}", file=sys.stderr, flush=True)
 
 
 async def handle_text(

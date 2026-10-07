@@ -220,3 +220,44 @@ async def test_plugin_no_port():
     res = await SpeakerPlugin().call("speaker.volume", {"action": "up"}, None, None)
     assert not res.ok
     assert res.say == "That speaker isn't connected."
+
+
+async def test_pump_paces_audio_to_real_time(monkeypatch):
+    from cadence.plugins import speaker as speaker_mod
+    sleeps = []
+    real_sleep = asyncio.sleep
+
+    async def fake_sleep(delay):
+        sleeps.append(delay)
+        await real_sleep(0)
+
+    monkeypatch.setattr(speaker_mod.asyncio, "sleep", fake_sleep)
+    monkeypatch.setattr(speaker_mod, "PACE_LEAD_S", 0.0)
+    one_second = int(1000 * speaker_mod.BYTES_PER_MS)
+    rig = Rig([bytes(one_second // 4 * 4)] * 3)  # 3 s of audio delivered instantly
+    await rig.play()
+    await rig.port.drain()
+    assert rig.ends == ["track_end"]
+    assert sum(sleeps) > 1.5  # without pacing the pump forwards everything with no sleeps
+
+
+async def test_pump_lead_is_measured_from_first_chunk_not_request(monkeypatch):
+    from cadence.plugins import speaker as speaker_mod
+    sleeps = []
+    real_sleep = asyncio.sleep
+
+    async def fake_sleep(delay):
+        sleeps.append(delay)
+        await real_sleep(0)
+
+    monkeypatch.setattr(speaker_mod.asyncio, "sleep", fake_sleep)
+    monkeypatch.setattr(speaker_mod, "PACE_LEAD_S", 0.3)
+    gate = asyncio.Event()
+    # 0.4 s of audio arrives 0.2 s after the request (ffmpeg startup): the pump must still
+    # hold back everything past the 0.3 s lead, not count the startup delay as time already played.
+    rig = Rig([bytes(int(400 * speaker_mod.BYTES_PER_MS) // 4 * 4)], gate=(0, gate))
+    await rig.play()
+    await real_sleep(0.2)
+    gate.set()
+    await rig.port.drain()
+    assert sum(sleeps) > 0.05

@@ -12,6 +12,7 @@ from cadence.config import VOLUME_STEP
 from cadence.plugins.base import Capability, Manifest, Plugin, Result
 
 BYTES_PER_MS = 176.4  # 44100 Hz * 2 ch * 2 bytes / 1000
+PACE_LEAD_S = 0.3  # how far ahead of real time _pump may run; must stay below the board's ~370 ms ring
 
 VOLUME = Capability(
     "speaker.volume",
@@ -85,15 +86,26 @@ class SpeakerPort:
     async def _pump(self, url: str) -> None:
         reason = "track_end"
         try:
+            loop = asyncio.get_running_loop()
+            t0, sent = None, 0  # pacing baseline (set at the first forwarded chunk, not the request: ffmpeg startup is not playback time)
             async with httpx.AsyncClient(transport=self._transport, timeout=None) as client:
                 async with client.stream("GET", url) as response:
                     async for chunk in response.aiter_bytes():
+                        waited = loop.time()
                         await self._resumed.wait()
+                        if loop.time() - waited > 0.2:  # paused: restart the baseline
+                            t0, sent = None, 0
                         self._bytes += len(chunk)
                         if self._speaking:
                             self._tail += chunk
                         else:
+                            if t0 is None:
+                                t0 = loop.time()
                             await self._send(self._apply_gain(chunk))
+                            sent += len(chunk)
+                            ahead = sent / BYTES_PER_MS / 1000 - (loop.time() - t0) - PACE_LEAD_S
+                            if ahead > 0:
+                                await asyncio.sleep(ahead)
         except httpx.HTTPError:
             reason = "lost"
         on_end, self._on_end = self._on_end, None

@@ -1,4 +1,5 @@
 #include <string.h>
+#include "esp_timer.h"
 #include "esp_event.h"
 #include "esp_websocket_client.h"
 #include "esp_log.h"
@@ -27,6 +28,8 @@ static const char *TAG = "voice_chat";
 
 #define WIFI_CONNECTED_BIT BIT0
 #define AUDIO_RING_BYTES    (64 * 1024)
+#define PREBUFFER_BYTES     (35280)  // ~200 ms of 44.1 kHz stereo s16le
+#define PREBUFFER_IDLE_MS   60       // short clips (acks) never reach the threshold; play them once the stream stalls
 
 static EventGroupHandle_t s_wifi_event_group;
 static StreamBufferHandle_t s_audio_ring;
@@ -73,6 +76,7 @@ static void wifi_init_sta(void)
     ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
     ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
     ESP_ERROR_CHECK(esp_wifi_start());
+    ESP_ERROR_CHECK(esp_wifi_set_ps(WIFI_PS_NONE)); // modem sleep adds bursty latency to a continuous stream
 
     ESP_LOGI(TAG, "connecting to %s", CONFIG_VOICE_WIFI_SSID);
     xEventGroupWaitBits(s_wifi_event_group, WIFI_CONNECTED_BIT, pdFALSE, pdTRUE, portMAX_DELAY);
@@ -81,6 +85,9 @@ static void wifi_init_sta(void)
 static void i2s_speaker_init(void)
 {
     i2s_chan_config_t chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_0, I2S_ROLE_MASTER);
+    chan_cfg.auto_clear = true;   // underrun plays silence, not a looping buffer (the "held note")
+    chan_cfg.dma_desc_num = 8;
+    chan_cfg.dma_frame_num = 480; // 8 x 480 frames = ~87 ms of DMA headroom
     ESP_ERROR_CHECK(i2s_new_channel(&chan_cfg, &s_tx_chan, NULL));
 
     i2s_std_config_t std_cfg = {
@@ -125,13 +132,56 @@ static void i2s_mic_init(void)
 static void i2s_drain_task(void *arg)
 {
     int16_t buf[256];
+    bool playing = false;
+    size_t last_avail = 0;
+    int idle_ms = 0;
+    uint32_t underruns = 0, writes = 0;
+    size_t min_avail = AUDIO_RING_BYTES;
+    int64_t last_log_us = esp_timer_get_time();
     while (1) {
-        size_t got = xStreamBufferReceive(s_audio_ring, buf, sizeof(buf), portMAX_DELAY);
+        if (playing) {
+            size_t a = xStreamBufferBytesAvailable(s_audio_ring);
+            if (a < min_avail) {
+                min_avail = a;
+            }
+        }
+        if (esp_timer_get_time() - last_log_us > 2000000) {
+            if (playing || underruns) {
+                ESP_LOGI(TAG, "audio: ring=%u min=%u underruns=%u writes=%u", (unsigned)xStreamBufferBytesAvailable(s_audio_ring),
+                         (unsigned)min_avail, (unsigned)underruns, (unsigned)writes);
+            }
+            min_avail = AUDIO_RING_BYTES;
+            last_log_us = esp_timer_get_time();
+        }
+        if (!playing) {
+            size_t avail = xStreamBufferBytesAvailable(s_audio_ring);
+            if (avail >= PREBUFFER_BYTES) {
+                playing = true;
+            } else if (avail > 0 && avail == last_avail) {
+                idle_ms += 10;
+                if (idle_ms >= PREBUFFER_IDLE_MS) {
+                    playing = true;
+                }
+            } else {
+                idle_ms = 0;
+            }
+            last_avail = avail;
+            if (!playing) {
+                vTaskDelay(pdMS_TO_TICKS(10));
+                continue;
+            }
+            idle_ms = 0;
+        }
+        size_t got = xStreamBufferReceive(s_audio_ring, buf, sizeof(buf), pdMS_TO_TICKS(100));
         if (got == 0) {
+            playing = false;   // underrun or end of stream: re-buffer before resuming
+            underruns++;
+            last_avail = 0;
             continue;
         }
         size_t written;
         i2s_channel_write(s_tx_chan, buf, got, &written, portMAX_DELAY);
+        writes++;
     }
 }
 
@@ -203,7 +253,7 @@ static void mic_ws_task(void *arg)
         if (s_ws_client == NULL || !esp_websocket_client_is_connected(s_ws_client)) {
             continue;
         }
-        esp_websocket_client_send_bin(s_ws_client, (const char *)pcm16, n * sizeof(int16_t), portMAX_DELAY);
+        esp_websocket_client_send_bin(s_ws_client, (const char *)pcm16, n * sizeof(int16_t), pdMS_TO_TICKS(100));  // drop the frame rather than block the client lock
     }
 }
 
