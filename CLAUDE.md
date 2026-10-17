@@ -33,6 +33,21 @@ Setup and run steps are in `harness/README.md`. Design: `docs/specs/2026-10-01-c
 
 Config constants and env vars (`CADENCE_MUSE_BASE_URL`, `CADENCE_MUSE_PROXY_URL`, `CADENCE_DEVICES_PATH`, `CADENCE_WAKE_ENABLED`, `CADENCE_BENCH_RECORD_DIR`) are in `cadence/config.py`. `openwakeword` must be installed with `--no-deps` (`requirements-nodeps.txt`). Scheduler, routines, and diary code (`scheduler.py`, `routines.py`, `store.py`) remain in the repo, unwired until v2.
 
+## Version control and multi-machine sync
+
+This repo is worked on from several machines and Claude sessions. GitHub (`origin/master`, `IanTheMitten/Cadence_Speaker`) is the single source of truth; another machine knows what is done only from what is pushed.
+
+- **Session start:** run `git fetch && git status -sb` and `git log --oneline -15`. If behind, `git pull --rebase`. Read the newest `docs/plans/*.md` for task status before starting work.
+- **Session end (or before switching machines):** commit everything worth keeping, then `git push`. Do not end a session with unpushed commits or untracked docs/specs/research unless the user says to keep them local. Report `git status -sb` at the end; it must show no `ahead` and no `??` files unless the user said to keep them local.
+- **Commit small and often**, one logical change per commit. Conventional prefixes: `feat:`, `fix:`, `test:`, `docs:`, `build:`, `style:`, `refactor:`. Subject says what and where, in the imperative, under about 72 chars. Body only when the why is not obvious.
+- **Plan progress lives in git:** when a task from a `docs/plans/*.md` finishes, mark it done in the plan file and say so in the commit message (for example `feat: BenchRecorder (plan task 3 done)`). Another machine reads the plan plus `git log` to see what remains.
+- **Specs, research, and plans are committed** (`docs/specs/`, `docs/research/`, `docs/plans/`, `docs/preflight/`, `docs/handoffs/`). Do not leave them untracked.
+- **Name the project in commits** when a change touches only one of the independent projects: scope with the directory, e.g. `fix(voice_chat): ...`, `feat(harness): ...`, `fix(mic_test): ...`. Root firmware changes use no scope or `firmware`.
+- **Never commit** secrets or machine-local files: `sdkconfig`, `sdkconfig.old`, `build/`, `voice_chat/sdkconfig.defaults.local` (WiFi creds), `harness/.venv`, `typesafe.env`, `cadence.sqlite3`, bench recordings. Check `git status` before `git add`; add files by name, not `git add -A`.
+- **Work on `master`** unless the user asks for a branch. Pull with `--rebase` to keep history linear. No force-push, no history rewrites, no amending pushed commits.
+- **Hardware state is not in git.** If a firmware change was flashed or a bench was run on a physical board, record it in the commit message or a `docs/preflight/` note (which board, which project dir, result), since another machine cannot see it.
+- Claude still commits and pushes only when the user asks. At session end, if anything is unpushed or untracked, say so and offer to commit and push.
+
 ## Commands
 
 Environment must be sourced once per shell (ESP-IDF lives at `~/esp/esp-idf`, v5.3):
