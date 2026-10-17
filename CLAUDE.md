@@ -45,7 +45,7 @@ This repo is worked on from several machines and Claude sessions. GitHub (`origi
 - **Name the project in commits** when a change touches only one of the independent projects: scope with the directory, e.g. `fix(voice_chat): ...`, `feat(harness): ...`, `fix(mic_test): ...`. Root firmware changes use no scope or `firmware`.
 - **Never commit** secrets or machine-local files: `sdkconfig`, `sdkconfig.old`, `build/`, `voice_chat/sdkconfig.defaults.local` (WiFi creds), `harness/.venv`, `typesafe.env`, `cadence.sqlite3`, bench recordings. Check `git status` before `git add`; add files by name, not `git add -A`.
 - **Work on `master`** unless the user asks for a branch. Pull with `--rebase` to keep history linear. No force-push, no history rewrites, no amending pushed commits.
-- **Hardware state is not in git.** If a firmware change was flashed or a bench was run on a physical board, record it in the commit message or a `docs/preflight/` note (which board, which project dir, result), since another machine cannot see it.
+- **Hardware state is not in git, so it is documented in `docs/hardware/`.** After any flash, wiring change, bench run, or measurement, add a dated entry to `docs/hardware/build-log.md` (board, project dir, what changed, result with units), update `docs/hardware/inventory.md` if parts, wiring, or flashed firmware changed, and put raw data or photos in `docs/hardware/measurements/`. Commit and push it the same day. Another machine reads that folder to know how far the hardware has progressed.
 - Claude still commits and pushes only when the user asks. At session end, if anything is unpushed or untracked, say so and offer to commit and push.
 
 ## Commands
