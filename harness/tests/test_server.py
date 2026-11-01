@@ -174,3 +174,33 @@ def test_stale_session_cleanup_does_not_unregister_newer_one(rt):
             _recv(ws_new)
         assert rt.registry.get("speaker-1").online is True
         assert server.REGISTRY.get("speaker-1") is not None
+
+
+def _turn(ws, text="do it"):
+    ws.send_text(json.dumps({"type": "text", "content": text}))
+    for _ in range(3):
+        _recv(ws)
+
+
+def test_text_only_unknown_client_is_not_registered_as_speaker(rt):
+    # A text controller is not a speaker; registering it made the resolver target it.
+    with TestClient(server.app).websocket_connect("/session") as ws:
+        _hello(ws, {"type": "hello", "client_id": "cli", "caps": []})
+        _turn(ws)
+        assert rt.registry.get("cli") is None
+    assert rt.registry.get("cli") is None
+
+
+def test_portless_session_with_same_id_keeps_board_port(rt):
+    # A text-only session reusing the board's id must not tear down the board's port on close.
+    board_hello = {"type": "hello", "client_id": "speaker-1", "caps": ["audio_out"]}
+    client = TestClient(server.app)
+    with client.websocket_connect("/session") as board:
+        _hello(board, board_hello)
+        _turn(board)
+        board_port = rt.ports["speaker-1"]
+        with client.websocket_connect("/session") as other:
+            _hello(other, {"type": "hello", "client_id": "speaker-1", "caps": []})
+            _turn(other)
+        assert rt.ports.get("speaker-1") is board_port
+        assert rt.registry.get("speaker-1").online is True

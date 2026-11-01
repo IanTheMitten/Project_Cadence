@@ -119,7 +119,9 @@ async def session_endpoint(ws: WebSocket) -> None:
         send_text=send_text,
     )
     REGISTRY.add(session)
-    runtime.registry.set_online(client_id, True)
+    # Only audio-out clients are speakers; a text-only controller must not become a target.
+    if caps.audio_out or runtime.registry.get(client_id) is not None:
+        runtime.registry.set_online(client_id, True)
     port: SpeakerPort | None = None
     if caps.audio_out:
         port = SpeakerPort(send_audio, max_gain=MAX_VOLUME)
@@ -188,8 +190,11 @@ async def session_endpoint(ws: WebSocket) -> None:
         # only tear down shared state if it is still ours.
         if REGISTRY.get(client_id) is session:
             REGISTRY.remove(client_id)
-            runtime.ports.pop(client_id, None)
-            runtime.registry.set_online(client_id, False)
+            # A portless session reusing an id must not tear down the port another session owns.
+            if runtime.ports.get(client_id) is port:
+                runtime.ports.pop(client_id, None)
+                if runtime.registry.get(client_id) is not None:
+                    runtime.registry.set_online(client_id, False)
         if port is not None:
             await port.stop("lost")
 
