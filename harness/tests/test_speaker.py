@@ -17,7 +17,7 @@ def _samples(data):
 
 
 class Rig:
-    def __init__(self, chunks, *, gate=None, error=None, gain=1.0):
+    def __init__(self, chunks, *, gate=None, error=None, gain=1.0, max_gain=1.0):
         self.chunks = chunks
         self.gate = gate  # (index, asyncio.Event): wait before yielding chunks[index]
         self.error = error
@@ -35,7 +35,8 @@ class Rig:
         def handler(request):
             return httpx.Response(200, stream=_Stream(stream()))
 
-        self.port = SpeakerPort(self._send, transport=httpx.MockTransport(handler), gain=gain)
+        self.port = SpeakerPort(self._send, transport=httpx.MockTransport(handler), gain=gain,
+                                max_gain=max_gain)
 
     async def _send(self, data):
         self.sent.append(data)
@@ -91,6 +92,14 @@ async def test_set_gain_halves_and_clamps():
     assert _samples(rig.out) == [500, -1000, 200, 4]
     rig.port.set_gain(2.0)
     assert rig.port.gain == 1.0
+
+
+async def test_max_gain_caps_full_volume():
+    rig = Rig([_pcm([1000, -2000, 400, 10])], gain=1.0, max_gain=0.7)
+    await rig.play()
+    await rig.port.drain()
+    assert _samples(rig.out) == [700, -1400, 280, 7]
+    assert rig.port.gain == 1.0  # user-facing volume scale is unchanged
 
 
 async def test_mute_sends_zeros():

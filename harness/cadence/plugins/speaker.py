@@ -29,10 +29,12 @@ VOLUME = Capability(
 
 class SpeakerPort:
     def __init__(self, send_audio: Callable[[bytes], Awaitable[None]], *,
-                 transport: httpx.AsyncBaseTransport | None = None, gain: float = 1.0) -> None:
+                 transport: httpx.AsyncBaseTransport | None = None, gain: float = 1.0,
+                 max_gain: float = 1.0) -> None:
         self._send = send_audio
         self._transport = transport
         self._gain = max(0.0, min(1.0, gain))
+        self._max_gain = max(0.0, min(1.0, max_gain))  # output ceiling; gain 1.0 plays at this level
         self._muted = False
         self._carry = b""
         self._on_end: Callable[[str], Awaitable[None]] | None = None
@@ -62,7 +64,7 @@ class SpeakerPort:
         self._muted = False
 
     def _apply_gain(self, data: bytes) -> bytes:
-        eff = 0.0 if self._muted else self._gain
+        eff = 0.0 if self._muted else self._gain * self._max_gain
         data = self._carry + data
         self._carry = b""
         if eff == 1.0:

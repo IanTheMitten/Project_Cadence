@@ -20,6 +20,7 @@ from fastapi import FastAPI, WebSocket
 
 from cadence.audio.chunker import SentenceChunker
 from cadence.benchrec import BenchRecorder
+from cadence.config import MAX_VOLUME
 from cadence.events import utterance
 from cadence.plugins.speaker import SpeakerPort
 from cadence.session import Session, SessionCaps, SessionRegistry
@@ -121,7 +122,7 @@ async def session_endpoint(ws: WebSocket) -> None:
     runtime.registry.set_online(client_id, True)
     port: SpeakerPort | None = None
     if caps.audio_out:
-        port = SpeakerPort(send_audio)
+        port = SpeakerPort(send_audio, max_gain=MAX_VOLUME)
         runtime.ports[client_id] = port
     listener = runtime.listener_factory() if session.needs_asr else None
     recorder = BenchRecorder.open(runtime.bench_dir, client_id) if runtime.bench_dir and caps.audio_in else None

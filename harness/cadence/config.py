@@ -27,6 +27,7 @@ BENCH_RECORD_DIR = os.environ.get("CADENCE_BENCH_RECORD_DIR")
 ACK_DIR = "acks"
 PAUSE_TIMEOUT_S = 600.0
 VOLUME_STEP = 0.1
+MAX_VOLUME = 0.7  # speaker output ceiling: full volume is 70% of raw PCM level
 PLAY_SOURCE = "cadence"
 MUSE_CONTRACT_MAJOR = 1
 DEFAULT_QUEUE_LEN = 10
