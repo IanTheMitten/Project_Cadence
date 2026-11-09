@@ -183,7 +183,7 @@ Test commands (shared venv, per spec `docs/specs/2026-11-09-cadence-modular-spli
 **Why:** Moves `TURN_LOCK` and turn dispatch out of the audio server (spec `:128-133`).
 
 ### Task 7: Write /peer hub tests (red) [test]
-- [ ] status
+- [x] status
 **Objective:** `harness/tests/test_peers.py` pins the `/peer` endpoint and `PeerHub` over a real in-process WebSocket, failing on import.
 **Write-scope:** `harness/tests/test_peers.py` (new)
 **Read-context:** `harness/tests/test_server.py:1-60`, `harness/tests/test_pipeline.py:20-80`, `harness/cadence/core.py` (from Task 6)
