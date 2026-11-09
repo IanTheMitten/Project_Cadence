@@ -4,34 +4,52 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository layout
 
-This repo holds a Python decision harness plus **three independent ESP-IDF projects** targeting the same ESP32-S3 board:
+This repo holds three Python programs (`harness/`, `speaker/`, `muse_adapter/`) plus **three independent ESP-IDF projects** targeting the same ESP32-S3 board:
 
-- **`harness/`** — the server-side Cadence decision harness (Python, v1). See "Decision harness (`harness/`)" below.
+- **`harness/`** — the Cadence core (Python): decisions, schedules, decision log. Knows nothing about audio. See "Decision harness (`harness/`)" below.
+- **`speaker/`** (package `cadence_speaker`) — the board-facing speaker adapter. Serves `/session` on 8768 to the ESP32 boards and does wake word, VAD, ASR, TTS, acks, and music ducking. Connects to Cadence over `/peer`. See `speaker/README.md`.
+- **`muse_adapter/`** (package `cadence_muse`) — a service peer for Muse (music queues, stream URLs). Connects to Cadence over `/peer`. See `muse_adapter/README.md`.
 - **Root project** (`CMakeLists.txt`, `main/Cadence_Speaker.c`) — the real firmware. Joins WiFi, pulls a raw PCM stream over HTTP from `tools/muse_proxy.py`, and plays it out an I2S DAC/amp.
 - **`mic_test/`** — a standalone scratch project (its own `CMakeLists.txt`, `main/`, `sdkconfig.defaults`) that reads an INMP441 I2S mic and prints an amplitude meter over serial. Not wired into the main app; it's a separate firmware image for bench-testing the mic in isolation.
-- **`voice_chat/`** — a standalone scratch project that runs the speaker TX path and the mic RX path at once (the board is wired for both simultaneously). It is the firmware client of the harness's `/session` WebSocket; `tools/voice_chat_host.py` is the older, pre-harness companion server for it. See "Voice conversation test" below.
+- **`voice_chat/`** — a standalone scratch project that runs the speaker TX path and the mic RX path at once (the board is wired for both simultaneously). It is the firmware client of the speaker adapter's `/session` WebSocket; `tools/voice_chat_host.py` is the older, pre-harness companion server for it. See "Voice conversation test" below.
 
 Each ESP-IDF project has its own `build/` directory. `idf.py` commands act on whichever project directory you're `cd`'d into — always check which one before building/flashing.
 
 ## Decision harness (`harness/`)
 
-Setup and run steps are in `harness/README.md`. Design: `docs/specs/2026-10-01-cadence-decision-harness-v1.md`; task plan: `docs/plans/2026-10-01-cadence-decision-harness-v1.md`. Run from `harness/` with `python -m cadence` (WebSocket server on port 8768; `/session` protocol and `TURN_LOCK` live in `cadence/server.py`). `build_runtime()` in `cadence/wiring.py` assembles everything lazily.
+Setup and run steps are in `harness/README.md`. Original v1 design: `docs/specs/2026-10-01-cadence-decision-harness-v1.md`; split design: `docs/specs/2026-11-09-cadence-modular-split.md`, plan `docs/plans/2026-11-09-cadence-modular-split.md`. Run from `harness/` with `python -m cadence` (WebSocket `/peer` on port 8770, `PEER_PORT` in `cadence/config.py`). `build_runtime()` in `cadence/wiring.py` assembles everything lazily.
 
-**Event pipeline** (`cadence/pipeline.py`): speaker session (mic, wake word "hey jarvis" via `openwakeword`, VAD, ASR) produces an `Event` (`cadence/events.py`; v1 kind `utterance`), then Decide, Resolve (`resolver.py`: target devices), Execute (`executor.py`: plugin calls), and every decision is written to the decision log. Acknowledgement clips (`acks.py`, `harness/acks/`) play after Jev routes.
+**Three programs, run order** (each from its own directory, each with `harness/.venv/bin/python`):
+
+```
+cd harness     && ../harness/.venv/bin/python -m cadence          # core, /peer on 8770
+cd muse_adapter && ../harness/.venv/bin/python -m cadence_muse    # Muse service peer
+cd speaker     && ../harness/.venv/bin/python -m cadence_speaker  # board-facing, /session on 8768
+```
+
+The adapters reach Cadence at `CADENCE_PEER_URL` (default `ws://127.0.0.1:8770/peer`). The speaker adapter's room is `CADENCE_SPEAKER_ROOM` (default `bedroom`). Moved env vars: `CADENCE_MUSE_BASE_URL`, `CADENCE_MUSE_PROXY_URL` now belong to `cadence_muse`; `CADENCE_WAKE_ENABLED`, `CADENCE_BENCH_RECORD_DIR` to `cadence_speaker`.
+
+**Peers** (`cadence/peers.py`, protocol in `cadence/protocol.py`, table in `harness/README.md`): a peer joins `/peer` with a `hello` as a `device` (has a room, e.g. the speaker) or a `service` (e.g. Muse) and declares its abilities; Cadence builds the capability catalogue and device registry from connected peers' hellos and sends `call`s back over the same socket.
+
+**Core** (`cadence/core.py`): `Core` is the only entry point; `submit(event)` takes `TURN_LOCK` (also in `core.py`) and runs the pipeline. `schedules.py` holds schedules and pending questions; `Core.run_schedules()` is the schedule loop started by `python -m cadence`.
+
+**Event pipeline** (`cadence/pipeline.py`): the speaker adapter (wake word "hey jarvis", VAD, ASR) sends an `event` (`cadence/events.py`; kind `utterance`), then Decide, Resolve (`resolver.py`: target devices), Execute (`executor.py`: `call` to the owning peer), and every decision is written to the decision log. Acknowledgement clips (`speaker/cadence_speaker/acks.py`, `speaker/acks/`, gitignored) play after Jev routes.
 
 **Deciders** (`cadence/deciders/`): one interface, `decide(event, context, capabilities, instruction)`. `JevDecider` (TypeSafe, key from `TYPESAFE_API_KEY` or `~/.config/cadence/typesafe.env`, never committed) decides first. `LlmDecider` (Ollama) is the escalation: low confidence, missing args, `chat`, `correction`, or Jev unavailable.
 
-**Plugins** (`cadence/plugins/`): `speaker` (volume, audio port) and `music` (Muse client in `cadence/muse/`); `mcp_adapter.py` wraps an external MCP server, none wired by default. `registry.py` holds the device registry loaded from `devices.json`. The capability catalogue (`catalogue.py`) is generated from plugin manifests plus built-ins `chat` and `correction`.
+**Plugins and peers' abilities**: `mcp_adapter.py` (in `cadence/plugins/`) wraps an external MCP server, none wired by default. The music and speaker abilities now live in the adapters (`cadence_muse`, `cadence_speaker`). The Muse MCP server entry point is `python -m cadence_muse.mcp_main`. The capability catalogue (`catalogue.py`) is generated from connected peers' abilities plus built-ins `chat` and `correction`.
 
 **Decision log** (`cadence/decisionlog.py`, `cadence.sqlite3`): table `decision_log` records every decision; `decision_labels` holds labels. A spoken correction labels the previous decision `wrong` (source `spoken_correction`). The only input is the speaker; labels come from spoken corrections only.
 
-**Other modules**: `cadence/audio/` (`vad.py`, `wakeword.py`, `listener.py` wake-gated utterance capture, `asr.py` Whisper, `tts.py` Kokoro, `mixer.py` music ducking under speech, `chunker.py`); `session.py` (`SessionCaps`, `SessionRegistry` for connected clients); `livecontext.py` (now-playing and recent decisions fed to deciders); `context.py` (`RollingContext`); `llm.py` (Ollama client, model `gemma4:31b-cloud`); `agent.py` (`MAX_TOOL_CALLS` cap, bounded tool loop); `mcp_client.py` (stdio MCP tool registry); `turntiming.py` (`TurnTimer`, per-turn stage stamps; one `turn_timing {json}` stderr line per turn, durations merged into `latency_ms`); `benchrec.py` (`BenchRecorder`, off unless `CADENCE_BENCH_RECORD_DIR` is set; writes `<client>-<ms>.pcm/.json` per session plus `utt-*.pcm` per utterance; the directory is never auto-created); `wakebench.py` (pure wake/ASR bench scoring and loaders).
+**Other harness modules**: `context.py` (`RollingContext`); `livecontext.py` (now-playing and recent decisions fed to deciders); `llm.py` (Ollama client, model `gemma4:31b-cloud`); `agent.py` (`MAX_TOOL_CALLS` cap, bounded tool loop); `mcp_client.py` (stdio MCP tool registry); `turntiming.py` (per-turn stage stamps).
 
-**Setup and tests**: venv lives at `harness/.venv` (Python >= 3.14). Install `requirements.txt`, then `requirements-nodeps.txt` with `--no-deps`. Kokoro model files (`kokoro-v1.0.onnx`, `voices-v1.0.bin`) go in `tools/`; `harness/README.md` has the download commands. Run tests from `harness/`: `.venv/bin/python -m pytest` (`asyncio_mode = auto`, `testpaths = tests`).
+**Speaker adapter modules** (`speaker/cadence_speaker/`): `server.py` (`/session`), `audio/` (`vad.py`, `wakeword.py`, `listener.py`, `asr.py` Whisper, `tts.py` Kokoro, `mixer.py` music ducking, `chunker.py`), `session.py` (`SessionCaps`), `speaker.py`, `acks.py`, `link.py` (the `/peer` client), `turntiming.py`, `benchrec.py` (`BenchRecorder`, off unless `CADENCE_BENCH_RECORD_DIR` is set; the directory is never auto-created), `wakebench.py`. Config in `speaker/cadence_speaker/config.py`. `muse_adapter/cadence_muse/`: `adapter.py`, `music.py`, `client.py` (Muse HTTP client), `link.py`, `mcp_server.py`; config in `config.py`.
 
-**Scripts** (`harness/scripts/`, run from `harness/`): `build_ack_pool.py` (regenerate `acks/`, needs Ollama + Kokoro), `golden_replay.py` (replay golden set against live Jev), `smoke_session.py` (end-to-end turn smoke), `preflight_*.py` (live-service checks), `capture_muse_fixtures.py`, `bench_*.py`, `wake_guide.py` (guided wake/command labels), `wake_bench.py` (writes `docs/preflight/wake-bench.md`), `asr_bench.py` (writes `docs/preflight/asr-bench.md`). `Asr(model_name, beam_size)` is configurable. Preflight and smoke results are recorded in `docs/preflight/`; Muse/Cadence contract is `docs/handoffs/2026-10-01-muse-cadence-contract.md`.
+**Setup and tests**: one venv at `harness/.venv` (Python >= 3.14) serves all three programs. Install `harness/requirements.txt`, then `harness/requirements-nodeps.txt` with `--no-deps`. Kokoro model files (`kokoro-v1.0.onnx`, `voices-v1.0.bin`) go in `tools/` at the repo root; `harness/README.md` has the download commands. Run tests from each program's directory: `.venv/bin/python -m pytest` in `harness/`, `../harness/.venv/bin/python -m pytest` in `speaker/` and `muse_adapter/` (`asyncio_mode = auto`, `testpaths = tests`).
 
-Config constants and env vars (`CADENCE_MUSE_BASE_URL`, `CADENCE_MUSE_PROXY_URL`, `CADENCE_DEVICES_PATH`, `CADENCE_WAKE_ENABLED`, `CADENCE_BENCH_RECORD_DIR`) are in `cadence/config.py`. `openwakeword` must be installed with `--no-deps` (`requirements-nodeps.txt`). Scheduler, routines, and diary code (`scheduler.py`, `routines.py`, `store.py`) remain in the repo, unwired until v2.
+**Scripts**: `harness/scripts/` (`golden_replay.py`, `smoke_session.py`, `preflight_*.py`, `bench_*.py`; `preflight_v1.py` is historical and still imports the removed `cadence.audio`). `speaker/scripts/` (`build_ack_pool.py` regenerates `acks/`, needs Ollama + Kokoro; `wake_guide.py`, `wake_bench.py`, `asr_bench.py`, `preflight_wake_bench.py`). `muse_adapter/scripts/capture_muse_fixtures.py`. Preflight and smoke results are recorded in `docs/preflight/`; Muse/Cadence contract is `docs/handoffs/2026-10-01-muse-cadence-contract.md`.
+
+`routines.py` and `store.py` (diary) remain in `harness/cadence/`, unwired until v2. Schedules are in `cadence/schedules.py`.
 
 ## Version control and multi-machine sync
 
@@ -88,7 +106,7 @@ Transcodes tracks from a Muse library server (`MUSE_BASE = http://ianshomeserver
 
 `voice_chat/main/voice_chat.c` runs the root project's speaker TX path and `mic_test`'s mic
 RX path in the same firmware image (different I2S peripherals/pins, no conflict — see the pin
-map below). It is the firmware client of the harness's `/session` WebSocket. `app_main` joins
+map below). It is the firmware client of the speaker adapter's `/session` WebSocket. `app_main` joins
 WiFi as a station (blocks until an IP is obtained), then starts three tasks: `i2s_drain_task`
 (pulls from the 64 KB `s_audio_ring` and writes to the I2S TX channel), `ws_client_task` (opens
 the `esp_websocket_client` to `CONFIG_VOICE_WS_URL`; the client reconnects on its own), and
@@ -102,9 +120,9 @@ samples per frame (32-bit I2S samples shifted `>> 14`). Binary frames from the s
 (`turn_start`, `turn_end`, `text`, `error`) are only logged (`ws text: ...`); the firmware
 takes no other action on them.
 
-The server is the harness: run `python -m cadence` from `harness/` (`/session` on port 8768).
-It does the wake word ("hey jarvis") server-side, then VAD and ASR. There is no echo
-cancellation; the harness ducks music under speech. `tools/voice_chat_host.py` is the
+The board talks only to the speaker adapter: run `python -m cadence_speaker` from `speaker/` (`/session` on port 8768). The adapter talks to Cadence (`python -m cadence` from `harness/`, `/peer` on 8770).
+The adapter does the wake word ("hey jarvis") server-side, then VAD and ASR. There is no echo
+cancellation; the speaker adapter ducks music under speech. `tools/voice_chat_host.py` is the
 pre-harness server and is not used by this firmware.
 
 ## I2S pin map

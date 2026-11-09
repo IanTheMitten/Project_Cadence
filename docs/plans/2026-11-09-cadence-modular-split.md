@@ -411,7 +411,7 @@ Negative result is a valid outcome.
 **Why:** Spec defers whether Jev routes schedule requests well; this measures it (`:218`, `:231`).
 
 ### Task 18: Update CLAUDE.md and READMEs for the three-program layout [docs]
-- [ ] status
+- [x] status
 **Objective:** CLAUDE.md, `harness/README.md`, `speaker/README.md`, `muse_adapter/README.md` describe the split accurately.
 **Write-scope:** `CLAUDE.md`
 `harness/README.md`

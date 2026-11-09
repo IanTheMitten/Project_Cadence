@@ -2,17 +2,11 @@
 
 ## What this is
 
-v1 of the Cadence decision harness: a WebSocket server (`cadence.server`, `/session`) that turns
-speaker utterances into decisions and actions. Pipeline: mic audio, then wake word ("hey
-jarvis"), VAD, ASR, then an `Event` goes through Decide (Jev first, a cloud LLM on
-escalation), Resolve, Execute. Every decision is written to a SQLite decision log. Plugins:
-`speaker` (volume, audio port) and `music` (Muse). Replies are synthesized with Kokoro TTS.
+The Cadence core (`cadence/core.py`): a WebSocket server (`cadence.peers`, `/peer`, port 8770, `PEER_PORT`) that turns events from connected peers into decisions and actions. An `Event` goes through Decide (Jev first, a cloud LLM on escalation), Resolve, Execute. Every decision is written to a SQLite decision log. The core knows nothing about audio.
 
-Design: `docs/specs/2026-10-01-cadence-decision-harness-v1.md`. Plan:
-`docs/plans/2026-10-01-cadence-decision-harness-v1.md`.
+Audio lives in the speaker adapter (`speaker/`, package `cadence_speaker`: wake word, VAD, ASR, TTS, acks, `/session` on 8768 for the ESP32 boards). Music lives in the Muse adapter (`muse_adapter/`, package `cadence_muse`). Both connect to this server as peers.
 
-The ESP32-S3 boards talk to this server as WebSocket clients over `/session`
-(`harness/cadence/server.py`). Target host is `ianshomeserver`.
+Designs: `docs/specs/2026-10-01-cadence-decision-harness-v1.md` (v1), `docs/specs/2026-11-09-cadence-modular-split.md` (split). Plan: `docs/plans/2026-11-09-cadence-modular-split.md`. Target host is `ianshomeserver`.
 
 ## Setup
 
@@ -28,18 +22,6 @@ The second install is `--no-deps` on purpose. `openwakeword` 0.6.0 hard-requires
 `tflite-runtime` on Linux, which has no Python 3.14 wheel, so a normal install fails. The code
 runs it with `inference_framework="onnx"` instead; its other needs (`scikit-learn`, `requests`,
 `tqdm`) are listed in `requirements.txt`. Never run a plain `pip install openwakeword`.
-
-### Kokoro model files
-
-`cadence.audio.tts` loads them from `tools/` at the repo root:
-
-```
-cd tools
-wget https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/kokoro-v1.0.onnx
-wget https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/voices-v1.0.bin
-```
-
-Kokoro and Whisper load lazily on first use, not at import.
 
 ### Jev (TypeSafe) key
 
@@ -58,62 +40,37 @@ unavailable at startup (a message goes to stderr) and every utterance escalates 
 Escalations go to `gemma4:31b-cloud` at `http://localhost:11434/api/chat` (`cadence/llm.py`).
 Run `ollama signin` once on the host; the harness does not do it for you.
 
-## Configuration
-
-Env vars, read in `cadence/config.py`:
-
-| Variable | Default | Meaning |
-|---|---|---|
-| `CADENCE_MUSE_BASE_URL` | `http://ianshomeserver:8080` | Muse library server |
-| `CADENCE_MUSE_PROXY_URL` | `http://ianshomeserver:8765` | `tools/muse_proxy.py`, where speakers fetch PCM |
-| `CADENCE_DEVICES_PATH` | `devices.json` | Device registry file |
-| `CADENCE_WAKE_ENABLED` | `1` | `1` gates utterances on the wake word; any other value falls back to VAD-only |
-
-Relative paths resolve against `harness/`, the directory the server runs from.
-
-### `devices.json`
-
-Static device list, loaded at startup. The shipped file has one device:
-
-```
-{"devices": [{"id": "speaker-1", "kind": "speaker", "room": "bedroom"}]}
-```
-
-`id` is the client id the firmware connects with (`speaker-1` is the firmware default). Edit
-`room` by hand.
-
-## Acknowledgement clips
-
-Short spoken acknowledgements (categories `action`, `chat`, `correction`) are played from
-`harness/acks/<category>/NN.pcm`. Regenerate them from `harness/` with:
-
-```
-.venv/bin/python scripts/build_ack_pool.py --out acks --per-category 20
-```
-
-It asks the Ollama LLM for phrases and renders them with Kokoro, so both must be available.
-
 ## Running it
 
-1. Start the Muse proxy on the host (the harness does not start it):
+Three programs, started in this order, each from its own directory with this venv:
 
-   ```
-   python3 tools/muse_proxy.py
-   ```
+```
+cd harness && .venv/bin/python -m cadence
+cd muse_adapter && ../harness/.venv/bin/python -m cadence_muse
+cd speaker && ../harness/.venv/bin/python -m cadence_speaker
+```
 
-   It listens on port 8765 and transcodes tracks to raw PCM.
+`python -m cadence` listens on `0.0.0.0:8770` (`PEER_PORT` in `cadence/config.py`) and runs the schedule loop. The runtime is built lazily on first use (`build_runtime()` in `cadence/wiring.py`). The adapters find it at `CADENCE_PEER_URL` (default `ws://127.0.0.1:8770/peer`); see `speaker/README.md` and `muse_adapter/README.md` for their env vars. Kokoro files and acks are the speaker adapter's (`speaker/README.md`). The Muse proxy (`tools/muse_proxy.py`, port 8765) is started separately on the host.
 
-2. Start the harness:
+## Device protocol (`/peer`)
 
-   ```
-   cd harness && .venv/bin/python -m cadence
-   ```
+JSON text frames, `PROTOCOL_VERSION = 1` (`cadence/protocol.py`; each peer package carries a verbatim copy). A `hello` with another version is rejected.
 
-   Listens on `0.0.0.0:8768` (`WS_PORT`). The runtime is built lazily on first use
-   (`build_runtime()` in `cadence/wiring.py`).
-
-Wake phrase: "hey jarvis" (`hey_jarvis_v0.1`, threshold 0.5). After a wake, utterances are
-accepted for a listen window of 8 s.
+| Message | Direction | Fields |
+|---|---|---|
+| `hello` | peer to Cadence | `version`, `peer_id`, `role` (`device`\|`service`), `kind`, `room` (string or null), `caps` (list of strings, e.g. `audio_out`, `text_out`), `abilities` (list of `{name, description, parameters}`) |
+| `welcome` | Cadence to peer | none; sent after an accepted `hello` |
+| `error` | Cadence to peer | `message`; sent on a bad or mismatched `hello`, then the socket closes |
+| `event` | peer to Cadence | `kind` (`utterance`), `payload` (`text`, `asr_conf`), `timing` (stage stamps, ms; merged into `latency_ms`) |
+| `turn_start`, `turn_end` | Cadence to peer | none; bracket the turn for the event's source |
+| `ack` | Cadence to peer | `category` (`action`\|`chat`\|`correction`) |
+| `say` | Cadence to peer | `text` |
+| `listen` | Cadence to peer | `seconds`: open the mic without the wake word |
+| `call` | Cadence to peer | `call_id`, `capability`, `args`, `target` (device id or null) |
+| `result` | peer to Cadence | `call_id`, `ok`, `say`, `data`, `error` |
+| `media` | service to Cadence, then Cadence to device | `device`, `action` (`play_url`\|`pause`\|`resume`\|`stop`), `url` (for `play_url`). Cadence forwards it to the device and records the service as that device's media owner. The forwarded frame carries `action` and `url` only. |
+| `media_event` | device to Cadence, then Cadence to the owning service | `event` (`track_end`\|`lost`\|`stopped`), `position_ms`, `url`. Cadence adds `device`. |
+| `state` | peer to Cadence | `state`: free-form dict. Muse sends `{"now_playing": {<device_id>: {track_name, artist_name, paused} \| null}}`, fed to `LiveContext`. |
 
 ## Decision log
 
