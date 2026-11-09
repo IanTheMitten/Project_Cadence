@@ -199,6 +199,21 @@ static cJSON *pct_param(const char *desc)
     return p;
 }
 
+// Closed-arg choices "keep", "0", "10" .. "100" for one channel, value -> description for Jev.
+static void add_level_choices(cJSON *o, const char *channel)
+{
+    char key[8], desc[160];
+    snprintf(desc, sizeof(desc), "%s not mentioned or implied: leave the %s channel as it is", channel, channel);
+    cJSON_AddStringToObject(o, "keep", desc);
+    for (int p = 0; p <= 100; p += 10) {
+        snprintf(key, sizeof(key), "%d", p);
+        if (p == 0) snprintf(desc, sizeof(desc), "%s at 0%%: off, none of it (also for turning the light off)", channel);
+        else if (p == 100) snprintf(desc, sizeof(desc), "%s at 100%%: full, max, brightest, all of it", channel);
+        else snprintf(desc, sizeof(desc), "%s at %d%%", channel, p);
+        cJSON_AddStringToObject(o, key, desc);
+    }
+}
+
 static void send_hello(void)
 {
     cJSON *props = cJSON_CreateObject();
@@ -216,9 +231,15 @@ static void send_hello(void)
     cJSON *ab = cJSON_CreateObject();
     cJSON_AddStringToObject(ab, "name", "light.set");
     cJSON_AddStringToObject(ab, "description",
-        "Set the ceiling lamp's two white LED channels directly. Both 0 is off. "
+        "Set the ceiling lamp's two white LED channels directly: turn the light on or off, "
+        "brightness, warmer or cooler. Both 0 is off; setting neither turns it on at the last level. "
         "Returns the new cool/warm levels.");
     cJSON_AddItemToObject(ab, "parameters", params);
+    // closed choices let Jev fill the levels itself, no LLM escalation; fade_ms stays LLM-only
+    cJSON *closed = cJSON_AddObjectToObject(ab, "closed_args");
+    add_level_choices(cJSON_AddObjectToObject(closed, "cool"), "cool-white (bluish, cold, daylight)");
+    add_level_choices(cJSON_AddObjectToObject(closed, "warm"), "warm-white (yellow, cozy, soft)");
+    cJSON_AddArrayToObject(ab, "free_args");
     cJSON_AddStringToObject(ab, "target", "lamp");
 
     cJSON *m = cJSON_CreateObject();
@@ -241,13 +262,26 @@ static void send_state(void)
     send_json(m);
 }
 
-// Reads one optional 0..100 arg. Returns an error string or NULL.
-static const char *read_pct(const cJSON *args, const char *key, float *out)
+// Reads one optional 0..100 arg: a number (LLM) or a closed choice string "0".."100"/"keep" (Jev).
+// Returns an error string or NULL; *given says whether a level was set.
+static const char *read_pct(const cJSON *args, const char *key, float *out, bool *given)
 {
     const cJSON *v = cJSON_GetObjectItem(args, key);
+    double d;
     if (v == NULL || cJSON_IsNull(v)) return NULL;
-    if (!cJSON_IsNumber(v) || v->valuedouble < 0 || v->valuedouble > 100) return "must be a number 0-100";
-    *out = (float)v->valuedouble;
+    if (cJSON_IsString(v)) {
+        if (strcmp(v->valuestring, "keep") == 0) return NULL;
+        char *end;
+        d = strtod(v->valuestring, &end);
+        if (end == v->valuestring || *end) return "must be a number 0-100 or keep";
+    } else if (cJSON_IsNumber(v)) {
+        d = v->valuedouble;
+    } else {
+        return "must be a number 0-100";
+    }
+    if (d < 0 || d > 100) return "must be a number 0-100";
+    *out = (float)d;
+    *given = true;
     return NULL;
 }
 
@@ -258,15 +292,16 @@ static void handle_call(const cJSON *msg)
     char err[64] = "";
     lamp_state_t st = s_state;
     uint32_t fade_ms = DEFAULT_FADE_MS;
+    bool given = false;
 
     if (!cJSON_IsString(cap) || strcmp(cap->valuestring, "light.set") != 0) {
         snprintf(err, sizeof(err), "unknown capability");
     } else {
         const char *e;
         const cJSON *f = cJSON_GetObjectItem(args, "fade_ms");
-        if ((e = read_pct(args, "cool", &st.cool))) {
+        if ((e = read_pct(args, "cool", &st.cool, &given))) {
             snprintf(err, sizeof(err), "cool %s", e);
-        } else if ((e = read_pct(args, "warm", &st.warm))) {
+        } else if ((e = read_pct(args, "warm", &st.warm, &given))) {
             snprintf(err, sizeof(err), "warm %s", e);
         } else if (f && !cJSON_IsNull(f)) {
             if (!cJSON_IsNumber(f) || f->valuedouble < 0 || f->valuedouble > MAX_FADE_MS) {
@@ -278,6 +313,7 @@ static void handle_call(const cJSON *msg)
     }
 
     if (!err[0]) {
+        if (!given && st.cool == 0 && st.warm == 0) st = state_load();  // bare "turn on": last lit level
         apply(st, fade_ms);
         state_save();
         ESP_LOGI(TAG, "light.set cool=%.1f warm=%.1f fade=%lu", st.cool, st.warm, (unsigned long)fade_ms);
