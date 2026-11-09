@@ -1,0 +1,105 @@
+{
+  "q": "bieber",
+  "results": [
+    {
+      "track_rowid": 230470615,
+      "track_name": "Pray",
+      "artist_name": "Justin Bieber",
+      "artist_names": [
+        "Justin Bieber"
+      ],
+      "album_name": "Pray",
+      "album_rowid": 52936457,
+      "track_no": 1,
+      "disc_no": 1,
+      "duration_ms": 213463,
+      "status": "done",
+      "is_instrumental": false,
+      "has_art": false,
+      "has_lyrics": true,
+      "gain_db": null,
+      "rating": null,
+      "playable": true
+    },
+    {
+      "track_rowid": 223630588,
+      "track_name": "I DO",
+      "artist_name": "Justin Bieber",
+      "artist_names": [
+        "Justin Bieber"
+      ],
+      "album_name": "SWAG II",
+      "album_rowid": 51524251,
+      "track_no": 4,
+      "disc_no": 1,
+      "duration_ms": 223906,
+      "status": "done",
+      "is_instrumental": false,
+      "has_art": true,
+      "has_lyrics": true,
+      "gain_db": null,
+      "rating": null,
+      "playable": true
+    },
+    {
+      "track_rowid": 223630610,
+      "track_name": "YUKON",
+      "artist_name": "Justin Bieber",
+      "artist_names": [
+        "Justin Bieber"
+      ],
+      "album_name": "SWAG II",
+      "album_rowid": 51524251,
+      "track_no": 3,
+      "disc_no": 2,
+      "duration_ms": 163866,
+      "status": "done",
+      "is_instrumental": false,
+      "has_art": true,
+      "has_lyrics": true,
+      "gain_db": null,
+      "rating": null,
+      "playable": true
+    },
+    {
+      "track_rowid": 76624,
+      "track_name": "Yummy",
+      "artist_name": "Justin Bieber",
+      "artist_names": [
+        "Justin Bieber"
+      ],
+      "album_name": "Changes",
+      "album_rowid": 12081,
+      "track_no": 5,
+      "disc_no": 1,
+      "duration_ms": 208520,
+      "status": "done",
+      "is_instrumental": false,
+      "has_art": true,
+      "has_lyrics": true,
+      "gain_db": null,
+      "rating": null,
+      "playable": true
+    },
+    {
+      "track_rowid": 223630602,
+      "track_name": "LYIN'",
+      "artist_name": "Justin Bieber",
+      "artist_names": [
+        "Justin Bieber"
+      ],
+      "album_name": "SWAG II",
+      "album_rowid": 51524251,
+      "track_no": 18,
+      "disc_no": 1,
+      "duration_ms": 186773,
+      "status": "done",
+      "is_instrumental": false,
+      "has_art": true,
+      "has_lyrics": true,
+      "gain_db": null,
+      "rating": null,
+      "playable": true
+    }
+  ]
+}

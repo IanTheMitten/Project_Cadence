@@ -278,7 +278,7 @@ Test commands (shared venv, per spec `docs/specs/2026-11-09-cadence-modular-spli
 **Why:** Board needs no reflash; the speaker becomes one peer per board session (spec `:114-119`, `:204`).
 
 ### Task 12: Scaffold the Muse adapter package [mechanical]
-- [ ] status
+- [x] status
 **Objective:** `muse_adapter/` is a standalone package `cadence_muse` holding the Muse client and MCP server, their tests green.
 **Write-scope:** `muse_adapter/` (new)
 **Read-context:** `harness/cadence/config.py:11-34`, `harness/cadence/muse/__main__.py`

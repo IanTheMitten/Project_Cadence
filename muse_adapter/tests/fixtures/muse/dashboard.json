@@ -1,0 +1,6939 @@
+{
+  "generated_at": 1789829029312,
+  "resume": {
+    "track": {
+      "track_rowid": 43204,
+      "track_name": "Mona Lisa",
+      "artist_name": "Dominic Fike",
+      "artist_names": [
+        "Dominic Fike"
+      ],
+      "album_name": "Sunburn",
+      "album_rowid": 7745,
+      "track_no": 7,
+      "disc_no": 1,
+      "duration_ms": 186066,
+      "status": "done",
+      "is_instrumental": false,
+      "has_art": true,
+      "has_lyrics": true,
+      "gain_db": null,
+      "rating": null,
+      "playable": true
+    },
+    "position_ms": 131749,
+    "queue_length": 9,
+    "queue_index": 0
+  },
+  "mixes": [
+    {
+      "key": "bright",
+      "label": "Bright",
+      "note": "up and open",
+      "tracks": 307,
+      "runtime_ms": 65129693,
+      "share": 0.288
+    },
+    {
+      "key": "warm",
+      "label": "Warm",
+      "note": "easy, unhurried",
+      "tracks": 226,
+      "runtime_ms": 47031622,
+      "share": 0.212
+    },
+    {
+      "key": "low",
+      "label": "Low",
+      "note": "quiet and heavy",
+      "tracks": 307,
+      "runtime_ms": 64092139,
+      "share": 0.288
+    },
+    {
+      "key": "intense",
+      "label": "Intense",
+      "note": "dark, driving",
+      "tracks": 226,
+      "runtime_ms": 46991121,
+      "share": 0.212
+    }
+  ],
+  "sounds_like": {
+    "seed": {
+      "track_rowid": 223077249,
+      "track_name": "Problems",
+      "artist_name": "Ed Sheeran",
+      "artist_names": [
+        "Ed Sheeran"
+      ],
+      "album_name": "Play (Extended Edition)",
+      "album_rowid": 51417208,
+      "track_no": 14,
+      "disc_no": 1,
+      "duration_ms": 174628,
+      "status": "done",
+      "is_instrumental": false,
+      "has_art": true,
+      "has_lyrics": true,
+      "gain_db": null,
+      "rating": null,
+      "playable": true
+    },
+    "tracks": [
+      {
+        "track_rowid": 260466,
+        "track_name": "Put On A Smile",
+        "artist_name": "Bruno Mars",
+        "artist_names": [
+          "Bruno Mars",
+          "Anderson .Paak",
+          "Silk Sonic"
+        ],
+        "album_name": "An Evening With Silk Sonic",
+        "album_rowid": 46039,
+        "track_no": 6,
+        "disc_no": 1,
+        "duration_ms": 255455,
+        "status": "done",
+        "is_instrumental": false,
+        "has_art": true,
+        "has_lyrics": true,
+        "gain_db": null,
+        "rating": null,
+        "distance": 0.013325889410000001,
+        "playable": true
+      },
+      {
+        "track_rowid": 123458863,
+        "track_name": "Home This Christmas",
+        "artist_name": "Justin Bieber",
+        "artist_names": [
+          "Justin Bieber",
+          "The Band Perry"
+        ],
+        "album_name": "Under The Mistletoe",
+        "album_rowid": 26753352,
+        "track_no": 10,
+        "disc_no": 1,
+        "duration_ms": 204400,
+        "status": "done",
+        "is_instrumental": false,
+        "has_art": true,
+        "has_lyrics": true,
+        "gain_db": null,
+        "rating": null,
+        "distance": 0.01673133600000001,
+        "playable": true
+      },
+      {
+        "track_rowid": 43175,
+        "track_name": "Reason To Stay",
+        "artist_name": "Olivia Dean",
+        "artist_names": [
+          "Olivia Dean"
+        ],
+        "album_name": "Ok Love You Bye",
+        "album_rowid": 7741,
+        "track_no": 3,
+        "disc_no": 1,
+        "duration_ms": 198813,
+        "status": "done",
+        "is_instrumental": false,
+        "has_art": true,
+        "has_lyrics": true,
+        "gain_db": null,
+        "rating": null,
+        "distance": 0.018921107359999988,
+        "playable": true
+      },
+      {
+        "track_rowid": 78852,
+        "track_name": "Change My Mind",
+        "artist_name": "One Direction",
+        "artist_names": [
+          "One Direction"
+        ],
+        "album_name": "Take Me Home (Expanded Edition)",
+        "album_rowid": 12367,
+        "track_no": 8,
+        "disc_no": 1,
+        "duration_ms": 212893,
+        "status": "done",
+        "is_instrumental": false,
+        "has_art": true,
+        "has_lyrics": true,
+        "gain_db": null,
+        "rating": null,
+        "distance": 0.018966629640000017,
+        "playable": true
+      },
+      {
+        "track_rowid": 79036,
+        "track_name": "Long Way Down",
+        "artist_name": "One Direction",
+        "artist_names": [
+          "One Direction"
+        ],
+        "album_name": "Made In The A.M. (Deluxe Edition)",
+        "album_rowid": 12387,
+        "track_no": 7,
+        "disc_no": 1,
+        "duration_ms": 192160,
+        "status": "done",
+        "is_instrumental": false,
+        "has_art": true,
+        "has_lyrics": true,
+        "gain_db": null,
+        "rating": null,
+        "distance": 0.020790734840000005,
+        "playable": true
+      },
+      {
+        "track_rowid": 29899,
+        "track_name": "Beautiful People (feat. Khalid)",
+        "artist_name": "Ed Sheeran",
+        "artist_names": [
+          "Ed Sheeran",
+          "Khalid"
+        ],
+        "album_name": "No.6 Collaborations Project",
+        "album_rowid": 3510,
+        "track_no": 1,
+        "disc_no": 1,
+        "duration_ms": 197866,
+        "status": "done",
+        "is_instrumental": false,
+        "has_art": true,
+        "has_lyrics": true,
+        "gain_db": null,
+        "rating": null,
+        "distance": 0.02152318836000001,
+        "playable": true
+      },
+      {
+        "track_rowid": 3120,
+        "track_name": "A Cruel Affair",
+        "artist_name": "beabadoobee",
+        "artist_names": [
+          "beabadoobee"
+        ],
+        "album_name": "This Is How Tomorrow Moves",
+        "album_rowid": 385,
+        "track_no": 9,
+        "disc_no": 1,
+        "duration_ms": 152040,
+        "status": "done",
+        "is_instrumental": false,
+        "has_art": true,
+        "has_lyrics": true,
+        "gain_db": null,
+        "rating": null,
+        "distance": 0.02299834848999998,
+        "playable": true
+      },
+      {
+        "track_rowid": 4397,
+        "track_name": "Illusion",
+        "artist_name": "One Direction",
+        "artist_names": [
+          "One Direction"
+        ],
+        "album_name": "FOUR (Deluxe)",
+        "album_rowid": 728,
+        "track_no": 14,
+        "disc_no": 1,
+        "duration_ms": 194200,
+        "status": "done",
+        "is_instrumental": false,
+        "has_art": true,
+        "has_lyrics": true,
+        "gain_db": null,
+        "rating": null,
+        "distance": 0.023453477439999988,
+        "playable": true
+      }
+    ]
+  },
+  "recent_albums": [
+    {
+      "album_rowid": 7745,
+      "album_name": "Sunburn",
+      "artist_name": "Dominic Fike",
+      "track_count": 1,
+      "runtime_ms": 186066,
+      "has_art": true,
+      "last_played": 1789725086520
+    },
+    {
+      "album_rowid": 13864312,
+      "album_name": "Strong Love",
+      "artist_name": "Jon Thurlow",
+      "track_count": 6,
+      "runtime_ms": 2028398,
+      "has_art": true,
+      "last_played": 1789725085445
+    },
+    {
+      "album_rowid": 51417208,
+      "album_name": "Play (Extended Edition)",
+      "artist_name": "Ed Sheeran",
+      "track_count": 17,
+      "runtime_ms": 3571159,
+      "has_art": true,
+      "last_played": 1789725084525
+    },
+    {
+      "album_rowid": 29970607,
+      "album_name": "Unorthodox Jukebox (Deluxe Edition)",
+      "artist_name": "Bruno Mars",
+      "track_count": 11,
+      "runtime_ms": 2177743,
+      "has_art": true,
+      "last_played": 1789725083597
+    },
+    {
+      "album_rowid": 1315,
+      "album_name": "Up All Night",
+      "artist_name": "One Direction",
+      "track_count": 17,
+      "runtime_ms": 3499834,
+      "has_art": true,
+      "last_played": 1789725082927
+    }
+  ],
+  "never_played": [
+    {
+      "album_rowid": 50966119,
+      "album_name": "All I Want",
+      "artist_name": "Olivia Rodrigo",
+      "track_count": 1,
+      "runtime_ms": 184601,
+      "has_art": false
+    },
+    {
+      "album_rowid": 170,
+      "album_name": "Die With A Smile",
+      "artist_name": "Lady Gaga",
+      "track_count": 1,
+      "runtime_ms": 251667,
+      "has_art": true
+    },
+    {
+      "album_rowid": 53220517,
+      "album_name": "snowflake (feat. Jaden & Sarcastic Sounds)",
+      "artist_name": "Powfu & Jaden & Sarcastic Sounds",
+      "track_count": 1,
+      "runtime_ms": 188885,
+      "has_art": true
+    },
+    {
+      "album_rowid": 26786800,
+      "album_name": "Breakfast With the Moon",
+      "artist_name": "Powfu",
+      "track_count": 1,
+      "runtime_ms": 163108,
+      "has_art": true
+    },
+    {
+      "album_rowid": 196,
+      "album_name": "Bewitched: The Goddess Edition",
+      "artist_name": "Laufey",
+      "track_count": 4,
+      "runtime_ms": 780692,
+      "has_art": true
+    }
+  ],
+  "forgotten": [
+    {
+      "track_rowid": 164032819,
+      "track_name": "The One / Great Is The Lord",
+      "artist_name": "GIFTED",
+      "artist_names": [
+        "GIFTED"
+      ],
+      "album_name": "He Says Love",
+      "album_rowid": 36016395,
+      "track_no": 5,
+      "disc_no": 1,
+      "duration_ms": 452266,
+      "status": "done",
+      "is_instrumental": false,
+      "has_art": false,
+      "has_lyrics": true,
+      "gain_db": null,
+      "rating": null,
+      "last_played": 1786378453368,
+      "playable": true
+    },
+    {
+      "track_rowid": 164032815,
+      "track_name": "He Says Love",
+      "artist_name": "GIFTED",
+      "artist_names": [
+        "GIFTED"
+      ],
+      "album_name": "He Says Love",
+      "album_rowid": 36016395,
+      "track_no": 1,
+      "disc_no": 1,
+      "duration_ms": 414360,
+      "status": "done",
+      "is_instrumental": false,
+      "has_art": false,
+      "has_lyrics": true,
+      "gain_db": null,
+      "rating": null,
+      "last_played": 1786378453990,
+      "playable": true
+    },
+    {
+      "track_rowid": 51042870,
+      "track_name": "Coffee",
+      "artist_name": "beabadoobee",
+      "artist_names": [
+        "beabadoobee"
+      ],
+      "album_name": "Coffee",
+      "album_rowid": 7197375,
+      "track_no": 1,
+      "disc_no": 1,
+      "duration_ms": 126824,
+      "status": "done",
+      "is_instrumental": false,
+      "has_art": true,
+      "has_lyrics": true,
+      "gain_db": null,
+      "rating": null,
+      "last_played": 1786382293652,
+      "playable": true
+    },
+    {
+      "track_rowid": 7202,
+      "track_name": "Curtains",
+      "artist_name": "Ed Sheeran",
+      "artist_names": [
+        "Ed Sheeran"
+      ],
+      "album_name": "- (Deluxe)",
+      "album_rowid": 1019,
+      "track_no": 8,
+      "disc_no": 1,
+      "duration_ms": 224803,
+      "status": "done",
+      "is_instrumental": false,
+      "has_art": true,
+      "has_lyrics": true,
+      "gain_db": null,
+      "rating": null,
+      "last_played": 1786423934601,
+      "playable": true
+    },
+    {
+      "track_rowid": 10234,
+      "track_name": "I Wish",
+      "artist_name": "One Direction",
+      "artist_names": [
+        "One Direction"
+      ],
+      "album_name": "Up All Night",
+      "album_rowid": 1315,
+      "track_no": 6,
+      "disc_no": 1,
+      "duration_ms": 216946,
+      "status": "done",
+      "is_instrumental": false,
+      "has_art": true,
+      "has_lyrics": true,
+      "gain_db": null,
+      "rating": null,
+      "last_played": 1786423935420,
+      "playable": true
+    }
+  ],
+  "stats": {
+    "library": {
+      "playable": 1066,
+      "missing": 0,
+      "albums": 125,
+      "artists": 104,
+      "runtime_ms": 223244575
+    },
+    "measured": {
+      "playable": 1066,
+      "measured": 1066
+    },
+    "map": [
+      {
+        "track_rowid": 266,
+        "valence": -0.314,
+        "arousal": -0.072,
+        "band": "low"
+      },
+      {
+        "track_rowid": 267,
+        "valence": -0.043,
+        "arousal": 0.065,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 268,
+        "valence": -0.142,
+        "arousal": 0.252,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 269,
+        "valence": -0.017,
+        "arousal": 0.364,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 270,
+        "valence": 0.155,
+        "arousal": 0.36,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 271,
+        "valence": -0.512,
+        "arousal": -0.383,
+        "band": "low"
+      },
+      {
+        "track_rowid": 272,
+        "valence": -0.197,
+        "arousal": -0.013,
+        "band": "low"
+      },
+      {
+        "track_rowid": 273,
+        "valence": -0.481,
+        "arousal": 0.158,
+        "band": "low"
+      },
+      {
+        "track_rowid": 274,
+        "valence": -0.401,
+        "arousal": -0.372,
+        "band": "low"
+      },
+      {
+        "track_rowid": 275,
+        "valence": -0.389,
+        "arousal": 0.238,
+        "band": "low"
+      },
+      {
+        "track_rowid": 389,
+        "valence": -0.774,
+        "arousal": 0.422,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 390,
+        "valence": -0.062,
+        "arousal": 0.017,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 391,
+        "valence": -0.273,
+        "arousal": 0.256,
+        "band": "low"
+      },
+      {
+        "track_rowid": 392,
+        "valence": 0.048,
+        "arousal": 0.423,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 393,
+        "valence": -0.08,
+        "arousal": 0.266,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 394,
+        "valence": -0.186,
+        "arousal": 0.476,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 395,
+        "valence": -0.2,
+        "arousal": 0.204,
+        "band": "low"
+      },
+      {
+        "track_rowid": 396,
+        "valence": -0.228,
+        "arousal": -0.139,
+        "band": "low"
+      },
+      {
+        "track_rowid": 397,
+        "valence": -0.329,
+        "arousal": 0.084,
+        "band": "low"
+      },
+      {
+        "track_rowid": 398,
+        "valence": -0.313,
+        "arousal": -0.138,
+        "band": "low"
+      },
+      {
+        "track_rowid": 399,
+        "valence": 0.138,
+        "arousal": 0.122,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 742,
+        "valence": 0.196,
+        "arousal": 0.263,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 743,
+        "valence": -0.311,
+        "arousal": -0.153,
+        "band": "low"
+      },
+      {
+        "track_rowid": 744,
+        "valence": -0.256,
+        "arousal": 0.084,
+        "band": "low"
+      },
+      {
+        "track_rowid": 745,
+        "valence": -0.475,
+        "arousal": 0.085,
+        "band": "low"
+      },
+      {
+        "track_rowid": 746,
+        "valence": -0.428,
+        "arousal": 0.044,
+        "band": "low"
+      },
+      {
+        "track_rowid": 747,
+        "valence": -0.356,
+        "arousal": 0.372,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 748,
+        "valence": -0.228,
+        "arousal": 0.033,
+        "band": "low"
+      },
+      {
+        "track_rowid": 749,
+        "valence": -0.267,
+        "arousal": -0.03,
+        "band": "low"
+      },
+      {
+        "track_rowid": 750,
+        "valence": -0.032,
+        "arousal": -0.068,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 751,
+        "valence": -0.517,
+        "arousal": 0.028,
+        "band": "low"
+      },
+      {
+        "track_rowid": 752,
+        "valence": -0.484,
+        "arousal": 0.047,
+        "band": "low"
+      },
+      {
+        "track_rowid": 753,
+        "valence": -0.528,
+        "arousal": -0.546,
+        "band": "low"
+      },
+      {
+        "track_rowid": 754,
+        "valence": -0.393,
+        "arousal": -0.464,
+        "band": "low"
+      },
+      {
+        "track_rowid": 755,
+        "valence": -0.479,
+        "arousal": 0.006,
+        "band": "low"
+      },
+      {
+        "track_rowid": 756,
+        "valence": -0.551,
+        "arousal": -0.388,
+        "band": "low"
+      },
+      {
+        "track_rowid": 757,
+        "valence": -0.349,
+        "arousal": -0.384,
+        "band": "low"
+      },
+      {
+        "track_rowid": 758,
+        "valence": -0.239,
+        "arousal": -0.053,
+        "band": "low"
+      },
+      {
+        "track_rowid": 759,
+        "valence": -0.42,
+        "arousal": -0.271,
+        "band": "low"
+      },
+      {
+        "track_rowid": 760,
+        "valence": 0.017,
+        "arousal": 0.128,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 761,
+        "valence": -0.245,
+        "arousal": -0.063,
+        "band": "low"
+      },
+      {
+        "track_rowid": 763,
+        "valence": -0.388,
+        "arousal": 0.142,
+        "band": "low"
+      },
+      {
+        "track_rowid": 764,
+        "valence": -0.258,
+        "arousal": 0.128,
+        "band": "low"
+      },
+      {
+        "track_rowid": 765,
+        "valence": -0.131,
+        "arousal": 0.068,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 766,
+        "valence": -0.412,
+        "arousal": 0.376,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 767,
+        "valence": -0.367,
+        "arousal": -0.137,
+        "band": "low"
+      },
+      {
+        "track_rowid": 768,
+        "valence": -0.287,
+        "arousal": -0.062,
+        "band": "low"
+      },
+      {
+        "track_rowid": 769,
+        "valence": 0.041,
+        "arousal": 0.419,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 1178,
+        "valence": -0.459,
+        "arousal": 0.269,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1337,
+        "valence": -0.184,
+        "arousal": -0.1,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 1338,
+        "valence": -0.614,
+        "arousal": -0.429,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1339,
+        "valence": -0.303,
+        "arousal": 0.607,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 1340,
+        "valence": 0.219,
+        "arousal": 0.395,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 1358,
+        "valence": -0.44,
+        "arousal": 0.174,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1359,
+        "valence": 0.319,
+        "arousal": 0.159,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 1360,
+        "valence": 0.098,
+        "arousal": 0.067,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 1361,
+        "valence": 0.113,
+        "arousal": 0.162,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 1362,
+        "valence": -0.392,
+        "arousal": -0.464,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1363,
+        "valence": -0.244,
+        "arousal": -0.23,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1364,
+        "valence": -0.343,
+        "arousal": 0.275,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1365,
+        "valence": -0.603,
+        "arousal": -0.405,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1366,
+        "valence": -0.008,
+        "arousal": 0.117,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 1367,
+        "valence": -0.202,
+        "arousal": -0.247,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1368,
+        "valence": -0.34,
+        "arousal": -0.455,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1369,
+        "valence": -0.275,
+        "arousal": 0.009,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1370,
+        "valence": -0.357,
+        "arousal": -0.238,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1371,
+        "valence": -0.27,
+        "arousal": -0.358,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1372,
+        "valence": -0.38,
+        "arousal": 0.05,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1373,
+        "valence": -0.479,
+        "arousal": -0.035,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1503,
+        "valence": -0.373,
+        "arousal": 0.304,
+        "band": "low"
+      },
+      {
+        "track_rowid": 2379,
+        "valence": -0.301,
+        "arousal": 0.604,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 2380,
+        "valence": -0.405,
+        "arousal": 0.44,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 2381,
+        "valence": -0.425,
+        "arousal": 0.493,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 2382,
+        "valence": 0.009,
+        "arousal": 0.279,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 2383,
+        "valence": -0.218,
+        "arousal": 0.647,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 2384,
+        "valence": -0.606,
+        "arousal": 0.433,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 2385,
+        "valence": -0.428,
+        "arousal": 0.393,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 2386,
+        "valence": -0.326,
+        "arousal": 0.13,
+        "band": "low"
+      },
+      {
+        "track_rowid": 2387,
+        "valence": -0.09,
+        "arousal": 0.4,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 2388,
+        "valence": -0.496,
+        "arousal": 0.067,
+        "band": "low"
+      },
+      {
+        "track_rowid": 2389,
+        "valence": -0.352,
+        "arousal": 0.49,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 2390,
+        "valence": -0.355,
+        "arousal": -0.209,
+        "band": "low"
+      },
+      {
+        "track_rowid": 2391,
+        "valence": -0.011,
+        "arousal": 0.577,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 2392,
+        "valence": -0.088,
+        "arousal": 0.49,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 2393,
+        "valence": -0.203,
+        "arousal": 0.533,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 2394,
+        "valence": 0.61,
+        "arousal": 0.433,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 2395,
+        "valence": 0.065,
+        "arousal": 0.478,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 2443,
+        "valence": -0.086,
+        "arousal": 0.592,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 2444,
+        "valence": -0.3,
+        "arousal": 0.714,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 2445,
+        "valence": -0.217,
+        "arousal": 0.476,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 3112,
+        "valence": -0.179,
+        "arousal": 0.105,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 3113,
+        "valence": -0.129,
+        "arousal": 0.389,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 3114,
+        "valence": 0.093,
+        "arousal": 0.253,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 3115,
+        "valence": 0.101,
+        "arousal": 0.103,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 3116,
+        "valence": -0.397,
+        "arousal": 0.356,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 3117,
+        "valence": -0.137,
+        "arousal": -0.056,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 3118,
+        "valence": -0.244,
+        "arousal": 0.304,
+        "band": "low"
+      },
+      {
+        "track_rowid": 3119,
+        "valence": -0.45,
+        "arousal": 0.298,
+        "band": "low"
+      },
+      {
+        "track_rowid": 3120,
+        "valence": -0.366,
+        "arousal": 0.373,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 3121,
+        "valence": -0.236,
+        "arousal": 0.11,
+        "band": "low"
+      },
+      {
+        "track_rowid": 3122,
+        "valence": -0.257,
+        "arousal": 0.572,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 3123,
+        "valence": -0.048,
+        "arousal": -0.109,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 3124,
+        "valence": -0.399,
+        "arousal": -0.354,
+        "band": "low"
+      },
+      {
+        "track_rowid": 3125,
+        "valence": -0.111,
+        "arousal": 0.013,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 4350,
+        "valence": -0.534,
+        "arousal": 0.73,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 4351,
+        "valence": -0.267,
+        "arousal": 0.506,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 4352,
+        "valence": -0.041,
+        "arousal": 0.721,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 4353,
+        "valence": -0.189,
+        "arousal": 0.584,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 4354,
+        "valence": -0.08,
+        "arousal": 0.305,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 4355,
+        "valence": 0.229,
+        "arousal": 0.253,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 4356,
+        "valence": -0.224,
+        "arousal": 0.019,
+        "band": "low"
+      },
+      {
+        "track_rowid": 4357,
+        "valence": -0.061,
+        "arousal": 0.452,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 4358,
+        "valence": -0.078,
+        "arousal": 0.105,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 4368,
+        "valence": -0.257,
+        "arousal": 0.527,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 4369,
+        "valence": -0.343,
+        "arousal": -0.16,
+        "band": "low"
+      },
+      {
+        "track_rowid": 4370,
+        "valence": -0.091,
+        "arousal": 0.578,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 4371,
+        "valence": 0.065,
+        "arousal": 0.241,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 4372,
+        "valence": 0.155,
+        "arousal": 0.266,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 4373,
+        "valence": -0.018,
+        "arousal": 0.444,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 4374,
+        "valence": 0.24,
+        "arousal": 0.517,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 4375,
+        "valence": -0.032,
+        "arousal": 0.41,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 4376,
+        "valence": -0.033,
+        "arousal": 0.204,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 4377,
+        "valence": 0.083,
+        "arousal": 0.169,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 4378,
+        "valence": -0.401,
+        "arousal": -0.182,
+        "band": "low"
+      },
+      {
+        "track_rowid": 4379,
+        "valence": -0.591,
+        "arousal": -0.344,
+        "band": "low"
+      },
+      {
+        "track_rowid": 4380,
+        "valence": 0.06,
+        "arousal": 0.423,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 4381,
+        "valence": -0.325,
+        "arousal": 0.373,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 4382,
+        "valence": 0.112,
+        "arousal": 0.349,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 4383,
+        "valence": -0.275,
+        "arousal": -0.106,
+        "band": "low"
+      },
+      {
+        "track_rowid": 4384,
+        "valence": -0.238,
+        "arousal": 0.573,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 4385,
+        "valence": -0.096,
+        "arousal": 0.251,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 4386,
+        "valence": -0.393,
+        "arousal": 0.664,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 4387,
+        "valence": -0.351,
+        "arousal": -0.102,
+        "band": "low"
+      },
+      {
+        "track_rowid": 4388,
+        "valence": 0.172,
+        "arousal": 0.57,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 4389,
+        "valence": 0.022,
+        "arousal": 0.265,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 4390,
+        "valence": -0.261,
+        "arousal": 0.342,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 4391,
+        "valence": -0.14,
+        "arousal": 0.569,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 4392,
+        "valence": -0.09,
+        "arousal": 0.327,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 4393,
+        "valence": 0.128,
+        "arousal": 0.584,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 4394,
+        "valence": -0.322,
+        "arousal": 0.644,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 4395,
+        "valence": -0.195,
+        "arousal": 0.564,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 4396,
+        "valence": -0.037,
+        "arousal": 0.413,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 4397,
+        "valence": 0.145,
+        "arousal": 0.558,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 4398,
+        "valence": 0.089,
+        "arousal": -0.112,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 4399,
+        "valence": 0.026,
+        "arousal": 0.33,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 4400,
+        "valence": -0.343,
+        "arousal": 0.188,
+        "band": "low"
+      },
+      {
+        "track_rowid": 4465,
+        "valence": -0.181,
+        "arousal": -0.004,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 4466,
+        "valence": -0.249,
+        "arousal": 0.412,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 4467,
+        "valence": -0.355,
+        "arousal": 0.56,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 4468,
+        "valence": -0.152,
+        "arousal": 0.318,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 4469,
+        "valence": 0.025,
+        "arousal": 0.424,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 4470,
+        "valence": -0.371,
+        "arousal": -0.271,
+        "band": "low"
+      },
+      {
+        "track_rowid": 4471,
+        "valence": -0.119,
+        "arousal": 0.029,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 4472,
+        "valence": 0.198,
+        "arousal": -0.05,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 4473,
+        "valence": -0.179,
+        "arousal": 0.264,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 4474,
+        "valence": -0.069,
+        "arousal": 0.429,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 4475,
+        "valence": 0.005,
+        "arousal": 0.18,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 4476,
+        "valence": 0.057,
+        "arousal": 0.124,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 4477,
+        "valence": 0.236,
+        "arousal": 0.495,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 4478,
+        "valence": 0.042,
+        "arousal": 0.441,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 4479,
+        "valence": -0.561,
+        "arousal": 0.09,
+        "band": "low"
+      },
+      {
+        "track_rowid": 4480,
+        "valence": -0.224,
+        "arousal": 0.298,
+        "band": "low"
+      },
+      {
+        "track_rowid": 4827,
+        "valence": -0.495,
+        "arousal": -0.141,
+        "band": "low"
+      },
+      {
+        "track_rowid": 4828,
+        "valence": -0.417,
+        "arousal": 0.071,
+        "band": "low"
+      },
+      {
+        "track_rowid": 4829,
+        "valence": -0.233,
+        "arousal": 0.1,
+        "band": "low"
+      },
+      {
+        "track_rowid": 4830,
+        "valence": -0.283,
+        "arousal": 0.317,
+        "band": "low"
+      },
+      {
+        "track_rowid": 4831,
+        "valence": -0.444,
+        "arousal": 0.189,
+        "band": "low"
+      },
+      {
+        "track_rowid": 4832,
+        "valence": -0.153,
+        "arousal": 0.01,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 4833,
+        "valence": -0.391,
+        "arousal": 0.136,
+        "band": "low"
+      },
+      {
+        "track_rowid": 4834,
+        "valence": -0.451,
+        "arousal": 0.085,
+        "band": "low"
+      },
+      {
+        "track_rowid": 4835,
+        "valence": -0.34,
+        "arousal": 0.364,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 5034,
+        "valence": -0.12,
+        "arousal": 0.569,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 5035,
+        "valence": 0.043,
+        "arousal": 0.206,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 5036,
+        "valence": 0.067,
+        "arousal": 0.368,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 5037,
+        "valence": -0.553,
+        "arousal": 0.657,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 5038,
+        "valence": 0.054,
+        "arousal": 0.52,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 5039,
+        "valence": 0.104,
+        "arousal": 0.268,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 5040,
+        "valence": -0.219,
+        "arousal": 0.382,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 5042,
+        "valence": 0.005,
+        "arousal": 0.123,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 5043,
+        "valence": -0.214,
+        "arousal": 0.399,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 5044,
+        "valence": -0.139,
+        "arousal": 0.374,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 5045,
+        "valence": -0.138,
+        "arousal": 0.418,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 7195,
+        "valence": -0.159,
+        "arousal": -0.102,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 7196,
+        "valence": -0.31,
+        "arousal": 0.336,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 7197,
+        "valence": -0.265,
+        "arousal": 0.072,
+        "band": "low"
+      },
+      {
+        "track_rowid": 7198,
+        "valence": -0.511,
+        "arousal": 0.417,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 7199,
+        "valence": -0.018,
+        "arousal": -0.086,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 7200,
+        "valence": -0.274,
+        "arousal": 0.337,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 7201,
+        "valence": -0.087,
+        "arousal": 0.014,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 7202,
+        "valence": -0.032,
+        "arousal": 0.183,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 7203,
+        "valence": -0.37,
+        "arousal": 0.035,
+        "band": "low"
+      },
+      {
+        "track_rowid": 7204,
+        "valence": -0.376,
+        "arousal": 0.061,
+        "band": "low"
+      },
+      {
+        "track_rowid": 7205,
+        "valence": -0.159,
+        "arousal": 0.243,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 7206,
+        "valence": -0.34,
+        "arousal": 0.419,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 7207,
+        "valence": -0.306,
+        "arousal": 0.064,
+        "band": "low"
+      },
+      {
+        "track_rowid": 7208,
+        "valence": -0.16,
+        "arousal": 0.394,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 7209,
+        "valence": -0.07,
+        "arousal": 0.013,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 7210,
+        "valence": -0.294,
+        "arousal": 0.048,
+        "band": "low"
+      },
+      {
+        "track_rowid": 7211,
+        "valence": -0.469,
+        "arousal": -0.034,
+        "band": "low"
+      },
+      {
+        "track_rowid": 7212,
+        "valence": -0.485,
+        "arousal": 0.15,
+        "band": "low"
+      },
+      {
+        "track_rowid": 7263,
+        "valence": -0.291,
+        "arousal": 0.183,
+        "band": "low"
+      },
+      {
+        "track_rowid": 7264,
+        "valence": -0.023,
+        "arousal": 0.129,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 7265,
+        "valence": -0.012,
+        "arousal": 0.558,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 7266,
+        "valence": -0.17,
+        "arousal": 0.038,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 7267,
+        "valence": -0.461,
+        "arousal": 0.044,
+        "band": "low"
+      },
+      {
+        "track_rowid": 7268,
+        "valence": -0.125,
+        "arousal": 0.439,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 7269,
+        "valence": -0.449,
+        "arousal": 0.149,
+        "band": "low"
+      },
+      {
+        "track_rowid": 7270,
+        "valence": -0.194,
+        "arousal": 0.405,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 7271,
+        "valence": -0.306,
+        "arousal": 0.513,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 7272,
+        "valence": -0.475,
+        "arousal": -0.352,
+        "band": "low"
+      },
+      {
+        "track_rowid": 7273,
+        "valence": -0.424,
+        "arousal": 0.146,
+        "band": "low"
+      },
+      {
+        "track_rowid": 7274,
+        "valence": -0.294,
+        "arousal": 0.03,
+        "band": "low"
+      },
+      {
+        "track_rowid": 7275,
+        "valence": -0.23,
+        "arousal": 0.287,
+        "band": "low"
+      },
+      {
+        "track_rowid": 7276,
+        "valence": -0.227,
+        "arousal": 0.132,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10181,
+        "valence": -0.133,
+        "arousal": 0.402,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10182,
+        "valence": 0.124,
+        "arousal": 0.427,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10183,
+        "valence": -0.124,
+        "arousal": 0.335,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10184,
+        "valence": -0.414,
+        "arousal": 0.057,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10185,
+        "valence": -0.14,
+        "arousal": 0.42,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10186,
+        "valence": -0.44,
+        "arousal": 0.466,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10187,
+        "valence": -0.172,
+        "arousal": 0.56,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10188,
+        "valence": -0.506,
+        "arousal": 0.578,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10190,
+        "valence": -0.264,
+        "arousal": 0.645,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10191,
+        "valence": -0.001,
+        "arousal": 0.463,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10192,
+        "valence": -0.523,
+        "arousal": 0.573,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10193,
+        "valence": -0.427,
+        "arousal": 0.736,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10195,
+        "valence": -0.311,
+        "arousal": 0.338,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10196,
+        "valence": -0.178,
+        "arousal": 0.483,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10197,
+        "valence": -0.28,
+        "arousal": 0.465,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10229,
+        "valence": -0.364,
+        "arousal": 0.8,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10230,
+        "valence": -0.558,
+        "arousal": 0.76,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10231,
+        "valence": -0.07,
+        "arousal": 0.625,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10232,
+        "valence": 0.233,
+        "arousal": 0.347,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10233,
+        "valence": -0.204,
+        "arousal": 0.524,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10234,
+        "valence": -0.076,
+        "arousal": 0.552,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10235,
+        "valence": 0.111,
+        "arousal": 0.61,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10236,
+        "valence": 0.212,
+        "arousal": 0.244,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 10237,
+        "valence": -0.369,
+        "arousal": 0.612,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10238,
+        "valence": 0.348,
+        "arousal": 0.375,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10239,
+        "valence": 0.027,
+        "arousal": 0.371,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10240,
+        "valence": -0.389,
+        "arousal": 0.338,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10241,
+        "valence": 0.301,
+        "arousal": 0.463,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10242,
+        "valence": -0.232,
+        "arousal": 0.469,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10243,
+        "valence": -0.121,
+        "arousal": 0.106,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 10244,
+        "valence": -0.159,
+        "arousal": 0.475,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10245,
+        "valence": -0.097,
+        "arousal": 0.642,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10246,
+        "valence": -0.032,
+        "arousal": 0.678,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10278,
+        "valence": -0.202,
+        "arousal": -0.051,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10279,
+        "valence": -0.035,
+        "arousal": 0.079,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 10280,
+        "valence": -0.332,
+        "arousal": 0.043,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10281,
+        "valence": -0.118,
+        "arousal": 0.203,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 10282,
+        "valence": -0.098,
+        "arousal": 0.11,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 10283,
+        "valence": -0.239,
+        "arousal": 0.136,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10285,
+        "valence": 0.146,
+        "arousal": 0.554,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10286,
+        "valence": -0.239,
+        "arousal": 0.392,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10288,
+        "valence": -0.39,
+        "arousal": -0.046,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10291,
+        "valence": 0.191,
+        "arousal": 0.438,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10384,
+        "valence": -0.21,
+        "arousal": 0.733,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10385,
+        "valence": -0.425,
+        "arousal": 0.568,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10386,
+        "valence": -0.155,
+        "arousal": 0.343,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10387,
+        "valence": 0.017,
+        "arousal": 0.26,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 10388,
+        "valence": -0.112,
+        "arousal": 0.251,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 10389,
+        "valence": -0.167,
+        "arousal": 0.426,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10390,
+        "valence": -0.452,
+        "arousal": 0.415,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10391,
+        "valence": -0.342,
+        "arousal": 0.212,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10392,
+        "valence": 0.292,
+        "arousal": 0.573,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10393,
+        "valence": 0.237,
+        "arousal": 0.514,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10394,
+        "valence": -0.257,
+        "arousal": 0.421,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10395,
+        "valence": -0.134,
+        "arousal": 0.539,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10396,
+        "valence": -0.278,
+        "arousal": 0.397,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10398,
+        "valence": -0.449,
+        "arousal": 0.324,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10399,
+        "valence": 0.461,
+        "arousal": 0.725,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10400,
+        "valence": 0.038,
+        "arousal": 0.415,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10401,
+        "valence": -0.489,
+        "arousal": 0.499,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 18124,
+        "valence": 0.01,
+        "arousal": 0.368,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 18125,
+        "valence": 0.262,
+        "arousal": 0.496,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 18126,
+        "valence": -0.025,
+        "arousal": 0.652,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 18127,
+        "valence": -0.264,
+        "arousal": 0.756,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 18128,
+        "valence": -0.345,
+        "arousal": 0.496,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 18129,
+        "valence": 0.324,
+        "arousal": 0.646,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 18130,
+        "valence": -0.275,
+        "arousal": 0.163,
+        "band": "low"
+      },
+      {
+        "track_rowid": 18131,
+        "valence": -0.257,
+        "arousal": 0.572,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 18132,
+        "valence": -0.317,
+        "arousal": 0.546,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 18133,
+        "valence": -0.157,
+        "arousal": 0.458,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 18134,
+        "valence": -0.185,
+        "arousal": 0.314,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 18135,
+        "valence": -0.048,
+        "arousal": 0.119,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 18136,
+        "valence": -0.265,
+        "arousal": 0.126,
+        "band": "low"
+      },
+      {
+        "track_rowid": 18137,
+        "valence": -0.206,
+        "arousal": 0.212,
+        "band": "low"
+      },
+      {
+        "track_rowid": 18138,
+        "valence": -0.194,
+        "arousal": 0.647,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 21968,
+        "valence": -0.425,
+        "arousal": 0.813,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 21969,
+        "valence": -0.41,
+        "arousal": 0.617,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 21970,
+        "valence": 0.032,
+        "arousal": 0.673,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 21971,
+        "valence": -0.601,
+        "arousal": 0.454,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 21972,
+        "valence": -0.402,
+        "arousal": -0.139,
+        "band": "low"
+      },
+      {
+        "track_rowid": 21973,
+        "valence": -0.397,
+        "arousal": 0.291,
+        "band": "low"
+      },
+      {
+        "track_rowid": 21974,
+        "valence": -0.039,
+        "arousal": 0.643,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 21975,
+        "valence": -0.345,
+        "arousal": 0.185,
+        "band": "low"
+      },
+      {
+        "track_rowid": 21976,
+        "valence": 0.023,
+        "arousal": 0.463,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 21977,
+        "valence": -0.309,
+        "arousal": 0.48,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 21978,
+        "valence": 0.061,
+        "arousal": 0.603,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 21979,
+        "valence": 0.027,
+        "arousal": 0.542,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 21980,
+        "valence": -0.086,
+        "arousal": 0.621,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 21981,
+        "valence": -0.001,
+        "arousal": 0.592,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 21982,
+        "valence": 0.123,
+        "arousal": 0.756,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 21983,
+        "valence": -0.342,
+        "arousal": 0.737,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 22087,
+        "valence": -0.549,
+        "arousal": 0.321,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 22088,
+        "valence": -0.181,
+        "arousal": 0.811,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 22089,
+        "valence": 0.135,
+        "arousal": 0.623,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 22090,
+        "valence": -0.332,
+        "arousal": 0.423,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 22091,
+        "valence": -0.204,
+        "arousal": 0.181,
+        "band": "low"
+      },
+      {
+        "track_rowid": 22092,
+        "valence": -0.159,
+        "arousal": 0.606,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 22093,
+        "valence": -0.44,
+        "arousal": 0.46,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 22094,
+        "valence": -0.052,
+        "arousal": 0.118,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 22095,
+        "valence": -0.285,
+        "arousal": 0.763,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 22096,
+        "valence": 0.036,
+        "arousal": 0.693,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 22097,
+        "valence": -0.683,
+        "arousal": 0.291,
+        "band": "low"
+      },
+      {
+        "track_rowid": 22098,
+        "valence": -0.415,
+        "arousal": 0.738,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 22099,
+        "valence": -0.164,
+        "arousal": -0.0,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 29899,
+        "valence": -0.246,
+        "arousal": 0.259,
+        "band": "low"
+      },
+      {
+        "track_rowid": 29900,
+        "valence": 0.214,
+        "arousal": 0.389,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 29901,
+        "valence": -0.319,
+        "arousal": 0.798,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 29903,
+        "valence": -0.498,
+        "arousal": 0.184,
+        "band": "low"
+      },
+      {
+        "track_rowid": 29904,
+        "valence": 0.071,
+        "arousal": 0.413,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 29905,
+        "valence": -0.08,
+        "arousal": 0.536,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 29908,
+        "valence": -0.425,
+        "arousal": 0.259,
+        "band": "low"
+      },
+      {
+        "track_rowid": 29910,
+        "valence": -0.239,
+        "arousal": 0.323,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 29911,
+        "valence": -0.047,
+        "arousal": 0.36,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 29913,
+        "valence": -0.108,
+        "arousal": 0.589,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 43173,
+        "valence": -0.107,
+        "arousal": 0.192,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 43174,
+        "valence": -0.023,
+        "arousal": 0.151,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 43175,
+        "valence": -0.523,
+        "arousal": 0.622,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 43176,
+        "valence": -0.17,
+        "arousal": -0.004,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 43198,
+        "valence": -0.273,
+        "arousal": 0.361,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 43199,
+        "valence": -0.007,
+        "arousal": 0.526,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 43201,
+        "valence": -0.026,
+        "arousal": 0.333,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 43202,
+        "valence": 0.018,
+        "arousal": 0.513,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 43203,
+        "valence": 0.202,
+        "arousal": 0.578,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 43204,
+        "valence": -0.072,
+        "arousal": 0.128,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 43205,
+        "valence": -0.014,
+        "arousal": 0.412,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 43206,
+        "valence": -0.045,
+        "arousal": 0.437,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 43207,
+        "valence": -0.006,
+        "arousal": 0.155,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 43208,
+        "valence": -0.349,
+        "arousal": 0.1,
+        "band": "low"
+      },
+      {
+        "track_rowid": 43209,
+        "valence": -0.067,
+        "arousal": 0.577,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 43210,
+        "valence": -0.298,
+        "arousal": 0.266,
+        "band": "low"
+      },
+      {
+        "track_rowid": 43211,
+        "valence": -0.167,
+        "arousal": 0.172,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 43223,
+        "valence": -0.27,
+        "arousal": -0.183,
+        "band": "low"
+      },
+      {
+        "track_rowid": 45847,
+        "valence": 0.008,
+        "arousal": -0.141,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 45848,
+        "valence": -0.208,
+        "arousal": 0.024,
+        "band": "low"
+      },
+      {
+        "track_rowid": 45849,
+        "valence": -0.205,
+        "arousal": -0.189,
+        "band": "low"
+      },
+      {
+        "track_rowid": 45850,
+        "valence": -0.291,
+        "arousal": 0.531,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 45851,
+        "valence": -0.167,
+        "arousal": -0.065,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 45852,
+        "valence": -0.25,
+        "arousal": 0.1,
+        "band": "low"
+      },
+      {
+        "track_rowid": 45853,
+        "valence": 0.106,
+        "arousal": 0.293,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 45854,
+        "valence": -0.058,
+        "arousal": 0.501,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 45855,
+        "valence": -0.072,
+        "arousal": -0.161,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 45856,
+        "valence": -0.078,
+        "arousal": 0.468,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 45857,
+        "valence": -0.133,
+        "arousal": 0.145,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 45858,
+        "valence": -0.016,
+        "arousal": 0.306,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 45859,
+        "valence": -0.179,
+        "arousal": 0.057,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 54302,
+        "valence": 0.251,
+        "arousal": 0.265,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 54303,
+        "valence": -0.028,
+        "arousal": 0.164,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 54304,
+        "valence": -0.023,
+        "arousal": 0.206,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 54305,
+        "valence": -0.294,
+        "arousal": 0.422,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 54306,
+        "valence": -0.273,
+        "arousal": -0.073,
+        "band": "low"
+      },
+      {
+        "track_rowid": 54307,
+        "valence": -0.15,
+        "arousal": 0.174,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 54308,
+        "valence": -0.097,
+        "arousal": 0.09,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 54309,
+        "valence": -0.497,
+        "arousal": 0.505,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 76322,
+        "valence": -0.371,
+        "arousal": 0.31,
+        "band": "low"
+      },
+      {
+        "track_rowid": 76323,
+        "valence": 0.009,
+        "arousal": 0.259,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 76324,
+        "valence": -0.05,
+        "arousal": 0.188,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 76325,
+        "valence": -0.133,
+        "arousal": 0.334,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 76326,
+        "valence": -0.379,
+        "arousal": 0.241,
+        "band": "low"
+      },
+      {
+        "track_rowid": 76327,
+        "valence": -0.252,
+        "arousal": 0.137,
+        "band": "low"
+      },
+      {
+        "track_rowid": 76475,
+        "valence": -0.327,
+        "arousal": 0.254,
+        "band": "low"
+      },
+      {
+        "track_rowid": 76476,
+        "valence": -0.377,
+        "arousal": 0.062,
+        "band": "low"
+      },
+      {
+        "track_rowid": 76477,
+        "valence": -0.147,
+        "arousal": 0.287,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 76478,
+        "valence": -0.331,
+        "arousal": 0.466,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 76479,
+        "valence": -0.419,
+        "arousal": 0.536,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 76480,
+        "valence": -0.182,
+        "arousal": 0.109,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 76620,
+        "valence": -0.285,
+        "arousal": 0.235,
+        "band": "low"
+      },
+      {
+        "track_rowid": 76621,
+        "valence": -0.147,
+        "arousal": 0.121,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 76622,
+        "valence": -0.233,
+        "arousal": 0.256,
+        "band": "low"
+      },
+      {
+        "track_rowid": 76623,
+        "valence": 0.493,
+        "arousal": 0.405,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 76624,
+        "valence": -0.006,
+        "arousal": 0.114,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 76625,
+        "valence": -0.055,
+        "arousal": 0.453,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 76626,
+        "valence": 0.023,
+        "arousal": 0.659,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 76627,
+        "valence": 0.17,
+        "arousal": 0.453,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 76628,
+        "valence": -0.184,
+        "arousal": 0.327,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 76629,
+        "valence": 0.117,
+        "arousal": 0.581,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 76630,
+        "valence": 0.072,
+        "arousal": 0.515,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 76631,
+        "valence": -0.072,
+        "arousal": 0.683,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 76632,
+        "valence": 0.386,
+        "arousal": 0.351,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 76633,
+        "valence": -0.323,
+        "arousal": 0.089,
+        "band": "low"
+      },
+      {
+        "track_rowid": 76634,
+        "valence": 0.028,
+        "arousal": 0.356,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 76635,
+        "valence": -0.355,
+        "arousal": 0.165,
+        "band": "low"
+      },
+      {
+        "track_rowid": 76636,
+        "valence": 0.356,
+        "arousal": 0.265,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 77147,
+        "valence": -0.359,
+        "arousal": -0.143,
+        "band": "low"
+      },
+      {
+        "track_rowid": 77148,
+        "valence": -0.478,
+        "arousal": -0.3,
+        "band": "low"
+      },
+      {
+        "track_rowid": 77149,
+        "valence": -0.412,
+        "arousal": -0.382,
+        "band": "low"
+      },
+      {
+        "track_rowid": 77150,
+        "valence": -0.315,
+        "arousal": -0.37,
+        "band": "low"
+      },
+      {
+        "track_rowid": 77151,
+        "valence": -0.461,
+        "arousal": -0.196,
+        "band": "low"
+      },
+      {
+        "track_rowid": 77152,
+        "valence": -0.611,
+        "arousal": -0.377,
+        "band": "low"
+      },
+      {
+        "track_rowid": 77153,
+        "valence": -0.12,
+        "arousal": -0.07,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 77154,
+        "valence": -0.581,
+        "arousal": -0.501,
+        "band": "low"
+      },
+      {
+        "track_rowid": 77155,
+        "valence": -0.672,
+        "arousal": -0.162,
+        "band": "low"
+      },
+      {
+        "track_rowid": 77156,
+        "valence": -0.305,
+        "arousal": -0.016,
+        "band": "low"
+      },
+      {
+        "track_rowid": 77157,
+        "valence": -0.003,
+        "arousal": -0.007,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 77158,
+        "valence": -0.216,
+        "arousal": 0.096,
+        "band": "low"
+      },
+      {
+        "track_rowid": 77159,
+        "valence": -0.223,
+        "arousal": 0.025,
+        "band": "low"
+      },
+      {
+        "track_rowid": 77160,
+        "valence": -0.459,
+        "arousal": -0.163,
+        "band": "low"
+      },
+      {
+        "track_rowid": 77161,
+        "valence": -0.485,
+        "arousal": -0.278,
+        "band": "low"
+      },
+      {
+        "track_rowid": 77162,
+        "valence": -0.475,
+        "arousal": -0.005,
+        "band": "low"
+      },
+      {
+        "track_rowid": 77318,
+        "valence": -0.418,
+        "arousal": 0.794,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 77319,
+        "valence": -0.134,
+        "arousal": 0.531,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 77320,
+        "valence": -0.368,
+        "arousal": 0.71,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 77321,
+        "valence": -0.227,
+        "arousal": 0.451,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 77322,
+        "valence": -0.402,
+        "arousal": 0.449,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 77323,
+        "valence": -0.16,
+        "arousal": 0.164,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 77324,
+        "valence": 0.102,
+        "arousal": 0.628,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 77325,
+        "valence": -0.018,
+        "arousal": 0.523,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 77326,
+        "valence": -0.169,
+        "arousal": 0.681,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 77327,
+        "valence": -0.658,
+        "arousal": 0.062,
+        "band": "low"
+      },
+      {
+        "track_rowid": 77328,
+        "valence": -0.212,
+        "arousal": 0.419,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 77329,
+        "valence": -0.21,
+        "arousal": 0.199,
+        "band": "low"
+      },
+      {
+        "track_rowid": 78169,
+        "valence": 0.091,
+        "arousal": 0.168,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 78170,
+        "valence": 0.043,
+        "arousal": -0.151,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 78171,
+        "valence": -0.175,
+        "arousal": 0.006,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 78172,
+        "valence": -0.488,
+        "arousal": 0.065,
+        "band": "low"
+      },
+      {
+        "track_rowid": 78173,
+        "valence": -0.445,
+        "arousal": 0.14,
+        "band": "low"
+      },
+      {
+        "track_rowid": 78175,
+        "valence": -0.485,
+        "arousal": 0.008,
+        "band": "low"
+      },
+      {
+        "track_rowid": 78176,
+        "valence": -0.204,
+        "arousal": 0.048,
+        "band": "low"
+      },
+      {
+        "track_rowid": 78177,
+        "valence": -0.196,
+        "arousal": 0.427,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 78311,
+        "valence": 0.001,
+        "arousal": 0.324,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 78312,
+        "valence": -0.159,
+        "arousal": -0.001,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 78313,
+        "valence": -0.215,
+        "arousal": 0.101,
+        "band": "low"
+      },
+      {
+        "track_rowid": 78314,
+        "valence": -0.319,
+        "arousal": 0.253,
+        "band": "low"
+      },
+      {
+        "track_rowid": 78315,
+        "valence": -0.345,
+        "arousal": 0.221,
+        "band": "low"
+      },
+      {
+        "track_rowid": 78316,
+        "valence": -0.367,
+        "arousal": 0.017,
+        "band": "low"
+      },
+      {
+        "track_rowid": 78317,
+        "valence": -0.476,
+        "arousal": -0.068,
+        "band": "low"
+      },
+      {
+        "track_rowid": 78318,
+        "valence": -0.082,
+        "arousal": 0.498,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 78319,
+        "valence": 0.059,
+        "arousal": 0.184,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 78320,
+        "valence": -0.266,
+        "arousal": 0.565,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 78321,
+        "valence": -0.392,
+        "arousal": -0.33,
+        "band": "low"
+      },
+      {
+        "track_rowid": 78322,
+        "valence": -0.274,
+        "arousal": 0.114,
+        "band": "low"
+      },
+      {
+        "track_rowid": 78323,
+        "valence": -0.418,
+        "arousal": -0.048,
+        "band": "low"
+      },
+      {
+        "track_rowid": 78324,
+        "valence": -0.147,
+        "arousal": 0.146,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 78325,
+        "valence": -0.338,
+        "arousal": 0.441,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 78326,
+        "valence": -0.241,
+        "arousal": 0.135,
+        "band": "low"
+      },
+      {
+        "track_rowid": 78327,
+        "valence": -0.476,
+        "arousal": -0.038,
+        "band": "low"
+      },
+      {
+        "track_rowid": 78845,
+        "valence": 0.022,
+        "arousal": 0.564,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 78846,
+        "valence": -0.388,
+        "arousal": 0.522,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 78847,
+        "valence": 0.045,
+        "arousal": 0.029,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 78848,
+        "valence": 0.213,
+        "arousal": 0.442,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 78849,
+        "valence": 0.07,
+        "arousal": 0.514,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 78850,
+        "valence": -0.247,
+        "arousal": 0.522,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 78851,
+        "valence": -0.031,
+        "arousal": 0.45,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 78852,
+        "valence": -0.121,
+        "arousal": 0.295,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 78853,
+        "valence": -0.074,
+        "arousal": 0.557,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 78854,
+        "valence": -0.044,
+        "arousal": 0.196,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 78855,
+        "valence": -0.076,
+        "arousal": 0.662,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 78856,
+        "valence": -0.098,
+        "arousal": 0.38,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 78857,
+        "valence": -0.063,
+        "arousal": 0.338,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 78858,
+        "valence": -0.171,
+        "arousal": 0.545,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 78859,
+        "valence": -0.269,
+        "arousal": 0.396,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 78860,
+        "valence": 0.227,
+        "arousal": 0.387,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 78861,
+        "valence": -0.209,
+        "arousal": 0.554,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 78862,
+        "valence": -0.238,
+        "arousal": 0.386,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 78863,
+        "valence": -0.332,
+        "arousal": 0.597,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 78864,
+        "valence": -0.023,
+        "arousal": 0.227,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 79030,
+        "valence": -0.148,
+        "arousal": 0.352,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 79031,
+        "valence": -0.24,
+        "arousal": 0.504,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 79032,
+        "valence": 0.379,
+        "arousal": 0.363,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 79033,
+        "valence": 0.045,
+        "arousal": 0.371,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 79034,
+        "valence": -0.445,
+        "arousal": 0.595,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 79035,
+        "valence": -0.258,
+        "arousal": 0.176,
+        "band": "low"
+      },
+      {
+        "track_rowid": 79036,
+        "valence": -0.19,
+        "arousal": 0.01,
+        "band": "low"
+      },
+      {
+        "track_rowid": 79037,
+        "valence": -0.427,
+        "arousal": 0.393,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 79038,
+        "valence": -0.278,
+        "arousal": 0.657,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 79039,
+        "valence": -0.106,
+        "arousal": 0.569,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 79040,
+        "valence": -0.18,
+        "arousal": 0.524,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 79041,
+        "valence": 0.012,
+        "arousal": 0.039,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 79042,
+        "valence": -0.302,
+        "arousal": 0.508,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 79043,
+        "valence": 0.013,
+        "arousal": 0.209,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 79044,
+        "valence": -0.226,
+        "arousal": -0.144,
+        "band": "low"
+      },
+      {
+        "track_rowid": 79045,
+        "valence": -0.798,
+        "arousal": 0.792,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 79046,
+        "valence": -0.173,
+        "arousal": 0.07,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 79074,
+        "valence": -0.474,
+        "arousal": 0.432,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 79075,
+        "valence": -0.106,
+        "arousal": 0.624,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 79076,
+        "valence": -0.132,
+        "arousal": 0.405,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 79077,
+        "valence": -0.314,
+        "arousal": 0.558,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 79078,
+        "valence": 0.224,
+        "arousal": 0.423,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 79079,
+        "valence": -0.121,
+        "arousal": 0.539,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 79080,
+        "valence": -0.214,
+        "arousal": 0.397,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 79081,
+        "valence": -0.156,
+        "arousal": 0.243,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 79082,
+        "valence": 0.061,
+        "arousal": 0.649,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 79083,
+        "valence": -0.464,
+        "arousal": 0.314,
+        "band": "low"
+      },
+      {
+        "track_rowid": 79084,
+        "valence": -0.045,
+        "arousal": 0.096,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 79085,
+        "valence": -0.282,
+        "arousal": 0.313,
+        "band": "low"
+      },
+      {
+        "track_rowid": 79086,
+        "valence": -0.221,
+        "arousal": 0.37,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 79087,
+        "valence": -0.45,
+        "arousal": -0.298,
+        "band": "low"
+      },
+      {
+        "track_rowid": 79088,
+        "valence": 0.002,
+        "arousal": 0.582,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 79089,
+        "valence": -0.025,
+        "arousal": 0.557,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 79174,
+        "valence": -0.575,
+        "arousal": 0.841,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 79175,
+        "valence": -0.201,
+        "arousal": 0.83,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 79176,
+        "valence": -0.16,
+        "arousal": 0.394,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 79177,
+        "valence": -0.409,
+        "arousal": 0.259,
+        "band": "low"
+      },
+      {
+        "track_rowid": 79178,
+        "valence": -0.395,
+        "arousal": 0.279,
+        "band": "low"
+      },
+      {
+        "track_rowid": 79179,
+        "valence": -0.201,
+        "arousal": 0.623,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 79180,
+        "valence": 0.138,
+        "arousal": 0.803,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 79181,
+        "valence": -0.321,
+        "arousal": 0.695,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 79182,
+        "valence": -0.543,
+        "arousal": 0.412,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 79183,
+        "valence": -0.537,
+        "arousal": 0.453,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 79184,
+        "valence": -0.773,
+        "arousal": -0.226,
+        "band": "low"
+      },
+      {
+        "track_rowid": 79185,
+        "valence": -0.551,
+        "arousal": -0.112,
+        "band": "low"
+      },
+      {
+        "track_rowid": 79186,
+        "valence": -0.547,
+        "arousal": 0.648,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 79187,
+        "valence": -0.143,
+        "arousal": 0.557,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 79188,
+        "valence": -0.202,
+        "arousal": 0.179,
+        "band": "low"
+      },
+      {
+        "track_rowid": 79189,
+        "valence": -0.331,
+        "arousal": 0.504,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 79190,
+        "valence": -0.066,
+        "arousal": 0.607,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 79191,
+        "valence": -0.254,
+        "arousal": 0.593,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 79192,
+        "valence": -0.545,
+        "arousal": 0.115,
+        "band": "low"
+      },
+      {
+        "track_rowid": 79193,
+        "valence": -0.366,
+        "arousal": 0.575,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 80621,
+        "valence": -0.434,
+        "arousal": -0.257,
+        "band": "low"
+      },
+      {
+        "track_rowid": 80622,
+        "valence": -0.317,
+        "arousal": 0.253,
+        "band": "low"
+      },
+      {
+        "track_rowid": 98130,
+        "valence": -0.127,
+        "arousal": -0.194,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 98131,
+        "valence": 0.198,
+        "arousal": 0.353,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 98132,
+        "valence": -0.368,
+        "arousal": 0.401,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 98133,
+        "valence": -0.488,
+        "arousal": 0.278,
+        "band": "low"
+      },
+      {
+        "track_rowid": 98134,
+        "valence": -0.123,
+        "arousal": 0.076,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 98135,
+        "valence": -0.19,
+        "arousal": 0.05,
+        "band": "low"
+      },
+      {
+        "track_rowid": 98136,
+        "valence": -0.184,
+        "arousal": 0.527,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 98137,
+        "valence": -0.199,
+        "arousal": 0.096,
+        "band": "low"
+      },
+      {
+        "track_rowid": 98138,
+        "valence": -0.273,
+        "arousal": -0.129,
+        "band": "low"
+      },
+      {
+        "track_rowid": 98139,
+        "valence": -0.586,
+        "arousal": -0.272,
+        "band": "low"
+      },
+      {
+        "track_rowid": 98140,
+        "valence": -0.51,
+        "arousal": -0.058,
+        "band": "low"
+      },
+      {
+        "track_rowid": 98141,
+        "valence": 0.113,
+        "arousal": 0.022,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 152830,
+        "valence": -0.736,
+        "arousal": 0.021,
+        "band": "low"
+      },
+      {
+        "track_rowid": 152831,
+        "valence": -0.174,
+        "arousal": -0.007,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 152832,
+        "valence": 0.006,
+        "arousal": 0.136,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 152833,
+        "valence": -0.245,
+        "arousal": 0.384,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 152834,
+        "valence": -0.169,
+        "arousal": -0.048,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 152835,
+        "valence": -0.02,
+        "arousal": -0.012,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 152836,
+        "valence": -0.381,
+        "arousal": 0.065,
+        "band": "low"
+      },
+      {
+        "track_rowid": 152837,
+        "valence": 0.049,
+        "arousal": 0.507,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 152838,
+        "valence": -0.165,
+        "arousal": 0.093,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 152839,
+        "valence": -0.164,
+        "arousal": 0.437,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 152840,
+        "valence": -0.472,
+        "arousal": -0.147,
+        "band": "low"
+      },
+      {
+        "track_rowid": 152841,
+        "valence": -0.354,
+        "arousal": -0.137,
+        "band": "low"
+      },
+      {
+        "track_rowid": 152842,
+        "valence": -0.309,
+        "arousal": -0.209,
+        "band": "low"
+      },
+      {
+        "track_rowid": 152843,
+        "valence": -0.116,
+        "arousal": 0.146,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 152844,
+        "valence": -0.013,
+        "arousal": 0.031,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 152845,
+        "valence": -0.399,
+        "arousal": -0.035,
+        "band": "low"
+      },
+      {
+        "track_rowid": 181793,
+        "valence": 0.034,
+        "arousal": 0.291,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 260461,
+        "valence": -0.37,
+        "arousal": 0.579,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 260462,
+        "valence": -0.195,
+        "arousal": 0.348,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 260463,
+        "valence": 0.123,
+        "arousal": 0.622,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 260464,
+        "valence": 0.114,
+        "arousal": 0.385,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 260465,
+        "valence": -0.1,
+        "arousal": 0.781,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 260466,
+        "valence": 0.022,
+        "arousal": 0.409,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 260467,
+        "valence": -0.229,
+        "arousal": 0.708,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 260468,
+        "valence": -0.029,
+        "arousal": 0.492,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 260469,
+        "valence": -0.16,
+        "arousal": 0.211,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 260470,
+        "valence": 0.065,
+        "arousal": 0.417,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 723990,
+        "valence": -0.002,
+        "arousal": 0.033,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 723991,
+        "valence": -0.237,
+        "arousal": 0.508,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 723992,
+        "valence": -0.113,
+        "arousal": 0.407,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 723993,
+        "valence": -0.18,
+        "arousal": 0.496,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 723994,
+        "valence": -0.295,
+        "arousal": 0.395,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 723995,
+        "valence": 0.011,
+        "arousal": 0.441,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 723996,
+        "valence": -0.511,
+        "arousal": 0.652,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 723997,
+        "valence": 0.091,
+        "arousal": 0.294,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 723998,
+        "valence": 0.373,
+        "arousal": 0.512,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 723999,
+        "valence": -0.04,
+        "arousal": 0.267,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 724000,
+        "valence": -0.011,
+        "arousal": 0.013,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 724001,
+        "valence": -0.297,
+        "arousal": 0.479,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 724002,
+        "valence": 0.308,
+        "arousal": 0.416,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 724003,
+        "valence": -0.358,
+        "arousal": 0.368,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 724004,
+        "valence": -0.266,
+        "arousal": 0.49,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 724005,
+        "valence": -0.3,
+        "arousal": 0.363,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 1522403,
+        "valence": -0.255,
+        "arousal": 0.367,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 1522404,
+        "valence": -0.041,
+        "arousal": 0.272,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 1522405,
+        "valence": -0.209,
+        "arousal": 0.212,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1522408,
+        "valence": -0.607,
+        "arousal": -0.004,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1522410,
+        "valence": -0.007,
+        "arousal": 0.153,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 1522411,
+        "valence": -0.16,
+        "arousal": 0.414,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10329396,
+        "valence": -0.191,
+        "arousal": 0.086,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10329398,
+        "valence": -0.345,
+        "arousal": -0.152,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10329401,
+        "valence": -0.392,
+        "arousal": -0.181,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10329402,
+        "valence": -0.247,
+        "arousal": 0.083,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10329403,
+        "valence": -0.037,
+        "arousal": -0.301,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 10329406,
+        "valence": -0.37,
+        "arousal": 0.299,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10329407,
+        "valence": -0.438,
+        "arousal": -0.066,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10329408,
+        "valence": 0.035,
+        "arousal": 0.298,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 10329409,
+        "valence": -0.268,
+        "arousal": -0.236,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10329410,
+        "valence": -0.321,
+        "arousal": 0.246,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10330009,
+        "valence": -0.352,
+        "arousal": 0.092,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10330010,
+        "valence": -0.436,
+        "arousal": -0.314,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10330011,
+        "valence": -0.431,
+        "arousal": -0.073,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10330013,
+        "valence": -0.083,
+        "arousal": -0.002,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 10330014,
+        "valence": -0.172,
+        "arousal": 0.602,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 10330015,
+        "valence": -0.512,
+        "arousal": 0.512,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10330381,
+        "valence": -0.3,
+        "arousal": -0.1,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10330382,
+        "valence": -0.438,
+        "arousal": -0.298,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10330383,
+        "valence": -0.32,
+        "arousal": 0.007,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10330384,
+        "valence": -0.217,
+        "arousal": 0.086,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10330385,
+        "valence": -0.407,
+        "arousal": -0.378,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10330386,
+        "valence": -0.4,
+        "arousal": 0.178,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10330387,
+        "valence": -0.328,
+        "arousal": 0.736,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 10330388,
+        "valence": -0.23,
+        "arousal": -0.07,
+        "band": "low"
+      },
+      {
+        "track_rowid": 10331770,
+        "valence": -0.39,
+        "arousal": 0.188,
+        "band": "low"
+      },
+      {
+        "track_rowid": 27235219,
+        "valence": -0.479,
+        "arousal": 0.171,
+        "band": "low"
+      },
+      {
+        "track_rowid": 27235220,
+        "valence": -0.267,
+        "arousal": 0.363,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 27235221,
+        "valence": -0.429,
+        "arousal": -0.154,
+        "band": "low"
+      },
+      {
+        "track_rowid": 27235222,
+        "valence": -0.438,
+        "arousal": 0.12,
+        "band": "low"
+      },
+      {
+        "track_rowid": 27235223,
+        "valence": -0.33,
+        "arousal": -0.012,
+        "band": "low"
+      },
+      {
+        "track_rowid": 27235224,
+        "valence": -0.457,
+        "arousal": 0.447,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 27235225,
+        "valence": -0.529,
+        "arousal": 0.727,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 27235226,
+        "valence": -0.113,
+        "arousal": 0.453,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235227,
+        "valence": -0.097,
+        "arousal": 0.176,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 27235228,
+        "valence": 0.072,
+        "arousal": 0.183,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 27235229,
+        "valence": -0.248,
+        "arousal": -0.204,
+        "band": "low"
+      },
+      {
+        "track_rowid": 27235230,
+        "valence": -0.116,
+        "arousal": 0.386,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235231,
+        "valence": 0.059,
+        "arousal": 0.143,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 27235233,
+        "valence": 0.036,
+        "arousal": 0.586,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235234,
+        "valence": -0.284,
+        "arousal": -0.001,
+        "band": "low"
+      },
+      {
+        "track_rowid": 27235235,
+        "valence": -0.385,
+        "arousal": 0.226,
+        "band": "low"
+      },
+      {
+        "track_rowid": 27235236,
+        "valence": 0.087,
+        "arousal": 0.457,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235237,
+        "valence": -0.546,
+        "arousal": -0.153,
+        "band": "low"
+      },
+      {
+        "track_rowid": 27235238,
+        "valence": -0.143,
+        "arousal": 0.239,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 27235239,
+        "valence": 0.293,
+        "arousal": 0.057,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 27235240,
+        "valence": -0.118,
+        "arousal": 0.148,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 27235242,
+        "valence": -0.081,
+        "arousal": 0.232,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 27235243,
+        "valence": -0.431,
+        "arousal": 0.414,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 27235435,
+        "valence": 0.043,
+        "arousal": 0.28,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 27235436,
+        "valence": -0.214,
+        "arousal": 0.564,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 27235437,
+        "valence": 0.074,
+        "arousal": 0.166,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 27235438,
+        "valence": 0.078,
+        "arousal": 0.427,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235439,
+        "valence": 0.551,
+        "arousal": 0.537,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235440,
+        "valence": -0.059,
+        "arousal": 0.342,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235441,
+        "valence": 0.47,
+        "arousal": 0.462,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235442,
+        "valence": -0.105,
+        "arousal": 0.109,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 27235443,
+        "valence": -0.137,
+        "arousal": 0.398,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235444,
+        "valence": 0.153,
+        "arousal": 0.501,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235445,
+        "valence": 0.279,
+        "arousal": 0.464,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235446,
+        "valence": -0.168,
+        "arousal": 0.551,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235447,
+        "valence": -0.028,
+        "arousal": 0.315,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 27235448,
+        "valence": 0.106,
+        "arousal": 0.356,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235449,
+        "valence": -0.091,
+        "arousal": 0.618,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235450,
+        "valence": -0.114,
+        "arousal": 0.375,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235451,
+        "valence": 0.396,
+        "arousal": 0.531,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235452,
+        "valence": -0.219,
+        "arousal": 0.238,
+        "band": "low"
+      },
+      {
+        "track_rowid": 27235453,
+        "valence": 0.174,
+        "arousal": 0.27,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 27235454,
+        "valence": -0.183,
+        "arousal": 0.442,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235455,
+        "valence": -0.223,
+        "arousal": 0.154,
+        "band": "low"
+      },
+      {
+        "track_rowid": 27235457,
+        "valence": 0.417,
+        "arousal": 0.434,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235458,
+        "valence": -0.025,
+        "arousal": 0.501,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235459,
+        "valence": 0.363,
+        "arousal": 0.456,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235460,
+        "valence": -0.167,
+        "arousal": 0.514,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235461,
+        "valence": -0.19,
+        "arousal": 0.671,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 27235462,
+        "valence": 0.489,
+        "arousal": 0.594,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235464,
+        "valence": -0.025,
+        "arousal": 0.633,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 27235465,
+        "valence": -0.072,
+        "arousal": 0.18,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 37190811,
+        "valence": -0.291,
+        "arousal": -0.053,
+        "band": "low"
+      },
+      {
+        "track_rowid": 37190813,
+        "valence": 0.092,
+        "arousal": 0.264,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 37190814,
+        "valence": -0.388,
+        "arousal": 0.009,
+        "band": "low"
+      },
+      {
+        "track_rowid": 37190815,
+        "valence": -0.238,
+        "arousal": -0.098,
+        "band": "low"
+      },
+      {
+        "track_rowid": 37190816,
+        "valence": 0.339,
+        "arousal": 0.318,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 37190817,
+        "valence": -0.664,
+        "arousal": 0.27,
+        "band": "low"
+      },
+      {
+        "track_rowid": 37190818,
+        "valence": -0.25,
+        "arousal": -0.04,
+        "band": "low"
+      },
+      {
+        "track_rowid": 37190819,
+        "valence": -0.202,
+        "arousal": -0.065,
+        "band": "low"
+      },
+      {
+        "track_rowid": 37190820,
+        "valence": -0.469,
+        "arousal": -0.19,
+        "band": "low"
+      },
+      {
+        "track_rowid": 37190821,
+        "valence": -0.376,
+        "arousal": 0.152,
+        "band": "low"
+      },
+      {
+        "track_rowid": 37502677,
+        "valence": 0.103,
+        "arousal": 0.361,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 37502678,
+        "valence": -0.343,
+        "arousal": 0.43,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 37502679,
+        "valence": -0.225,
+        "arousal": 0.126,
+        "band": "low"
+      },
+      {
+        "track_rowid": 37502680,
+        "valence": 0.141,
+        "arousal": 0.457,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 37502681,
+        "valence": 0.037,
+        "arousal": 0.099,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 37502682,
+        "valence": -0.086,
+        "arousal": 0.101,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 37502683,
+        "valence": -0.122,
+        "arousal": 0.076,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 37502684,
+        "valence": -0.497,
+        "arousal": 0.366,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 37502685,
+        "valence": -0.057,
+        "arousal": 0.174,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 51042870,
+        "valence": 0.138,
+        "arousal": -0.189,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 51046160,
+        "valence": -0.661,
+        "arousal": 0.837,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 51046161,
+        "valence": -0.157,
+        "arousal": 0.498,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 51046162,
+        "valence": -0.234,
+        "arousal": 0.733,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 51046163,
+        "valence": -0.174,
+        "arousal": 0.458,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 51046164,
+        "valence": -0.705,
+        "arousal": 0.757,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 51046165,
+        "valence": -0.234,
+        "arousal": 0.029,
+        "band": "low"
+      },
+      {
+        "track_rowid": 51046166,
+        "valence": 0.016,
+        "arousal": 0.481,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 51046167,
+        "valence": -0.286,
+        "arousal": 0.387,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 51046168,
+        "valence": -0.371,
+        "arousal": 0.393,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 51046169,
+        "valence": -0.217,
+        "arousal": 0.697,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 51046170,
+        "valence": -0.203,
+        "arousal": 0.215,
+        "band": "low"
+      },
+      {
+        "track_rowid": 51046171,
+        "valence": -0.652,
+        "arousal": 0.285,
+        "band": "low"
+      },
+      {
+        "track_rowid": 51046913,
+        "valence": 0.417,
+        "arousal": 0.434,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 51046914,
+        "valence": -0.023,
+        "arousal": 0.444,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 51046915,
+        "valence": 0.363,
+        "arousal": 0.456,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 51046916,
+        "valence": -0.167,
+        "arousal": 0.514,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 51046917,
+        "valence": -0.19,
+        "arousal": 0.671,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 51046918,
+        "valence": 0.489,
+        "arousal": 0.594,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 51046919,
+        "valence": -0.058,
+        "arousal": 0.582,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 51046920,
+        "valence": -0.025,
+        "arousal": 0.633,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 51046921,
+        "valence": -0.429,
+        "arousal": 0.164,
+        "band": "low"
+      },
+      {
+        "track_rowid": 51048267,
+        "valence": -0.036,
+        "arousal": 0.114,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 51048268,
+        "valence": 0.019,
+        "arousal": 0.527,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 51048269,
+        "valence": -0.275,
+        "arousal": 0.163,
+        "band": "low"
+      },
+      {
+        "track_rowid": 51048270,
+        "valence": -0.405,
+        "arousal": 0.718,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 51048271,
+        "valence": -0.049,
+        "arousal": 0.506,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 51048272,
+        "valence": -0.69,
+        "arousal": -0.07,
+        "band": "low"
+      },
+      {
+        "track_rowid": 51048273,
+        "valence": -0.127,
+        "arousal": 0.018,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 51048274,
+        "valence": -0.349,
+        "arousal": -0.002,
+        "band": "low"
+      },
+      {
+        "track_rowid": 51345045,
+        "valence": -0.361,
+        "arousal": 0.624,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 51345046,
+        "valence": -0.451,
+        "arousal": -0.144,
+        "band": "low"
+      },
+      {
+        "track_rowid": 51345047,
+        "valence": 0.01,
+        "arousal": 0.083,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 51345048,
+        "valence": -0.425,
+        "arousal": 0.367,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 51345049,
+        "valence": -0.358,
+        "arousal": 0.318,
+        "band": "low"
+      },
+      {
+        "track_rowid": 51345050,
+        "valence": -0.096,
+        "arousal": 0.328,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 51345051,
+        "valence": 0.266,
+        "arousal": 0.459,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 51345053,
+        "valence": -0.271,
+        "arousal": -0.191,
+        "band": "low"
+      },
+      {
+        "track_rowid": 51345054,
+        "valence": -0.084,
+        "arousal": -0.093,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 51345055,
+        "valence": -0.187,
+        "arousal": 0.159,
+        "band": "low"
+      },
+      {
+        "track_rowid": 51345062,
+        "valence": 0.192,
+        "arousal": 0.372,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 51466535,
+        "valence": -0.24,
+        "arousal": -0.058,
+        "band": "low"
+      },
+      {
+        "track_rowid": 51466536,
+        "valence": -0.312,
+        "arousal": 0.474,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 51466537,
+        "valence": -0.312,
+        "arousal": 0.028,
+        "band": "low"
+      },
+      {
+        "track_rowid": 51466538,
+        "valence": -0.084,
+        "arousal": -0.223,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 51466539,
+        "valence": -0.275,
+        "arousal": 0.488,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 51466540,
+        "valence": -0.278,
+        "arousal": 0.191,
+        "band": "low"
+      },
+      {
+        "track_rowid": 51466541,
+        "valence": -0.27,
+        "arousal": -0.016,
+        "band": "low"
+      },
+      {
+        "track_rowid": 51466542,
+        "valence": -0.332,
+        "arousal": -0.038,
+        "band": "low"
+      },
+      {
+        "track_rowid": 51466543,
+        "valence": -0.084,
+        "arousal": 0.206,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 51466544,
+        "valence": -0.13,
+        "arousal": 0.09,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 51466545,
+        "valence": -0.185,
+        "arousal": 0.041,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 51466546,
+        "valence": -0.274,
+        "arousal": 0.482,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 51808618,
+        "valence": -0.05,
+        "arousal": 0.031,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 76203857,
+        "valence": -0.142,
+        "arousal": 0.355,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 76203858,
+        "valence": 0.153,
+        "arousal": 0.768,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 76203859,
+        "valence": 0.343,
+        "arousal": 0.527,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 76203860,
+        "valence": 0.204,
+        "arousal": 0.482,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 76203861,
+        "valence": 0.096,
+        "arousal": 0.815,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 76203862,
+        "valence": -0.525,
+        "arousal": 0.142,
+        "band": "low"
+      },
+      {
+        "track_rowid": 76203863,
+        "valence": -0.015,
+        "arousal": 0.161,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 76203864,
+        "valence": -0.158,
+        "arousal": 0.087,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 76203865,
+        "valence": -0.136,
+        "arousal": 0.288,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 76203887,
+        "valence": 0.032,
+        "arousal": 0.055,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 76203888,
+        "valence": 0.127,
+        "arousal": 0.262,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 76203889,
+        "valence": 0.011,
+        "arousal": -0.12,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 76203890,
+        "valence": -0.222,
+        "arousal": 0.217,
+        "band": "low"
+      },
+      {
+        "track_rowid": 76203892,
+        "valence": -0.36,
+        "arousal": -0.028,
+        "band": "low"
+      },
+      {
+        "track_rowid": 76203893,
+        "valence": -0.114,
+        "arousal": -0.355,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 76203896,
+        "valence": -0.033,
+        "arousal": 0.173,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 76203897,
+        "valence": 0.671,
+        "arousal": 0.442,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 103761716,
+        "valence": 0.104,
+        "arousal": 0.527,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 103822294,
+        "valence": -0.319,
+        "arousal": -0.373,
+        "band": "low"
+      },
+      {
+        "track_rowid": 103956296,
+        "valence": -0.04,
+        "arousal": 0.121,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 103956297,
+        "valence": -0.237,
+        "arousal": 0.312,
+        "band": "low"
+      },
+      {
+        "track_rowid": 103956298,
+        "valence": -0.269,
+        "arousal": 0.213,
+        "band": "low"
+      },
+      {
+        "track_rowid": 103956299,
+        "valence": -0.298,
+        "arousal": 0.335,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 103956300,
+        "valence": -0.468,
+        "arousal": 0.129,
+        "band": "low"
+      },
+      {
+        "track_rowid": 103956301,
+        "valence": -0.273,
+        "arousal": -0.0,
+        "band": "low"
+      },
+      {
+        "track_rowid": 103956302,
+        "valence": -0.206,
+        "arousal": 0.207,
+        "band": "low"
+      },
+      {
+        "track_rowid": 103956303,
+        "valence": -0.39,
+        "arousal": 0.276,
+        "band": "low"
+      },
+      {
+        "track_rowid": 103956304,
+        "valence": -0.018,
+        "arousal": 0.131,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 103956305,
+        "valence": 0.048,
+        "arousal": 0.354,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 103986875,
+        "valence": 0.085,
+        "arousal": 0.45,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 103986876,
+        "valence": -0.334,
+        "arousal": 0.014,
+        "band": "low"
+      },
+      {
+        "track_rowid": 103986877,
+        "valence": -0.277,
+        "arousal": 0.52,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 103986878,
+        "valence": -0.16,
+        "arousal": 0.436,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 103986879,
+        "valence": 0.005,
+        "arousal": 0.396,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 104178706,
+        "valence": -0.216,
+        "arousal": -0.135,
+        "band": "low"
+      },
+      {
+        "track_rowid": 104178707,
+        "valence": -0.242,
+        "arousal": 0.249,
+        "band": "low"
+      },
+      {
+        "track_rowid": 104178708,
+        "valence": 0.19,
+        "arousal": 0.352,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 104178709,
+        "valence": 0.033,
+        "arousal": 0.002,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 104178710,
+        "valence": -0.117,
+        "arousal": 0.061,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 104178711,
+        "valence": -0.156,
+        "arousal": 0.3,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 104246780,
+        "valence": -0.087,
+        "arousal": 0.583,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 104246781,
+        "valence": -0.021,
+        "arousal": 0.311,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 104246782,
+        "valence": 0.004,
+        "arousal": 0.408,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 104246783,
+        "valence": 0.084,
+        "arousal": 0.286,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 104269662,
+        "valence": 0.037,
+        "arousal": 0.315,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 104269663,
+        "valence": -0.162,
+        "arousal": 0.646,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 104269664,
+        "valence": -0.073,
+        "arousal": 0.401,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 104269665,
+        "valence": 0.005,
+        "arousal": 0.472,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 104269666,
+        "valence": 0.037,
+        "arousal": 0.347,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 104269667,
+        "valence": -0.142,
+        "arousal": 0.193,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 104269668,
+        "valence": -0.164,
+        "arousal": 0.33,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 104269669,
+        "valence": -0.232,
+        "arousal": 0.423,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 104269670,
+        "valence": -0.244,
+        "arousal": 0.039,
+        "band": "low"
+      },
+      {
+        "track_rowid": 104269671,
+        "valence": -0.254,
+        "arousal": 0.074,
+        "band": "low"
+      },
+      {
+        "track_rowid": 104269672,
+        "valence": -0.198,
+        "arousal": 0.35,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 104269673,
+        "valence": -0.113,
+        "arousal": 0.445,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 104269674,
+        "valence": -0.531,
+        "arousal": 0.364,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 104269675,
+        "valence": -0.403,
+        "arousal": 0.436,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 104269676,
+        "valence": -0.066,
+        "arousal": 0.491,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 104269677,
+        "valence": -0.404,
+        "arousal": -0.035,
+        "band": "low"
+      },
+      {
+        "track_rowid": 104269678,
+        "valence": 0.21,
+        "arousal": 0.364,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 104269679,
+        "valence": -0.174,
+        "arousal": 0.118,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 105043618,
+        "valence": 0.043,
+        "arousal": 0.28,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 105043619,
+        "valence": -0.214,
+        "arousal": 0.564,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 105043620,
+        "valence": -0.074,
+        "arousal": 0.102,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 105043621,
+        "valence": 0.185,
+        "arousal": 0.5,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 105043622,
+        "valence": 0.169,
+        "arousal": 0.579,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 105043623,
+        "valence": -0.059,
+        "arousal": 0.342,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 105043624,
+        "valence": 0.47,
+        "arousal": 0.462,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 105043625,
+        "valence": -0.123,
+        "arousal": 0.095,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 105043626,
+        "valence": -0.137,
+        "arousal": 0.398,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 105043627,
+        "valence": 0.164,
+        "arousal": 0.452,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 113952560,
+        "valence": -0.368,
+        "arousal": 0.394,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 114005263,
+        "valence": -0.479,
+        "arousal": 0.589,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 114005265,
+        "valence": -0.116,
+        "arousal": 0.554,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 114005266,
+        "valence": -0.401,
+        "arousal": 0.656,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 114005267,
+        "valence": -0.239,
+        "arousal": 0.339,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 114005268,
+        "valence": 0.105,
+        "arousal": 0.249,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 114005269,
+        "valence": 0.154,
+        "arousal": 0.259,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 114005270,
+        "valence": 0.395,
+        "arousal": 0.478,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 114005271,
+        "valence": -0.094,
+        "arousal": 0.319,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 114005273,
+        "valence": 0.078,
+        "arousal": 0.454,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 114005275,
+        "valence": 0.054,
+        "arousal": 0.479,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 114005276,
+        "valence": -0.068,
+        "arousal": 0.529,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 114005278,
+        "valence": -0.427,
+        "arousal": 0.129,
+        "band": "low"
+      },
+      {
+        "track_rowid": 114005280,
+        "valence": 0.009,
+        "arousal": 0.293,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 120643706,
+        "valence": 0.158,
+        "arousal": 0.595,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 121628122,
+        "valence": -0.35,
+        "arousal": 0.517,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 121628123,
+        "valence": 0.266,
+        "arousal": 0.695,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 121628124,
+        "valence": -0.266,
+        "arousal": 0.562,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 121628125,
+        "valence": -0.223,
+        "arousal": 0.451,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 121628126,
+        "valence": -0.57,
+        "arousal": 0.349,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 121628127,
+        "valence": -0.231,
+        "arousal": 0.313,
+        "band": "low"
+      },
+      {
+        "track_rowid": 121628128,
+        "valence": -0.099,
+        "arousal": 0.774,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 121628129,
+        "valence": -0.376,
+        "arousal": 0.611,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 121628130,
+        "valence": -0.235,
+        "arousal": 0.609,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 121628131,
+        "valence": -0.366,
+        "arousal": 0.654,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 121628132,
+        "valence": -0.054,
+        "arousal": 0.631,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 121628133,
+        "valence": -0.281,
+        "arousal": 0.341,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 121628134,
+        "valence": -0.52,
+        "arousal": 0.267,
+        "band": "low"
+      },
+      {
+        "track_rowid": 121628135,
+        "valence": 0.058,
+        "arousal": 0.506,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 121628136,
+        "valence": -0.341,
+        "arousal": 0.545,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 121628137,
+        "valence": -0.484,
+        "arousal": 0.59,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 121628138,
+        "valence": -0.194,
+        "arousal": 0.451,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 121628139,
+        "valence": -0.535,
+        "arousal": 0.75,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 121628140,
+        "valence": -0.381,
+        "arousal": 0.105,
+        "band": "low"
+      },
+      {
+        "track_rowid": 122091199,
+        "valence": -0.243,
+        "arousal": -0.119,
+        "band": "low"
+      },
+      {
+        "track_rowid": 123458854,
+        "valence": 0.297,
+        "arousal": 0.261,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 123458855,
+        "valence": 0.178,
+        "arousal": 0.336,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 123458856,
+        "valence": 0.182,
+        "arousal": 0.295,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 123458857,
+        "valence": -0.073,
+        "arousal": 0.676,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 123458859,
+        "valence": 0.075,
+        "arousal": 0.468,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 123458861,
+        "valence": 0.061,
+        "arousal": 0.259,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 123458862,
+        "valence": -0.275,
+        "arousal": -0.092,
+        "band": "low"
+      },
+      {
+        "track_rowid": 123458863,
+        "valence": -0.079,
+        "arousal": 0.679,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 123458864,
+        "valence": 0.278,
+        "arousal": 0.172,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 123520207,
+        "valence": -0.107,
+        "arousal": 0.192,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 123617130,
+        "valence": -0.407,
+        "arousal": -0.063,
+        "band": "low"
+      },
+      {
+        "track_rowid": 124094966,
+        "valence": 0.141,
+        "arousal": 0.457,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 124094973,
+        "valence": -0.343,
+        "arousal": 0.43,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 124094975,
+        "valence": -0.122,
+        "arousal": 0.076,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 125151520,
+        "valence": 0.048,
+        "arousal": 0.195,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 126626342,
+        "valence": 0.232,
+        "arousal": 0.352,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 126626343,
+        "valence": -0.375,
+        "arousal": -0.28,
+        "band": "low"
+      },
+      {
+        "track_rowid": 126626633,
+        "valence": -0.277,
+        "arousal": -0.133,
+        "band": "low"
+      },
+      {
+        "track_rowid": 126626634,
+        "valence": -0.337,
+        "arousal": 0.267,
+        "band": "low"
+      },
+      {
+        "track_rowid": 126626635,
+        "valence": -0.147,
+        "arousal": 0.102,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 126626636,
+        "valence": -0.213,
+        "arousal": -0.195,
+        "band": "low"
+      },
+      {
+        "track_rowid": 126626637,
+        "valence": -0.18,
+        "arousal": -0.379,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 126626638,
+        "valence": -0.253,
+        "arousal": 0.196,
+        "band": "low"
+      },
+      {
+        "track_rowid": 134835955,
+        "valence": -0.087,
+        "arousal": 0.351,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 134835956,
+        "valence": -0.07,
+        "arousal": 0.371,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 134835957,
+        "valence": -0.141,
+        "arousal": 0.158,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 134835958,
+        "valence": -0.361,
+        "arousal": 0.322,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 134835959,
+        "valence": -0.076,
+        "arousal": 0.502,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 134835960,
+        "valence": -0.04,
+        "arousal": 0.34,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 134835961,
+        "valence": 0.009,
+        "arousal": 0.297,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 134835962,
+        "valence": -0.462,
+        "arousal": -0.137,
+        "band": "low"
+      },
+      {
+        "track_rowid": 134835964,
+        "valence": -0.222,
+        "arousal": 0.084,
+        "band": "low"
+      },
+      {
+        "track_rowid": 134835965,
+        "valence": -0.275,
+        "arousal": 0.314,
+        "band": "low"
+      },
+      {
+        "track_rowid": 134835966,
+        "valence": -0.183,
+        "arousal": 0.391,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 134835967,
+        "valence": 0.225,
+        "arousal": 0.554,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 134835968,
+        "valence": 0.051,
+        "arousal": 0.235,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 134835969,
+        "valence": -0.102,
+        "arousal": 0.52,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 134835970,
+        "valence": 0.022,
+        "arousal": 0.423,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 134835971,
+        "valence": -0.333,
+        "arousal": 0.498,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 134835972,
+        "valence": -0.474,
+        "arousal": 0.33,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 134835973,
+        "valence": -0.175,
+        "arousal": 0.473,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 134835974,
+        "valence": -0.148,
+        "arousal": 0.502,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 134835975,
+        "valence": -0.231,
+        "arousal": 0.429,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 134835976,
+        "valence": -0.25,
+        "arousal": 0.584,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 134835977,
+        "valence": 0.231,
+        "arousal": 0.539,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 134835978,
+        "valence": -0.23,
+        "arousal": 0.445,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 134835979,
+        "valence": 0.071,
+        "arousal": 0.385,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 137354456,
+        "valence": -0.063,
+        "arousal": 0.471,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 137354457,
+        "valence": -0.295,
+        "arousal": 0.407,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 137354458,
+        "valence": -0.458,
+        "arousal": 0.592,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 137354459,
+        "valence": 0.35,
+        "arousal": 0.503,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 137354460,
+        "valence": 0.279,
+        "arousal": 0.371,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 137354461,
+        "valence": -0.252,
+        "arousal": -0.023,
+        "band": "low"
+      },
+      {
+        "track_rowid": 137354462,
+        "valence": -0.276,
+        "arousal": 0.596,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 137354463,
+        "valence": -0.121,
+        "arousal": 0.343,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 137354464,
+        "valence": 0.039,
+        "arousal": 0.535,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 137354465,
+        "valence": -0.015,
+        "arousal": 0.573,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 137354466,
+        "valence": -0.036,
+        "arousal": 0.339,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 137354467,
+        "valence": -0.476,
+        "arousal": 0.627,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 137354468,
+        "valence": -0.31,
+        "arousal": 0.659,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 137354469,
+        "valence": 0.466,
+        "arousal": 0.468,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 141996052,
+        "valence": -0.253,
+        "arousal": 0.719,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 141996054,
+        "valence": 0.298,
+        "arousal": 0.628,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 141996055,
+        "valence": 0.155,
+        "arousal": 0.558,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 141996057,
+        "valence": -0.158,
+        "arousal": 0.359,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 141996058,
+        "valence": -0.198,
+        "arousal": 0.41,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 141996059,
+        "valence": -0.323,
+        "arousal": 0.357,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 141996060,
+        "valence": -0.044,
+        "arousal": 0.666,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 141996061,
+        "valence": -0.328,
+        "arousal": 0.688,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 141996062,
+        "valence": -0.417,
+        "arousal": 0.272,
+        "band": "low"
+      },
+      {
+        "track_rowid": 141996064,
+        "valence": -0.175,
+        "arousal": 0.604,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 141996066,
+        "valence": -0.464,
+        "arousal": 0.271,
+        "band": "low"
+      },
+      {
+        "track_rowid": 141996068,
+        "valence": -0.248,
+        "arousal": 0.392,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 141996069,
+        "valence": -0.039,
+        "arousal": 0.426,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 141996071,
+        "valence": 0.031,
+        "arousal": 0.667,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 147571934,
+        "valence": -0.597,
+        "arousal": 0.376,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 147571936,
+        "valence": -0.22,
+        "arousal": 0.547,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 147571937,
+        "valence": -0.104,
+        "arousal": 0.609,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 147571938,
+        "valence": -0.065,
+        "arousal": 0.493,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 147571939,
+        "valence": -0.102,
+        "arousal": 0.248,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 147571940,
+        "valence": -0.176,
+        "arousal": 0.459,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 147571941,
+        "valence": -0.183,
+        "arousal": 0.558,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 147571942,
+        "valence": -0.068,
+        "arousal": 0.144,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 147571943,
+        "valence": -0.102,
+        "arousal": 0.331,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 147571944,
+        "valence": -0.498,
+        "arousal": 0.354,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 147571945,
+        "valence": 0.199,
+        "arousal": 0.272,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 147571946,
+        "valence": -0.599,
+        "arousal": 0.666,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 147571947,
+        "valence": -0.395,
+        "arousal": 0.288,
+        "band": "low"
+      },
+      {
+        "track_rowid": 147571948,
+        "valence": -0.144,
+        "arousal": 0.118,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 147571949,
+        "valence": -0.268,
+        "arousal": 0.499,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 147571950,
+        "valence": -0.394,
+        "arousal": 0.618,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 147571951,
+        "valence": -0.226,
+        "arousal": 0.513,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 164032815,
+        "valence": -0.221,
+        "arousal": 0.501,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 164032816,
+        "valence": 0.098,
+        "arousal": 0.522,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 164032817,
+        "valence": -0.156,
+        "arousal": 0.42,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 164032818,
+        "valence": 0.244,
+        "arousal": 0.509,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 164032819,
+        "valence": -0.175,
+        "arousal": -0.021,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 192700337,
+        "valence": -0.19,
+        "arousal": 0.671,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 196351237,
+        "valence": -0.265,
+        "arousal": 0.46,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 196351238,
+        "valence": -0.358,
+        "arousal": 0.408,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 197261401,
+        "valence": -0.256,
+        "arousal": 0.378,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 197261402,
+        "valence": -0.137,
+        "arousal": 0.616,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 197261403,
+        "valence": -0.163,
+        "arousal": 0.554,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 197261404,
+        "valence": 0.528,
+        "arousal": 0.515,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 197261405,
+        "valence": -0.151,
+        "arousal": 0.472,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 197261406,
+        "valence": -0.573,
+        "arousal": -0.214,
+        "band": "low"
+      },
+      {
+        "track_rowid": 197261407,
+        "valence": -0.027,
+        "arousal": 0.461,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 197261408,
+        "valence": 0.103,
+        "arousal": 0.481,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 197261409,
+        "valence": 0.069,
+        "arousal": 0.258,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 197261410,
+        "valence": -0.173,
+        "arousal": 0.748,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 197416982,
+        "valence": -0.326,
+        "arousal": 0.463,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 197416984,
+        "valence": 0.116,
+        "arousal": 0.368,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 197416986,
+        "valence": 0.073,
+        "arousal": 0.515,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 197416988,
+        "valence": 0.084,
+        "arousal": 0.491,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 197416991,
+        "valence": 0.001,
+        "arousal": 0.364,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 197416992,
+        "valence": 0.151,
+        "arousal": 0.258,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 197416993,
+        "valence": -0.232,
+        "arousal": -0.504,
+        "band": "low"
+      },
+      {
+        "track_rowid": 203080364,
+        "valence": -0.248,
+        "arousal": 0.246,
+        "band": "low"
+      },
+      {
+        "track_rowid": 203080367,
+        "valence": -0.148,
+        "arousal": -0.046,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 203080368,
+        "valence": -0.036,
+        "arousal": 0.02,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 203080369,
+        "valence": -0.252,
+        "arousal": -0.011,
+        "band": "low"
+      },
+      {
+        "track_rowid": 203080370,
+        "valence": -0.124,
+        "arousal": -0.225,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 218639948,
+        "valence": -0.297,
+        "arousal": 0.095,
+        "band": "low"
+      },
+      {
+        "track_rowid": 218639949,
+        "valence": -0.271,
+        "arousal": 0.425,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 218639950,
+        "valence": -0.378,
+        "arousal": -0.206,
+        "band": "low"
+      },
+      {
+        "track_rowid": 218639951,
+        "valence": -0.437,
+        "arousal": -0.364,
+        "band": "low"
+      },
+      {
+        "track_rowid": 218639952,
+        "valence": -0.421,
+        "arousal": -0.134,
+        "band": "low"
+      },
+      {
+        "track_rowid": 218639953,
+        "valence": -0.15,
+        "arousal": -0.194,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 218639954,
+        "valence": -0.234,
+        "arousal": 0.037,
+        "band": "low"
+      },
+      {
+        "track_rowid": 218639955,
+        "valence": -0.118,
+        "arousal": 0.238,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 218639956,
+        "valence": -0.393,
+        "arousal": -0.012,
+        "band": "low"
+      },
+      {
+        "track_rowid": 218639957,
+        "valence": -0.249,
+        "arousal": 0.196,
+        "band": "low"
+      },
+      {
+        "track_rowid": 218639958,
+        "valence": -0.332,
+        "arousal": -0.008,
+        "band": "low"
+      },
+      {
+        "track_rowid": 218639959,
+        "valence": 0.043,
+        "arousal": 0.058,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 218639960,
+        "valence": -0.562,
+        "arousal": 0.121,
+        "band": "low"
+      },
+      {
+        "track_rowid": 218639961,
+        "valence": -0.357,
+        "arousal": 0.18,
+        "band": "low"
+      },
+      {
+        "track_rowid": 220917360,
+        "valence": -0.057,
+        "arousal": 0.174,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 220971264,
+        "valence": 0.12,
+        "arousal": 0.237,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 223077236,
+        "valence": -0.411,
+        "arousal": 0.607,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 223077237,
+        "valence": 0.142,
+        "arousal": 0.577,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 223077238,
+        "valence": 0.099,
+        "arousal": 0.455,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 223077239,
+        "valence": -0.106,
+        "arousal": -0.039,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 223077240,
+        "valence": 0.061,
+        "arousal": 0.392,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 223077241,
+        "valence": -0.006,
+        "arousal": 0.342,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 223077242,
+        "valence": -0.393,
+        "arousal": 0.221,
+        "band": "low"
+      },
+      {
+        "track_rowid": 223077243,
+        "valence": -0.482,
+        "arousal": 0.403,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 223077244,
+        "valence": -0.113,
+        "arousal": 0.393,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 223077245,
+        "valence": -0.262,
+        "arousal": 0.368,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 223077246,
+        "valence": -0.169,
+        "arousal": 0.373,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 223077247,
+        "valence": -0.159,
+        "arousal": -0.097,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 223077248,
+        "valence": 0.016,
+        "arousal": 0.141,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 223077249,
+        "valence": -0.057,
+        "arousal": 0.371,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 223077250,
+        "valence": -0.479,
+        "arousal": 0.434,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 223077251,
+        "valence": -0.329,
+        "arousal": 0.078,
+        "band": "low"
+      },
+      {
+        "track_rowid": 223077252,
+        "valence": 0.173,
+        "arousal": 0.236,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 223590509,
+        "valence": -0.428,
+        "arousal": -0.095,
+        "band": "low"
+      },
+      {
+        "track_rowid": 223630585,
+        "valence": -0.214,
+        "arousal": 0.359,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 223630586,
+        "valence": 0.173,
+        "arousal": 0.173,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 223630587,
+        "valence": -0.049,
+        "arousal": 0.232,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 223630588,
+        "valence": -0.074,
+        "arousal": 0.304,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 223630590,
+        "valence": -0.006,
+        "arousal": 0.085,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 223630591,
+        "valence": -0.203,
+        "arousal": 0.251,
+        "band": "low"
+      },
+      {
+        "track_rowid": 223630592,
+        "valence": -0.013,
+        "arousal": 0.17,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 223630593,
+        "valence": -0.273,
+        "arousal": 0.281,
+        "band": "low"
+      },
+      {
+        "track_rowid": 223630594,
+        "valence": 0.367,
+        "arousal": 0.327,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 223630595,
+        "valence": -0.37,
+        "arousal": -0.168,
+        "band": "low"
+      },
+      {
+        "track_rowid": 223630596,
+        "valence": -0.143,
+        "arousal": 0.327,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 223630598,
+        "valence": -0.247,
+        "arousal": 0.291,
+        "band": "low"
+      },
+      {
+        "track_rowid": 223630599,
+        "valence": -0.148,
+        "arousal": 0.405,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 223630600,
+        "valence": -0.49,
+        "arousal": 0.175,
+        "band": "low"
+      },
+      {
+        "track_rowid": 223630602,
+        "valence": -0.243,
+        "arousal": 0.338,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 223630603,
+        "valence": -0.266,
+        "arousal": 0.295,
+        "band": "low"
+      },
+      {
+        "track_rowid": 223630604,
+        "valence": -0.176,
+        "arousal": 0.041,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 223630605,
+        "valence": -0.142,
+        "arousal": 0.5,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 223630606,
+        "valence": -0.069,
+        "arousal": -0.118,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 223630607,
+        "valence": -0.215,
+        "arousal": 0.224,
+        "band": "low"
+      },
+      {
+        "track_rowid": 223630608,
+        "valence": 0.165,
+        "arousal": 0.152,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 223630609,
+        "valence": -0.34,
+        "arousal": 0.312,
+        "band": "low"
+      },
+      {
+        "track_rowid": 223630610,
+        "valence": -0.153,
+        "arousal": 0.329,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 223630611,
+        "valence": -0.042,
+        "arousal": 0.218,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 223630612,
+        "valence": -0.251,
+        "arousal": 0.054,
+        "band": "low"
+      },
+      {
+        "track_rowid": 223630613,
+        "valence": -0.207,
+        "arousal": -0.029,
+        "band": "low"
+      },
+      {
+        "track_rowid": 223630614,
+        "valence": 0.314,
+        "arousal": 0.007,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 223630615,
+        "valence": 0.0,
+        "arousal": 0.271,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 223630617,
+        "valence": -0.522,
+        "arousal": 0.082,
+        "band": "low"
+      },
+      {
+        "track_rowid": 223630618,
+        "valence": -0.191,
+        "arousal": 0.426,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 223630619,
+        "valence": 0.247,
+        "arousal": 0.143,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 223630622,
+        "valence": -0.073,
+        "arousal": 0.168,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 223630626,
+        "valence": -0.485,
+        "arousal": 0.065,
+        "band": "low"
+      },
+      {
+        "track_rowid": 223898458,
+        "valence": -0.07,
+        "arousal": 0.126,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 230470615,
+        "valence": 0.164,
+        "arousal": 0.452,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 230679825,
+        "valence": -0.33,
+        "arousal": 0.561,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 231801304,
+        "valence": -0.6,
+        "arousal": -0.542,
+        "band": "low"
+      },
+      {
+        "track_rowid": 232081319,
+        "valence": -0.151,
+        "arousal": -0.084,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 234153788,
+        "valence": -0.03,
+        "arousal": 0.698,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 235063098,
+        "valence": -0.107,
+        "arousal": 0.593,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 236114953,
+        "valence": -0.168,
+        "arousal": 0.551,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 236757195,
+        "valence": -0.489,
+        "arousal": 0.388,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 239312406,
+        "valence": -0.178,
+        "arousal": 0.199,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 240738875,
+        "valence": -0.107,
+        "arousal": 0.251,
+        "band": "warm"
+      },
+      {
+        "track_rowid": 243700290,
+        "valence": 0.014,
+        "arousal": 0.632,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 255220826,
+        "valence": 0.114,
+        "arousal": 0.358,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 1000000000,
+        "valence": -0.424,
+        "arousal": 0.595,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 1000000001,
+        "valence": -0.363,
+        "arousal": 0.576,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 1000000002,
+        "valence": -0.292,
+        "arousal": 0.214,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1000000003,
+        "valence": -0.332,
+        "arousal": 0.136,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1000000004,
+        "valence": 0.062,
+        "arousal": 0.488,
+        "band": "bright"
+      },
+      {
+        "track_rowid": 1000000005,
+        "valence": -0.513,
+        "arousal": 0.673,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 1000000006,
+        "valence": -0.623,
+        "arousal": 0.254,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1000000007,
+        "valence": -0.578,
+        "arousal": 0.425,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 1000000008,
+        "valence": -0.474,
+        "arousal": -0.139,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1000000009,
+        "valence": -0.453,
+        "arousal": 0.122,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1000000010,
+        "valence": -0.515,
+        "arousal": -0.163,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1000000011,
+        "valence": -0.339,
+        "arousal": 0.451,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 1000000012,
+        "valence": -0.186,
+        "arousal": -0.019,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1000000013,
+        "valence": -0.482,
+        "arousal": 0.112,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1000000014,
+        "valence": -0.452,
+        "arousal": -0.225,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1000000015,
+        "valence": -0.29,
+        "arousal": -0.129,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1000000016,
+        "valence": -0.567,
+        "arousal": 0.645,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 1000000017,
+        "valence": -0.354,
+        "arousal": -0.248,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1000000018,
+        "valence": -0.199,
+        "arousal": 0.448,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 1000000019,
+        "valence": -0.293,
+        "arousal": 0.201,
+        "band": "low"
+      },
+      {
+        "track_rowid": 1000000020,
+        "valence": -0.196,
+        "arousal": 0.464,
+        "band": "intense"
+      },
+      {
+        "track_rowid": 1000000021,
+        "valence": 0.133,
+        "arousal": 0.501,
+        "band": "bright"
+      }
+    ],
+    "map_source": "emotion",
+    "map_centre": {
+      "valence": -0.1856,
+      "arousal": 0.3185,
+      "measured": 1066
+    },
+    "week": [
+      {
+        "day": "2026-09-13",
+        "weekday": "Sun",
+        "minutes": 18
+      },
+      {
+        "day": "2026-09-14",
+        "weekday": "Mon",
+        "minutes": 0
+      },
+      {
+        "day": "2026-09-15",
+        "weekday": "Tue",
+        "minutes": 0
+      },
+      {
+        "day": "2026-09-16",
+        "weekday": "Wed",
+        "minutes": 0
+      },
+      {
+        "day": "2026-09-17",
+        "weekday": "Thu",
+        "minutes": 41
+      },
+      {
+        "day": "2026-09-18",
+        "weekday": "Fri",
+        "minutes": 15
+      },
+      {
+        "day": "2026-09-19",
+        "weekday": "Sat",
+        "minutes": 0
+      }
+    ],
+    "listening": {
+      "plays": 669,
+      "heard_ms": 38352453
+    },
+    "top_artists": [
+      {
+        "artist_name": "Justin Bieber",
+        "plays": 113,
+        "heard_ms": 6804169
+      },
+      {
+        "artist_name": "Ed Sheeran",
+        "plays": 80,
+        "heard_ms": 5379634
+      },
+      {
+        "artist_name": "One Direction",
+        "plays": 76,
+        "heard_ms": 4121441
+      },
+      {
+        "artist_name": "Post Malone",
+        "plays": 56,
+        "heard_ms": 2831224
+      },
+      {
+        "artist_name": "Billie Eilish",
+        "plays": 45,
+        "heard_ms": 2805959
+      }
+    ]
+  }
+}
