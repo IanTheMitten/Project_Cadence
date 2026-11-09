@@ -219,7 +219,7 @@ Test commands (shared venv, per spec `docs/specs/2026-11-09-cadence-modular-spli
 ## Phase 3 - Speaker and Muse adapters
 
 ### Task 9: Scaffold the speaker package from harness audio code
-- [ ] status
+- [x] status
 **Objective:** `speaker/` is a standalone package `cadence_speaker` holding copies of the audio code, its tests green, nothing importing `cadence`.
 **Write-scope:** `speaker/` (new)
 **Read-context:** `harness/cadence/plugins/speaker.py:1-30,169-188`, `harness/tests/test_speaker.py:191-232`, `harness/pyproject.toml`, `harness/.gitignore`
