@@ -238,7 +238,7 @@ Test commands (shared venv, per spec `docs/specs/2026-11-09-cadence-modular-spli
 **Why:** Spec moves all audio to the speaker adapter (`:174`, `:216`); copying keeps harness green until Phase 4.
 
 ### Task 10: Write speaker /session server tests (red) [test]
-- [ ] status
+- [x] status
 **Objective:** `speaker/tests/test_server.py` pins the board-facing `/session` plus its peer link, failing on import.
 **Write-scope:** `speaker/tests/test_server.py` (new)
 **Read-context:** `harness/tests/test_server.py:1-206`, `speaker/tests/test_listener.py:20-40` (from Task 9), `speaker/cadence_speaker/speaker.py` (from Task 9)
