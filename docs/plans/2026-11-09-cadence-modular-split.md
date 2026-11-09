@@ -98,7 +98,7 @@ Test commands (shared venv, per spec `docs/specs/2026-11-09-cadence-modular-spli
 **Why:** Network peers have no in-process port; local plugins (schedules) need the event's source and room. The live runtime's old speaker/music plugins stop working here and are replaced in Phase 4.
 
 ### Task 3: Write schedule tests (red) [test]
-- [ ] status
+- [x] status
 **Objective:** `harness/tests/test_schedules.py` pins the schedule store, clash rule, yes/no parser, pending questions and `SchedulePlugin`, failing on import.
 **Write-scope:** `harness/tests/test_schedules.py` (new)
 **Read-context:** `docs/specs/2026-11-09-cadence-modular-split.md:142-161`, `harness/tests/test_pipeline.py:1-80`
