@@ -23,10 +23,12 @@ FAIL_SAY = "Sorry, that didn't work."
 
 
 def capability_from_ability(a: dict) -> Capability:
+    closed = a.get("closed_args") or {}
+    free = a.get("free_args")
+    if free is None:  # undeclared: every non-closed parameter is free, else Jev calls with no args
+        free = [p for p in a["parameters"].get("properties", {}) if p not in closed]
     return Capability(a["name"], a["description"], a["parameters"],
-                      closed_args=a.get("closed_args") or {},
-                      free_args=tuple(a.get("free_args") or ()),
-                      target=a.get("target"))
+                      closed_args=closed, free_args=tuple(free), target=a.get("target"))
 
 
 @dataclass

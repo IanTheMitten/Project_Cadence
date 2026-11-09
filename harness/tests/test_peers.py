@@ -226,3 +226,13 @@ def test_failed_welcome_does_not_leak_peer(env, monkeypatch):
     monkeypatch.setattr(WebSocket, "send_text", orig)
     with env.client.websocket_connect("/peer") as ws:
         _join(ws, SPEAKER)
+
+
+def test_ability_without_free_args_takes_them_from_parameters():
+    # the lamp firmware declares only `parameters`; Jev must still know light.set has args
+    lamp = {"name": "light.set", "description": "d", "target": "lamp",
+            "parameters": {"type": "object", "properties": {"cool": {}, "warm": {}, "fade_ms": {}}}}
+    assert peers.capability_from_ability(lamp).free_args == ("cool", "warm", "fade_ms")
+    closed = {**lamp, "closed_args": {"warm": {"on": "on"}}}
+    assert peers.capability_from_ability(closed).free_args == ("cool", "fade_ms")
+    assert peers.capability_from_ability({**lamp, "free_args": []}).free_args == ()
