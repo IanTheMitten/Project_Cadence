@@ -54,6 +54,10 @@ class FakeMuse:
         self._next_id += 1
         self.opened.append((track_rowid, duration_ms, source))
 
+    def contract_version(self):
+        self._maybe_raise("contract_version")
+        return self.version
+
 
 def _three():
     return [_track(1, duration=111), _track(2, duration=222), _track(3, duration=333)]
