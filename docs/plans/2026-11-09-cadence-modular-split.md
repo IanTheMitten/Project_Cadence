@@ -309,7 +309,7 @@ Test commands (shared venv, per spec `docs/specs/2026-11-09-cadence-modular-spli
 **Why:** The queue logic stays as-is behind a port that speaks the protocol (assumption A3).
 
 ### Task 14: Port the music plugin onto a remote port and connect it as a service peer
-- [ ] status
+- [x] status
 **Objective:** `python -m cadence_muse` connects to `/peer` as service `muse`; music plugin tests and adapter tests green.
 **Write-scope:** `muse_adapter/cadence_muse/music.py` (new)
 `muse_adapter/cadence_muse/remote.py` (new)
