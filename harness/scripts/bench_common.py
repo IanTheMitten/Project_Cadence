@@ -1,7 +1,7 @@
 """Shared tool surface, test set and scoring for the Jev/Needle/Laya benchmark.
 
 Tool schemas for the 8 Muse tools are copied verbatim (name, description,
-input_schema) from harness/cadence/muse/mcp_server.py at import time. The
+input_schema) from muse_adapter/cadence_muse/mcp_server.py at import time. The
 `set_warmth` circadian-light tool is MADE UP for this benchmark.
 
 Gold format: each utterance has `outcomes`, a list of acceptable first-step
@@ -20,7 +20,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 
 def _load_muse_defs() -> dict:
     """Import _TOOL_DEFS without needing the `mcp` package installed."""
-    src = (ROOT / "cadence" / "muse" / "mcp_server.py").read_text()
+    src = (ROOT.parent / "muse_adapter" / "cadence_muse" / "mcp_server.py").read_text()
     start = src.index("_TOOL_DEFS: dict[str, dict] = {")
     end = src.index("\n}\n", start) + 3
     ns: dict = {}
