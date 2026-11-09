@@ -17,7 +17,7 @@ from cadence.deciders.llm import LlmDecider
 from cadence.decisionlog import DecisionLog
 from cadence.executor import Executor
 from cadence.livecontext import LiveContext
-from cadence.llm import OllamaLLM
+from cadence.llm import GoogleLLM
 from cadence.peers import PeerHub
 from cadence.pipeline import Pipeline
 from cadence.plugins.registry import DeviceRegistry
@@ -47,7 +47,7 @@ def build_runtime() -> Runtime:
     except DeciderUnavailable as exc:
         print(f"jev unavailable: {exc}", file=sys.stderr)
         jev = UnavailableDecider(str(exc))
-    llm = LlmDecider(OllamaLLM(), RollingContext())
+    llm = LlmDecider(GoogleLLM(), RollingContext())
 
     executor = Executor(catalogue, registry)
     context = LiveContext(log, hub.now_playing)

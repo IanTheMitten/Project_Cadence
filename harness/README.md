@@ -35,10 +35,12 @@ TYPESAFE_API_KEY=<your key>
 Keep that file outside the repo and never commit it. If no key is found, Jev is marked
 unavailable at startup (a message goes to stderr) and every utterance escalates to the LLM.
 
-### LLM (Ollama)
+### LLM (Google AI Studio)
 
-Escalations go to `gemma4:31b-cloud` at `http://localhost:11434/api/chat` (`cadence/llm.py`).
-Run `ollama signin` once on the host; the harness does not do it for you.
+Escalations go to Google AI Studio's OpenAI-compatible endpoint (`cadence/llm.py`).
+Set `GEMINI_API_KEY` (from https://aistudio.google.com/apikey) in the environment; never commit it.
+Model defaults to `gemini-2.5-flash`; override with `CADENCE_LLM_MODEL`.
+Without a key the LLM decider reports unavailable and the turn fails cleanly.
 
 ## Running it
 
