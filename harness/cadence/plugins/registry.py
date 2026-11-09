@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-import json
-import os
 from dataclasses import dataclass
 
 
@@ -16,14 +14,6 @@ class Device:
 class DeviceRegistry:
     def __init__(self, devices: list[Device]) -> None:
         self._devices: dict[str, Device] = {d.id: d for d in devices}
-
-    @classmethod
-    def from_file(cls, path: str) -> "DeviceRegistry":
-        if not os.path.exists(path):
-            return cls([])
-        with open(path) as f:
-            data = json.load(f)
-        return cls([Device(d["id"], d["kind"], d.get("room")) for d in data.get("devices", [])])
 
     def get(self, device_id: str) -> Device | None:
         return self._devices.get(device_id)

@@ -355,7 +355,7 @@ Test commands (shared venv, per spec `docs/specs/2026-11-09-cadence-modular-spli
 **Why:** Harness can no longer import the plugins once they leave (Task 16).
 
 ### Task 16: Wire Cadence onto /peer and delete the moved harness code
-- [ ] status
+- [x] status
 **Objective:** `python -m cadence` runs `/peer` on 8770 plus the schedule loop; audio, speaker, music and Muse code is gone from `harness/`.
 **Write-scope:** `harness/cadence/wiring.py`
 `harness/cadence/__main__.py`
@@ -385,7 +385,7 @@ Test commands (shared venv, per spec `docs/specs/2026-11-09-cadence-modular-spli
 5. `registry.py`: delete `from_file` and unused `json`/`os` imports; `tests/test_core.py`: delete `test_registry_from_file`. `base.py`: Manifest kind comment `# "device" | "service"`.
 6. New `tests/test_wiring.py`: `monkeypatch.chdir(tmp_path)`, `monkeypatch.setenv("TYPESAFE_API_KEY", "x")`; `rt = build_runtime()`; `[c.name for c in rt.catalogue.available()] == ["schedule.add","schedule.cancel","chat","correction"]`; `rt.hub.catalogue is rt.catalogue`.
 **New symbols:** `PEER_PORT = 8770`; `Runtime(registry, catalogue, hub, core, pipeline, log)`
-**Verify:** `cd harness && .venv/bin/python -m pytest -q` — expected: all pass. `grep -rnE "cadence\.(audio|acks|benchrec|wakebench|server|session|scheduler|muse)|plugins\.(speaker|music)|WS_PORT|DEVICES_PATH" cadence scripts tests` — expected: no output. `grep -rn "cadence_speaker\|cadence_muse" cadence` — expected: no output.
+**Verify:** `cd harness && .venv/bin/python -m pytest -q` — expected: all pass. `grep -rnE "cadence\.(audio|acks|benchrec|wakebench|server|session|scheduler|muse)|plugins\.(speaker|music)|WS_PORT|DEVICES_PATH" --exclude=preflight_v1.py --exclude=preflight_runtime.py cadence scripts tests` — expected: no output. `grep -rn "cadence_speaker\|cadence_muse" cadence` — expected: no output.
 **Forbidden:** don't touch `store.py`, `routines.py`, `context.py`, `agent.py`, `mcp_client.py`, `preflight_v1.py`, `preflight_runtime.py`, `bench_*`; don't delete on-disk `harness/acks/` (gitignored); don't run `python -m cadence` (the live server owns this host's ports); no new deps.
 **Depends:** Task 15
 **Why:** Cadence becomes the audio-free core; this is the cutover point of step 1 (spec `:44-47`).

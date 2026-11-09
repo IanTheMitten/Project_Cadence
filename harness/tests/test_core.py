@@ -51,20 +51,6 @@ def test_decision_defaults():
     assert d.escalation is None
 
 
-def test_registry_from_file(tmp_path):
-    p = tmp_path / "d.json"
-    p.write_text(json.dumps({"devices": [
-        {"id": "a", "kind": "speaker", "room": "bedroom"},
-        {"id": "b", "kind": "speaker", "room": "kitchen"}]}))
-    reg = DeviceRegistry.from_file(str(p))
-    assert reg.get("a").room == "bedroom"
-    assert reg.get("a").online is False
-    assert reg.get("b").online is False
-    assert DeviceRegistry.from_file(str(tmp_path / "missing.json")).rooms() == []
-    assert DeviceRegistry.from_file(str(tmp_path / "missing.json")).find(
-        "speaker", online_only=False) == []
-
-
 def test_set_online_unknown_adds():
     reg = DeviceRegistry([])
     d = reg.set_online("new", True)

@@ -20,7 +20,7 @@ class Capability:
 @dataclass(frozen=True)
 class Manifest:
     id: str
-    kind: str  # "device" | "service" | "sensor"
+    kind: str  # "device" | "service"
     capabilities: tuple[Capability, ...]
 
 
