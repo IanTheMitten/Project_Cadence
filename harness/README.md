@@ -39,7 +39,7 @@ unavailable at startup (a message goes to stderr) and every utterance escalates 
 
 Escalations go to Google AI Studio's OpenAI-compatible endpoint (`cadence/llm.py`).
 Put `GEMINI_API_KEY=...` (from https://aistudio.google.com/apikey) in `~/.config/cadence/typesafe.env`, next to the TypeSafe key, or export it; the env var wins. Never commit it.
-Model defaults to `gemini-2.5-flash`; override with `CADENCE_LLM_MODEL`.
+Model defaults to `gemini-3.5-flash`; override with `CADENCE_LLM_MODEL`.
 Without a key the LLM decider reports unavailable and the turn fails cleanly.
 
 ## Running it
