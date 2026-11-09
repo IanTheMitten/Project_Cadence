@@ -26,7 +26,7 @@ menu "Cadence Lamp"
 
     config LAMP_OTA_URL
         string "OTA image URL (empty disables)"
-        default "http://ianshomeserver:8771/lamp.bin"
+        default "http://ianshomeserver:8772/lamp.bin"
         help
             Checked once per boot (power-cycle the wall switch to update).
             Flashed only when the image's ELF SHA-256 differs from the
