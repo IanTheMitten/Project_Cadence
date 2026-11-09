@@ -119,7 +119,7 @@ Test commands (shared venv, per spec `docs/specs/2026-11-09-cadence-modular-spli
 **Why:** Pins clash window, says and pending shape before implementation (spec `:156-161`).
 
 ### Task 4: Implement schedules, pending questions and the schedule plugin
-- [ ] status
+- [x] status
 **Objective:** `harness/cadence/schedules.py` makes `tests/test_schedules.py` green.
 **Write-scope:** `harness/cadence/schedules.py` (new)
 **Read-context:** `harness/tests/test_schedules.py` (from Task 3), `harness/cadence/plugins/base.py:10-55`, `harness/cadence/decisionlog.py:30-45`
