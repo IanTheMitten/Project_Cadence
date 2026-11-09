@@ -71,7 +71,7 @@ def _event(text="do it"):
 
 
 def _executor(plugin, registry=None, **kw):
-    return Executor(Catalogue([plugin]), registry or _registry(), lambda i: None, **kw)
+    return Executor(Catalogue([plugin]), registry or _registry(), **kw)
 
 
 def _jev(route, calls=(), confidence=0.9, candidates=None, escalation=None):
@@ -87,7 +87,7 @@ def _pipeline(tmp_path, jev, llm, plugin=None, log=None, **kw):
     plugin = plugin or FakePlugin()
     catalogue = Catalogue([plugin])
     log = log or DecisionLog(str(tmp_path / "log.db"))
-    pipe = Pipeline(jev, llm, catalogue, Executor(catalogue, _registry(), lambda i: None), log,
+    pipe = Pipeline(jev, llm, catalogue, Executor(catalogue, _registry()), log,
                     LiveContext(log, lambda s: None), clock=lambda: 1000.0, **kw)
     return pipe, log, plugin
 

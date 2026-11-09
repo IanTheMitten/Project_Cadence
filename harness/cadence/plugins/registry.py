@@ -28,11 +28,14 @@ class DeviceRegistry:
     def get(self, device_id: str) -> Device | None:
         return self._devices.get(device_id)
 
-    def set_online(self, device_id: str, online: bool, kind: str = "speaker") -> Device:
+    def set_online(self, device_id: str, online: bool, kind: str = "speaker",
+                   room: str | None = None) -> Device:
         dev = self._devices.get(device_id)
         if dev is None:
-            dev = Device(device_id, kind, None)
+            dev = Device(device_id, kind, room)
             self._devices[device_id] = dev
+        elif room is not None:
+            dev.room = room
         dev.online = online
         return dev
 

@@ -92,14 +92,18 @@ def test_label_invalid_raises(tmp_path):
         log.label(9999, "wrong", "spoken_correction")
 
 
-def test_last_for_source(tmp_path):
+def test_last_for_device_or_room(tmp_path):
     log = make_log(tmp_path)
     rec(log, event=utterance("speaker-1", None, "a", ts=100.0))
     new = rec(log, event=utterance("speaker-1", None, "b", ts=200.0))
     rec(log, event=utterance("other", None, "c", ts=300.0))
-    assert log.last_for_source("speaker-1", 50.0)["id"] == new
-    assert log.last_for_source("speaker-1", 250.0) is None
-    assert log.last_for_source("nobody", 0.0) is None
+    assert log.last_for_device_or_room("speaker-1", None, 50.0)["id"] == new
+    assert log.last_for_device_or_room("speaker-1", None, 250.0) is None
+    assert log.last_for_device_or_room("nobody", None, 0.0) is None
+    sched = rec(log, event=utterance("scheduler", "bedroom", "d", ts=400.0))
+    assert log.last_for_device_or_room("speaker-1", "bedroom", 0.0)["id"] == sched
+    assert log.last_for_device_or_room("speaker-1", None, 0.0)["id"] != sched
+    assert log.last_for_device_or_room("speaker-1", "bedroom", 450.0) is None
 
 
 def test_recent_newest_first(tmp_path):

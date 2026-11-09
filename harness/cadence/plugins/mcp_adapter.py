@@ -20,6 +20,6 @@ class McpPlugin(Plugin):
             ))
         self.manifest = Manifest(self._id, "service", tuple(caps))
 
-    async def call(self, capability: str, args: dict, target, port) -> Result:
+    async def call(self, capability: str, args: dict, target, event) -> Result:
         data = await self._registry.call(capability[len(self._id) + 1:], args)
         return Result(True, data=data if isinstance(data, dict) else {"result": data})

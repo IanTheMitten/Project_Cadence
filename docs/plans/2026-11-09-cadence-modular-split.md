@@ -48,7 +48,7 @@ Test commands (shared venv, per spec `docs/specs/2026-11-09-cadence-modular-spli
 ## Phase 1 - Harness primitives
 
 ### Task 1: Add the shared device-protocol module to harness
-- [ ] status
+- [x] status
 **Objective:** `harness/cadence/protocol.py` defines protocol v1 helpers, tested.
 **Write-scope:** `harness/cadence/protocol.py` (new)
 `harness/tests/test_protocol.py` (new)
@@ -66,7 +66,7 @@ Test commands (shared venv, per spec `docs/specs/2026-11-09-cadence-modular-spli
 **Why:** Three packages must agree on message shapes; this file is copied byte-for-byte into the adapters (Tasks 9, 12).
 
 ### Task 2: Pass the event to plugins, make the catalogue dynamic, look back corrections by room
-- [ ] status
+- [x] status
 **Objective:** `Plugin.call` gets the `Event`, `Catalogue` supports `add`/`remove`, the registry takes a room, and corrections find the last decision by source or room.
 **Write-scope:** `harness/cadence/plugins/base.py`
 `harness/cadence/executor.py`

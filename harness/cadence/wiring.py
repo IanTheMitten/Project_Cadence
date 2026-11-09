@@ -59,7 +59,7 @@ def build_runtime() -> Runtime:
         jev = UnavailableDecider(str(exc))
     llm = LlmDecider(OllamaLLM(), RollingContext())
 
-    executor = Executor(catalogue, registry, ports.get)
+    executor = Executor(catalogue, registry)
     context = LiveContext(log, music.now_playing)
     pipeline = Pipeline(jev, llm, catalogue, executor, log, context)
     acks = AckPool(ACK_DIR)

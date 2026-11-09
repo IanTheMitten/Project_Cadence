@@ -31,7 +31,7 @@ def rt(tmp_path):
     registry = DeviceRegistry([Device("speaker-1", "speaker", "bedroom")])
     log = DecisionLog(str(tmp_path / "log.db"))
     pipeline = Pipeline(ScriptedDecider(_jev("x.do", [DO_CALL])), ScriptedDecider(), catalogue,
-                        Executor(catalogue, registry, lambda i: None), log,
+                        Executor(catalogue, registry), log,
                         LiveContext(log, lambda s: None))
     runtime = Runtime(registry=registry, ports={}, music=None, pipeline=pipeline,
                       acks=AckPool(str(tmp_path / "acks")), tts=None, asr=None,

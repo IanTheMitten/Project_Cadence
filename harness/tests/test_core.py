@@ -22,7 +22,7 @@ class FakePlugin(Plugin):
                                  capabilities=tuple(cap(n) for n in names))
         self._avail = avail
 
-    async def call(self, capability, args, target, port):
+    async def call(self, capability, args, target, event):
         return Result(True)
 
     def available(self):
@@ -111,6 +111,29 @@ def test_catalogue_duplicates_raise():
         Catalogue([FakePlugin("p1", ["a"]), FakePlugin("p2", ["a"])])
     with pytest.raises(ValueError):
         Catalogue([FakePlugin("p1", ["chat"])])
+
+
+def test_catalogue_add_remove():
+    cat = Catalogue([])
+    p = FakePlugin("p1", ["a", "b"])
+    cat.add(p)
+    assert cat.get("a") is not None and cat.plugin_for("b") is p
+    assert [c.name for c in cat.available()] == ["a", "b", "chat", "correction"]
+    with pytest.raises(ValueError):
+        cat.add(FakePlugin("p2", ["b"]))
+    with pytest.raises(ValueError):
+        cat.add(FakePlugin("p3", ["chat"]))
+    cat.remove(p)
+    assert cat.get("a") is None and cat.plugin_for("b") is None
+    assert [c.name for c in cat.available()] == ["chat", "correction"]
+    cat.remove(p)
+
+
+def test_set_online_sets_room():
+    reg = DeviceRegistry([])
+    assert reg.set_online("d1", True, room="bedroom").room == "bedroom"
+    assert reg.set_online("d1", True).room == "bedroom"
+    assert reg.set_online("d1", True, room="kitchen").room == "kitchen"
 
 
 def test_catalogue_builtins():

@@ -30,7 +30,7 @@ def _outcome(decision: Decision, results: list[Result]) -> str:
 
 class DecisionLog:
     def __init__(self, path: str) -> None:
-        # single-writer: all access serialized by server.TURN_LOCK; may be created in a different thread than used (TestClient/uvicorn)
+        # single-writer: all access serialized by core.TURN_LOCK; may be created in a different thread than used (TestClient/uvicorn)
         self._conn = sqlite3.connect(path, check_same_thread=False)
         self._conn.execute(
             """
@@ -123,10 +123,11 @@ class DecisionLog:
                 row[col] = json.loads(row[col])
         return row
 
-    def last_for_source(self, source: str, since: float) -> dict | None:
+    def last_for_device_or_room(self, source: str, room: str | None, since: float) -> dict | None:
         values = self._conn.execute(
-            _SELECT + " WHERE source = ? AND at >= ? ORDER BY at DESC, id DESC LIMIT 1",
-            (source, since),
+            _SELECT + " WHERE (source = ? OR (? IS NOT NULL AND room = ?)) AND at >= ?"
+            " ORDER BY at DESC, id DESC LIMIT 1",
+            (source, room, room, since),
         ).fetchone()
         return self._row(values) if values else None
 

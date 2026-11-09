@@ -76,7 +76,7 @@ class Pipeline:
             route = jev_d.route
             await out.ack("chat" if route == "chat" else "correction" if route == "correction" else "action")
             if route == "correction":
-                prev = self._log.last_for_source(event.source, self._clock() - self._window)
+                prev = self._log.last_for_device_or_room(event.source, event.room, self._clock() - self._window)
                 escalation = "correction" if prev else "correction_no_previous"
                 llm_args = (no_corr, correction_instruction(prev) if prev else None)
             elif route == "chat":

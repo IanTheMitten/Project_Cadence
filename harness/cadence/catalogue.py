@@ -11,15 +11,28 @@ BUILTINS: tuple[Capability, ...] = (CHAT, CORRECTION)
 
 class Catalogue:
     def __init__(self, plugins: list[Plugin]) -> None:
-        self._plugins = list(plugins)
         self._caps: dict[str, Capability] = {c.name: c for c in BUILTINS}
         self._owner: dict[str, Plugin] = {}
-        for p in self._plugins:
-            for c in p.manifest.capabilities:
-                if c.name in self._caps:
-                    raise ValueError(f"duplicate capability name: {c.name}")
-                self._caps[c.name] = c
-                self._owner[c.name] = p
+        self._plugins = []
+        for p in plugins:
+            self.add(p)
+
+    def add(self, plugin: Plugin) -> None:
+        for c in plugin.manifest.capabilities:
+            if c.name in self._caps:
+                raise ValueError(f"duplicate capability name: {c.name}")
+        self._plugins.append(plugin)
+        for c in plugin.manifest.capabilities:
+            self._caps[c.name] = c
+            self._owner[c.name] = plugin
+
+    def remove(self, plugin: Plugin) -> None:
+        if not any(p is plugin for p in self._plugins):
+            return
+        self._plugins = [p for p in self._plugins if p is not plugin]
+        for c in plugin.manifest.capabilities:
+            del self._caps[c.name]
+            del self._owner[c.name]
 
     def get(self, name: str) -> Capability | None:
         return self._caps.get(name)

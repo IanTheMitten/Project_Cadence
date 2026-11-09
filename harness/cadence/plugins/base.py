@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import abc
 from dataclasses import dataclass, field
-from typing import Awaitable, Callable, Protocol
 
+from cadence.events import Event
 from cadence.plugins.registry import Device
 
 
@@ -32,21 +32,12 @@ class Result:
     error: str | None = None
 
 
-class AudioPort(Protocol):
-    async def play_url(self, url: str, on_end: Callable[[str], Awaitable[None]]) -> None: ...
-    async def pause(self) -> None: ...
-    async def resume(self) -> None: ...
-    async def stop(self, reason: str = "stopped") -> None: ...
-    def position_ms(self) -> int: ...
-    def is_paused(self) -> bool: ...
-
-
 class Plugin(abc.ABC):
     manifest: Manifest
 
     @abc.abstractmethod
     async def call(self, capability: str, args: dict, target: Device | None,
-                   port: AudioPort | None) -> Result: ...
+                   event: Event) -> Result: ...
 
     def available(self) -> bool:
         return True
