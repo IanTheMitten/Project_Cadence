@@ -294,7 +294,7 @@ Test commands (shared venv, per spec `docs/specs/2026-11-09-cadence-modular-spli
 **Why:** Spec makes Muse its own service peer (`:121-126`).
 
 ### Task 13: Write Muse remote-port and adapter tests (red) [test]
-- [ ] status
+- [x] status
 **Objective:** `muse_adapter/tests/test_adapter.py` pins `RemotePort` and `MuseAdapter`, failing on import.
 **Write-scope:** `muse_adapter/tests/test_adapter.py` (new)
 **Read-context:** `harness/tests/test_music_plugin.py:1-118`, `harness/cadence/plugins/music.py:155-175`, `harness/cadence/plugins/speaker.py:77-145`
