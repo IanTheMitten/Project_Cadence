@@ -9,7 +9,8 @@ Last updated: 2026-10-17 (seeded from `CLAUDE.md` and specs; verify against the 
 | Board | Role | Status | Flashed with | Notes |
 |---|---|---|---|---|
 | ESP32-S3 #1 | Speaker + mic (voice) | working (per repo; confirm) | `voice_chat/` (harness `/session` client) | Switch to root project or `mic_test/` by reflashing; only one image at a time. |
-| ESP32-S3 #2, #3, #4 | Lamps / CSI nodes | planned | none | 3 spare boards for the CSI ground tests. Fill in per-board notes as they are used. |
+| ESP32-S3 #2 | Bedroom ceiling lamp (`bedroom-ceiling`) | flashed 2026-11-09, strip bench test pending | `lamp/` (Cadence `/peer` device) | MAC `20:6e:f1:d6:e8:bc`, 8 MB flash, CH34x USB-serial. Wiring below. |
+| ESP32-S3 #3, #4 | Lamps / CSI nodes | planned | none | Spare boards for the CSI ground tests. Fill in per-board notes as they are used. |
 
 ## Speaker + mic board wiring
 
@@ -23,6 +24,20 @@ Last updated: 2026-10-17 (seeded from `CLAUDE.md` and specs; verify against the 
 INMP441: `L/R` to GND (left slot), `VDD` 3.3 V (not 5 V).
 
 Not yet recorded here (fill in): DAC/amp part number, speaker driver, power supply, enclosure.
+
+## Ceiling lamp wiring (board #2)
+
+24 V CCT strip, low-side switched by two IRLZ44N.
+
+| Item | Connection |
+|---|---|
+| 24 V PSU (+) | strip +24 V, buck VIN+ |
+| 24 V PSU (-) | buck VIN-, both MOSFET sources |
+| Buck VOUT (5 V) | ESP32 5V/VIN and GND (buck must share VIN-/VOUT- ground) |
+| GPIO2 | 220 ohm to Gate 1, 10 k gate-to-GND; Drain 1 = strip WW (-) |
+| GPIO4 | 220 ohm to Gate 2, 10 k gate-to-GND; Drain 2 = strip CW (-) |
+
+Gate drive is 3.3 V through 220 ohm, so PWM is 2 kHz (switching about 5-10 us per edge). If either channel draws over about 3 A, add a TC4427 gate driver on 5 V. Do not power from USB and the buck at once.
 
 ## Planned parts (not yet bought or built)
 
