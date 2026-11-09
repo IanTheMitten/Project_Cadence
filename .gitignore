@@ -3,6 +3,8 @@ build/
 mic_test/build/
 voice_chat/build/
 voice_chat/managed_components/
+lamp/build/
+lamp/managed_components/
 
 # Generated, machine-specific full configs (see CLAUDE.md)
 sdkconfig
@@ -11,6 +13,8 @@ mic_test/sdkconfig
 mic_test/sdkconfig.old
 voice_chat/sdkconfig
 voice_chat/sdkconfig.old
+lamp/sdkconfig
+lamp/sdkconfig.old
 
 # Contain the WiFi password in plaintext. voice_chat/ commits its sdkconfig.defaults
 # (no secrets) and keeps credentials in the ignored sdkconfig.defaults.local.
@@ -20,6 +24,8 @@ sdkconfig.defaults.local
 mic_test/sdkconfig.defaults.local
 voice_chat/sdkconfig.defaults.local
 !voice_chat/sdkconfig.defaults
+lamp/sdkconfig.defaults.local
+!lamp/sdkconfig.defaults
 
 # Python
 tools/.venv/

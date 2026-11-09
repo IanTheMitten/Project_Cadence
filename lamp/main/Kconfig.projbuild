@@ -1,0 +1,35 @@
+menu "Cadence Lamp"
+
+    config LAMP_WIFI_SSID
+        string "WiFi SSID"
+        default ""
+
+    config LAMP_WIFI_PASSWORD
+        string "WiFi password"
+        default ""
+
+    config LAMP_PEER_URL
+        string "Cadence /peer WebSocket URL"
+        default "ws://ianshomeserver:8770/peer"
+        help
+            The lamp joins Cadence directly as a device peer (no adapter).
+
+    config LAMP_PEER_ID
+        string "Peer ID"
+        default "bedroom-ceiling"
+        help
+            Unique per lamp; Cadence rejects a second peer with the same id.
+
+    config LAMP_ROOM
+        string "Room"
+        default "bedroom"
+
+    config LAMP_OTA_URL
+        string "OTA image URL (empty disables)"
+        default "http://ianshomeserver:8771/lamp.bin"
+        help
+            Checked once per boot (power-cycle the wall switch to update).
+            Flashed only when the image's ELF SHA-256 differs from the
+            running one and from an image that was already rolled back.
+
+endmenu

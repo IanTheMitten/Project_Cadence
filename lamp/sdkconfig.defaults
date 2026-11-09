@@ -1,0 +1,9 @@
+# Committed board defaults. WiFi SSID/password go in the gitignored
+# sdkconfig.defaults.local (see CLAUDE.md), which is applied after this file.
+# 4 MB is the smallest S3 module; two OTA slots fit, and it runs on 8 MB boards too.
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+# A new image stays pending until Cadence sends welcome; a crash before that reverts it.
+CONFIG_BOOTLOADER_APP_ROLLBACK_ENABLE=y
+CONFIG_ESP_HTTPS_OTA_ALLOW_HTTP=y
