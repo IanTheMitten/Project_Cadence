@@ -199,7 +199,7 @@ Test commands (shared venv, per spec `docs/specs/2026-11-09-cadence-modular-spli
 **Why:** Pins spec testing strategy for the core (`:214`).
 
 ### Task 8: Implement the /peer hub and endpoint
-- [ ] status
+- [x] status
 **Objective:** `harness/cadence/peers.py` makes `tests/test_peers.py` green.
 **Write-scope:** `harness/cadence/peers.py` (new)
 **Read-context:** `harness/tests/test_peers.py` (from Task 7), `harness/cadence/server.py:30-48,88-209`, `harness/cadence/catalogue.py`, `harness/cadence/core.py` (from Task 6)
