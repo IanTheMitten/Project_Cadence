@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cadence</title>
+<style>
+  :root { --bg: #f6f5f2; --fg: #1c1b19; --muted: #85827b; --me: #2f5d50; --me-fg: #fff; --them: #e8e6e1; --line: #dcd9d2; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #161615; --fg: #ecebe8; --muted: #8d8a83; --me: #3f7a69; --me-fg: #fff; --them: #262624; --line: #33322f; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; height: 100dvh; display: flex; flex-direction: column; background: var(--bg); color: var(--fg);
+         font: 16px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  header { padding: 12px 16px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: baseline; }
+  header h1 { margin: 0; font-size: 17px; font-weight: 600; }
+  #status { font-size: 13px; color: var(--muted); }
+  #log { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 8px; max-width: 720px; width: 100%; margin: 0 auto; }
+  .msg { max-width: 80%; padding: 8px 12px; border-radius: 14px; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .me { align-self: flex-end; background: var(--me); color: var(--me-fg); }
+  .them { align-self: flex-start; background: var(--them); }
+  .note { align-self: center; font-size: 13px; color: var(--muted); }
+  form { display: flex; gap: 8px; padding: 12px 16px; border-top: 1px solid var(--line); max-width: 720px; width: 100%; margin: 0 auto; }
+  input { flex: 1; font: inherit; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); }
+  button { font: inherit; padding: 10px 16px; border-radius: 10px; border: 0; background: var(--me); color: var(--me-fg); cursor: pointer; }
+  button:disabled { opacity: .5; cursor: default; }
+  input:focus-visible, button:focus-visible { outline: 2px solid var(--me); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<header><h1>Cadence</h1><span id="status" role="status">connecting…</span></header>
+<main id="log" aria-live="polite"></main>
+<form id="f">
+  <label for="t" hidden>Message</label>
+  <input id="t" autocomplete="off" placeholder="Say something to Cadence" autofocus>
+  <button id="b" disabled>Send</button>
+</form>
+<script>
+const log = document.getElementById("log"), status = document.getElementById("status");
+const input = document.getElementById("t"), btn = document.getElementById("b");
+let ws;
+
+function add(cls, text) {
+  const d = document.createElement("div");
+  d.className = "msg " + cls; d.textContent = text;
+  log.appendChild(d); log.scrollTop = log.scrollHeight;
+}
+
+function connect() {
+  ws = new WebSocket((location.protocol === "https:" ? "wss://" : "ws://") + location.host + "/ws");
+  ws.onopen = () => { status.textContent = "connected"; btn.disabled = false; };
+  ws.onclose = () => { status.textContent = "reconnecting…"; btn.disabled = true; setTimeout(connect, 2000); };
+  ws.onmessage = (e) => {
+    const m = JSON.parse(e.data);
+    if (m.type === "say") add("them", m.text);
+    else if (m.type === "error") add("note", m.message);
+    else if (m.type === "turn_start") status.textContent = "thinking…";
+    else if (m.type === "turn_end") status.textContent = "connected";
+  };
+}
+
+document.getElementById("f").onsubmit = (e) => {
+  e.preventDefault();
+  const text = input.value.trim();
+  if (!text || ws.readyState !== WebSocket.OPEN) return;
+  ws.send(text); add("me", text); input.value = "";
+};
+connect();
+</script>
+</body>
+</html>
