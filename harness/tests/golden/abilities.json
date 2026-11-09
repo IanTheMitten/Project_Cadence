@@ -1,0 +1,155 @@
+[
+ {
+  "name": "music.play",
+  "description": "Play music: a mood, genre, artist, song, or a playlist built from a vibe.",
+  "parameters": {
+   "type": "object",
+   "properties": {
+    "artist": {
+     "type": "string"
+    },
+    "title": {
+     "type": "string"
+    },
+    "mood": {
+     "type": "string",
+     "description": "mood, vibe, activity, or feeling"
+    },
+    "genre": {
+     "type": "string"
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 50
+    },
+    "room": {
+     "type": "string"
+    }
+   }
+  },
+  "closed_args": {},
+  "free_args": [
+   "artist",
+   "title",
+   "mood",
+   "genre"
+  ],
+  "target": "speaker"
+ },
+ {
+  "name": "music.control",
+  "description": "Pause, stop, resume, skip, go back, or turn shuffle on or off for the music playing now.",
+  "parameters": {
+   "type": "object",
+   "properties": {
+    "action": {
+     "type": "string",
+     "enum": [
+      "pause",
+      "resume",
+      "skip",
+      "previous",
+      "shuffle_on",
+      "shuffle_off"
+     ]
+    },
+    "room": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "action"
+   ]
+  },
+  "closed_args": {
+   "action": {
+    "pause": "pause or stop the music",
+    "resume": "resume or continue paused music",
+    "skip": "skip to the next track",
+    "previous": "go back to the previous track",
+    "shuffle_on": "turn shuffle on",
+    "shuffle_off": "turn shuffle off"
+   }
+  },
+  "free_args": [],
+  "target": "speaker"
+ },
+ {
+  "name": "music.rate",
+  "description": "Like or dislike the track playing now, or clear its rating.",
+  "parameters": {
+   "type": "object",
+   "properties": {
+    "rating": {
+     "type": "string",
+     "enum": [
+      "up",
+      "down",
+      "clear"
+     ]
+    },
+    "room": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "rating"
+   ]
+  },
+  "closed_args": {
+   "rating": {
+    "up": "likes it, thumbs up",
+    "down": "dislikes it, thumbs down",
+    "clear": "remove the rating"
+   }
+  },
+  "free_args": [],
+  "target": "speaker"
+ },
+ {
+  "name": "music.now_playing",
+  "description": "Say what is playing now, or whether the music is paused.",
+  "parameters": {
+   "type": "object",
+   "properties": {}
+  },
+  "closed_args": {},
+  "free_args": [],
+  "target": "speaker"
+ },
+ {
+  "name": "speaker.volume",
+  "description": "Make the speaker louder or quieter, or mute or unmute it.",
+  "parameters": {
+   "type": "object",
+   "properties": {
+    "action": {
+     "type": "string",
+     "enum": [
+      "up",
+      "down",
+      "mute",
+      "unmute"
+     ]
+    },
+    "room": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "action"
+   ]
+  },
+  "closed_args": {
+   "action": {
+    "up": "louder, turn it up",
+    "down": "quieter, turn it down",
+    "mute": "mute",
+    "unmute": "unmute"
+   }
+  },
+  "free_args": [],
+  "target": "speaker"
+ }
+]

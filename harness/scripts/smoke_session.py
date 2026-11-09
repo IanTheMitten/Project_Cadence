@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Five live turns through the running harness; prints two markdown tables.
 
-Run from harness/ with the server up on ws://127.0.0.1:8768/session.
+Run from harness/ with the server up on /peer, port 8770 (ws://127.0.0.1:8770/peer).
 See docs/preflight/e2e-v1.md.
 """
 import asyncio
@@ -15,8 +15,9 @@ import websockets
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from cadence.decisionlog import DecisionLog  # noqa: E402
+from cadence.protocol import hello  # noqa: E402
 
-URL = "ws://127.0.0.1:8768/session"
+URL = "ws://127.0.0.1:8770/peer"
 UTTERANCES = [
     "play something chill",
     "what's playing",
@@ -33,38 +34,38 @@ def cell(value, limit=200):
 
 async def turn(ws, text):
     t = time.perf_counter()
-    await ws.send(json.dumps({"type": "text", "content": text}))
-    audio = 0
+    await ws.send(json.dumps({"type": "event", "kind": "utterance", "payload": {"text": text}}))
     texts = []
     while True:
         msg = await asyncio.wait_for(ws.recv(), TURN_TIMEOUT)
-        if isinstance(msg, bytes):
-            audio += len(msg)
-            continue
         frame = json.loads(msg)
         if frame.get("type") == "turn_end":
             break
-        if frame.get("type") in ("text", "error"):
-            texts.append(f"{frame['type']}: {frame.get('content') or frame.get('message')}")
-    return (time.perf_counter() - t), audio, texts
+        if frame.get("type") == "say":
+            texts.append(f"say: {frame['text']}")
+        elif frame.get("type") == "error":
+            texts.append(f"error: {frame.get('text') or frame.get('message')}")
+    return (time.perf_counter() - t), texts
 
 
 async def main():
     rows = []
     async with websockets.connect(URL, max_size=None) as ws:
-        await ws.send(json.dumps({"type": "hello", "client_id": "speaker-1",
-                                  "caps": ["text_in", "audio_out"]}))
+        await ws.send(json.dumps(hello("smoke", "device", "text", None, ["text_out"], [])))
+        welcome = json.loads(await ws.recv())
+        if welcome.get("type") != "welcome":
+            raise SystemExit(f"expected welcome, got {welcome}")
         for text in UTTERANCES:
             try:
-                wall, audio, texts = await turn(ws, text)
-                rows.append((text, f"{wall:.2f}", audio, "; ".join(texts)))
+                wall, texts = await turn(ws, text)
+                rows.append((text, f"{wall:.2f}", "; ".join(texts)))
             except Exception as exc:  # record, keep going
-                rows.append((text, "n/a", 0, f"EXC {type(exc).__name__}: {exc}"))
+                rows.append((text, "n/a", f"EXC {type(exc).__name__}: {exc}"))
     print("## Turns\n")
-    print("| utterance | wall s | audio bytes | text/error frames |")
-    print("|---|---|---|---|")
-    for text, wall, audio, extra in rows:
-        print(f"| {cell(text)} | {wall} | {audio} | {cell(extra)} |")
+    print("| utterance | wall s | say/error frames |")
+    print("|---|---|---|")
+    for text, wall, extra in rows:
+        print(f"| {cell(text)} | {wall} | {cell(extra)} |")
     print("\n## Decision log (last 5)\n")
     print("| text | route | decider | escalation | calls | outcome | latency_ms | labels |")
     print("|---|---|---|---|---|---|---|---|")

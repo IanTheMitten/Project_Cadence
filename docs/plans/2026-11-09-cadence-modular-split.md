@@ -335,7 +335,7 @@ Test commands (shared venv, per spec `docs/specs/2026-11-09-cadence-modular-spli
 ## Phase 4 - Switch harness to /peer
 
 ### Task 15: Point golden replay and the smoke script at the new catalogue and /peer
-- [ ] status
+- [x] status
 **Objective:** `golden_replay.py` builds caps from `tests/golden/abilities.json` plus schedule caps; `smoke_session.py` speaks `/peer`; a guard test checks the golden catalogue.
 **Write-scope:** `harness/scripts/golden_replay.py`
 `harness/scripts/smoke_session.py`

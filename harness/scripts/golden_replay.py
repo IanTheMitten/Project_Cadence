@@ -14,12 +14,12 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REPO = os.path.dirname(ROOT)
 sys.path.insert(0, ROOT)
 
-from cadence.catalogue import Catalogue  # noqa: E402
+from cadence.catalogue import BUILTINS  # noqa: E402
 from cadence.deciders.base import DeciderUnavailable  # noqa: E402
 from cadence.deciders.jev import JevDecider, load_api_key  # noqa: E402
 from cadence.events import utterance  # noqa: E402
-from cadence.plugins.music import MusicPlugin  # noqa: E402
-from cadence.plugins.speaker import SpeakerPlugin  # noqa: E402
+from cadence.peers import capability_from_ability  # noqa: E402
+from cadence.schedules import SchedulePlugin  # noqa: E402
 
 CONTEXT = {"time": "22:30", "weekday": "Tuesday", "room": "bedroom",
            "now_playing": {"track_name": "Weightless", "artist_name": "Marconi Union", "paused": False},
@@ -38,7 +38,8 @@ def quantile(vals, q):
 
 async def main():
     items = json.load(open(os.path.join(ROOT, "tests/golden/utterances.json")))["items"]
-    caps = Catalogue([MusicPlugin(object()), SpeakerPlugin()]).available()
+    caps = [capability_from_ability(a) for a in json.load(open(os.path.join(ROOT, "tests/golden/abilities.json")))] \
+        + list(SchedulePlugin.manifest.capabilities) + list(BUILTINS)
     jev = JevDecider(load_api_key())
     records, stopped = [], None
     for it in items:
