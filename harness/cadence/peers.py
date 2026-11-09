@@ -189,10 +189,9 @@ async def peer_endpoint(ws: WebSocket) -> None:
         await ws.send_text(encode({"type": "error", "message": str(exc)}))
         await ws.close()
         return
-    await send({"type": "welcome"})
-
     turns: set[asyncio.Task] = set()
     try:
+        await send({"type": "welcome"})
         while True:
             message = await ws.receive()
             if message.get("type") == "websocket.disconnect":

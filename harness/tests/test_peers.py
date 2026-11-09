@@ -204,3 +204,25 @@ def test_import_does_not_build_runtime(monkeypatch):
 
     monkeypatch.setattr(wiring, "build_runtime", boom)
     importlib.reload(peers)
+
+
+def test_failed_welcome_does_not_leak_peer(env, monkeypatch):
+    from starlette.websockets import WebSocket
+    orig = WebSocket.send_text
+
+    async def flaky(self, text):
+        if "welcome" in text:
+            raise RuntimeError("dropped")
+        await orig(self, text)
+
+    monkeypatch.setattr(WebSocket, "send_text", flaky)
+    try:
+        with env.client.websocket_connect("/peer") as ws:
+            _send(ws, SPEAKER)
+            _recv(ws)
+    except Exception:
+        pass
+    assert _eventually(lambda: not env.hub.registry.get("speaker-1").online, 2.0)
+    monkeypatch.setattr(WebSocket, "send_text", orig)
+    with env.client.websocket_connect("/peer") as ws:
+        _join(ws, SPEAKER)
