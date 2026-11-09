@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "about": "Golden utterances for the v1 catalogue. 48 items relabelled from harness/scripts/bench_common.py TESTSET (same ids) plus 12 new v1 items (ids x1-x12). `routes` lists every acceptable route; `args` lists expected closed-set args, scored only when the predicted route equals the first entry of `routes`. Free-text args are not scored here. Context for every item: the source speaker is playing 'Weightless' by Marconi Union, time 22:30.",
-  "catalogue": ["music.play", "music.control", "music.rate", "music.now_playing", "speaker.volume", "chat", "correction"],
+  "about": "Golden utterances for the v1 catalogue. 48 items relabelled from harness/scripts/bench_common.py TESTSET (same ids) plus 12 new v1 items (ids x1-x12). `routes` lists every acceptable route; `args` lists expected closed-set args, scored only when the predicted route equals the first entry of `routes`. Free-text args are not scored here. Context for every item: the source speaker is playing 'Weightless' by Marconi Union, time 22:30. Items s1-s10 cover voice schedules (2026-11-09).",
+  "catalogue": ["music.play", "music.control", "music.rate", "music.now_playing", "speaker.volume", "chat", "correction", "schedule.add", "schedule.cancel"],
   "items": [
     {"id": "v1", "utterance": "play something mellow for dinner", "routes": ["music.play"], "args": {}},
     {"id": "v2", "utterance": "I want some upbeat music to get me going", "routes": ["music.play"], "args": {}},
@@ -62,6 +62,16 @@
     {"id": "x9", "utterance": "turn shuffle off", "routes": ["music.control"], "args": {"action": "shuffle_off"}},
     {"id": "x10", "utterance": "no, I meant something more upbeat", "routes": ["correction"], "args": {}},
     {"id": "x11", "utterance": "that's the wrong song", "routes": ["correction"], "args": {}},
-    {"id": "x12", "utterance": "not that, play Radiohead instead", "routes": ["correction"], "args": {}}
+    {"id": "x12", "utterance": "not that, play Radiohead instead", "routes": ["correction"], "args": {}},
+    {"id": "s1", "utterance": "wake me up at 7 and play jazz", "routes": ["schedule.add"], "args": {}},
+    {"id": "s2", "utterance": "set an alarm for six thirty tomorrow", "routes": ["schedule.add"], "args": {}},
+    {"id": "s3", "utterance": "wake me up every day at 7", "routes": ["schedule.add"], "args": {}},
+    {"id": "s4", "utterance": "every morning at 8 play something upbeat", "routes": ["schedule.add"], "args": {}},
+    {"id": "s5", "utterance": "at 10 pm turn the volume down", "routes": ["schedule.add"], "args": {}},
+    {"id": "s6", "utterance": "cancel my 7 o'clock alarm", "routes": ["schedule.cancel"], "args": {}},
+    {"id": "s7", "utterance": "delete the wake-up at six thirty", "routes": ["schedule.cancel"], "args": {}},
+    {"id": "s8", "utterance": "never mind the 8am schedule", "routes": ["schedule.cancel"], "args": {}},
+    {"id": "s9", "utterance": "stop the alarm", "routes": ["music.control", "schedule.cancel"], "args": {}},
+    {"id": "s10", "utterance": "what time is my alarm", "routes": ["chat"], "args": {}}
   ]
 }

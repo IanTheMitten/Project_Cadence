@@ -10,7 +10,7 @@
   },
   "recent": []
  },
- "total_items": 60,
+ "total_items": 70,
  "stopped": null,
  "records": [
   {
@@ -23,16 +23,18 @@
    "route": "music.play",
    "confidence": 1.0,
    "probabilities": {
-    "speaker.volume": 0.0,
-    "music.now_playing": 0.0,
-    "music.rate": 0.0,
-    "chat": 0.0,
     "music.play": 1.0,
-    "correction": 0.0,
-    "music.control": 0.0
+    "music.control": 0.0,
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 329.5,
+   "latency_ms": 355.5,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -47,16 +49,18 @@
    "route": "music.play",
    "confidence": 1.0,
    "probabilities": {
-    "music.now_playing": 0.0,
-    "correction": 0.0,
-    "music.rate": 0.0,
     "music.play": 1.0,
-    "chat": 0.0,
+    "music.control": 0.0,
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
     "speaker.volume": 0.0,
-    "music.control": 0.0
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 225.6,
+   "latency_ms": 198.1,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -71,16 +75,18 @@
    "route": "music.play",
    "confidence": 1.0,
    "probabilities": {
-    "music.control": 0.0,
-    "chat": 0.0,
-    "music.rate": 0.0,
     "music.play": 1.0,
+    "music.control": 0.0,
+    "music.rate": 0.0,
     "music.now_playing": 0.0,
     "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
     "correction": 0.0
    },
    "args": {},
-   "latency_ms": 224.4,
+   "latency_ms": 205.2,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -97,14 +103,16 @@
    "probabilities": {
     "music.play": 1.0,
     "music.control": 0.0,
-    "music.now_playing": 0.0,
-    "chat": 0.0,
     "music.rate": 0.0,
-    "correction": 0.0,
-    "speaker.volume": 0.0
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 233.8,
+   "latency_ms": 302.7,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -117,18 +125,20 @@
    ],
    "expected_args": {},
    "route": "music.play",
-   "confidence": 1.0,
+   "confidence": 0.99,
    "probabilities": {
-    "chat": 0.0,
-    "music.rate": 0.0,
+    "music.play": 0.99,
     "music.control": 0.0,
-    "correction": 0.0,
+    "music.rate": 0.0,
     "music.now_playing": 0.0,
     "speaker.volume": 0.0,
-    "music.play": 1.0
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.01,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 209.7,
+   "latency_ms": 210.0,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -141,18 +151,20 @@
    ],
    "expected_args": {},
    "route": "music.play",
-   "confidence": 1.0,
+   "confidence": 0.97,
    "probabilities": {
-    "correction": 0.0,
+    "music.play": 0.97,
     "music.control": 0.0,
-    "chat": 0.0,
-    "speaker.volume": 0.0,
     "music.rate": 0.0,
-    "music.play": 1.0,
-    "music.now_playing": 0.0
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.03,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 240.0,
+   "latency_ms": 215.1,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -165,18 +177,20 @@
    ],
    "expected_args": {},
    "route": "music.play",
-   "confidence": 0.97,
+   "confidence": 0.81,
    "probabilities": {
+    "music.play": 0.83,
     "music.control": 0.0,
-    "music.now_playing": 0.0,
-    "music.play": 0.98,
     "music.rate": 0.0,
+    "music.now_playing": 0.0,
     "speaker.volume": 0.0,
-    "correction": 0.0,
-    "chat": 0.02
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.17,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 273.7,
+   "latency_ms": 209.6,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -189,18 +203,20 @@
    ],
    "expected_args": {},
    "route": "music.play",
-   "confidence": 0.92,
+   "confidence": 0.45,
    "probabilities": {
+    "music.play": 0.51,
+    "music.control": 0.0,
     "music.rate": 0.0,
     "music.now_playing": 0.0,
-    "correction": 0.0,
-    "chat": 0.06,
     "speaker.volume": 0.0,
-    "music.play": 0.94,
-    "music.control": 0.0
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.49,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 378.2,
+   "latency_ms": 205.7,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -214,18 +230,20 @@
    ],
    "expected_args": {},
    "route": "music.play",
-   "confidence": 0.54,
+   "confidence": 0.51,
    "probabilities": {
-    "music.control": 0.02,
-    "music.play": 0.62,
-    "chat": 0.36,
-    "correction": 0.0,
+    "music.play": 0.56,
+    "music.control": 0.03,
     "music.rate": 0.0,
     "music.now_playing": 0.0,
-    "speaker.volume": 0.0
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.41,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 274.7,
+   "latency_ms": 223.4,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -240,16 +258,18 @@
    "route": "music.play",
    "confidence": 0.97,
    "probabilities": {
+    "music.play": 0.97,
     "music.control": 0.01,
-    "chat": 0.01,
+    "music.rate": 0.0,
     "music.now_playing": 0.0,
-    "correction": 0.0,
-    "music.play": 0.98,
     "speaker.volume": 0.0,
-    "music.rate": 0.0
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.02,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 296.2,
+   "latency_ms": 217.3,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -262,18 +282,20 @@
    ],
    "expected_args": {},
    "route": "music.play",
-   "confidence": 0.98,
+   "confidence": 0.78,
    "probabilities": {
+    "music.play": 0.8,
+    "music.control": 0.01,
     "music.rate": 0.0,
-    "music.play": 0.99,
-    "chat": 0.01,
-    "music.control": 0.0,
     "music.now_playing": 0.0,
-    "correction": 0.0,
-    "speaker.volume": 0.0
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.19,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 206.8,
+   "latency_ms": 205.4,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -288,16 +310,18 @@
    "route": "music.play",
    "confidence": 0.99,
    "probabilities": {
-    "music.now_playing": 0.0,
-    "chat": 0.0,
-    "speaker.volume": 0.0,
-    "music.play": 1.0,
+    "music.play": 0.99,
     "music.control": 0.0,
-    "correction": 0.0,
-    "music.rate": 0.0
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.01,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 248.0,
+   "latency_ms": 212.0,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -310,18 +334,20 @@
    ],
    "expected_args": {},
    "route": "music.play",
-   "confidence": 1.0,
+   "confidence": 0.99,
    "probabilities": {
+    "music.play": 0.99,
     "music.control": 0.0,
-    "correction": 0.0,
-    "chat": 0.0,
-    "music.play": 1.0,
-    "music.now_playing": 0.0,
     "music.rate": 0.0,
-    "speaker.volume": 0.0
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.01,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 259.7,
+   "latency_ms": 203.7,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -334,18 +360,20 @@
    ],
    "expected_args": {},
    "route": "music.play",
-   "confidence": 0.75,
+   "confidence": 0.87,
    "probabilities": {
-    "music.play": 0.79,
-    "music.control": 0.21,
-    "music.now_playing": 0.0,
-    "chat": 0.0,
+    "music.play": 0.88,
+    "music.control": 0.1,
     "music.rate": 0.0,
-    "correction": 0.0,
-    "speaker.volume": 0.0
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.02,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 347.2,
+   "latency_ms": 224.1,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -360,16 +388,18 @@
    "route": "music.now_playing",
    "confidence": 1.0,
    "probabilities": {
-    "speaker.volume": 0.0,
-    "chat": 0.0,
-    "correction": 0.0,
     "music.play": 0.0,
     "music.control": 0.0,
     "music.rate": 0.0,
-    "music.now_playing": 1.0
+    "music.now_playing": 1.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 256.6,
+   "latency_ms": 208.8,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -384,16 +414,18 @@
    "route": "music.now_playing",
    "confidence": 1.0,
    "probabilities": {
-    "chat": 0.0,
-    "music.now_playing": 1.0,
-    "music.rate": 0.0,
-    "speaker.volume": 0.0,
     "music.play": 0.0,
     "music.control": 0.0,
+    "music.rate": 0.0,
+    "music.now_playing": 1.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
     "correction": 0.0
    },
    "args": {},
-   "latency_ms": 251.9,
+   "latency_ms": 196.5,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -407,18 +439,20 @@
    ],
    "expected_args": {},
    "route": "music.now_playing",
-   "confidence": 0.6,
+   "confidence": 0.73,
    "probabilities": {
-    "music.now_playing": 0.67,
-    "correction": 0.0,
-    "music.control": 0.01,
     "music.play": 0.0,
+    "music.control": 0.01,
+    "music.rate": 0.0,
+    "music.now_playing": 0.76,
     "speaker.volume": 0.0,
-    "chat": 0.32,
-    "music.rate": 0.0
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.23,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 265.8,
+   "latency_ms": 230.1,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -435,18 +469,20 @@
    "route": "music.control",
    "confidence": 1.0,
    "probabilities": {
-    "speaker.volume": 0.0,
-    "correction": 0.0,
+    "music.play": 0.0,
     "music.control": 1.0,
     "music.rate": 0.0,
-    "music.play": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
     "chat": 0.0,
-    "music.now_playing": 0.0
+    "correction": 0.0
    },
    "args": {
     "action": "shuffle_on"
    },
-   "latency_ms": 241.6,
+   "latency_ms": 232.1,
    "route_ok": true,
    "arg_scored": true,
    "arg_ok": true
@@ -462,18 +498,20 @@
    "route": "music.control",
    "confidence": 1.0,
    "probabilities": {
-    "speaker.volume": 0.0,
-    "music.now_playing": 0.0,
-    "music.rate": 0.0,
-    "chat": 0.0,
-    "correction": 0.0,
     "music.play": 0.0,
-    "music.control": 1.0
+    "music.control": 1.0,
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
    },
    "args": {
     "action": "shuffle_off"
    },
-   "latency_ms": 238.0,
+   "latency_ms": 314.6,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -491,17 +529,19 @@
    "confidence": 1.0,
    "probabilities": {
     "music.play": 0.0,
+    "music.control": 1.0,
     "music.rate": 0.0,
     "music.now_playing": 0.0,
-    "chat": 0.0,
-    "music.control": 1.0,
     "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
     "correction": 0.0
    },
    "args": {
     "action": "pause"
    },
-   "latency_ms": 262.9,
+   "latency_ms": 236.4,
    "route_ok": true,
    "arg_scored": true,
    "arg_ok": true
@@ -517,18 +557,20 @@
    "route": "music.control",
    "confidence": 1.0,
    "probabilities": {
-    "correction": 0.0,
-    "chat": 0.0,
+    "music.play": 0.0,
+    "music.control": 1.0,
     "music.rate": 0.0,
     "music.now_playing": 0.0,
-    "music.play": 0.0,
     "speaker.volume": 0.0,
-    "music.control": 1.0
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
    },
    "args": {
     "action": "previous"
    },
-   "latency_ms": 258.2,
+   "latency_ms": 207.9,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -541,15 +583,17 @@
    ],
    "expected_args": {},
    "route": "chat",
-   "confidence": 0.93,
+   "confidence": 0.97,
    "probabilities": {
-    "music.play": 0.01,
-    "correction": 0.0,
+    "music.play": 0.0,
     "music.control": 0.0,
-    "chat": 0.94,
+    "music.rate": 0.0,
+    "music.now_playing": 0.03,
     "speaker.volume": 0.0,
-    "music.now_playing": 0.05,
-    "music.rate": 0.0
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.97,
+    "correction": 0.0
    },
    "args": {},
    "latency_ms": 210.3,
@@ -565,18 +609,20 @@
    ],
    "expected_args": {},
    "route": "chat",
-   "confidence": 0.98,
+   "confidence": 0.96,
    "probabilities": {
-    "chat": 0.98,
-    "music.now_playing": 0.02,
     "music.play": 0.0,
-    "speaker.volume": 0.0,
+    "music.control": 0.0,
     "music.rate": 0.0,
-    "correction": 0.0,
-    "music.control": 0.0
+    "music.now_playing": 0.04,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.96,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 216.9,
+   "latency_ms": 195.8,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -591,20 +637,22 @@
     "rating": "up"
    },
    "route": "music.rate",
-   "confidence": 0.7,
+   "confidence": 0.87,
    "probabilities": {
-    "music.rate": 0.75,
-    "music.control": 0.0,
     "music.play": 0.0,
-    "speaker.volume": 0.0,
-    "correction": 0.0,
+    "music.control": 0.0,
+    "music.rate": 0.88,
     "music.now_playing": 0.0,
-    "chat": 0.25
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.12,
+    "correction": 0.0
    },
    "args": {
     "rating": "up"
    },
-   "latency_ms": 233.5,
+   "latency_ms": 209.0,
    "route_ok": true,
    "arg_scored": true,
    "arg_ok": true
@@ -620,20 +668,22 @@
     "rating": "down"
    },
    "route": "music.control",
-   "confidence": 0.62,
+   "confidence": 0.63,
    "probabilities": {
-    "speaker.volume": 0.0,
-    "music.rate": 0.32,
-    "music.control": 0.68,
-    "chat": 0.0,
-    "correction": 0.0,
     "music.play": 0.0,
-    "music.now_playing": 0.0
+    "music.control": 0.67,
+    "music.rate": 0.33,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
    },
    "args": {
     "action": "skip"
    },
-   "latency_ms": 254.4,
+   "latency_ms": 252.2,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -651,17 +701,19 @@
    "confidence": 1.0,
    "probabilities": {
     "music.play": 0.0,
-    "speaker.volume": 0.0,
-    "correction": 0.0,
     "music.control": 0.0,
+    "music.rate": 1.0,
     "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
     "chat": 0.0,
-    "music.rate": 1.0
+    "correction": 0.0
    },
    "args": {
     "rating": "up"
    },
-   "latency_ms": 224.2,
+   "latency_ms": 235.3,
    "route_ok": true,
    "arg_scored": true,
    "arg_ok": true
@@ -676,20 +728,22 @@
     "rating": "down"
    },
    "route": "music.rate",
-   "confidence": 0.58,
+   "confidence": 0.75,
    "probabilities": {
-    "correction": 0.03,
-    "music.control": 0.06,
-    "chat": 0.25,
-    "music.now_playing": 0.01,
-    "speaker.volume": 0.0,
     "music.play": 0.01,
-    "music.rate": 0.64
+    "music.control": 0.06,
+    "music.rate": 0.78,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.13,
+    "correction": 0.02
    },
    "args": {
     "rating": "down"
    },
-   "latency_ms": 339.2,
+   "latency_ms": 202.4,
    "route_ok": true,
    "arg_scored": true,
    "arg_ok": true
@@ -702,18 +756,20 @@
    ],
    "expected_args": {},
    "route": "chat",
-   "confidence": 0.99,
+   "confidence": 1.0,
    "probabilities": {
-    "speaker.volume": 0.0,
-    "music.control": 0.0,
     "music.play": 0.0,
-    "chat": 1.0,
-    "correction": 0.0,
+    "music.control": 0.0,
     "music.rate": 0.0,
-    "music.now_playing": 0.0
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 1.0,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 349.7,
+   "latency_ms": 238.8,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -726,18 +782,20 @@
    ],
    "expected_args": {},
    "route": "chat",
-   "confidence": 1.0,
+   "confidence": 0.99,
    "probabilities": {
+    "music.play": 0.0,
+    "music.control": 0.0,
     "music.rate": 0.0,
     "music.now_playing": 0.0,
-    "chat": 1.0,
-    "music.control": 0.0,
     "speaker.volume": 0.0,
-    "correction": 0.0,
-    "music.play": 0.0
+    "schedule.add": 0.01,
+    "schedule.cancel": 0.0,
+    "chat": 0.99,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 246.9,
+   "latency_ms": 214.0,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -750,18 +808,20 @@
    ],
    "expected_args": {},
    "route": "chat",
-   "confidence": 1.0,
+   "confidence": 0.98,
    "probabilities": {
     "music.play": 0.0,
-    "music.now_playing": 0.0,
     "music.control": 0.0,
     "music.rate": 0.0,
-    "chat": 1.0,
+    "music.now_playing": 0.0,
     "speaker.volume": 0.0,
+    "schedule.add": 0.02,
+    "schedule.cancel": 0.0,
+    "chat": 0.98,
     "correction": 0.0
    },
    "args": {},
-   "latency_ms": 280.6,
+   "latency_ms": 227.2,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -774,18 +834,20 @@
    ],
    "expected_args": {},
    "route": "chat",
-   "confidence": 0.97,
+   "confidence": 0.98,
    "probabilities": {
-    "correction": 0.0,
-    "chat": 0.97,
-    "music.rate": 0.0,
     "music.play": 0.0,
     "music.control": 0.0,
+    "music.rate": 0.0,
     "music.now_playing": 0.0,
-    "speaker.volume": 0.03
+    "speaker.volume": 0.02,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.98,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 281.1,
+   "latency_ms": 239.1,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -798,18 +860,20 @@
    ],
    "expected_args": {},
    "route": "chat",
-   "confidence": 0.76,
+   "confidence": 0.51,
    "probabilities": {
-    "music.rate": 0.0,
-    "music.play": 0.17,
+    "music.play": 0.37,
+    "music.control": 0.02,
+    "music.rate": 0.01,
+    "music.now_playing": 0.01,
     "speaker.volume": 0.02,
-    "music.control": 0.01,
-    "correction": 0.0,
-    "chat": 0.79,
-    "music.now_playing": 0.01
+    "schedule.add": 0.01,
+    "schedule.cancel": 0.0,
+    "chat": 0.56,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 278.2,
+   "latency_ms": 205.6,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -822,18 +886,20 @@
    ],
    "expected_args": {},
    "route": "chat",
-   "confidence": 0.78,
+   "confidence": 0.9,
    "probabilities": {
-    "music.rate": 0.0,
     "music.play": 0.01,
-    "correction": 0.0,
-    "music.now_playing": 0.0,
     "music.control": 0.0,
-    "chat": 0.81,
-    "speaker.volume": 0.17
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.07,
+    "schedule.add": 0.01,
+    "schedule.cancel": 0.0,
+    "chat": 0.91,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 287.5,
+   "latency_ms": 271.5,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -848,16 +914,18 @@
    "route": "chat",
    "confidence": 1.0,
    "probabilities": {
-    "correction": 0.0,
-    "speaker.volume": 0.0,
-    "music.rate": 0.0,
-    "chat": 1.0,
-    "music.now_playing": 0.0,
+    "music.play": 0.0,
     "music.control": 0.0,
-    "music.play": 0.0
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 1.0,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 256.4,
+   "latency_ms": 202.9,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -872,16 +940,18 @@
    "route": "chat",
    "confidence": 1.0,
    "probabilities": {
-    "music.now_playing": 0.0,
-    "music.control": 0.0,
-    "correction": 0.0,
-    "music.rate": 0.0,
-    "chat": 1.0,
     "music.play": 0.0,
-    "speaker.volume": 0.0
+    "music.control": 0.0,
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 1.0,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 299.4,
+   "latency_ms": 213.6,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -894,18 +964,20 @@
    ],
    "expected_args": {},
    "route": "chat",
-   "confidence": 0.99,
+   "confidence": 0.96,
    "probabilities": {
-    "speaker.volume": 0.0,
-    "music.now_playing": 0.0,
-    "music.control": 0.0,
-    "music.rate": 0.01,
-    "chat": 0.99,
     "music.play": 0.0,
+    "music.control": 0.0,
+    "music.rate": 0.04,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.96,
     "correction": 0.0
    },
    "args": {},
-   "latency_ms": 261.8,
+   "latency_ms": 208.7,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -920,16 +992,18 @@
    "route": "chat",
    "confidence": 1.0,
    "probabilities": {
-    "music.rate": 0.0,
-    "chat": 1.0,
     "music.play": 0.0,
-    "speaker.volume": 0.0,
-    "correction": 0.0,
+    "music.control": 0.0,
+    "music.rate": 0.0,
     "music.now_playing": 0.0,
-    "music.control": 0.0
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 1.0,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 255.0,
+   "latency_ms": 220.7,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -944,16 +1018,18 @@
    "route": "chat",
    "confidence": 1.0,
    "probabilities": {
-    "music.rate": 0.0,
-    "music.control": 0.0,
-    "chat": 1.0,
-    "music.now_playing": 0.0,
     "music.play": 0.0,
+    "music.control": 0.0,
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
     "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 1.0,
     "correction": 0.0
    },
    "args": {},
-   "latency_ms": 211.0,
+   "latency_ms": 204.6,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -965,20 +1041,22 @@
     "chat"
    ],
    "expected_args": {},
-   "route": "chat",
+   "route": "schedule.add",
    "confidence": 1.0,
    "probabilities": {
-    "music.control": 0.0,
-    "music.now_playing": 0.0,
     "music.play": 0.0,
+    "music.control": 0.0,
     "music.rate": 0.0,
+    "music.now_playing": 0.0,
     "speaker.volume": 0.0,
-    "correction": 0.0,
-    "chat": 1.0
+    "schedule.add": 1.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 204.7,
-   "route_ok": true,
+   "latency_ms": 296.6,
+   "route_ok": false,
    "arg_scored": false,
    "arg_ok": false
   },
@@ -992,16 +1070,18 @@
    "route": "chat",
    "confidence": 1.0,
    "probabilities": {
-    "music.rate": 0.0,
-    "correction": 0.0,
-    "music.now_playing": 0.0,
-    "music.control": 0.0,
-    "chat": 1.0,
     "music.play": 0.0,
-    "speaker.volume": 0.0
+    "music.control": 0.0,
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 1.0,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 208.6,
+   "latency_ms": 209.6,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -1015,18 +1095,20 @@
    ],
    "expected_args": {},
    "route": "chat",
-   "confidence": 0.77,
+   "confidence": 0.73,
    "probabilities": {
-    "music.control": 0.01,
-    "music.now_playing": 0.0,
-    "chat": 0.81,
-    "music.play": 0.18,
+    "music.play": 0.22,
+    "music.control": 0.02,
     "music.rate": 0.0,
-    "correction": 0.0,
-    "speaker.volume": 0.0
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.76,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 253.4,
+   "latency_ms": 251.5,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -1039,19 +1121,21 @@
     "chat"
    ],
    "expected_args": {},
-   "route": "music.play",
-   "confidence": 0.53,
+   "route": "chat",
+   "confidence": 0.43,
    "probabilities": {
+    "music.play": 0.45,
     "music.control": 0.01,
-    "chat": 0.3,
     "music.rate": 0.0,
-    "music.play": 0.6,
     "music.now_playing": 0.0,
-    "speaker.volume": 0.09,
+    "speaker.volume": 0.05,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.49,
     "correction": 0.0
    },
    "args": {},
-   "latency_ms": 205.5,
+   "latency_ms": 206.5,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -1067,20 +1151,22 @@
     "action": "pause"
    },
    "route": "music.control",
-   "confidence": 0.47,
+   "confidence": 0.57,
    "probabilities": {
     "music.play": 0.0,
-    "correction": 0.0,
+    "music.control": 0.62,
     "music.rate": 0.0,
     "music.now_playing": 0.0,
-    "music.control": 0.55,
-    "speaker.volume": 0.04,
-    "chat": 0.41
+    "speaker.volume": 0.02,
+    "schedule.add": 0.07,
+    "schedule.cancel": 0.0,
+    "chat": 0.29,
+    "correction": 0.0
    },
    "args": {
     "action": "pause"
    },
-   "latency_ms": 230.2,
+   "latency_ms": 204.2,
    "route_ok": true,
    "arg_scored": true,
    "arg_ok": true
@@ -1094,18 +1180,20 @@
    ],
    "expected_args": {},
    "route": "music.play",
-   "confidence": 0.99,
+   "confidence": 0.96,
    "probabilities": {
+    "music.play": 0.96,
     "music.control": 0.0,
     "music.rate": 0.0,
-    "chat": 0.01,
-    "music.play": 0.99,
     "music.now_playing": 0.0,
-    "correction": 0.0,
-    "speaker.volume": 0.0
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.04,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 218.3,
+   "latency_ms": 204.8,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -1120,16 +1208,18 @@
    "route": "music.play",
    "confidence": 1.0,
    "probabilities": {
-    "chat": 0.0,
-    "music.now_playing": 0.0,
-    "music.rate": 0.0,
-    "music.control": 0.0,
     "music.play": 1.0,
-    "correction": 0.0,
-    "speaker.volume": 0.0
+    "music.control": 0.0,
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 215.5,
+   "latency_ms": 201.2,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -1145,20 +1235,22 @@
     "rating": "up"
    },
    "route": "music.rate",
-   "confidence": 0.41,
+   "confidence": 0.55,
    "probabilities": {
-    "music.rate": 0.5,
-    "correction": 0.0,
-    "music.play": 0.29,
+    "music.play": 0.13,
+    "music.control": 0.27,
+    "music.rate": 0.6,
     "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
     "chat": 0.0,
-    "music.control": 0.21,
-    "speaker.volume": 0.0
+    "correction": 0.0
    },
    "args": {
     "rating": "up"
    },
-   "latency_ms": 242.9,
+   "latency_ms": 198.6,
    "route_ok": true,
    "arg_scored": true,
    "arg_ok": true
@@ -1175,18 +1267,20 @@
     "action": "skip"
    },
    "route": "correction",
-   "confidence": 0.64,
+   "confidence": 0.58,
    "probabilities": {
-    "speaker.volume": 0.0,
+    "music.play": 0.0,
+    "music.control": 0.34,
+    "music.rate": 0.03,
     "music.now_playing": 0.0,
-    "music.play": 0.01,
-    "correction": 0.69,
-    "music.rate": 0.09,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
     "chat": 0.0,
-    "music.control": 0.21
+    "correction": 0.63
    },
    "args": {},
-   "latency_ms": 195.4,
+   "latency_ms": 213.1,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -1199,18 +1293,20 @@
    ],
    "expected_args": {},
    "route": "chat",
-   "confidence": 0.93,
+   "confidence": 0.96,
    "probabilities": {
+    "music.play": 0.0,
+    "music.control": 0.0,
     "music.rate": 0.0,
     "music.now_playing": 0.0,
-    "speaker.volume": 0.05,
-    "music.play": 0.0,
-    "music.control": 0.01,
-    "correction": 0.0,
-    "chat": 0.94
+    "speaker.volume": 0.03,
+    "schedule.add": 0.01,
+    "schedule.cancel": 0.0,
+    "chat": 0.96,
+    "correction": 0.0
    },
    "args": {},
-   "latency_ms": 237.6,
+   "latency_ms": 199.5,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -1227,18 +1323,20 @@
    "route": "speaker.volume",
    "confidence": 1.0,
    "probabilities": {
-    "speaker.volume": 1.0,
-    "music.now_playing": 0.0,
-    "chat": 0.0,
     "music.play": 0.0,
-    "correction": 0.0,
+    "music.control": 0.0,
     "music.rate": 0.0,
-    "music.control": 0.0
+    "music.now_playing": 0.0,
+    "speaker.volume": 1.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
    },
    "args": {
     "action": "up"
    },
-   "latency_ms": 221.5,
+   "latency_ms": 199.4,
    "route_ok": true,
    "arg_scored": true,
    "arg_ok": true
@@ -1255,18 +1353,20 @@
    "route": "speaker.volume",
    "confidence": 1.0,
    "probabilities": {
-    "speaker.volume": 1.0,
+    "music.play": 0.0,
     "music.control": 0.0,
-    "music.now_playing": 0.0,
-    "chat": 0.0,
     "music.rate": 0.0,
-    "correction": 0.0,
-    "music.play": 0.0
+    "music.now_playing": 0.0,
+    "speaker.volume": 1.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
    },
    "args": {
     "action": "down"
    },
-   "latency_ms": 202.7,
+   "latency_ms": 210.1,
    "route_ok": true,
    "arg_scored": true,
    "arg_ok": true
@@ -1283,18 +1383,20 @@
    "route": "speaker.volume",
    "confidence": 1.0,
    "probabilities": {
-    "music.control": 0.0,
     "music.play": 0.0,
+    "music.control": 0.0,
     "music.rate": 0.0,
-    "chat": 0.0,
     "music.now_playing": 0.0,
     "speaker.volume": 1.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
     "correction": 0.0
    },
    "args": {
     "action": "mute"
    },
-   "latency_ms": 217.1,
+   "latency_ms": 213.9,
    "route_ok": true,
    "arg_scored": true,
    "arg_ok": true
@@ -1311,18 +1413,20 @@
    "route": "speaker.volume",
    "confidence": 1.0,
    "probabilities": {
-    "chat": 0.0,
-    "correction": 0.0,
-    "music.now_playing": 0.0,
-    "music.rate": 0.0,
-    "speaker.volume": 1.0,
+    "music.play": 0.0,
     "music.control": 0.0,
-    "music.play": 0.0
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 1.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
    },
    "args": {
     "action": "unmute"
    },
-   "latency_ms": 267.4,
+   "latency_ms": 216.8,
    "route_ok": true,
    "arg_scored": true,
    "arg_ok": true
@@ -1339,18 +1443,20 @@
    "route": "music.control",
    "confidence": 1.0,
    "probabilities": {
-    "music.control": 1.0,
     "music.play": 0.0,
-    "chat": 0.0,
-    "music.now_playing": 0.0,
+    "music.control": 1.0,
     "music.rate": 0.0,
-    "correction": 0.0,
-    "speaker.volume": 0.0
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
    },
    "args": {
     "action": "skip"
    },
-   "latency_ms": 220.2,
+   "latency_ms": 240.6,
    "route_ok": true,
    "arg_scored": true,
    "arg_ok": true
@@ -1368,17 +1474,19 @@
    "confidence": 1.0,
    "probabilities": {
     "music.play": 0.0,
-    "correction": 0.0,
-    "music.now_playing": 0.0,
-    "chat": 0.0,
-    "speaker.volume": 0.0,
+    "music.control": 1.0,
     "music.rate": 0.0,
-    "music.control": 1.0
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
    },
    "args": {
     "action": "previous"
    },
-   "latency_ms": 243.0,
+   "latency_ms": 222.9,
    "route_ok": true,
    "arg_scored": true,
    "arg_ok": true
@@ -1393,20 +1501,22 @@
     "action": "resume"
    },
    "route": "music.control",
-   "confidence": 0.99,
+   "confidence": 1.0,
    "probabilities": {
-    "music.control": 1.0,
     "music.play": 0.0,
-    "chat": 0.0,
+    "music.control": 1.0,
+    "music.rate": 0.0,
     "music.now_playing": 0.0,
-    "correction": 0.0,
     "speaker.volume": 0.0,
-    "music.rate": 0.0
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
    },
    "args": {
     "action": "resume"
    },
-   "latency_ms": 206.6,
+   "latency_ms": 225.6,
    "route_ok": true,
    "arg_scored": true,
    "arg_ok": true
@@ -1424,17 +1534,19 @@
    "confidence": 1.0,
    "probabilities": {
     "music.play": 0.0,
-    "correction": 0.0,
-    "music.rate": 0.0,
-    "chat": 0.0,
-    "speaker.volume": 0.0,
     "music.control": 1.0,
-    "music.now_playing": 0.0
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
    },
    "args": {
     "action": "pause"
    },
-   "latency_ms": 232.6,
+   "latency_ms": 223.2,
    "route_ok": true,
    "arg_scored": true,
    "arg_ok": true
@@ -1451,18 +1563,20 @@
    "route": "music.control",
    "confidence": 1.0,
    "probabilities": {
-    "correction": 0.0,
     "music.play": 0.0,
     "music.control": 1.0,
-    "chat": 0.0,
-    "music.now_playing": 0.0,
     "music.rate": 0.0,
-    "speaker.volume": 0.0
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
    },
    "args": {
     "action": "shuffle_off"
    },
-   "latency_ms": 237.0,
+   "latency_ms": 218.5,
    "route_ok": true,
    "arg_scored": true,
    "arg_ok": true
@@ -1475,18 +1589,20 @@
    ],
    "expected_args": {},
    "route": "correction",
-   "confidence": 0.72,
+   "confidence": 0.87,
    "probabilities": {
-    "music.play": 0.24,
-    "speaker.volume": 0.0,
-    "music.now_playing": 0.0,
-    "music.rate": 0.0,
+    "music.play": 0.12,
     "music.control": 0.0,
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
     "chat": 0.0,
-    "correction": 0.76
+    "correction": 0.88
    },
    "args": {},
-   "latency_ms": 213.1,
+   "latency_ms": 235.1,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -1499,18 +1615,20 @@
    ],
    "expected_args": {},
    "route": "correction",
-   "confidence": 0.99,
+   "confidence": 0.98,
    "probabilities": {
     "music.play": 0.0,
+    "music.control": 0.02,
     "music.rate": 0.0,
-    "correction": 0.99,
-    "chat": 0.0,
     "music.now_playing": 0.0,
     "speaker.volume": 0.0,
-    "music.control": 0.01
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.98
    },
    "args": {},
-   "latency_ms": 232.0,
+   "latency_ms": 207.3,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false
@@ -1523,18 +1641,281 @@
    ],
    "expected_args": {},
    "route": "correction",
-   "confidence": 0.64,
+   "confidence": 0.79,
    "probabilities": {
-    "correction": 0.69,
-    "chat": 0.0,
-    "music.rate": 0.0,
+    "music.play": 0.19,
     "music.control": 0.0,
-    "music.play": 0.31,
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
     "speaker.volume": 0.0,
-    "music.now_playing": 0.0
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.81
    },
    "args": {},
-   "latency_ms": 274.9,
+   "latency_ms": 212.9,
+   "route_ok": true,
+   "arg_scored": false,
+   "arg_ok": false
+  },
+  {
+   "id": "s1",
+   "utterance": "wake me up at 7 and play jazz",
+   "routes": [
+    "schedule.add"
+   ],
+   "expected_args": {},
+   "route": "schedule.add",
+   "confidence": 1.0,
+   "probabilities": {
+    "music.play": 0.0,
+    "music.control": 0.0,
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 1.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
+   },
+   "args": {},
+   "latency_ms": 200.4,
+   "route_ok": true,
+   "arg_scored": false,
+   "arg_ok": false
+  },
+  {
+   "id": "s2",
+   "utterance": "set an alarm for six thirty tomorrow",
+   "routes": [
+    "schedule.add"
+   ],
+   "expected_args": {},
+   "route": "schedule.add",
+   "confidence": 1.0,
+   "probabilities": {
+    "music.play": 0.0,
+    "music.control": 0.0,
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 1.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
+   },
+   "args": {},
+   "latency_ms": 342.2,
+   "route_ok": true,
+   "arg_scored": false,
+   "arg_ok": false
+  },
+  {
+   "id": "s3",
+   "utterance": "wake me up every day at 7",
+   "routes": [
+    "schedule.add"
+   ],
+   "expected_args": {},
+   "route": "schedule.add",
+   "confidence": 1.0,
+   "probabilities": {
+    "music.play": 0.0,
+    "music.control": 0.0,
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 1.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
+   },
+   "args": {},
+   "latency_ms": 213.5,
+   "route_ok": true,
+   "arg_scored": false,
+   "arg_ok": false
+  },
+  {
+   "id": "s4",
+   "utterance": "every morning at 8 play something upbeat",
+   "routes": [
+    "schedule.add"
+   ],
+   "expected_args": {},
+   "route": "schedule.add",
+   "confidence": 1.0,
+   "probabilities": {
+    "music.play": 0.0,
+    "music.control": 0.0,
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 1.0,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
+   },
+   "args": {},
+   "latency_ms": 239.9,
+   "route_ok": true,
+   "arg_scored": false,
+   "arg_ok": false
+  },
+  {
+   "id": "s5",
+   "utterance": "at 10 pm turn the volume down",
+   "routes": [
+    "schedule.add"
+   ],
+   "expected_args": {},
+   "route": "schedule.add",
+   "confidence": 0.75,
+   "probabilities": {
+    "music.play": 0.0,
+    "music.control": 0.0,
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.22,
+    "schedule.add": 0.78,
+    "schedule.cancel": 0.0,
+    "chat": 0.0,
+    "correction": 0.0
+   },
+   "args": {},
+   "latency_ms": 223.5,
+   "route_ok": true,
+   "arg_scored": false,
+   "arg_ok": false
+  },
+  {
+   "id": "s6",
+   "utterance": "cancel my 7 o'clock alarm",
+   "routes": [
+    "schedule.cancel"
+   ],
+   "expected_args": {},
+   "route": "schedule.cancel",
+   "confidence": 1.0,
+   "probabilities": {
+    "music.play": 0.0,
+    "music.control": 0.0,
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 1.0,
+    "chat": 0.0,
+    "correction": 0.0
+   },
+   "args": {},
+   "latency_ms": 246.4,
+   "route_ok": true,
+   "arg_scored": false,
+   "arg_ok": false
+  },
+  {
+   "id": "s7",
+   "utterance": "delete the wake-up at six thirty",
+   "routes": [
+    "schedule.cancel"
+   ],
+   "expected_args": {},
+   "route": "schedule.cancel",
+   "confidence": 1.0,
+   "probabilities": {
+    "music.play": 0.0,
+    "music.control": 0.0,
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 1.0,
+    "chat": 0.0,
+    "correction": 0.0
+   },
+   "args": {},
+   "latency_ms": 222.5,
+   "route_ok": true,
+   "arg_scored": false,
+   "arg_ok": false
+  },
+  {
+   "id": "s8",
+   "utterance": "never mind the 8am schedule",
+   "routes": [
+    "schedule.cancel"
+   ],
+   "expected_args": {},
+   "route": "schedule.cancel",
+   "confidence": 0.99,
+   "probabilities": {
+    "music.play": 0.0,
+    "music.control": 0.0,
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.99,
+    "chat": 0.0,
+    "correction": 0.01
+   },
+   "args": {},
+   "latency_ms": 243.4,
+   "route_ok": true,
+   "arg_scored": false,
+   "arg_ok": false
+  },
+  {
+   "id": "s9",
+   "utterance": "stop the alarm",
+   "routes": [
+    "music.control",
+    "schedule.cancel"
+   ],
+   "expected_args": {},
+   "route": "schedule.cancel",
+   "confidence": 0.94,
+   "probabilities": {
+    "music.play": 0.0,
+    "music.control": 0.03,
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.0,
+    "schedule.cancel": 0.95,
+    "chat": 0.02,
+    "correction": 0.0
+   },
+   "args": {},
+   "latency_ms": 246.7,
+   "route_ok": true,
+   "arg_scored": false,
+   "arg_ok": false
+  },
+  {
+   "id": "s10",
+   "utterance": "what time is my alarm",
+   "routes": [
+    "chat"
+   ],
+   "expected_args": {},
+   "route": "chat",
+   "confidence": 0.94,
+   "probabilities": {
+    "music.play": 0.0,
+    "music.control": 0.0,
+    "music.rate": 0.0,
+    "music.now_playing": 0.0,
+    "speaker.volume": 0.0,
+    "schedule.add": 0.05,
+    "schedule.cancel": 0.0,
+    "chat": 0.95,
+    "correction": 0.0
+   },
+   "args": {},
+   "latency_ms": 223.4,
    "route_ok": true,
    "arg_scored": false,
    "arg_ok": false

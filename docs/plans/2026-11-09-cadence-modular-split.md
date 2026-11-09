@@ -391,7 +391,7 @@ Test commands (shared venv, per spec `docs/specs/2026-11-09-cadence-modular-spli
 **Why:** Cadence becomes the audio-free core; this is the cutover point of step 1 (spec `:44-47`).
 
 ### Task 17: Add schedule items to the Jev golden set and replay [experiment]
-- [ ] status
+- [x] status
 **Objective:** golden set has schedule utterances; one live replay is recorded with per-route accuracy for `schedule.add`/`schedule.cancel`.
 **Write-scope:** `harness/tests/golden/utterances.json`
 `docs/preflight/jev-v1-golden.md`
