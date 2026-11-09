@@ -213,3 +213,14 @@ async def test_track_end_media_event_plays_next():
 def test_hello():
     adapter, _ = _adapter(_muse())
     assert adapter.hello() == hello("muse", "service", "music", None, [], ABILITIES)
+
+
+async def test_plugin_exception_becomes_failed_result():
+    adapter, sent = _adapter(_muse())
+    await adapter.handle(_CALL)
+    sent.clear()
+    await adapter.handle({"type": "call", "call_id": "c2", "capability": "music.rate",
+                          "target": "speaker-1", "args": {}})
+    res = next(m for m in sent if m["type"] == "result")
+    assert res["ok"] is False and res["error"].startswith("KeyError")
+    assert sent[-1]["type"] == "state"

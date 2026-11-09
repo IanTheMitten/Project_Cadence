@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import sys
 import time
 from dataclasses import asdict
 
@@ -43,7 +44,10 @@ class MuseAdapter:
                 res = Result(False, say="Muse isn't answering.", error="muse_unavailable")
             else:
                 port = self._port(target) if target else None
-                res = await self.plugin.call(msg["capability"], msg.get("args") or {}, target, port)
+                try:
+                    res = await self.plugin.call(msg["capability"], msg.get("args") or {}, target, port)
+                except Exception as exc:
+                    res = Result(False, say="Sorry, that didn't work.", error=f"{type(exc).__name__}: {exc}")
             await self._emit({"type": "result", "call_id": msg["call_id"], **asdict(res)})
         elif kind == "media_event":
             await self._port(msg["device"]).on_media_event(msg["event"], msg["position_ms"], msg["url"])
@@ -58,6 +62,12 @@ async def run(adapter, url: str = PEER_URL, *, open_link=open_link, reconnect_s:
             link = await open_link(url, adapter.hello())
             adapter.send = link.send
             while True:
-                await adapter.handle(await link.recv())
+                msg = await link.recv()
+                try:
+                    await adapter.handle(msg)
+                except LinkClosed:
+                    raise
+                except Exception as exc:
+                    print(f"adapter: handle failed: {exc!r}", file=sys.stderr)
         except (LinkClosed, OSError):
             await asyncio.sleep(reconnect_s)
