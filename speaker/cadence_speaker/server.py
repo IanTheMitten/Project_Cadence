@@ -108,8 +108,9 @@ async def session_endpoint(ws: WebSocket) -> None:
             if action == "play_url":
                 async def on_end(reason: str) -> None:
                     if link is not None:
-                        await link.send({"type": "media_event", "event": reason,
-                                         "position_ms": port.position_ms(), "url": url})
+                        with contextlib.suppress(LinkClosed):
+                            await link.send({"type": "media_event", "event": reason,
+                                             "position_ms": port.position_ms(), "url": url})
                 await port.play_url(url, on_end)
             elif action == "pause":
                 await port.pause()
@@ -133,7 +134,13 @@ async def session_endpoint(ws: WebSocket) -> None:
             try:
                 link = await rt.open_link(rt.peer_url, hello_msg)
                 while True:
-                    await dispatch(link, await link.recv())
+                    msg = await link.recv()
+                    try:
+                        await dispatch(link, msg)
+                    except LinkClosed:
+                        raise
+                    except Exception as exc:
+                        print(f"dispatch failed: {exc!r}", file=sys.stderr, flush=True)
             except (LinkClosed, OSError):
                 link = None
                 in_turn = False
@@ -141,25 +148,29 @@ async def session_endpoint(ws: WebSocket) -> None:
 
     async def audio_turns(utterances: list[bytes], wake_at) -> None:
         nonlocal in_turn, timer
-        for pcm in utterances:
-            timer = TurnTimer()
-            if wake_at is not None:
-                timer.mark("wake", at=wake_at)
-            timer.mark("speech_end")
-            if recorder is not None:
-                recorder.save_utterance(pcm)
-            text = await asyncio.to_thread(rt.asr, pcm)
-            timer.mark("asr_done")
-            if not text:
-                in_turn = False
-            elif link is None:
-                await port.speak(await asyncio.to_thread(rt.tts, UNREACHABLE_SAY))
-                in_turn = False
-            else:
-                now = time.monotonic()
-                await link.send({"type": "event", "kind": "utterance",
-                                 "payload": {"text": text, "asr_conf": None},
-                                 "timing": {s: (now - at) * 1000 for s, at in timer.stamps.items()}})
+        try:
+            for pcm in utterances:
+                timer = TurnTimer()
+                if wake_at is not None:
+                    timer.mark("wake", at=wake_at)
+                timer.mark("speech_end")
+                if recorder is not None:
+                    recorder.save_utterance(pcm)
+                text = await asyncio.to_thread(rt.asr, pcm)
+                timer.mark("asr_done")
+                if not text:
+                    in_turn = False
+                elif link is None:
+                    await port.speak(await asyncio.to_thread(rt.tts, UNREACHABLE_SAY))
+                    in_turn = False
+                else:
+                    now = time.monotonic()
+                    await link.send({"type": "event", "kind": "utterance",
+                                     "payload": {"text": text, "asr_conf": None},
+                                     "timing": {s: (now - at) * 1000 for s, at in timer.stamps.items()}})
+        except Exception:
+            in_turn = False
+            raise
 
     link_task = asyncio.create_task(link_loop())
     try:

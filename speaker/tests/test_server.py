@@ -247,3 +247,51 @@ def test_listen_for_returns_vad_utterances_without_wake():
     listener = Listener(gate, vad_factory=lambda: FakeVad([UTT]))
     listener.listen_for(8)
     assert listener.feed(FRAME) == [UTT]
+
+
+def test_asr_exception_does_not_leave_speaker_deaf(rt):
+    calls = []
+
+    def asr(pcm):
+        calls.append(1)
+        if len(calls) == 1:
+            raise RuntimeError("boom")
+        return "hi"
+
+    rt.asr = asr
+    rt.listener_factory = lambda: Listener(None, vad_factory=RepeatVad)
+    with TestClient(server.app) as client, _connect(client, rt) as (ws, link):
+        ws.send_bytes(FRAME)
+        _wait(lambda: len(calls) == 1)
+        time.sleep(0.2)
+        ws.send_bytes(FRAME)
+        _wait(lambda: len(calls) > 1)
+
+
+def test_dispatch_failure_keeps_link_alive(rt):
+    def bad_tts(text):
+        raise RuntimeError("tts down")
+
+    rt.tts = bad_tts
+    with TestClient(server.app) as client, _connect(client, rt) as (ws, link):
+        link.inbox.put({"type": "say", "text": "Hi."})
+        link.inbox.put({"type": "call", "call_id": "c1", "capability": "speaker.volume",
+                        "args": {"action": "mute"}, "target": "speaker-1"})
+        assert _out(link)["type"] == "result"
+
+
+def test_media_end_on_closed_link_closes_cleanly(rt):
+    async def slow():
+        yield b"\x00" * 400
+        await asyncio.sleep(5)
+        yield b"\x00" * 400
+
+    rt.transport = httpx.MockTransport(lambda r: httpx.Response(200, content=slow()))
+    rt.reconnect_s = 30  # no reconnect: the stale link stays referenced
+    with TestClient(server.app) as client, _connect(client, rt) as (ws, link):
+        link.inbox.put({"type": "media", "action": "play_url", "url": "http://m/1"})
+        time.sleep(0.3)
+        link.closed = True
+        time.sleep(0.2)
+    time.sleep(0.3)
+    assert rt.links.empty()
