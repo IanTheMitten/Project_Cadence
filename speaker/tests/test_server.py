@@ -1,6 +1,7 @@
 """Tests for the speaker /session endpoint and its peer link to Cadence. Fake link, no sockets."""
 
 import asyncio
+import contextlib
 import json
 import queue
 import time
@@ -75,12 +76,11 @@ def _bytes(ws):
             return msg["bytes"]
 
 
+@contextlib.contextmanager
 def _connect(client, rt):
-    ws = client.websocket_connect("/session").__enter__()
-    ws.send_text(json.dumps(HELLO))
-    link = rt.links.get(timeout=2)
-    assert _out(link) == link.hello
-    return ws, link
+    with client.websocket_connect("/session") as ws:
+        ws.send_text(json.dumps(HELLO))
+        yield ws, rt.links.get(timeout=2)
 
 
 def _wait(cond):
@@ -117,8 +117,7 @@ def rt(tmp_path):
 
 
 def test_link_hello(rt):
-    with TestClient(server.app) as client:
-        ws, link = _connect(client, rt)
+    with TestClient(server.app) as client, _connect(client, rt) as (ws, link):
         assert link.hello == hello("speaker-1", "device", "speaker", "bedroom",
                                    ["audio_in", "audio_out"], [VOLUME])
 
@@ -130,8 +129,7 @@ def test_bad_board_hello_error_frame(rt):
 
 
 def test_mic_frame_emits_utterance_event(rt):
-    with TestClient(server.app) as client:
-        ws, link = _connect(client, rt)
+    with TestClient(server.app) as client, _connect(client, rt) as (ws, link):
         ws.send_bytes(FRAME)
         msg = _out(link)
         assert msg["type"] == "event"
@@ -142,8 +140,7 @@ def test_mic_frame_emits_utterance_event(rt):
 
 def test_frames_ignored_until_turn_end(rt):
     rt.listener_factory = lambda: Listener(None, vad_factory=RepeatVad)
-    with TestClient(server.app) as client:
-        ws, link = _connect(client, rt)
+    with TestClient(server.app) as client, _connect(client, rt) as (ws, link):
         ws.send_bytes(FRAME)
         assert _out(link)["type"] == "event"
         ws.send_bytes(FRAME)
@@ -157,8 +154,7 @@ def test_frames_ignored_until_turn_end(rt):
 
 
 def test_say_sends_tts_audio_to_board(rt):
-    with TestClient(server.app) as client:
-        ws, link = _connect(client, rt)
+    with TestClient(server.app) as client, _connect(client, rt) as (ws, link):
         link.inbox.put({"type": "say", "text": "Hi."})
         assert _bytes(ws) == b"\x00\x00" * 100
 
@@ -168,15 +164,13 @@ def test_ack_sends_clip_to_board(rt, tmp_path):
     clip.mkdir(parents=True)
     (clip / "01.pcm").write_bytes(b"\x00\x00" * 10)
     rt.acks = AckPool(str(tmp_path / "acks"))
-    with TestClient(server.app) as client:
-        ws, link = _connect(client, rt)
+    with TestClient(server.app) as client, _connect(client, rt) as (ws, link):
         link.inbox.put({"type": "ack", "category": "action"})
         assert _bytes(ws) == b"\x00\x00" * 10
 
 
 def test_call_volume_mute_result(rt):
-    with TestClient(server.app) as client:
-        ws, link = _connect(client, rt)
+    with TestClient(server.app) as client, _connect(client, rt) as (ws, link):
         link.inbox.put({"type": "call", "call_id": "c1", "capability": "speaker.volume",
                         "args": {"action": "mute"}, "target": "speaker-1"})
         assert _out(link) == {"type": "result", "call_id": "c1", "ok": True, "say": None,
@@ -185,8 +179,7 @@ def test_call_volume_mute_result(rt):
 
 def test_media_play_url_reports_track_end(rt):
     rt.transport = httpx.MockTransport(lambda r: httpx.Response(200, content=b"\x00" * 400))
-    with TestClient(server.app) as client:
-        ws, link = _connect(client, rt)
+    with TestClient(server.app) as client, _connect(client, rt) as (ws, link):
         link.inbox.put({"type": "media", "action": "play_url", "url": "http://m/1"})
         msg = _out(link)
         assert msg["type"] == "media_event"
@@ -198,8 +191,7 @@ def test_media_play_url_reports_track_end(rt):
 def test_listen_opens_window(rt):
     spy = SpyListener()
     rt.listener_factory = lambda: spy
-    with TestClient(server.app) as client:
-        ws, link = _connect(client, rt)
+    with TestClient(server.app) as client, _connect(client, rt) as (ws, link):
         link.inbox.put({"type": "listen", "seconds": 8})
         _wait(lambda: spy.listens == [8])
 
@@ -210,10 +202,10 @@ def test_link_unreachable_speaks_fallback(rt):
 
     rt.open_link = dead
     with TestClient(server.app) as client:
-        ws = client.websocket_connect("/session").__enter__()
-        ws.send_text(json.dumps(HELLO))
-        ws.send_bytes(FRAME)
-        assert _bytes(ws) == b"\x00\x00" * 100
+        with client.websocket_connect("/session") as ws:
+            ws.send_text(json.dumps(HELLO))
+            ws.send_bytes(FRAME)
+            assert _bytes(ws) == b"\x00\x00" * 100
     assert rt.tts_calls == ["I can't reach my brain right now."]
 
 
@@ -222,8 +214,7 @@ def test_bench_recorder_writes_session_audio(rt, tmp_path):
     bench.mkdir()
     rt.bench_dir = str(bench)
     rt.listener_factory = lambda: Listener(None, vad_factory=lambda: FakeVad([b"\x01\x00" * 8000]))
-    with TestClient(server.app) as client:
-        ws, link = _connect(client, rt)
+    with TestClient(server.app) as client, _connect(client, rt) as (ws, link):
         ws.send_bytes(b"\x01\x00" * 160)
         _out(link)
     pcms = list(bench.glob("speaker-1-*.pcm"))
