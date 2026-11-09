@@ -85,7 +85,7 @@ class ScheduleStore:
     def __init__(self, path: str):
         self._db = sqlite3.connect(path, check_same_thread=False)
         self._db.execute(
-            "CREATE TABLE IF NOT EXISTS schedules (id INTEGER PRIMARY KEY, time TEXT NOT NULL, "
+            "CREATE TABLE IF NOT EXISTS schedules (id INTEGER PRIMARY KEY AUTOINCREMENT, time TEXT NOT NULL, "
             "repeat TEXT NOT NULL, greeting INTEGER NOT NULL, command TEXT, room TEXT, "
             "next_at REAL NOT NULL)")
         self._db.commit()
