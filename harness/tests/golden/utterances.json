@@ -41,7 +41,7 @@
     {"id": "c3", "utterance": "thanks, that was great", "routes": ["chat"], "args": {}},
     {"id": "c4", "utterance": "how are you today", "routes": ["chat"], "args": {}},
     {"id": "c5", "utterance": "what's the weather tomorrow", "routes": ["chat"], "args": {}},
-    {"id": "c6", "utterance": "set an alarm for 7am", "routes": ["chat"], "args": {}},
+    {"id": "c6", "utterance": "set an alarm for 7am", "routes": ["schedule.add"], "args": {}},
     {"id": "c7", "utterance": "who sang Bohemian Rhapsody? just tell me, don't play it", "routes": ["chat"], "args": {}},
     {"id": "c8", "utterance": "I'm bored", "routes": ["chat", "music.play"], "args": {}},
     {"id": "a1", "utterance": "make it cozy in here", "routes": ["music.play", "chat"], "args": {}},
