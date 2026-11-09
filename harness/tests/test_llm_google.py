@@ -1,9 +1,11 @@
+import functools
 import json
 
 import httpx
 import pytest
 
 from cadence import llm
+from cadence.deciders import jev
 
 
 async def test_chat_converts_tool_calls_both_ways(monkeypatch):
@@ -30,7 +32,15 @@ async def test_chat_converts_tool_calls_both_ways(monkeypatch):
     assert sent["headers"]["Authorization"] == "Bearer k"
 
 
-async def test_missing_key_is_connection_error(monkeypatch):
+async def test_missing_key_is_connection_error(monkeypatch, tmp_path):
     monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+    monkeypatch.setattr(llm, "load_api_key", functools.partial(jev.load_api_key, str(tmp_path / "none.env")))
     with pytest.raises(ConnectionError):
         await llm.GoogleLLM().chat([], [], think=False)
+
+
+async def test_key_read_from_env_file(monkeypatch, tmp_path):
+    monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+    f = tmp_path / "typesafe.env"
+    f.write_text("TYPESAFE_API_KEY=t\nGEMINI_API_KEY='g'\n")
+    assert jev.load_api_key(str(f), name="GEMINI_API_KEY") == "g"

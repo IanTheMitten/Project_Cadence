@@ -5,13 +5,16 @@ Callers (`agent.run_turn`, `LlmDecider`) speak the Ollama message shape:
 client converts to and from the OpenAI shape at the boundary.
 
 One attempt, no retry: a transport failure, a non-200 status, or a missing
-`GEMINI_API_KEY` is a hard `ConnectionError` for the caller to handle.
+`GEMINI_API_KEY` (env var, else ~/.config/cadence/typesafe.env) is a hard `ConnectionError` for the caller to handle.
 """
 
 import json
 import os
 
 import httpx
+
+from cadence.deciders.base import DeciderUnavailable
+from cadence.deciders.jev import load_api_key
 
 LLM_MODEL = os.environ.get("CADENCE_LLM_MODEL", "gemini-2.5-flash")
 GOOGLE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
@@ -48,9 +51,10 @@ def _from_openai(message: dict) -> dict:
 class GoogleLLM:
     async def chat(self, messages: list[dict], tools: list[dict], think: bool) -> dict:
         # `think` ignored: kept for interface parity with the old Ollama client.
-        key = os.environ.get("GEMINI_API_KEY")
-        if not key:
-            raise ConnectionError("GEMINI_API_KEY not set")
+        try:
+            key = load_api_key(name="GEMINI_API_KEY")
+        except DeciderUnavailable as exc:
+            raise ConnectionError(str(exc)) from exc
         payload = {"model": LLM_MODEL, "messages": [_to_openai(m) for m in messages]}
         if tools:
             payload["tools"] = tools

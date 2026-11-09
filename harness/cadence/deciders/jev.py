@@ -13,18 +13,18 @@ from cadence.plugins.base import Capability
 ROUTE_INSTRUCTIONS = "Which single function best serves what the user just said?"
 
 
-def load_api_key(path: str = TYPESAFE_ENV_PATH) -> str:
-    key = os.environ.get("TYPESAFE_API_KEY")
+def load_api_key(path: str = TYPESAFE_ENV_PATH, name: str = "TYPESAFE_API_KEY") -> str:
+    key = os.environ.get(name)
     if key:
         return key
     try:
         with open(path) as f:
             for line in f:
-                if line.startswith("TYPESAFE_API_KEY="):
+                if line.startswith(name + "="):
                     return line.split("=", 1)[1].strip().strip("'\"")
     except OSError:
         pass
-    raise DeciderUnavailable("no TypeSafe key")
+    raise DeciderUnavailable(f"no {name}")
 
 
 def render_state(event: Event, context: dict) -> str:
