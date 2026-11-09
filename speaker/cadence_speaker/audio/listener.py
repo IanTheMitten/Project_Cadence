@@ -24,6 +24,15 @@ class Listener:
     def listening(self) -> bool:
         return self._listening
 
+    def listen_for(self, seconds: float) -> None:
+        if self._gate is None:
+            return
+        self._listening = True
+        now = self._clock()
+        self.wake_at = now
+        self._deadline = now + seconds
+        self._vad = self._vad_factory()
+
     def feed(self, pcm: bytes) -> list[bytes]:
         if self._gate is None:
             return self._vad.feed(pcm)

@@ -254,7 +254,7 @@ Test commands (shared venv, per spec `docs/specs/2026-11-09-cadence-modular-spli
 **Why:** Board protocol must stay byte-for-byte (spec `:114-119`); pins `listen`, ducking path and reconnect cleanup.
 
 ### Task 11: Implement the speaker server, peer link and entry point
-- [ ] status
+- [x] status
 **Objective:** `python -m cadence_speaker` serves `/session` on 8768 and bridges each board session to Cadence `/peer`; `speaker/tests/test_server.py` green.
 **Write-scope:** `speaker/cadence_speaker/server.py` (new)
 `speaker/cadence_speaker/link.py` (new)
