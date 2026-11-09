@@ -163,7 +163,7 @@ Test commands (shared venv, per spec `docs/specs/2026-11-09-cadence-modular-spli
 **Why:** Core is the single entry point (spec `:51-56`, `:128-140`, `:196-198`).
 
 ### Task 6: Implement Core
-- [ ] status
+- [x] status
 **Objective:** `harness/cadence/core.py` makes `tests/test_core_submit.py` green.
 **Write-scope:** `harness/cadence/core.py` (new)
 **Read-context:** `harness/tests/test_core_submit.py` (from Task 5), `harness/cadence/server.py:211-229`, `harness/cadence/pipeline.py:30-52`, `harness/cadence/events.py:1-30`
