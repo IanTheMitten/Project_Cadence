@@ -143,7 +143,7 @@ Test commands (shared venv, per spec `docs/specs/2026-11-09-cadence-modular-spli
 ## Phase 2 - Core and /peer hub
 
 ### Task 5: Write Core tests (red) [test]
-- [ ] status
+- [x] status
 **Objective:** `harness/tests/test_core_submit.py` pins `Core.submit`, `announce`, pending answers and the schedule tick, failing on import.
 **Write-scope:** `harness/tests/test_core_submit.py` (new)
 **Read-context:** `harness/cadence/schedules.py` (from Task 4), `harness/cadence/turntiming.py:18-43`, `harness/cadence/decisionlog.py:65-98`
