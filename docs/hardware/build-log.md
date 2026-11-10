@@ -14,7 +14,7 @@ Newest first. Entry template:
 ## 2026-11-10: lamp 24 V bench test passed, ready to mount (`lamp/`)
 - Board / project dir: ESP32-S3 #2 (`bedroom-ceiling`), `lamp/`, 24 V PSU via buck, USB unplugged.
 - What changed or was tried: channel checks from the chat page via Jev `light.preset` (warm, cool, dim, night, on, off, 22:00-22:20 KST), then both channels at 100 % for over 10 min.
-- Result: all presets returned `ok`. Heat by touch after 10+ min at 100/100: MOSFETs barely warm, LED strip warm but comfortable, ESP32 module warm (normal for WiFi always on). No TC4427 needed. PSU current not measured.
+- Result: all presets returned `ok`. Heat by touch after 10+ min at 100/100: MOSFETs barely warm, LED strip warm but comfortable, ESP32 module warm (normal for WiFi always on), buck converter not hot. No TC4427 needed. PSU current not measured.
 - Next: mount on ceiling (power off; keep MOSFETs, buck and ESP32 ventilated and off the strip; strain-relieve 24 V; fuse on the 24 V line). Reserve 172.30.1.28 in DHCP.
 - Links: `harness/cadence/lamp.py`, inventory "Ceiling lamp wiring"
 
