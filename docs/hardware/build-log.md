@@ -11,6 +11,13 @@ Newest first. Entry template:
 - Links: commit, spec section, measurement file
 ```
 
+## 2026-11-10: lamp first light on 24 V, 100 % blink fixed (`lamp/`)
+- Board / project dir: ESP32-S3 #2 (`bedroom-ceiling`), `lamp/`, powered from 24 V PSU (60-150 W) via buck, USB unplugged.
+- What changed or was tried: strip first stayed dark: harness routed `light.set` with empty args (fixed in `99b06c0`). Then it blinked at 100 %. Step test from Cadence: 10 % warm steady, 100 % warm blinking, 99 % warm steady; ESP32 never reset (one steady `/peer` link, ping stable), so not a supply cut-out. Cause: ESP32-S3 LEDC cannot output duty 2^14 at its max 14-bit resolution (IDF `ledc.c` note). Capped duty at 2^14-1 (`9cddd3e`), pushed by OTA (power-cycle of 24 V).
+- Result: OTA 10:48:20 full GET, 10:48:41 same-image abort, link up. 100 % warm steady at 12:29. Warm channel works 10-100 %.
+- Next: cool-only check, both at 100 % for 10 min with PSU current and MOSFET temperature by touch (still not done), then ceiling mount.
+- Links: `lamp/main/lamp.c`, `harness/cadence/peers.py`
+
 ## 2026-11-10: lamp first OTA, reconnect-after-close fix (`lamp/`)
 - Board / project dir: ESP32-S3 #2 (`bedroom-ceiling`), `lamp/`
 - What changed or was tried: lamp had dropped off `/peer` after a 09:50 USB replug and never retried. Cause: `esp_websocket_client` 2.0.0 stops for good after a clean server close (here likely the `peer_id in use` rejection while Cadence still held the stale socket) unless `enable_close_reconnect` is set. Fixed in `lamp.c` and `voice_chat.c` (commit `89bf2cb`). Lamp image built on ianshomeserver, served with `python3 -m http.server 8772 --bind 172.30.1.28` from a directory holding only `lamp.bin`, then lamp replugged.
