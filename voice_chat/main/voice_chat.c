@@ -221,6 +221,7 @@ static void ws_client_task(void *arg)
 {
     esp_websocket_client_config_t ws_cfg = {
         .uri = CONFIG_VOICE_WS_URL,
+        .enable_close_reconnect = true,  // else a clean close from the adapter (restart) ends the link until reboot
     };
     s_ws_client = esp_websocket_client_init(&ws_cfg);
     esp_websocket_register_events(s_ws_client, WEBSOCKET_EVENT_ANY, ws_event_handler, NULL);

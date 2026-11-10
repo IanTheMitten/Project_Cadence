@@ -342,7 +342,8 @@ void app_main(void)
     wifi_init_sta();
     ota_check();
 
-    esp_websocket_client_config_t ws_cfg = {.uri = CONFIG_LAMP_PEER_URL};
+    // close_reconnect: without it a clean close from Cadence (restart, rejected hello) ends the link until reboot
+    esp_websocket_client_config_t ws_cfg = {.uri = CONFIG_LAMP_PEER_URL, .enable_close_reconnect = true};
     s_ws = esp_websocket_client_init(&ws_cfg);
     esp_websocket_register_events(s_ws, WEBSOCKET_EVENT_ANY, ws_event_handler, NULL);
     esp_websocket_client_start(s_ws);  // reconnects on its own
