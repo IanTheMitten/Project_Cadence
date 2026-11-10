@@ -22,7 +22,8 @@ SCHEDULE_ADD = Capability(
     "Set a wake-up or timed routine: a time, once or every day, an optional greeting, then an optional "
     "spoken command (e.g. 'wake me up at 7 and play jazz').",
     {"type": "object", "properties": {
-        "time": {"type": "string", "description": "24-hour HH:MM"},
+        "time": {"type": "string",
+                 "description": "24-hour HH:MM clock time, or +MINUTES for a delay ('in 10 minutes' -> '+10')"},
         "repeat": {"type": "string", "enum": ["once", "daily"]},
         "greeting": {"type": "boolean"},
         "command": {"type": "string",
@@ -179,10 +180,14 @@ class SchedulePlugin(Plugin):
         self._clock = clock
 
     async def call(self, capability: str, args: dict, target: Device | None, event: Event) -> Result:
-        t = parse_hhmm(args.get("time"))
+        now = self._clock()
+        raw = args.get("time")
+        delay = re.fullmatch(r"\+(\d{1,4})", raw.strip()) if isinstance(raw, str) else None
+        if delay and capability == "schedule.add":
+            raw = time.strftime("%H:%M", time.localtime(now + int(delay[1]) * 60))
+        t = parse_hhmm(raw)
         if t is None:
             return Result(False, say=BAD_TIME_SAY, error="bad_time")
-        now = self._clock()
         if capability == "schedule.cancel":
             found = self._store.at_time(t)
             if not found:

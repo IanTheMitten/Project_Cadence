@@ -39,7 +39,7 @@ unavailable at startup (a message goes to stderr) and every utterance escalates 
 
 Escalations go to Google AI Studio's OpenAI-compatible endpoint (`cadence/llm.py`).
 Put `GEMINI_API_KEY=...` (from https://aistudio.google.com/apikey) in `~/.config/cadence/typesafe.env`, next to the TypeSafe key, or export it; the env var wins. Never commit it.
-Model defaults to `gemini-2.5-flash`; override with `CADENCE_LLM_MODEL`.
+Model defaults to `gemini-3.5-flash-lite` (2.5 is retired for new keys; free tier on `gemini-3.5-flash` is 20 requests/day); override with `CADENCE_LLM_MODEL`.
 Without a key the LLM decider reports unavailable and the turn fails cleanly.
 
 ## Running it
@@ -47,12 +47,12 @@ Without a key the LLM decider reports unavailable and the turn fails cleanly.
 Three programs, started in this order, each from its own directory with this venv:
 
 ```
-cd harness && .venv/bin/python -m cadence
+cd harness && TZ=Asia/Seoul .venv/bin/python -m cadence
 cd muse_adapter && ../harness/.venv/bin/python -m cadence_muse
 cd speaker && ../harness/.venv/bin/python -m cadence_speaker
 ```
 
-`python -m cadence` listens on `0.0.0.0:8770` (`PEER_PORT` in `cadence/config.py`) and runs the schedule loop. The runtime is built lazily on first use (`build_runtime()` in `cadence/wiring.py`). The adapters find it at `CADENCE_PEER_URL` (default `ws://127.0.0.1:8770/peer`); see `speaker/README.md` and `muse_adapter/README.md` for their env vars. Kokoro files and acks are the speaker adapter's (`speaker/README.md`). The Muse proxy (`tools/muse_proxy.py`, port 8765) is started separately on the host.
+`python -m cadence` listens on `0.0.0.0:8770` (`PEER_PORT` in `cadence/config.py`) and runs the schedule loop. Schedule times and the clock the deciders see follow the process time zone; the host is UTC, so set `TZ` to the household zone (`Asia/Seoul`). The runtime is built lazily on first use (`build_runtime()` in `cadence/wiring.py`). The adapters find it at `CADENCE_PEER_URL` (default `ws://127.0.0.1:8770/peer`); see `speaker/README.md` and `muse_adapter/README.md` for their env vars. Kokoro files and acks are the speaker adapter's (`speaker/README.md`). The Muse proxy (`tools/muse_proxy.py`, port 8765) is started separately on the host.
 
 ## Device protocol (`/peer`)
 

@@ -119,6 +119,17 @@ async def test_add_ok(store):
     assert store.get_all()[0].room == "bedroom"
 
 
+async def test_add_relative_minutes(store):
+    # "turn off after one minute" was stored as 00:01; +N is a delay from now
+    plugin = SchedulePlugin(store, PendingQuestions(), clock=lambda: D0 + 6 * H + 30)
+    ev = utterance("speaker-1", "bedroom", "x")
+    r = await plugin.call("schedule.add", {**ADD, "repeat": "once", "time": "+5"}, None, ev)
+    assert r.ok is True
+    s = store.get_all()[0]
+    assert s.time == "06:05"
+    assert s.next_at == D0 + 6 * H + 5 * 60
+
+
 async def test_add_bad_time(store):
     plugin, _, ev = make(store)
     r = await plugin.call("schedule.add", {**ADD, "time": "7"}, None, ev)

@@ -16,7 +16,7 @@ import httpx
 from cadence.deciders.base import DeciderUnavailable
 from cadence.deciders.jev import load_api_key
 
-LLM_MODEL = os.environ.get("CADENCE_LLM_MODEL", "gemini-2.5-flash")
+LLM_MODEL = os.environ.get("CADENCE_LLM_MODEL", "gemini-3.5-flash-lite")  # 2.5 retired for new keys
 GOOGLE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
 
 

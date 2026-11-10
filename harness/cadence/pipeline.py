@@ -100,7 +100,8 @@ class Pipeline:
             try:
                 final = await self._llm.decide(event, ctx, llm_args[0], llm_args[1])
                 final.escalation = escalation
-            except DeciderUnavailable:
+            except DeciderUnavailable as exc:
+                print(f"llm unavailable: {str(exc)[:300]}", file=sys.stderr, flush=True)
                 unavailable = True
                 await out.say(UNAVAILABLE_SAY)
                 final = Decision("none", None, [], escalation=escalation)
