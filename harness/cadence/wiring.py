@@ -16,6 +16,7 @@ from cadence.deciders.jev import JevDecider, load_api_key
 from cadence.deciders.llm import LlmDecider
 from cadence.decisionlog import DecisionLog
 from cadence.executor import Executor
+from cadence.lamp import LampPresetPlugin
 from cadence.livecontext import LiveContext
 from cadence.llm import GoogleLLM
 from cadence.peers import PeerHub
@@ -40,6 +41,7 @@ def build_runtime() -> Runtime:
     schedules = ScheduleStore(DB_PATH)
     pending = PendingQuestions()
     catalogue = Catalogue([SchedulePlugin(schedules, pending)])
+    catalogue.add(LampPresetPlugin(catalogue))
     hub = PeerHub(catalogue, registry)
 
     try:
