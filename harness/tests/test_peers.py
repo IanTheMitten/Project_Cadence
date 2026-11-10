@@ -226,3 +226,13 @@ def test_failed_welcome_does_not_leak_peer(env, monkeypatch):
     monkeypatch.setattr(WebSocket, "send_text", orig)
     with env.client.websocket_connect("/peer") as ws:
         _join(ws, SPEAKER)
+
+
+def test_ability_without_free_args_treats_unlisted_params_as_free():
+    # the lamp's hello lists neither; Jev then sent light.set {} and the lamp kept its level
+    lamp = {"name": "light.set", "description": "d", "target": "lamp",
+            "parameters": {"type": "object", "properties": {"cool": {}, "warm": {}, "fade_ms": {}}}}
+    assert capability_from_ability(lamp).free_args == ("cool", "warm", "fade_ms")
+    mixed = {**lamp, "closed_args": {"warm": {"on": "on"}}}
+    assert capability_from_ability(mixed).free_args == ("cool", "fade_ms")
+    assert capability_from_ability({**lamp, "free_args": []}).free_args == ()
