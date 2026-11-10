@@ -11,6 +11,13 @@ Newest first. Entry template:
 - Links: commit, spec section, measurement file
 ```
 
+## 2026-11-10: lamp 24 V bench test passed, ready to mount (`lamp/`)
+- Board / project dir: ESP32-S3 #2 (`bedroom-ceiling`), `lamp/`, 24 V PSU via buck, USB unplugged.
+- What changed or was tried: channel checks from the chat page via Jev `light.preset` (warm, cool, dim, night, on, off, 22:00-22:20 KST), then both channels at 100 % for over 10 min.
+- Result: all presets returned `ok`. Heat by touch after 10+ min at 100/100: MOSFETs barely warm, LED strip warm but comfortable, ESP32 module warm (normal for WiFi always on). No TC4427 needed. PSU current not measured.
+- Next: mount on ceiling (power off; keep MOSFETs, buck and ESP32 ventilated and off the strip; strain-relieve 24 V; fuse on the 24 V line). Reserve 172.30.1.28 in DHCP.
+- Links: `harness/cadence/lamp.py`, inventory "Ceiling lamp wiring"
+
 ## 2026-11-10: lamp first light on 24 V, 100 % blink fixed (`lamp/`)
 - Board / project dir: ESP32-S3 #2 (`bedroom-ceiling`), `lamp/`, powered from 24 V PSU (60-150 W) via buck, USB unplugged.
 - What changed or was tried: strip first stayed dark: harness routed `light.set` with empty args (fixed in `99b06c0`). Then it blinked at 100 %. Step test from Cadence: 10 % warm steady, 100 % warm blinking, 99 % warm steady; ESP32 never reset (one steady `/peer` link, ping stable), so not a supply cut-out. Cause: ESP32-S3 LEDC cannot output duty 2^14 at its max 14-bit resolution (IDF `ledc.c` note). Capped duty at 2^14-1 (`9cddd3e`), pushed by OTA (power-cycle of 24 V).

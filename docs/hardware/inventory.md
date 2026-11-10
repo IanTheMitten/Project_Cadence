@@ -9,7 +9,7 @@ Last updated: 2026-10-17 (seeded from `CLAUDE.md` and specs; verify against the 
 | Board | Role | Status | Flashed with | Notes |
 |---|---|---|---|---|
 | ESP32-S3 #1 | Speaker + mic (voice) | working (per repo; confirm) | `voice_chat/` (harness `/session` client) | Switch to root project or `mic_test/` by reflashing; only one image at a time. |
-| ESP32-S3 #2 | Bedroom ceiling lamp (`bedroom-ceiling`) | flashed 2026-11-09, strip bench test pending | `lamp/` (Cadence `/peer` device) | MAC `20:6e:f1:d6:e8:bc`, 8 MB flash, CH34x USB-serial. Wiring below. |
+| ESP32-S3 #2 | Bedroom ceiling lamp (`bedroom-ceiling`) | 24 V bench test passed 2026-11-10, ready to mount | `lamp/` (Cadence `/peer` device) | MAC `20:6e:f1:d6:e8:bc`, 8 MB flash, CH34x USB-serial. Wiring below. |
 | ESP32-S3 #3, #4 | Lamps / CSI nodes | planned | none | Spare boards for the CSI ground tests. Fill in per-board notes as they are used. |
 
 ## Speaker + mic board wiring
