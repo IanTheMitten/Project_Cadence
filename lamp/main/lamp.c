@@ -28,7 +28,7 @@ static const char *TAG = "lamp";
 // IRLZ44N on 3.3 V through 220 ohm switches in ~5-10 us; at 2 kHz that is a few % of the period, not half.
 #define PWM_HZ          2000
 #define PWM_RES         LEDC_TIMER_14_BIT // 80 MHz / 2 kHz = 40000 ticks; 14 bits fits, finer low-end dimming
-#define DUTY_MAX        (1u << 14)
+#define DUTY_MAX        ((1u << 14) - 1) // S3 LEDC bug: duty 2^14 at max resolution garbles output (strip blinked at 100%)
 #define DEFAULT_FADE_MS 400
 #define MAX_FADE_MS     600000
 #define BOOT_FADE_MS    300
