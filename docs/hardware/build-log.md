@@ -11,6 +11,13 @@ Newest first. Entry template:
 - Links: commit, spec section, measurement file
 ```
 
+## 2026-11-10: lamp first OTA, reconnect-after-close fix (`lamp/`)
+- Board / project dir: ESP32-S3 #2 (`bedroom-ceiling`), `lamp/`
+- What changed or was tried: lamp had dropped off `/peer` after a 09:50 USB replug and never retried. Cause: `esp_websocket_client` 2.0.0 stops for good after a clean server close (here likely the `peer_id in use` rejection while Cadence still held the stale socket) unless `enable_close_reconnect` is set. Fixed in `lamp.c` and `voice_chat.c` (commit `89bf2cb`). Lamp image built on ianshomeserver, served with `python3 -m http.server 8772 --bind 172.30.1.28` from a directory holding only `lamp.bin`, then lamp replugged.
+- Result: 10:15:57 full GET of `lamp.bin` (980384 bytes), flash, restart; 10:16:19 new image re-checked OTA, saw same image, aborted (expected); `/peer` link up and welcomed about 10:16:2x. First OTA on this board works end to end.
+- Next: voice_chat board #1 was not on the LAN (no ARP reply); power it and USB-flash `89bf2cb`. voice_chat has no OTA (single-app partition) until it gets the lamp's two-slot table and `ota_check`.
+- Links: `lamp/main/lamp.c`, `voice_chat/main/voice_chat.c`
+
 ## 2026-11-09: ceiling lamp board first flash (`lamp/`)
 - Board / project dir: ESP32-S3 #2 (QFN56 rev v0.2, MAC `20:6e:f1:d6:e8:bc`, 8 MB flash, CH34x USB-serial), `lamp/`
 - What changed or was tried: first USB flash of `lamp/` (commit `accc125`: 2 kHz 14-bit PWM). 24 V off, USB power only. Peer and OTA URLs overridden to LAN IP `172.30.1.28` in `lamp/sdkconfig.defaults.local`, because the board's DNS cannot resolve the MagicDNS name `ianshomeserver`.
