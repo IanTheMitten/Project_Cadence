@@ -55,7 +55,7 @@ The adapters reach Cadence at `CADENCE_PEER_URL` (default `ws://127.0.0.1:8770/p
 
 ## Version control and multi-machine sync
 
-This repo is worked on from several machines and Claude sessions. GitHub (`origin/master`, `IanTheMitten/Cadence_Speaker`) is the single source of truth; another machine knows what is done only from what is pushed.
+This repo is worked on from several machines and Claude sessions. GitHub (`origin/master`, `IanTheMitten/Project_Cadence`) is the single source of truth; another machine knows what is done only from what is pushed.
 
 - **Session start:** run `git fetch && git status -sb` and `git log --oneline -15`. If behind, `git pull --rebase`. Read the newest `docs/plans/*.md` for task status before starting work.
 - **Session end (or before switching machines):** commit everything worth keeping, then `git push`. Do not end a session with unpushed commits or untracked docs/specs/research unless the user says to keep them local. Report `git status -sb` at the end; it must show no `ahead` and no `??` files unless the user said to keep them local.
